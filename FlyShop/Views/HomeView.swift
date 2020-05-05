@@ -16,7 +16,6 @@ struct HomeView: View {
         
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
-        UINavigationBar.appearance().backgroundColor = #colorLiteral(red: 0.01536641922, green: 0.002536598593, blue: 0.0852348879, alpha: 1)
         
     }
     var body: some View {
@@ -35,13 +34,17 @@ struct HomeView: View {
                         Spacer()
                         
                         Image( "filter" )
-                        // open the filter view 
+                        // open the filter view
                     }
                     Spacer()
                 }
                 
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
-        }
+            .background(NavigationConfigurator { nc in
+                nc.navigationBar.barTintColor = #colorLiteral(red: 0.01536641922, green: 0.002536598593, blue: 0.0852348879, alpha: 1)
+            })
+        }    .navigationViewStyle(StackNavigationViewStyle())
+
     }
 }
 
