@@ -23,6 +23,8 @@
 		FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807B24619000000E5D88 /* MainScreen.swift */; };
 		FF1C80802461C38D000E5D88 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */; };
 		FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */; };
+		FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80822461D03B000E5D88 /* HomeView.swift */; };
+		FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80842461D068000E5D88 /* HomeViewBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		FF1C807B24619000000E5D88 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		FF1C80822461D03B000E5D88 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FF1C80842461D068000E5D88 /* HomeViewBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +130,10 @@
 		FF1C806B24617298000E5D88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FF1C806C246172A7000E5D88 /* Background.swift */,
+				FF1C80862461D941000E5D88 /* Backgrounds */,
 				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
+				FF1C80822461D03B000E5D88 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +169,15 @@
 				FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		FF1C80862461D941000E5D88 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80842461D068000E5D88 /* HomeViewBackground.swift */,
+				FF1C806C246172A7000E5D88 /* Background.swift */,
+			);
+			path = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
+				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
 				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
