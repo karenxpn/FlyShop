@@ -16,72 +16,70 @@ struct SignUp: View {
     @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
-        ScrollView {
-            VStack( spacing: 20) {
-                Image( "flyshoplogo" )
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3)
+        VStack( spacing: 20) {
+            Image( "flyshoplogo" )
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3.5)
+            
+            Text( "FlyShop" )
+                .font(.custom("McLaren-Regular", size: 45))
+            
+            NumberInput()
+            
+            VStack {
                 
-                Text( "FlyShop" )
-                    .font(.custom("McLaren", size: 45))
+                TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
+                    .padding([.top, .bottom], 14)
+                    .keyboardType(.numberPad)
+                    .font( .custom("Montserrat-Italic", size: 16))                    .multilineTextAlignment(.center)
                 
-                NumberInput()
-                
-                VStack {
-                    
-                    TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
-                        .padding([.top, .bottom], 14)
-                        .keyboardType(.numberPad)
-                        .font( .custom("Montserrat", size: 16))                    .multilineTextAlignment(.center)
-                    
-                }.padding([.leading, .trailing], 12)
-                    .background(
-                        Image("signUpTextFieldBg")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill))
-                    .cornerRadius(8)
-                
-                VStack {
-                    Text( "Sign Up")
-                        .foregroundColor(Color.white)
-                        .font( .custom("Montserrat", size: 20))
-                    
-                }.padding([.top, .bottom], 11)
-                    .frame(width: UIScreen.main.bounds.size.width-30)
-                    .background(
-                        Image("signUpButtonBackground")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill))
-                    .cornerRadius(20)
-                    .onTapGesture {
-                        if self.authVM.number != "" && self.authVM.confirmationCode != "" {
-                            self.authVM.logTheUser()
-                        } else {
-                            self.showAlert.toggle()
-                        }
-                }
-                
-                
-                Text( "YOUR CHOICE" )
+            }.padding([.leading, .trailing], 12)
+                .background(
+                    Image("signUpTextFieldBg")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill))
+                .cornerRadius(8)
+            
+            VStack {
+                Text( "Sign Up")
                     .foregroundColor(Color.white)
-                    .font( .custom("Montserrat", size: 14))
-                    .padding(20)
+                    .font( .custom("Montserrat-Italic", size: 20))
                 
-                Text( "OUR CARE" )
-                    .foregroundColor(Color.white)
-                    .font( .custom("Montserrat", size: 20))
-                    .padding(14)
-                
-                
-                Spacer()
-            }.padding()
-                .offset( y: -self.value )
-                .animation(.spring())
-                .onAppear {
-                    self.keyboardNotification()
+            }.padding([.top, .bottom], 11)
+                .frame(width: UIScreen.main.bounds.size.width-30)
+                .background(
+                    Image("signUpButtonBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill))
+                .cornerRadius(20)
+                .onTapGesture {
+                    if self.authVM.number != "" && self.authVM.confirmationCode != "" {
+                        self.authVM.logTheUser()
+                    } else {
+                        self.showAlert.toggle()
+                    }
             }
-        }.alert(isPresented: self.$showAlert, content: {
+            
+            
+            Text( "YOUR CHOICE" )
+                .foregroundColor(Color.white)
+                .font( .custom("Montserrat-Italic", size: 14))
+                .padding()
+            
+            Text( "OUR CARE" )
+                .foregroundColor(Color.white)
+                .font( .custom("Montserrat-Italic", size: 20))
+                .padding(6)
+            
+            
+        }.padding()
+            .offset( y: -self.value )
+            .animation(.spring())
+            .onAppear {
+                self.keyboardNotification()
+        }
+        .alert(isPresented: self.$showAlert, content: {
             Alert(title: Text( "Error"), message: Text( "Enter your phone number/ verification code"), dismissButton: .default(Text( "OK")))
         })
             .onTapGesture {
@@ -119,7 +117,7 @@ struct NumberInput: View {
     var body: some View {
         HStack{
             Text( "+374" )
-                .font( .custom("Montserrat", size: 35))
+                .font( .custom("Montserrat-Italic", size: 35))
             
             Image( "cursor" )
                 .resizable()
@@ -127,7 +125,7 @@ struct NumberInput: View {
             
             TextField("", text: self.$authVM.number)
                 .keyboardType(.numberPad)
-                .font( .custom("Montserrat", size: 35))
+                .font( .custom("Montserrat-Italic", size: 35))
                 
                 .frame( height: 35)
             
