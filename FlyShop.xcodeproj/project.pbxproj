@@ -25,6 +25,9 @@
 		FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */; };
 		FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80822461D03B000E5D88 /* HomeView.swift */; };
 		FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80842461D068000E5D88 /* HomeViewBackground.swift */; };
+		FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */; };
+		FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80942461FF95000E5D88 /* TabItemModel.swift */; };
+		FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		FF1C80822461D03B000E5D88 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF1C80842461D068000E5D88 /* HomeViewBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBackground.swift; sourceTree = "<group>"; };
+		FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		FF1C80942461FF95000E5D88 /* TabItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemModel.swift; sourceTree = "<group>"; };
+		FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 		FF1C805424616F23000E5D88 /* FlyShop */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C80932461FF8A000E5D88 /* Models */,
+				FF1C808E2461ED94000E5D88 /* Utils */,
 				FF1C807824618E7C000E5D88 /* ViewModels */,
 				FF1C807524617EB3000E5D88 /* Extensions */,
 				FF1C807024617B96000E5D88 /* Services */,
@@ -180,6 +188,23 @@
 			path = Backgrounds;
 			sourceTree = "<group>";
 		};
+		FF1C808E2461ED94000E5D88 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */,
+				FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FF1C80932461FF8A000E5D88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80942461FF95000E5D88 /* TabItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,6 +223,8 @@
 			dependencies = (
 			);
 			name = FlyShop;
+			packageProductDependencies = (
+			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +253,8 @@
 				Base,
 			);
 			mainGroup = FF1C804924616F23000E5D88;
+			packageReferences = (
+			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,6 +330,8 @@
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
+				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
+				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
@@ -308,6 +339,7 @@
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

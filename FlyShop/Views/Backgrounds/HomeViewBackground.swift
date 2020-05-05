@@ -13,7 +13,7 @@ struct HomeViewBackground: View {
     
     var body: some View {
         Image( "homebackground" )
-        .resizable()
+            .resizable()
             .edgesIgnoringSafeArea(.horizontal)
     }
 }
