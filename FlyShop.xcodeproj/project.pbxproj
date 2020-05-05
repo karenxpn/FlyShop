@@ -3,19 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
 		FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805924616F23000E5D88 /* ContentView.swift */; };
 		FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1C805B24616F25000E5D88 /* Assets.xcassets */; };
 		FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1C805E24616F25000E5D88 /* Preview Assets.xcassets */; };
 		FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */; };
+		FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */; };
+		FF1C806D246172A7000E5D88 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C806C246172A7000E5D88 /* Background.swift */; };
+		FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C806E2461737F000E5D88 /* SignUp.swift */; };
+		FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807124617BA3000E5D88 /* AuthService.swift */; };
+		FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807624617EFC000E5D88 /* Extensions.swift */; };
+		FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807924618E8B000E5D88 /* AuthViewModel.swift */; };
+		FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807B24619000000E5D88 /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
+		ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C805724616F23000E5D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,13 @@
 		FF1C805E24616F25000E5D88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF1C806124616F25000E5D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1C806324616F25000E5D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF1C806C246172A7000E5D88 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		FF1C806E2461737F000E5D88 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		FF1C807124617BA3000E5D88 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FF1C807624617EFC000E5D88 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FF1C807924618E8B000E5D88 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		FF1C807B24619000000E5D88 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68E4629599D57A41A8F8B15D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */,
+				72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9DDBD4414A864672232374F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF1C804924616F23000E5D88 = {
 			isa = PBXGroup;
 			children = (
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
+				68E4629599D57A41A8F8B15D /* Pods */,
+				9DDBD4414A864672232374F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +94,17 @@
 		FF1C805424616F23000E5D88 /* FlyShop */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C807824618E7C000E5D88 /* ViewModels */,
+				FF1C807524617EB3000E5D88 /* Extensions */,
+				FF1C807024617B96000E5D88 /* Services */,
+				FF1C806B24617298000E5D88 /* Views */,
 				FF1C805524616F23000E5D88 /* AppDelegate.swift */,
 				FF1C805724616F23000E5D88 /* SceneDelegate.swift */,
 				FF1C805924616F23000E5D88 /* ContentView.swift */,
 				FF1C805B24616F25000E5D88 /* Assets.xcassets */,
 				FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */,
 				FF1C806324616F25000E5D88 /* Info.plist */,
+				FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */,
 				FF1C805D24616F25000E5D88 /* Preview Content */,
 			);
 			path = FlyShop;
@@ -75,6 +118,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FF1C806B24617298000E5D88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C806C246172A7000E5D88 /* Background.swift */,
+				FF1C806E2461737F000E5D88 /* SignUp.swift */,
+				FF1C807B24619000000E5D88 /* MainScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF1C807024617B96000E5D88 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C807124617BA3000E5D88 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF1C807524617EB3000E5D88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C807624617EFC000E5D88 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF1C807824618E7C000E5D88 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C807924618E8B000E5D88 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1C806624616F25000E5D88 /* Build configuration list for PBXNativeTarget "FlyShop" */;
 			buildPhases = (
+				9F29D763B648CC9898C13478 /* [CP] Check Pods Manifest.lock */,
 				FF1C804E24616F23000E5D88 /* Sources */,
 				FF1C804F24616F23000E5D88 /* Frameworks */,
 				FF1C805024616F23000E5D88 /* Resources */,
+				7D6BF86DD5487EA6B592554E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,12 +213,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
+				FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
 				FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D6BF86DD5487EA6B592554E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F29D763B648CC9898C13478 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlyShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF1C804E24616F23000E5D88 /* Sources */ = {
@@ -149,6 +271,12 @@
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
+				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
+				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
+				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
+				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
+				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +410,9 @@
 		};
 		FF1C806724616F25000E5D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9LZT27D3M;
@@ -302,8 +431,9 @@
 		};
 		FF1C806824616F25000E5D88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9LZT27D3M;

@@ -9,8 +9,100 @@
 import SwiftUI
 
 struct SignUp: View {
+    
+    //Keyboard
+    @State var value: CGFloat = 0
+    @State private var showAlert = false
+    @EnvironmentObject var authVM: AuthViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack( spacing: 20) {
+                Image( "flyshoplogo" )
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3)
+                
+                Text( "FlyShop" )
+                    .font(.custom("McLaren", size: 45))
+                
+                NumberInput()
+                
+                VStack {
+                    
+                    TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
+                        .padding([.top, .bottom], 14)
+                        .keyboardType(.numberPad)
+                        .font( .custom("Montserrat", size: 16))                    .multilineTextAlignment(.center)
+                    
+                }.padding([.leading, .trailing], 12)
+                    .background(
+                        Image("signUpTextFieldBg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill))
+                    .cornerRadius(8)
+                
+                VStack {
+                    Text( "Sign Up")
+                        .foregroundColor(Color.white)
+                        .font( .custom("Montserrat", size: 20))
+                    
+                }.padding([.top, .bottom], 11)
+                    .frame(width: UIScreen.main.bounds.size.width-30)
+                    .background(
+                        Image("signUpButtonBackground")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill))
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        if self.authVM.number != "" && self.authVM.confirmationCode != "" {
+                            self.authVM.logTheUser()
+                        } else {
+                            self.showAlert.toggle()
+                        }
+                }
+                
+                
+                Text( "YOUR CHOICE" )
+                    .foregroundColor(Color.white)
+                    .font( .custom("Montserrat", size: 14))
+                    .padding(20)
+                
+                Text( "OUR CARE" )
+                    .foregroundColor(Color.white)
+                    .font( .custom("Montserrat", size: 20))
+                    .padding(14)
+                
+                
+                Spacer()
+            }.padding()
+                .offset( y: -self.value )
+                .animation(.spring())
+                .onAppear {
+                    self.keyboardNotification()
+            }
+        }.alert(isPresented: self.$showAlert, content: {
+            Alert(title: Text( "Error"), message: Text( "Enter your phone number/ verification code"), dismissButton: .default(Text( "OK")))
+        })
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+        }
+    }
+    
+    func keyboardNotification() {
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+            
+            let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+            let height = value.height
+            
+            self.value = height + 30
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
+            
+            self.value = 0
+        }
     }
 }
 
@@ -19,3 +111,43 @@ struct SignUp_Previews: PreviewProvider {
         SignUp()
     }
 }
+
+struct NumberInput: View {
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    
+    var body: some View {
+        HStack{
+            Text( "+374" )
+                .font( .custom("Montserrat", size: 35))
+            
+            Image( "cursor" )
+                .resizable()
+                .frame(width: 2, height: 35)
+            
+            TextField("", text: self.$authVM.number)
+                .keyboardType(.numberPad)
+                .font( .custom("Montserrat", size: 35))
+                
+                .frame( height: 35)
+            
+            Image( "signUpNumberAttr" )
+                .resizable()
+                .frame(width: 35, height: 35)
+                // send verification code
+                .onTapGesture {
+                    self.authVM.signUp()
+            }
+            
+            Spacer()
+        }.padding([.leading, .trailing], 12)
+            .padding([.top, .bottom], 5)
+            .background(
+                Image("signUpTextFieldBg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+        ).cornerRadius(8)
+    }
+}
+
+

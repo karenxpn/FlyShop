@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class AuthViewModel: ObservableObject {
+    @Published var userLogged: Bool = false
+    @Published var number: String = ""
+    @Published var confirmationCode: String = ""
+    
+    func signUp() {
+        AuthService().signUp(phoneNumber: self.number)
+    }
+    
+    func logTheUser() {
+        AuthService().signIn(verificationCode: self.confirmationCode) { (result) in
+            if result == true {
+                self.userLogged = true
+            }
+        }
+    }
+}
