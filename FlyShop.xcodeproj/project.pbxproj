@@ -21,6 +21,8 @@
 		FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807624617EFC000E5D88 /* Extensions.swift */; };
 		FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807924618E8B000E5D88 /* AuthViewModel.swift */; };
 		FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807B24619000000E5D88 /* MainScreen.swift */; };
+		FF1C80802461C38D000E5D88 /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */; };
+		FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FF1C807624617EFC000E5D88 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FF1C807924618E8B000E5D88 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		FF1C807B24619000000E5D88 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
+		FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */,
 				FF1C806324616F25000E5D88 /* Info.plist */,
 				FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */,
+				FF1C807F2461C366000E5D88 /* fonts */,
 				FF1C805D24616F25000E5D88 /* Preview Content */,
 			);
 			path = FlyShop;
@@ -150,6 +155,15 @@
 				FF1C807924618E8B000E5D88 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FF1C807F2461C366000E5D88 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */,
+				FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +229,9 @@
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
 				FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
+				FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */,
 				FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */,
+				FF1C80802461C38D000E5D88 /* McLaren-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
