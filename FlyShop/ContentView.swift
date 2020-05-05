@@ -9,8 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var authVM = AuthViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+            ZStack {
+                Background()
+                
+                if authVM.userLogged == false {
+                    SignUp()
+                } else if authVM.userLogged == true {
+                    MainScreen()
+                }
+            }.environmentObject(self.authVM)
+
     }
 }
 
