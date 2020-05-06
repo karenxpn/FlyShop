@@ -1,5 +1,5 @@
 //
-//  FilterBackground.swift
+//  AllShopsBackground.swift
 //  FlyShop
 //
 //  Created by Karen Mirakyan on 5/6/20.
@@ -8,11 +8,10 @@
 
 import Foundation
 import SwiftUI
-
-struct FilterBackground: View {
+struct AllShopsBackground: View {
     var body: some View {
-        Image( "filterBackground" )
-        .resizable()
-        .edgesIgnoringSafeArea(.all)
+        Image( "blueBackground" )
+            .resizable()
+            .edgesIgnoringSafeArea(.all)
     }
 }
