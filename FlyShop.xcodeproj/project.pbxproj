@@ -28,6 +28,8 @@
 		FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */; };
 		FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80942461FF95000E5D88 /* TabItemModel.swift */; };
 		FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */; };
+		FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A02462AF5D000E5D88 /* FilterView.swift */; };
+		FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		FF1C80942461FF95000E5D88 /* TabItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemModel.swift; sourceTree = "<group>"; };
 		FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		FF1C80A02462AF5D000E5D88 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
 				FF1C80822461D03B000E5D88 /* HomeView.swift */,
+				FF1C80A02462AF5D000E5D88 /* FilterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1C807924618E8B000E5D88 /* AuthViewModel.swift */,
+				FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			files = (
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
+				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
@@ -340,6 +347,7 @@
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
+				FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

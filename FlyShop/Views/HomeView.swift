@@ -15,9 +15,12 @@ struct HomeView: View {
         //UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
         
         //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
         
-    }
+//        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
+        
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
+        UINavigationBar.appearance().backgroundColor = .black
+ }
     var body: some View {
         
         NavigationView {
@@ -28,22 +31,27 @@ struct HomeView: View {
                     HStack {
                         Spacer()
                         Text( "TRENDS" ).font(.custom("Montserrat-Italic", size: 28))
-                            .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
+                            .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1)).offset( x: 18)
 
                         
                         Spacer()
                         
-                        Image( "filter" )
                         // open the filter view
+                        NavigationLink (destination: FilterView()) {
+                            Image( "filter" )
+                            .renderingMode(.original)
+
+                        }
+
+                        
+                        // The list here should represent trends etc.
                     }
                     Spacer()
                 }
                 
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
-            .background(NavigationConfigurator { nc in
-                nc.navigationBar.barTintColor = #colorLiteral(red: 0.01536641922, green: 0.002536598593, blue: 0.0852348879, alpha: 1)
-            })
-        }    .navigationViewStyle(StackNavigationViewStyle())
+            
+        }
 
     }
 }

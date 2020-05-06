@@ -22,52 +22,46 @@ struct MainScreen: View {
     
     var body: some View {
         
-        ZStack {
-            Color( #colorLiteral(red: 0.09298879653, green: 0.07001345605, blue: 0.1453302801, alpha: 1) ).edgesIgnoringSafeArea(.top)
-            VStack {
-                Spacer()
-                
-                if self.viewRouter.currentView == "allShops" {
-                    Text( "allShops" )
-                } else if self.viewRouter.currentView == "new" {
-                    Text( "new")
-                } else if self.viewRouter.currentView == "main" {
-                    HomeView()
-                } else if self.viewRouter.currentView == "sales" {
-                    Text( "sales" )
-                } else if self.viewRouter.currentView == "cart" {
-                    Text( "cart" )
-                }
-                
-                Spacer()
-                
-                HStack( alignment: .top) {
-                    List {
-                        HStack {
-                            ForEach( 0..<self.tabItems.count ) { index in
-                                ZStack {
-                                    Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
-                                        .frame(width: 40, height: 40)
-                                    
-                                    self.tabItems[index].image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .padding()
-                                        .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
-                                        .onTapGesture {
-                                            self.designSelectedItem(index: index)
-                                            self.viewRouter.currentView = self.tabItems[index].title
-                                    }
+        VStack {
+            
+            if self.viewRouter.currentView == "allShops" {
+                Text( "allShops" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            } else if self.viewRouter.currentView == "new" {
+                Text( "new").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            } else if self.viewRouter.currentView == "main" {
+                HomeView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            } else if self.viewRouter.currentView == "sales" {
+                Text( "sales" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            } else if self.viewRouter.currentView == "cart" {
+                Text( "cart" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            }
+            
+            HStack( alignment: .top) {
+                List {
+                    HStack {
+                        ForEach( 0..<self.tabItems.count ) { index in
+                            ZStack {
+                                Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
+                                    .frame(width: 50, height: 50)
+                                
+                                self.tabItems[index].image
+                                    .resizable()
+                                    .aspectRatio(contentMode: index == 2 ? .fill : .fit)
+                                    .padding()
+                                    .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/5)
+                                    .onTapGesture {
+                                        self.designSelectedItem(index: index)
+                                        self.viewRouter.currentView = self.tabItems[index].title
                                 }
                             }
                         }
                     }
-                }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10.5)
-                
-                
-            }.edgesIgnoringSafeArea(.bottom)
-        }
-        
+                }
+            }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10.5)
+                .padding(.bottom, 15)
+            
+            
+        }.edgesIgnoringSafeArea(.bottom)
     }
     
     func designSelectedItem ( index: Int ) {
