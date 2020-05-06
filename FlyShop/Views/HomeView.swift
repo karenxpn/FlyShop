@@ -9,28 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    init() {
-        //Use this if NavigationBarTitle is with Large Font
-        //UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
-        
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        
-        //        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
-        //        UIView.appearance().backgroundColor = UIColor.red
-        //
-        //        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
-        
 
-        UINavigationBar.appearance().barTintColor = UIColor(red: 29/255, green: 29/255, blue: 39/255, alpha: 1)
-
-
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, .font: UIFont( name: "McLaren-Regular", size: 20)!]
-
-        //navigationBarAppearace.titleTextAttributes = [.font: UIFont( name: "McLaren-Regular", size: 20)!]
-        
-        
-    }
     var body: some View {
         
         NavigationView {

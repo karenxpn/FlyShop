@@ -21,6 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = MainScreen()
+        
+        let newAppearance = UINavigationBarAppearance()
+        newAppearance.configureWithOpaqueBackground()
+        newAppearance.backgroundColor = UIColor(red: 29/255, green: 29/255, blue: 39/255, alpha: 1.0)
+        newAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, .font: UIFont( name: "McLaren-Regular", size: 20)!]
+
+        UINavigationBar.appearance().standardAppearance = newAppearance
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
