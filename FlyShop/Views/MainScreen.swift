@@ -37,27 +37,25 @@ struct MainScreen: View {
             }
             
             HStack( alignment: .top) {
-                List {
-                    HStack {
-                        ForEach( 0..<self.tabItems.count ) { index in
-                            ZStack {
-                                Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
-                                    .frame(width: 50, height: 50)
-                                
-                                self.tabItems[index].image
-                                    .resizable()
-                                    .aspectRatio(contentMode: index == 2 ? .fill : .fit)
-                                    .padding()
-                                    .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/5)
-                                    .onTapGesture {
-                                        self.designSelectedItem(index: index)
-                                        self.viewRouter.currentView = self.tabItems[index].title
-                                }
+                HStack {
+                    ForEach( 0..<self.tabItems.count ) { index in
+                        ZStack {
+                            Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
+                                .frame(width: 50, height: 50)
+                            
+                            self.tabItems[index].image
+                                .resizable()
+                                .aspectRatio(contentMode: index == 2 ? .fill : .fit)
+                                .padding()
+                                .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/5)
+                                .onTapGesture {
+                                    self.designSelectedItem(index: index)
+                                    self.viewRouter.currentView = self.tabItems[index].title
                             }
                         }
                     }
                 }
-            }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10.5)
+            }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
                 .padding(.bottom, 15)
             
             

@@ -16,11 +16,21 @@ struct HomeView: View {
         
         //Use this if NavigationBarTitle is with displayMode = .inline
         
-//        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
+        //        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
+        //        UIView.appearance().backgroundColor = UIColor.red
+        //
+        //        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
         
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "McLaren-Regular", size: 20)!]
-        UINavigationBar.appearance().backgroundColor = .black
- }
+
+        UINavigationBar.appearance().barTintColor = UIColor(red: 29/255, green: 29/255, blue: 39/255, alpha: 1)
+
+
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white, .font: UIFont( name: "McLaren-Regular", size: 20)!]
+
+        //navigationBarAppearace.titleTextAttributes = [.font: UIFont( name: "McLaren-Regular", size: 20)!]
+        
+        
+    }
     var body: some View {
         
         NavigationView {
@@ -32,17 +42,17 @@ struct HomeView: View {
                         Spacer()
                         Text( "TRENDS" ).font(.custom("Montserrat-Italic", size: 28))
                             .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1)).offset( x: 18)
-
+                        
                         
                         Spacer()
                         
                         // open the filter view
                         NavigationLink (destination: FilterView()) {
                             Image( "filter" )
-                            .renderingMode(.original)
-
+                                .renderingMode(.original)
+                            
                         }
-
+                                           
                         
                         // The list here should represent trends etc.
                     }
@@ -50,9 +60,9 @@ struct HomeView: View {
                 }
                 
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
-            
         }
 
+        
     }
 }
 

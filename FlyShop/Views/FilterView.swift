@@ -190,7 +190,7 @@ struct FilterView: View {
             }, label: {
                 Text( "Clear" )
                     .font( .custom("Montserrat-Italic", size: 16))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.white)
             }))
     }
 }
