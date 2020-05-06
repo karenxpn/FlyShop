@@ -20,8 +20,6 @@ class AllShopsViewModel: ObservableObject {
         AllShopService().getAllShops { result in
             if let result = result {
                 self.allShops = result.map(ShopListViewModel.init)
-                print("The data is here")
-                print(self.allShops)
             }
         }
     }

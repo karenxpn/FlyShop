@@ -47,7 +47,7 @@ struct MainScreen: View {
                                 .resizable()
                                 .aspectRatio(contentMode: index == 2 ? .fill : .fit)
                                 .padding()
-                                .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/5)
+                                .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
                                 .onTapGesture {
                                     self.designSelectedItem(index: index)
                                     self.viewRouter.currentView = self.tabItems[index].title
