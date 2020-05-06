@@ -19,7 +19,7 @@ struct AllShopsView: View {
                 
                 AllShopsBackground()
                 
-                VStack {
+                VStack( spacing: 0) {
                     
                     ZStack {
                         Image("searchRectangle")
@@ -32,14 +32,15 @@ struct AllShopsView: View {
                         
                         Image("searchicon")
                             .resizable()
-                            .frame(width: UIScreen.main.bounds.size.width/12, height: UIScreen.main.bounds.size.height/27)
-                            .offset(y: UIScreen.main.bounds.size.height/45)
+                            .frame(width: UIScreen.main.bounds.size.width/13, height: UIScreen.main.bounds.size.height/27)
+                            .offset(y: UIScreen.main.bounds.size.height/50)
                     }
                     
                     QGrid(self.allShopVM.allShops, columns: 2) {
                         AllShopGridCell(shopModel: $0)
 
-                    }.frame( height: UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height/15 - UIScreen.main.bounds.size.height/10 - 105 )
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .offset(y: 9)
                 }
             }
                 
