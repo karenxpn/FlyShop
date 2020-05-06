@@ -25,7 +25,7 @@ struct MainScreen: View {
         VStack {
             
             if self.viewRouter.currentView == "allShops" {
-                Text( "allShops" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                AllShopsView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "new" {
                 Text( "new").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "main" {

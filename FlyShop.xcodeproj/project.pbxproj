@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,9 +28,18 @@
 		FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */; };
 		FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80942461FF95000E5D88 /* TabItemModel.swift */; };
 		FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */; };
-		FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A02462AF5D000E5D88 /* FilterView.swift */; };
 		FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */; };
-		FF1C80A52462DBDE000E5D88 /* FilterBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */; };
+		FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A6246320F7000E5D88 /* FilterView.swift */; };
+		FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A824632393000E5D88 /* SizeChart.swift */; };
+		FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80AA24632DA7000E5D88 /* SizeModel.swift */; };
+		FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80AC24633798000E5D88 /* AllShopsView.swift */; };
+		FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80AE24633823000E5D88 /* AllShopsBackground.swift */; };
+		FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */; };
+		FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B224633B99000E5D88 /* ShopModel.swift */; };
+		FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B424633C38000E5D88 /* AllShopService.swift */; };
+		FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B624633EE9000E5D88 /* Loading.swift */; };
+		FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */; };
+		FF1C80C024634A57000E5D88 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = FF1C80BF24634A57000E5D88 /* QGrid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +68,17 @@
 		FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		FF1C80942461FF95000E5D88 /* TabItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemModel.swift; sourceTree = "<group>"; };
 		FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
-		FF1C80A02462AF5D000E5D88 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
-		FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBackground.swift; sourceTree = "<group>"; };
+		FF1C80A6246320F7000E5D88 /* FilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FF1C80A824632393000E5D88 /* SizeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeChart.swift; sourceTree = "<group>"; };
+		FF1C80AA24632DA7000E5D88 /* SizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeModel.swift; sourceTree = "<group>"; };
+		FF1C80AC24633798000E5D88 /* AllShopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsView.swift; sourceTree = "<group>"; };
+		FF1C80AE24633823000E5D88 /* AllShopsBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsBackground.swift; sourceTree = "<group>"; };
+		FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsViewModel.swift; sourceTree = "<group>"; };
+		FF1C80B224633B99000E5D88 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		FF1C80B424633C38000E5D88 /* AllShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopService.swift; sourceTree = "<group>"; };
+		FF1C80B624633EE9000E5D88 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1C80C024634A57000E5D88 /* QGrid in Frameworks */,
 				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,11 +162,15 @@
 		FF1C806B24617298000E5D88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C80B824633EF9000E5D88 /* Utils */,
 				FF1C80862461D941000E5D88 /* Backgrounds */,
 				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
+				FF1C80A6246320F7000E5D88 /* FilterView.swift */,
 				FF1C80822461D03B000E5D88 /* HomeView.swift */,
-				FF1C80A02462AF5D000E5D88 /* FilterView.swift */,
+				FF1C80A824632393000E5D88 /* SizeChart.swift */,
+				FF1C80AC24633798000E5D88 /* AllShopsView.swift */,
+				FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1C807124617BA3000E5D88 /* AuthService.swift */,
+				FF1C80B424633C38000E5D88 /* AllShopService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +197,7 @@
 			children = (
 				FF1C807924618E8B000E5D88 /* AuthViewModel.swift */,
 				FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */,
+				FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -192,7 +216,7 @@
 			children = (
 				FF1C80842461D068000E5D88 /* HomeViewBackground.swift */,
 				FF1C806C246172A7000E5D88 /* Background.swift */,
-				FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */,
+				FF1C80AE24633823000E5D88 /* AllShopsBackground.swift */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
@@ -210,8 +234,18 @@
 			isa = PBXGroup;
 			children = (
 				FF1C80942461FF95000E5D88 /* TabItemModel.swift */,
+				FF1C80AA24632DA7000E5D88 /* SizeModel.swift */,
+				FF1C80B224633B99000E5D88 /* ShopModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FF1C80B824633EF9000E5D88 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80B624633EE9000E5D88 /* Loading.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +267,7 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
+				FF1C80BF24634A57000E5D88 /* QGrid */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -263,6 +298,7 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
+				FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -337,22 +373,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
+				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
+				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
+				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
+				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
 				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
+				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
+				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
+				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
-				FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */,
+				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
-				FF1C80A52462DBDE000E5D88 /* FilterBackground.swift in Sources */,
+				FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF1C80BF24634A57000E5D88 /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF1C804A24616F23000E5D88 /* Project object */;
 }

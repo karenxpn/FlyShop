@@ -17,4 +17,6 @@ class FilterViewModel: ObservableObject {
     @Published var shoes: Bool = false
     @Published var accessories: Bool = false
     @Published var price: Double = 0
+    
+    @Published var size = [String]()
 }
