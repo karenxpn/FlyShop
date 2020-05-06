@@ -30,6 +30,7 @@
 		FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */; };
 		FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A02462AF5D000E5D88 /* FilterView.swift */; };
 		FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */; };
+		FF1C80A52462DBDE000E5D88 /* FilterBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		FF1C80A02462AF5D000E5D88 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				FF1C80842461D068000E5D88 /* HomeViewBackground.swift */,
 				FF1C806C246172A7000E5D88 /* Background.swift */,
+				FF1C80A42462DBDE000E5D88 /* FilterBackground.swift */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
 				FF1C80A12462AF5D000E5D88 /* FilterView.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
+				FF1C80A52462DBDE000E5D88 /* FilterBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
