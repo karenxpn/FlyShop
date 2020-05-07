@@ -27,7 +27,7 @@ struct MainScreen: View {
             if self.viewRouter.currentView == "allShops" {
                 AllShopsView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "new" {
-                Text( "new").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                NewView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "main" {
                 HomeView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "sales" {

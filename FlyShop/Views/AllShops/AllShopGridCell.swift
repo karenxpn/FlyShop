@@ -16,7 +16,7 @@ struct AllShopGridCell : View {
     
     var body: some View  {
         
-        NavigationLink(destination: Text( "kjhkjhkjhjhk" )) {
+        NavigationLink(destination: SingleShop()) {
             VStack {
                 
                 Text( shopModel.name )

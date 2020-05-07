@@ -32,7 +32,7 @@ struct SignUp: View {
                 TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
                     .padding([.top, .bottom], 14)
                     .keyboardType(.numberPad)
-                    .font( .custom("Montserrat-Italic", size: 16))                    .multilineTextAlignment(.center)
+                    .font( .custom("Montserrat-Light", size: 16))                    .multilineTextAlignment(.center)
                 
             }.padding([.leading, .trailing], 12)
                 .background(
@@ -44,7 +44,7 @@ struct SignUp: View {
             VStack {
                 Text( "Sign Up")
                     .foregroundColor(Color.white)
-                    .font( .custom("Montserrat-Italic", size: 20))
+                    .font( .custom("Montserrat-Light", size: 20))
                 
             }.padding([.top, .bottom], 11)
                 .frame(width: UIScreen.main.bounds.size.width-30)
@@ -64,12 +64,12 @@ struct SignUp: View {
             
             Text( "YOUR CHOICE" )
                 .foregroundColor(Color.white)
-                .font( .custom("Montserrat-Italic", size: 14))
+                .font( .custom("Montserrat-Light", size: 14))
                 .padding()
             
             Text( "OUR CARE" )
                 .foregroundColor(Color.white)
-                .font( .custom("Montserrat-Italic", size: 20))
+                .font( .custom("Montserrat-Light", size: 20))
                 .padding(6)
             
             

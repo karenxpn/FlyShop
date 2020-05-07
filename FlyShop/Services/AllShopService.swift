@@ -29,7 +29,7 @@ class AllShopService {
                     if let shopName = document.get("shopName") as? String {
                         if let image = document.get("image") as? String {
                             
-                            let model = ShopModel(shopName: shopName, image: image)
+                            let model = ShopModel(shopName: shopName, image: image, products: nil)
                             shops.append(model)
                         }
                     }
