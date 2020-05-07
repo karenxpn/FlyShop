@@ -48,7 +48,7 @@ struct NewView: View {
                                     .font(.custom("Montserrat-Italic", size: 14))
                                 
                             }.padding(.leading, 12)
-                        }.offset(x: -10, y: -20)
+                        }.padding()
                         
                         Text( self.getDate() + "PM" )
                             .foregroundColor(Color.gray)
@@ -69,7 +69,7 @@ struct NewView: View {
     func getDate() -> String{
         let time = Date()
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:ss"
+        timeFormatter.dateFormat = "HH:mm"
         let stringDate = timeFormatter.string(from: time)
         return stringDate
     }
@@ -106,6 +106,6 @@ struct TopChat: View {
                 
                 
             }.padding(.leading, 12)
-        }.offset(x: 10, y: 20)
+        }.padding([.leading, .top], 20)
     }
 }
