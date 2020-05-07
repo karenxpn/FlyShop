@@ -6,6 +6,7 @@
 	<string>Light</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Montserrat-Light.ttf</string>
 		<string>Montserrat-Italic.ttf</string>
 		<string>McLaren-Regular.ttf</string>
 	</array>

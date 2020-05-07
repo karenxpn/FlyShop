@@ -7,11 +7,11 @@
 //
 
 import SwiftUI
-import QGrid
+import WaterfallGrid
 
 struct AllShopsView: View {
     
-    @EnvironmentObject var allShopVM: AllShopsViewModel
+    @ObservedObject var allShopVM = AllShopsViewModel()
     
     var body: some View {
         NavigationView {
@@ -19,7 +19,7 @@ struct AllShopsView: View {
                 
                 AllShopsBackground()
                 
-                VStack( spacing: 0) {
+                VStack( spacing: 6) {
                     
                     ZStack {
                         Image("searchRectangle")
@@ -36,11 +36,11 @@ struct AllShopsView: View {
                             .offset(y: UIScreen.main.bounds.size.height/50)
                     }
                     
-                    QGrid(self.allShopVM.allShops, columns: 2) {
-                        AllShopGridCell(shopModel: $0)
-
-                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        .offset(y: 9)
+                    WaterfallGrid( self.allShopVM.allShops) { shop in
+                        AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
+                    }.gridStyle(
+                        animation: .easeInOut(duration: 0.5)
+                    )
                 }
             }
                 

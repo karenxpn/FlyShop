@@ -12,5 +12,6 @@ struct ShopModel: Identifiable {
     var id = UUID()
     var shopName: String
     var image: String
+    var products: [ProductModel]?
     
 }

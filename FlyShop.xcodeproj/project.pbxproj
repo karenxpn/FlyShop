@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,7 +39,13 @@
 		FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B424633C38000E5D88 /* AllShopService.swift */; };
 		FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80B624633EE9000E5D88 /* Loading.swift */; };
 		FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */; };
-		FF1C80C024634A57000E5D88 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = FF1C80BF24634A57000E5D88 /* QGrid */; };
+		FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80ED24636779000E5D88 /* SingleShop.swift */; };
+		FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80EF24642F4D000E5D88 /* NewView.swift */; };
+		FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80F1246431B9000E5D88 /* RoundedCorners.swift */; };
+		FF1C80F524643719000E5D88 /* SingleNewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80F424643719000E5D88 /* SingleNewProduct.swift */; };
+		FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80F824643A42000E5D88 /* ProductModel.swift */; };
+		FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FA24643B71000E5D88 /* NewViewModel.swift */; };
+		FF1C80FD24644020000E5D88 /* NewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FC24644020000E5D88 /* NewService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +85,14 @@
 		FF1C80B424633C38000E5D88 /* AllShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopService.swift; sourceTree = "<group>"; };
 		FF1C80B624633EE9000E5D88 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopGridCell.swift; sourceTree = "<group>"; };
+		FF1C80EC2463652E000E5D88 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		FF1C80ED24636779000E5D88 /* SingleShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleShop.swift; sourceTree = "<group>"; };
+		FF1C80EF24642F4D000E5D88 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
+		FF1C80F1246431B9000E5D88 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		FF1C80F424643719000E5D88 /* SingleNewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNewProduct.swift; sourceTree = "<group>"; };
+		FF1C80F824643A42000E5D88 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		FF1C80FA24643B71000E5D88 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
+		FF1C80FC24644020000E5D88 /* NewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1C80C024634A57000E5D88 /* QGrid in Frameworks */,
 				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,10 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				FF1C80932461FF8A000E5D88 /* Models */,
-				FF1C808E2461ED94000E5D88 /* Utils */,
 				FF1C807824618E7C000E5D88 /* ViewModels */,
-				FF1C807524617EB3000E5D88 /* Extensions */,
 				FF1C807024617B96000E5D88 /* Services */,
+				FF1C808E2461ED94000E5D88 /* Utils */,
+				FF1C807524617EB3000E5D88 /* Extensions */,
 				FF1C806B24617298000E5D88 /* Views */,
 				FF1C805524616F23000E5D88 /* AppDelegate.swift */,
 				FF1C805724616F23000E5D88 /* SceneDelegate.swift */,
@@ -162,15 +175,14 @@
 		FF1C806B24617298000E5D88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C80F72464380F000E5D88 /* Home */,
+				FF1C80F624643722000E5D88 /* AllShops */,
+				FF1C80F324643705000E5D88 /* New */,
 				FF1C80B824633EF9000E5D88 /* Utils */,
 				FF1C80862461D941000E5D88 /* Backgrounds */,
 				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
-				FF1C80A6246320F7000E5D88 /* FilterView.swift */,
-				FF1C80822461D03B000E5D88 /* HomeView.swift */,
-				FF1C80A824632393000E5D88 /* SizeChart.swift */,
-				FF1C80AC24633798000E5D88 /* AllShopsView.swift */,
-				FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */,
+				FF1C80ED24636779000E5D88 /* SingleShop.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +192,7 @@
 			children = (
 				FF1C807124617BA3000E5D88 /* AuthService.swift */,
 				FF1C80B424633C38000E5D88 /* AllShopService.swift */,
+				FF1C80FC24644020000E5D88 /* NewService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 				FF1C807924618E8B000E5D88 /* AuthViewModel.swift */,
 				FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */,
 				FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */,
+				FF1C80FA24643B71000E5D88 /* NewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -206,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */,
+				FF1C80EC2463652E000E5D88 /* Montserrat-Light.ttf */,
 				FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */,
 			);
 			path = fonts;
@@ -226,6 +241,7 @@
 			children = (
 				FF1C808F2461EDA0000E5D88 /* ViewRouter.swift */,
 				FF1C809624620B64000E5D88 /* NavigationConfigurator.swift */,
+				FF1C80F1246431B9000E5D88 /* RoundedCorners.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -236,6 +252,7 @@
 				FF1C80942461FF95000E5D88 /* TabItemModel.swift */,
 				FF1C80AA24632DA7000E5D88 /* SizeModel.swift */,
 				FF1C80B224633B99000E5D88 /* ShopModel.swift */,
+				FF1C80F824643A42000E5D88 /* ProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +263,34 @@
 				FF1C80B624633EE9000E5D88 /* Loading.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FF1C80F324643705000E5D88 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80EF24642F4D000E5D88 /* NewView.swift */,
+				FF1C80F424643719000E5D88 /* SingleNewProduct.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		FF1C80F624643722000E5D88 /* AllShops */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80AC24633798000E5D88 /* AllShopsView.swift */,
+				FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */,
+			);
+			path = AllShops;
+			sourceTree = "<group>";
+		};
+		FF1C80F72464380F000E5D88 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80822461D03B000E5D88 /* HomeView.swift */,
+				FF1C80A6246320F7000E5D88 /* FilterView.swift */,
+				FF1C80A824632393000E5D88 /* SizeChart.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +312,6 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
-				FF1C80BF24634A57000E5D88 /* QGrid */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -298,7 +342,6 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
-				FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -372,11 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
+				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
@@ -384,16 +429,21 @@
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
+				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
+				FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */,
 				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
+				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
+				FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */,
 				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
+				FF1C80F524643719000E5D88 /* SingleNewProduct.swift in Sources */,
 				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 				FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */,
@@ -592,25 +642,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Q-Mobile/QGrid";
-			requirement = {
-				kind = exactVersion;
-				version = 0.1.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FF1C80BF24634A57000E5D88 /* QGrid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FF1C80BE24634A57000E5D88 /* XCRemoteSwiftPackageReference "QGrid" */;
-			productName = QGrid;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF1C804A24616F23000E5D88 /* Project object */;
 }
