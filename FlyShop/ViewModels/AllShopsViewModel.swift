@@ -11,14 +11,17 @@ import Foundation
 class AllShopsViewModel: ObservableObject {
     
     @Published var allShops = [ShopListViewModel]()
+    @Published var showLoading: Bool = false
     
     init() {
         getShopList()
     }
     
     func getShopList() {
+        self.showLoading = true
         AllShopService().getAllShops { result in
             if let result = result {
+                self.showLoading = false
                 self.allShops = result.map(ShopListViewModel.init)
             }
         }
@@ -40,5 +43,9 @@ struct ShopListViewModel: Identifiable {
     
     var image: String {
         self.shopModel.image
+    }
+    
+    var products: [ProductViewModel] {
+        self.shopModel.products!.map(ProductViewModel.init)
     }
 }

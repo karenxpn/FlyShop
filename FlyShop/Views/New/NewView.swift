@@ -30,6 +30,10 @@ struct NewView: View {
                     BottomChat()
                     
                 }
+                
+                if self.newVM.showLoading {
+                    Loading()
+                }
  
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }

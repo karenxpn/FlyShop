@@ -9,14 +9,17 @@
 import Foundation
 class NewViewModel: ObservableObject {
     @Published var newItemList = [ProductViewModel]()
+    @Published var showLoading: Bool = false
     
     init() {
         getNewItems()
     }
     
     func getNewItems() {
+        self.showLoading = true
         NewService().getNew { (result) in
             if let result = result {
+                self.showLoading = false
                 self.newItemList = result.map( ProductViewModel.init )
             }
         }

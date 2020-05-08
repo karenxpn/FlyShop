@@ -10,14 +10,17 @@ import Foundation
 
 class SaleViewModel: ObservableObject {
     @Published var productsUnderSale = [SaleProductViewModel]()
+    @Published var showLoading: Bool = false
     
     init() {
         getProducts()
     }
     
     func getProducts() {
+        self.showLoading = true
         SaleService().fetchData { (result) in
             if let result = result {
+                self.showLoading = false
                 self.productsUnderSale = result.map(SaleProductViewModel.init)
             }
         }

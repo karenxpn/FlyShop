@@ -29,7 +29,34 @@ class AllShopService {
                     if let shopName = document.get("shopName") as? String {
                         if let image = document.get("image") as? String {
                             
-                            let model = ShopModel(shopName: shopName, image: image, products: nil)
+                            var productArray = [ProductModel]()
+                            
+                            if let products = document.get( "products" ) as? [[String: Any]] {
+                                for product in products {
+                                    if let price = product["productPrice"] as? Int {
+                                        if let name = product["productName"] as? String {
+                                            if let size = product["productSize"] as? String {
+                                                if let date = product["date"] as? String {
+                                                    if let image = product["image"] as? String {
+                                                        if let category = product["category"] as? String {
+                                                            if let sale = product["sale"] as? Int {
+                                                                let model = ProductModel(category: category, image: image, productPrice: price, productName: name, productSize: size, date: date, sale: sale)
+                                                                
+                                                                productArray.append(model)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            
+                            
+                            
+                            let model = ShopModel(shopName: shopName, image: image, products: productArray)
                             shops.append(model)
                         }
                     }
@@ -43,3 +70,6 @@ class AllShopService {
     }
     
 }
+
+
+
