@@ -13,8 +13,9 @@ struct ProductModel: Identifiable {
     
     var category: String
     var image: String
-    var productPrice: String
+    var productPrice: Int
     var productName: String
     var productSize: String
     var date: String
+    var sale: Int
 }

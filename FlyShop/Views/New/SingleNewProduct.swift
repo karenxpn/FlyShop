@@ -50,7 +50,7 @@ struct SingleNewProduct: View {
                             y: -UIScreen.main.bounds.size.height/12.5)
             }
 
-        }.padding([.top, .bottom], 8)
+        }.padding([.top, .bottom], 6)
             .padding([.trailing, .leading], 10)
             .background(Color.white)
             .cornerRadius(15)
