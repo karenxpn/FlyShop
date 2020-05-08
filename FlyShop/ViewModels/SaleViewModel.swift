@@ -1,32 +1,32 @@
 //
-//  NewViewModel.swift
+//  SaleViewModel.swift
 //  FlyShop
 //
-//  Created by Karen Mirakyan on 5/7/20.
+//  Created by Karen Mirakyan on 5/8/20.
 //  Copyright © 2020 Karen Mirakyan. All rights reserved.
 //
 
 import Foundation
-class NewViewModel: ObservableObject {
-    @Published var newItemList = [ProductViewModel]()
+
+class SaleViewModel: ObservableObject {
+    @Published var productsUnderSale = [SaleProductViewModel]()
     
     init() {
-        getNewItems()
+        getProducts()
     }
     
-    func getNewItems() {
-        NewService().getNew { (result) in
+    func getProducts() {
+        SaleService().fetchData { (result) in
             if let result = result {
-                self.newItemList = result.map( ProductViewModel.init )
+                self.productsUnderSale = result.map(SaleProductViewModel.init)
             }
         }
     }
 }
 
 
-struct ProductViewModel: Identifiable {
-    let id = UUID()
-    
+struct SaleProductViewModel: Identifiable {
+    var id = UUID()
     var productModel: ProductModel
     
     init( model: ProductModel ) {
@@ -38,7 +38,7 @@ struct ProductViewModel: Identifiable {
     }
     
     var price: String {
-        String(self.productModel.productPrice)
+        String(self.productModel.productPrice - self.productModel.productPrice * self.productModel.sale/100 )
     }
     
     var name: String {
@@ -48,4 +48,5 @@ struct ProductViewModel: Identifiable {
     var size: String {
         self.productModel.productSize
     }
+    
 }

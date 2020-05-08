@@ -31,7 +31,7 @@ struct MainScreen: View {
             } else if self.viewRouter.currentView == "main" {
                 HomeView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "sales" {
-                Text( "sales" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                SaleView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "cart" {
                 Text( "cart" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }

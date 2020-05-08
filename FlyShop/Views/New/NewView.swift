@@ -20,7 +20,7 @@ struct NewView: View {
                 AllShopsBackground()
                 
                 VStack{
-                    TopChat()
+                    TopChat(message: "Hi, we have something new for you!")
                     
                     
                     WaterfallGrid(self.newVM.newItemList) { product in
@@ -44,6 +44,9 @@ struct NewView_Previews: PreviewProvider {
 }
 
 struct TopChat: View {
+    
+    let message: String
+    
     var body: some View {
         HStack(alignment: .bottom) {
             
@@ -62,7 +65,7 @@ struct TopChat: View {
                     .frame(width: UIScreen.main.bounds.size.width-110, height: UIScreen.main.bounds.size.height/14)
                     .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
                 
-                Text( "Hi, we have something new for you!")
+                Text( message )
                     .foregroundColor(Color.white)
                     .font(.custom("Montserrat-Italic", size: 14))
                 
