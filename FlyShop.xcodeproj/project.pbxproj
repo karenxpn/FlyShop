@@ -46,6 +46,10 @@
 		FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80F824643A42000E5D88 /* ProductModel.swift */; };
 		FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FA24643B71000E5D88 /* NewViewModel.swift */; };
 		FF1C80FD24644020000E5D88 /* NewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FC24644020000E5D88 /* NewService.swift */; };
+		FFB023412465B50900FC135D /* SaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023402465B50900FC135D /* SaleView.swift */; };
+		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
+		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
+		FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023462465B8A200FC135D /* SingleSaleProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +97,10 @@
 		FF1C80F824643A42000E5D88 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		FF1C80FA24643B71000E5D88 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
 		FF1C80FC24644020000E5D88 /* NewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService.swift; sourceTree = "<group>"; };
+		FFB023402465B50900FC135D /* SaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleView.swift; sourceTree = "<group>"; };
+		FFB023422465B67300FC135D /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
+		FFB023442465B74B00FC135D /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
+		FFB023462465B8A200FC135D /* SingleSaleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSaleProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +183,7 @@
 		FF1C806B24617298000E5D88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FFB0233F2465B4F400FC135D /* Sales */,
 				FF1C80F72464380F000E5D88 /* Home */,
 				FF1C80F624643722000E5D88 /* AllShops */,
 				FF1C80F324643705000E5D88 /* New */,
@@ -193,6 +202,7 @@
 				FF1C807124617BA3000E5D88 /* AuthService.swift */,
 				FF1C80B424633C38000E5D88 /* AllShopService.swift */,
 				FF1C80FC24644020000E5D88 /* NewService.swift */,
+				FFB023422465B67300FC135D /* SaleService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 				FF1C80A22462B25E000E5D88 /* FilterViewModel.swift */,
 				FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */,
 				FF1C80FA24643B71000E5D88 /* NewViewModel.swift */,
+				FFB023442465B74B00FC135D /* SaleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -291,6 +302,15 @@
 				FF1C80A824632393000E5D88 /* SizeChart.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FFB0233F2465B4F400FC135D /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+				FFB023402465B50900FC135D /* SaleView.swift */,
+				FFB023462465B8A200FC135D /* SingleSaleProduct.swift */,
+			);
+			path = Sales;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,15 +435,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB023412465B50900FC135D /* SaleView.swift in Sources */,
 				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
+				FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */,
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
 				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
+				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
@@ -444,6 +467,7 @@
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
 				FF1C80F524643719000E5D88 /* SingleNewProduct.swift in Sources */,
+				FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */,
 				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 				FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */,
