@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,6 +50,9 @@
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
 		FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023462465B8A200FC135D /* SingleSaleProduct.swift */; };
+		FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftUIX */; };
+		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
+		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,8 @@
 		FFB023422465B67300FC135D /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
 		FFB023442465B74B00FC135D /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
 		FFB023462465B8A200FC135D /* SingleSaleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSaleProduct.swift; sourceTree = "<group>"; };
+		FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
+		FFB023542465EACB00FC135D /* SingleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
+				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +189,7 @@
 		FF1C806B24617298000E5D88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FFB0234B2465DDB800FC135D /* NavBar */,
 				FFB0233F2465B4F400FC135D /* Sales */,
 				FF1C80F72464380F000E5D88 /* Home */,
 				FF1C80F624643722000E5D88 /* AllShops */,
@@ -191,7 +198,6 @@
 				FF1C80862461D941000E5D88 /* Backgrounds */,
 				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
-				FF1C80ED24636779000E5D88 /* SingleShop.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 			children = (
 				FF1C80AC24633798000E5D88 /* AllShopsView.swift */,
 				FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */,
+				FF1C80ED24636779000E5D88 /* SingleShop.swift */,
+				FFB023542465EACB00FC135D /* SingleProduct.swift */,
 			);
 			path = AllShops;
 			sourceTree = "<group>";
@@ -313,6 +321,14 @@
 			path = Sales;
 			sourceTree = "<group>";
 		};
+		FFB0234B2465DDB800FC135D /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +348,7 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
+				FFB023492465DCD100FC135D /* SwiftUIX */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -362,6 +379,7 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
+				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -446,6 +464,8 @@
 				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
+				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
+				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
 				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
@@ -666,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFB023492465DCD100FC135D /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF1C804A24616F23000E5D88 /* Project object */;
 }

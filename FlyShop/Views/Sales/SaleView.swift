@@ -28,6 +28,10 @@ struct SaleView: View {
                     
                     BottomChat()
                 }
+                
+                if self.saleVM.showLoading {
+                    Loading()
+                }
             }
             .navigationBarTitle(Text( "FlyShop"), displayMode: .inline)
         }

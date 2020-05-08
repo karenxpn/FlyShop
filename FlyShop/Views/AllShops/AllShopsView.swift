@@ -42,6 +42,10 @@ struct AllShopsView: View {
                         animation: .easeInOut(duration: 0.5)
                     )
                 }
+                
+                if self.allShopVM.showLoading {
+                    Loading()
+                }
             }
                 
             .navigationBarTitle(Text("FlyShop"), displayMode: .inline)

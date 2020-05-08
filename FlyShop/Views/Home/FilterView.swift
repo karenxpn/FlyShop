@@ -123,6 +123,7 @@ struct FilterView: View {
                             .background( self.filterVM.clothes ? Color.blue : Color.gray)
                             .cornerRadius(20)
                             .onTapGesture {
+                                self.filterVM.size = [String]()
                                 self.filterVM.clothes.toggle()
                                 if self.filterVM.shoes {
                                     self.filterVM.shoes.toggle()
@@ -140,6 +141,7 @@ struct FilterView: View {
                             .background(self.filterVM.shoes ? Color.blue : Color.gray)
                             .cornerRadius(20)
                             .onTapGesture {
+                                self.filterVM.size = [String]()
                                 self.filterVM.shoes.toggle()
                                 if self.filterVM.clothes {
                                     self.filterVM.clothes.toggle()
@@ -170,38 +172,43 @@ struct FilterView: View {
                     
                     Divider()
                     
-                    HStack {
-                        Text( "SIZE" )
-                            .font( .custom("Montserrat-Italic", size: 14))
-                        
-                        
-                        Spacer()
-                        
+                    
+                    if self.filterVM.accessories == false {
                         HStack {
-                            Text( self.filterVM.size.isEmpty ? "Your size" : self.getSizes() )
+                            Text( "SIZE" )
                                 .font( .custom("Montserrat-Italic", size: 14))
-                                .foregroundColor(Color.white)
-                                .padding([.top, .bottom], 6)
-                                .padding([.trailing, .leading], 12)
-                                .background(Color.blue)
-                                .cornerRadius(20)
                             
-                            Text( "+" )
-                                .font( .custom("Montserrat-Italic", size: 20))
-                                .foregroundColor(Color.white)
-                                .padding([.leading, .trailing], 12)
-                                .padding([.top, .bottom], 6)
-                                .background(Color.blue)
-                                .cornerRadius(30)
-                                .onTapGesture {
-                                    if self.filterVM.shoes || self.filterVM.clothes{
+                            
+                            Spacer()
+                            
+                            HStack {
+                                Text( self.filterVM.size.isEmpty ? "Your size" : self.getSizes() )
+                                    .font( .custom("Montserrat-Italic", size: 14))
+                                    .foregroundColor(Color.white)
+                                    .padding([.top, .bottom], 6)
+                                    .padding([.trailing, .leading], 12)
+                                    .background(Color.blue)
+                                    .cornerRadius(20)
+                                
+                                Text( "+" )
+                                    .font( .custom("Montserrat-Italic", size: 20))
+                                    .foregroundColor(Color.white)
+                                    .padding([.leading, .trailing], 12)
+                                    .padding([.top, .bottom], 6)
+                                    .background(Color.blue)
+                                    .cornerRadius(30)
+                                    .onTapGesture {
                                         if self.filterVM.maleGender || self.filterVM.femaleGender {
-                                            self.showSheet = true
+                                            if self.filterVM.shoes || self.filterVM.clothes {
+                                                self.showSheet = true
+                                            } else {
+                                                self.showAler.toggle()
+                                            }
                                         }
-                                    }
-                                    else {
-                                        self.showAler.toggle()
-                                    }
+                                        else {
+                                            self.showAler.toggle()
+                                        }
+                                }
                             }
                         }
                     }
@@ -231,7 +238,7 @@ struct FilterView: View {
                 .onTapGesture {
                     // perform search in database to shop filtered items to the user
                     print(self.filterVM.size)
-
+                    
             }
             
         }.padding()
@@ -257,7 +264,7 @@ struct FilterView: View {
             .alert(isPresented: self.$showAler, content: {
                 Alert(title: Text( "Error"), message: Text( "You haven't selected gender or category"), dismissButton: .default(Text( "OK" )))
             })
-            .navigationBarTitle(Text( "Products"))
+            .navigationBarTitle(Text( "FlyShop"))
             .navigationBarItems(trailing: Button(action: {
                 
                 // perform the action here
