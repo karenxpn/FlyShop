@@ -16,70 +16,73 @@ struct SignUp: View {
     @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
-        VStack( spacing: 20) {
-            Image( "flyshoplogo" )
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3.5)
+        ZStack{
             
-            Text( "FlyShop" )
-                .font(.custom("McLaren-Regular", size: 45))
-            
-            NumberInput()
-            
-            VStack {
+            Background()
+            VStack( spacing: 20) {
+                Image( "flyshoplogo" )
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.size.width/1.5, height: UIScreen.main.bounds.size.height/3.5)
                 
-                TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
-                    .padding([.top, .bottom], 14)
-                    .keyboardType(.numberPad)
-                    .font( .custom("Montserrat-Light", size: 16))                    .multilineTextAlignment(.center)
+                Text( "FlyShop" )
+                    .font(.custom("McLaren-Regular", size: 45))
                 
-            }.padding([.leading, .trailing], 12)
-                .background(
-                    Image("signUpTextFieldBg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill))
-                .cornerRadius(8)
-            
-            VStack {
-                Text( "Sign Up")
+                NumberInput()
+                
+                VStack {
+                    
+                    TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
+                        .padding([.top, .bottom], 14)
+                        .keyboardType(.numberPad)
+                        .font( .custom("Montserrat-Light", size: 16)).multilineTextAlignment(.center)
+                    
+                }.padding([.leading, .trailing], 12)
+                    .background(
+                        Image("signUpTextFieldBg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill))
+                    .cornerRadius(8)
+                
+                VStack {
+                    Text( "Sign Up")
+                        .foregroundColor(Color.white)
+                        .font( .custom("Montserrat-Light", size: 20))
+                    
+                }.padding([.top, .bottom], 11)
+                    .frame(width: UIScreen.main.bounds.size.width-30)
+                    .background(
+                        Image("signUpButtonBackground")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill))
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        if self.authVM.number != "" && self.authVM.confirmationCode != "" {
+                            self.authVM.logTheUser()
+                        } else {
+                            self.showAlert.toggle()
+                        }
+                }
+                
+                
+                Text( "YOUR CHOICE" )
+                    .foregroundColor(Color.white)
+                    .font( .custom("Montserrat-Light", size: 14))
+                    .padding()
+                
+                Text( "OUR CARE" )
                     .foregroundColor(Color.white)
                     .font( .custom("Montserrat-Light", size: 20))
+                    .padding(6)
                 
-            }.padding([.top, .bottom], 11)
-                .frame(width: UIScreen.main.bounds.size.width-30)
-                .background(
-                    Image("signUpButtonBackground")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill))
-                .cornerRadius(20)
-                .onTapGesture {
-                    if self.authVM.number != "" && self.authVM.confirmationCode != "" {
-                        self.authVM.logTheUser()
-                    } else {
-                        self.showAlert.toggle()
-                    }
+                
+            }.padding()
+                .offset( y: -self.value )
+                .animation(.spring())
+                .onAppear {
+                    self.keyboardNotification()
             }
-            
-            
-            Text( "YOUR CHOICE" )
-                .foregroundColor(Color.white)
-                .font( .custom("Montserrat-Light", size: 14))
-                .padding()
-            
-            Text( "OUR CARE" )
-                .foregroundColor(Color.white)
-                .font( .custom("Montserrat-Light", size: 20))
-                .padding(6)
-            
-            
-        }.padding()
-            .offset( y: -self.value )
-            .animation(.spring())
-            .onAppear {
-                self.keyboardNotification()
-        }
-        .alert(isPresented: self.$showAlert, content: {
+        }.alert(isPresented: self.$showAlert, content: {
             Alert(title: Text( "Error"), message: Text( "Enter your phone number/ verification code"), dismissButton: .default(Text( "OK")))
         })
             .onTapGesture {
