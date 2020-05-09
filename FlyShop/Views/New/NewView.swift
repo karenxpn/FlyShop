@@ -25,7 +25,9 @@ struct NewView: View {
                     
                     WaterfallGrid(self.newVM.newItemList) { product in
                         SingleNewProduct(product: product)
-                    }.scrollOptions(direction: .horizontal, showsIndicators: false)
+                    }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                        animation: .easeInOut(duration: 1)
+                    )
                     
                     BottomChat()
                     

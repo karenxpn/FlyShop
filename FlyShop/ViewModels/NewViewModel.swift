@@ -36,7 +36,7 @@ struct ProductViewModel: Identifiable {
         self.productModel = model
     }
     
-    var image: String {
+    var image: [String] {
         self.productModel.image
     }
     
@@ -48,7 +48,7 @@ struct ProductViewModel: Identifiable {
         self.productModel.productName
     }
     
-    var size: String {
+    var size: [String] {
         self.productModel.productSize
     }
 }

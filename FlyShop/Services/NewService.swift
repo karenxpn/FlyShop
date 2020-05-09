@@ -21,9 +21,9 @@ class NewService {
         let currentDate = Date()
         let components = Set<Calendar.Component>([.day])
         let differenceOfDate = Calendar.current.dateComponents(components, from: formatedStartDate!, to: currentDate)
-
+        
         return differenceOfDate.day!
-
+        
     }
     
     func getNew(completion: @escaping ( [ProductModel]?) -> ()) {
@@ -49,14 +49,27 @@ class NewService {
                         for product in products {
                             if let price = product["productPrice"] as? Int {
                                 if let name = product["productName"] as? String {
-                                    if let size = product["productSize"] as? String {
+                                    if let description = product["description"] as? String {
                                         if let date = product["date"] as? String {
-                                            if let image = product["image"] as? String {
-                                                if let category = product["category"] as? String {
-                                                    if let sale = product["sale"] as? Int {
-                                                        let model = ProductModel(category: category, image: image, productPrice: price, productName: name, productSize: size, date: date, sale: sale)
+                                            if let category = product["category"] as? String {
+                                                if let sale = product["sale"] as? Int {
+                                                    
+                                                    if let size = product["productSize"] as? [String] {
+                                                        var sizeArray = [String]()
+                                                        for productSize in size {
+                                                            sizeArray.append(productSize)
+                                                        }
                                                         
-                                                        productArray.append(model)
+                                                        if let images = product["image"] as? [String] {
+                                                            var imageArray = [String]()
+                                                            for image in images {
+                                                                imageArray.append(image)
+                                                            }
+                                                            
+                                                            let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale)
+                                                            
+                                                            productArray.append(model)
+                                                        }
                                                     }
                                                 }
                                             }

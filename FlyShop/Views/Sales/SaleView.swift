@@ -24,7 +24,9 @@ struct SaleView: View {
                     
                     WaterfallGrid(self.saleVM.productsUnderSale) { product in
                         SingleSaleProduct(product: product)
-                    }.scrollOptions(direction: .horizontal, showsIndicators: false)
+                    }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                        animation: .easeInOut(duration: 1)
+                    )
                     
                     BottomChat()
                 }

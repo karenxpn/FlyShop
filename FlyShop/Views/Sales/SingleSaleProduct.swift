@@ -25,7 +25,7 @@ struct SingleSaleProduct: View {
                     
                     Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                     
-                    WebImage(url: URL(string: product.image))
+                    WebImage(url: URL(string: product.image[0]))
                         .resizable()
                         .scaledToFill()
                         .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )

@@ -53,6 +53,7 @@
 		FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftUIX */; };
 		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
 		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
+		FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235624660F8F00FC135D /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		FFB023462465B8A200FC135D /* SingleSaleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSaleProduct.swift; sourceTree = "<group>"; };
 		FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		FFB023542465EACB00FC135D /* SingleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProduct.swift; sourceTree = "<group>"; };
+		FFB0235624660F8F00FC135D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1C80B624633EE9000E5D88 /* Loading.swift */,
+				FFB0235624660F8F00FC135D /* SearchBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
+				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */,

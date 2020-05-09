@@ -28,9 +28,9 @@ struct SingleShop: View {
                 ZStack {
                     Image("singleShopFilter" )
                         .resizable()
-                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10)
+                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
                     
-                    VStack {
+                    VStack( spacing: 5) {
                         HStack {
                             Text( shopModel.name )
                                 .font(.custom("Montserrat-Italic", size: 14))
@@ -92,8 +92,9 @@ struct SingleShop: View {
                 }
                 WaterfallGrid(self.shopModel.products) { product in
                     SingleProduct(product: product)
-                }
-                
+                }.gridStyle(
+                    animation: .easeInOut(duration: 1)
+                )
                 
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)

@@ -12,10 +12,11 @@ struct ProductModel: Identifiable {
     var id = UUID()
     
     var category: String
-    var image: String
+    var image: [String]
     var productPrice: Int
     var productName: String
-    var productSize: String
+    var productSize: [String]
+    var description: String
     var date: String
     var sale: Int
 }

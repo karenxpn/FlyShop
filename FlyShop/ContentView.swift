@@ -7,22 +7,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     @ObservedObject var authVM = AuthViewModel()
     
     var body: some View {
-            ZStack {
-                Background()
-                
-                if authVM.userLogged == false {
-                    SignUp()
-                } else if authVM.userLogged == true {
-                    MainScreen()
-                }
-            }.environmentObject(self.authVM)
-
+        VStack {
+            if authVM.userLogged == true {
+                MainScreen()
+            } else if Auth.auth().currentUser != nil {
+                MainScreen()
+            } else {
+                SignUp()
+            }
+        }.environmentObject(self.authVM)
+        
     }
 }
 
