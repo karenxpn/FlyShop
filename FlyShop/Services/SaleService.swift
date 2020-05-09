@@ -39,6 +39,7 @@ class SaleService {
                                         if let date = product["date"] as? String {
                                             if let category = product["category"] as? String {
                                                 if let sale = product["sale"] as? Int {
+                                                    if let gender = product["gender"] as? String {
                                                     
                                                     if let size = product["productSize"] as? [String] {
                                                         var sizeArray = [String]()
@@ -52,7 +53,7 @@ class SaleService {
                                                                 imageArray.append(image)
                                                             }
                                                             
-                                                            let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale)
+                                                            let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender)
                                                             
                                                             productArray.append(model)
                                                         }
@@ -66,11 +67,12 @@ class SaleService {
                         }
                     }
                 }
-                
-                DispatchQueue.main.async {
-                    completion( productArray.filter{ $0.sale != 0 } )
-                }
+            }
+            
+            DispatchQueue.main.async {
+                completion( productArray.filter{ $0.sale != 0 } )
             }
         }
     }
+}
 }

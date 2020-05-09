@@ -39,21 +39,23 @@ class AllShopService {
                                                 if let date = product["date"] as? String {
                                                     if let category = product["category"] as? String {
                                                         if let sale = product["sale"] as? Int {
-                                                            
-                                                            if let size = product["productSize"] as? [String] {
-                                                                var sizeArray = [String]()
-                                                                for productSize in size {
-                                                                    sizeArray.append(productSize)
-                                                                }
+                                                            if let gender = product["gender"] as? String {
                                                                 
-                                                                if let images = product["image"] as? [String] {
-                                                                    var imageArray = [String]()
-                                                                    for image in images {
-                                                                        imageArray.append(image)
+                                                                if let size = product["productSize"] as? [String] {
+                                                                    var sizeArray = [String]()
+                                                                    for productSize in size {
+                                                                        sizeArray.append(productSize)
                                                                     }
                                                                     
-                                                                    let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale)
-                                                                    productArray.append(model)
+                                                                    if let images = product["image"] as? [String] {
+                                                                        var imageArray = [String]()
+                                                                        for image in images {
+                                                                            imageArray.append(image)
+                                                                        }
+                                                                        
+                                                                        let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender)
+                                                                        productArray.append(model)
+                                                                    }
                                                                 }
                                                             }
                                                         }

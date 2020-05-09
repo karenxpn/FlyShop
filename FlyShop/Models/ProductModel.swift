@@ -19,4 +19,5 @@ struct ProductModel: Identifiable {
     var description: String
     var date: String
     var sale: Int
+    var gender: String
 }
