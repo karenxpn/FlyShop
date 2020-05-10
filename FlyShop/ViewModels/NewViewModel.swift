@@ -27,32 +27,3 @@ class NewViewModel: ObservableObject {
 }
 
 
-struct ProductViewModel: Identifiable {
-    let id = UUID()
-    
-    var productModel: ProductModel
-    
-    init( model: ProductModel ) {
-        self.productModel = model
-    }
-    
-    var image: [String] {
-        self.productModel.image
-    }
-    
-    var price: String {
-        String(self.productModel.productPrice)
-    }
-    
-    var name: String {
-        self.productModel.productName
-    }
-    
-    var size: [String] {
-        self.productModel.productSize
-    }
-    
-    var description: String {
-        self.productModel.description
-    }
-}
