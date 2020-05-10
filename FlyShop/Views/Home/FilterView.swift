@@ -264,7 +264,7 @@ struct FilterView: View {
             .alert(isPresented: self.$showAler, content: {
                 Alert(title: Text( "Error"), message: Text( "You haven't selected gender or category"), dismissButton: .default(Text( "OK" )))
             })
-            .navigationBarTitle(Text( "FlyShop"))
+            .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 
                 // perform the action here
