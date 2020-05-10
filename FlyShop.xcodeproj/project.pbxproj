@@ -54,6 +54,8 @@
 		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
 		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
 		FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235624660F8F00FC135D /* SearchBar.swift */; };
+		FFB023592468364300FC135D /* SelectedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023582468364300FC135D /* SelectedProduct.swift */; };
+		FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235A24683DB700FC135D /* SizeSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleView.swift; sourceTree = "<group>"; };
 		FFB023542465EACB00FC135D /* SingleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProduct.swift; sourceTree = "<group>"; };
 		FFB0235624660F8F00FC135D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		FFB023582468364300FC135D /* SelectedProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProduct.swift; sourceTree = "<group>"; };
+		FFB0235A24683DB700FC135D /* SizeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,8 @@
 				FF1C80BC2463417B000E5D88 /* AllShopGridCell.swift */,
 				FF1C80ED24636779000E5D88 /* SingleShop.swift */,
 				FFB023542465EACB00FC135D /* SingleProduct.swift */,
+				FFB023582468364300FC135D /* SelectedProduct.swift */,
+				FFB0235A24683DB700FC135D /* SizeSheet.swift */,
 			);
 			path = AllShops;
 			sourceTree = "<group>";
@@ -466,9 +472,11 @@
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
 				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
+				FFB023592468364300FC135D /* SelectedProduct.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
+				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
 				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
