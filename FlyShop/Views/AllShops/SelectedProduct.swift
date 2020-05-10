@@ -50,8 +50,8 @@ struct SelectedProduct: View {
                                 .foregroundColor(Color.white)
                                 .font(.custom("Montserrat-Light", size: 28))
                             
-                            Text( product.price )
-                                .foregroundColor(Color.white)
+                            Text( self.product.sale == 0 ? product.price : product.priceWithSale )
+                                .foregroundColor(self.product.sale == 0 ? Color.white : Color.red)
                                 .font(.custom("Montserrat-Light", size: 28))
                             
                         }.padding()
