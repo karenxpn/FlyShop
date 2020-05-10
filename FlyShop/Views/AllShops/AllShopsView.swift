@@ -68,6 +68,7 @@ struct AllShopsView: View {
                             AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
                         }.transition(AnyTransition.slide)
                             .animation(.default)
+                            .offset(y: self.showSearch ? 10 : 0)
                     }
                     
                 }.gesture(DragGesture().onChanged{_ in

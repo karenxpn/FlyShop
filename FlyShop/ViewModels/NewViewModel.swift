@@ -51,4 +51,8 @@ struct ProductViewModel: Identifiable {
     var size: [String] {
         self.productModel.productSize
     }
+    
+    var description: String {
+        self.productModel.description
+    }
 }
