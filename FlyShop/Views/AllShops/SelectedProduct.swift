@@ -128,7 +128,7 @@ struct SelectedProduct: View {
             .sheet(isPresented: self.$showSheet) {
                 SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
             }
-        }.navigationBarTitle(Text( "FlyShop"), displayMode: .inline)
+        }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }
 
