@@ -46,15 +46,16 @@ struct SizeSheet: View {
                         }
                     }
                 }
-            }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
-                    self.showSeet = false
-                }, label: {
-                    Text( "Save" )
-                        .foregroundColor(Color.white)
+            }
+            .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                self.showSeet = false
+            }, label: {
+                Text( "Save" )
+                    .foregroundColor(Color.white)
                     .font( .custom("Montserrat-Italic", size: 16))
-
-                }))
+                
+            }))
         }
     }
     
