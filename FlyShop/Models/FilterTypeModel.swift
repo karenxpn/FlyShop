@@ -25,6 +25,9 @@ extension FilterTypeModel {
     }
     
     func categoryType( category: String ) -> [String] {
+        if category == "" {
+            return [String]()
+        }
         return typeMap[category]!
     }
     
