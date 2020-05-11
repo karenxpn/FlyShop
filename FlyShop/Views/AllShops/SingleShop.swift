@@ -46,7 +46,11 @@ struct SingleShop: View {
                                 .background( self.allShopsFilterVM.category == "Clothes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    self.allShopsFilterVM.category = "Clothes"
+                                    if self.allShopsFilterVM.category == "Clothes" {
+                                        self.allShopsFilterVM.category = ""
+                                    } else {
+                                        self.allShopsFilterVM.category = "Clothes"
+                                    }
                             }
                             
                             Text( "Shoes" )

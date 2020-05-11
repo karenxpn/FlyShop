@@ -23,8 +23,6 @@ class AllShopsFilter: ObservableObject {
             filteredList = model.products
         }
         
-        
-        
-        return filteredList.filter{Int( $0.price )! <= Int( self.price )}
+        return filteredList.filter{Int( $0.priceWithSale )! <= Int( self.price )}
     }
 }
