@@ -64,6 +64,7 @@
 		FFB023682468BCCA00FC135D /* AccessoriesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */; };
 		FFB0236A2468CAB400FC135D /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023692468CAB400FC135D /* FilterService.swift */; };
 		FFB0236C2468CFC100FC135D /* FilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236B2468CFC100FC135D /* FilterResult.swift */; };
+		FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesSheet.swift; sourceTree = "<group>"; };
 		FFB023692468CAB400FC135D /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		FFB0236B2468CFC100FC135D /* FilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResult.swift; sourceTree = "<group>"; };
+		FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				FF1C80B024633B76000E5D88 /* AllShopsViewModel.swift */,
 				FF1C80FA24643B71000E5D88 /* NewViewModel.swift */,
 				FFB023442465B74B00FC135D /* SaleViewModel.swift */,
+				FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
+				FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,

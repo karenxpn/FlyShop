@@ -12,7 +12,7 @@ import WaterfallGrid
 
 struct SingleShop: View {
     
-    @State private var slider: Double = 0
+    @ObservedObject var allShopsFilterVM = AllShopsFilter()
     
     let shopModel: ShopListViewModel
     
@@ -43,28 +43,37 @@ struct SingleShop: View {
                                 .foregroundColor(Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Clothes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
+                                .onTapGesture {
+                                    self.allShopsFilterVM.category = "Clothes"
+                            }
                             
                             Text( "Shoes" )
                                 .font( .custom("Montserrat-Italic", size: 12))
                                 .foregroundColor(Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Shoes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
+                                .onTapGesture {
+                                    self.allShopsFilterVM.category = "Shoes"
+                            }
                             
                             Text( "Accessories" )
                                 .font( .custom("Montserrat-Italic", size: 12))
                                 .foregroundColor(Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Accessories" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
+                                .onTapGesture {
+                                    self.allShopsFilterVM.category = "Accessories"
+                            }
                         }
                         
                         HStack {
-                            Text( "Your size" )
+                            Text( self.allShopsFilterVM.price == 0 ? "Price" : String(format: "%.0f", self.allShopsFilterVM.price))
                                 .font( .custom("Montserrat-Italic", size: 14))
                                 .foregroundColor(Color.white)
                                 .padding([.top, .bottom], 6)
@@ -72,32 +81,24 @@ struct SingleShop: View {
                                 .background(Color.blue)
                                 .cornerRadius(20)
                             
-                            Text( "+" )
-                                .font( .custom("Montserrat-Italic", size: 20))
-                                .foregroundColor(Color.white)
-                                .padding([.leading, .trailing], 12)
-                                .padding([.top, .bottom], 6)
-                                .background(Color.blue)
-                                .cornerRadius(30)
-                            
+
                             Spacer()
-                                                        
-                            Slider(value: self.$slider, in: 0...800000, step: 500)
-                            .accentColor(Color.red)
+                            
+                            Slider(value: self.$allShopsFilterVM.price, in: 0...400000, step: 100)
+                                .accentColor(Color.red)
                                 .frame(width: UIScreen.main.bounds.size.width * 0.5)
                         }
                         
                         
                     }.padding([.leading, .trailing])
                 }
-                WaterfallGrid(self.shopModel.products) { product in
+                WaterfallGrid(self.allShopsFilterVM.filter(model: self.shopModel)) { product in
                     SingleProduct(product: product)
-                }.gridStyle(
-                    animation: .easeInOut(duration: 1)
-                )
+                }
                 
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
+
     }
     
 }
