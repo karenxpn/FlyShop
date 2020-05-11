@@ -46,6 +46,6 @@ struct ShopListViewModel: Identifiable {
     }
     
     var products: [ProductViewModel] {
-        self.shopModel.products!.map(ProductViewModel.init)
+        self.shopModel.products.map(ProductViewModel.init)
     }
 }

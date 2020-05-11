@@ -12,7 +12,7 @@ import Firebase
 class FilterService {
     let db = Firestore.firestore()
     
-    func fetchFilteredData( category: String, gender: String, size: [String], type: String, completion: @escaping ( [ProductModel]?) -> () ) {
+    func fetchFilteredData(new: Bool, sale: Bool, brand: String, category: String, gender: String, size: [String], type: String, completion: @escaping ( [ProductModel]?) -> () ) {
         
         db.collection("AllShops").addSnapshotListener { (snapshot, error) in
             if error != nil {
@@ -23,37 +23,42 @@ class FilterService {
             }
             
             if snapshot?.isEmpty == false {
-                                
-                var productArray = [ProductModel]()
+                var shops = [ShopModel]()
                 
                 for document in snapshot!.documents {
-                    
-                    if let products = document.get( "products" ) as? [[String: Any]] {
-                        for product in products {
-                            if let price = product["productPrice"] as? Int {
-                                if let name = product["productName"] as? String {
-                                    if let description = product["description"] as? String {
-                                        if let date = product["date"] as? String {
-                                            if let category = product["category"] as? String {
-                                                if let sale = product["sale"] as? Int {
-                                                    if let gender = product["gender"] as? String {
-                                                        if let type = product["type"] as? String {
-                                                            
-                                                            if let size = product["productSize"] as? [String] {
-                                                                var sizeArray = [String]()
-                                                                for productSize in size {
-                                                                    sizeArray.append(productSize)
-                                                                }
-                                                                
-                                                                if let images = product["image"] as? [String] {
-                                                                    var imageArray = [String]()
-                                                                    for image in images {
-                                                                        imageArray.append(image)
+                    if let shopName = document.get("shopName") as? String {
+                        if let image = document.get("image") as? String {
+                            
+                            var productArray = [ProductModel]()
+                            
+                            if let products = document.get( "products" ) as? [[String: Any]] {
+                                for product in products {
+                                    if let price = product["productPrice"] as? Int {
+                                        if let name = product["productName"] as? String {
+                                            if let description = product["description"] as? String {
+                                                if let date = product["date"] as? String {
+                                                    if let category = product["category"] as? String {
+                                                        if let sale = product["sale"] as? Int {
+                                                            if let gender = product["gender"] as? String {
+                                                                if let type = product["type"] as? String {
+                                                                    
+                                                                if let size = product["productSize"] as? [String] {
+                                                                    var sizeArray = [String]()
+                                                                    for productSize in size {
+                                                                        sizeArray.append(productSize)
                                                                     }
                                                                     
-                                                                    let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type)
-                                                                    productArray.append(model)
+                                                                    if let images = product["image"] as? [String] {
+                                                                        var imageArray = [String]()
+                                                                        for image in images {
+                                                                            imageArray.append(image)
+                                                                        }
+                                                                        
+                                                                        let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type)
+                                                                        productArray.append(model)
+                                                                    }
                                                                 }
+                                                            }
                                                             }
                                                         }
                                                     }
@@ -63,22 +68,58 @@ class FilterService {
                                     }
                                 }
                             }
+                            
+                            let model = ShopModel(shopName: shopName, image: image, products: productArray)
+                            shops.append(model)
                         }
                     }
                 }
                 
                 DispatchQueue.main.async {
-                    let filteredCategory = productArray.filter{ $0.category.contains(category) }
-                    let filterdGender = filteredCategory.filter{ $0.gender.contains(gender) }
+                                        
+                    var filteredShops = [ShopModel]()
+                    
+                    if brand != "" {
+                        for shop in shops {
+                            if shop.shopName == brand {
+                                filteredShops.append(shop)
+                            }
+                        }
+                    } else {
+                        filteredShops = shops
+                    }
+                    
+                    var filteredCategory = [ProductModel]()
+                    
+                    for shops in filteredShops {
+                        filteredCategory.append(contentsOf: shops.products )
+                    }
+                    
+                    filteredCategory = filteredCategory.filter{ $0.category.contains(category) }
+                    let filteredGender = filteredCategory.filter{ $0.gender.contains(gender) }
+                    
+                    var filteredSale = [ProductModel]()
+                    if sale {
+                        filteredSale = filteredCategory.filter{ $0.sale != 0 }
+                    } else {
+                        filteredSale = filteredGender
+                    }
+                    
+                    var filteredNew = [ProductModel]()
+                    if new {
+                        filteredNew = filteredSale.filter{ self.convertToDate(startDate: $0.date) <= 30 }
+                    } else {
+                        filteredNew = filteredSale
+                    }
                     
                     var filteredSize = [ProductModel]()
                     if size.isEmpty == false {
-
+                        
                         for currentSize in size {
-                            filteredSize = filterdGender.filter{ $0.productSize.contains(currentSize)}
+                            filteredSize = filteredNew.filter{ $0.productSize.contains(currentSize)}
                         }
                     } else {
-                        filteredSize = filterdGender
+                        filteredSize = filteredNew
                     }
                     
                     var filteredType = [ProductModel]()
@@ -89,8 +130,25 @@ class FilterService {
                     }
                     completion( filteredType )
                 }
+
             }
         }
         
     }
+    
+    func convertToDate( startDate: String ) -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "hy")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let formatedStartDate = dateFormatter.date(from: startDate)
+        let currentDate = Date()
+        let components = Set<Calendar.Component>([.day])
+        let differenceOfDate = Calendar.current.dateComponents(components, from: formatedStartDate!, to: currentDate)
+        
+        return differenceOfDate.day!
+        
+    }
+
 }
+

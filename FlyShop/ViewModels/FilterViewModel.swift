@@ -22,7 +22,7 @@ class FilterViewModel: ObservableObject {
     @Published var filteredItems = [ProductViewModel]()
     
     func getFilteredData() {
-        FilterService().fetchFilteredData(category: category, gender: self.maleGender ? "Male" : "Female", size: self.size, type: self.type) { (result) in
+        FilterService().fetchFilteredData(new: checkedNew, sale: checkedSale, brand: brand, category: category, gender: self.maleGender ? "Male" : "Female", size: self.size, type: self.type) { (result) in
             if let result = result {
                 self.filteredItems = result.map(ProductViewModel.init)
             }
