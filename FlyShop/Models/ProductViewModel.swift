@@ -41,6 +41,10 @@ struct ProductViewModel: Identifiable {
         self.productModel.sale
     }
     
+    var category: String {
+        self.productModel.category
+    }
+    
     var priceWithSale: String {
         String(self.productModel.productPrice - self.productModel.productPrice * self.productModel.sale/100 )
     }

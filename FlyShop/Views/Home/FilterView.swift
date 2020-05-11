@@ -68,6 +68,8 @@ struct FilterView: View {
                     }
                 }
                 
+                Text( "").frame( height: 70)
+                
                 Section(header: FilterBySectionHeader()) {
                     VStack {
                         
@@ -169,11 +171,21 @@ struct FilterView: View {
                     }
                 }
                 
-                Spacer()
+                HStack {
+                    
+                    Text( String(format: "%.0f", self.filterVM.price) )
+                        .foregroundColor(Color.black)
+                        .frame(width: UIScreen.main.bounds.size.width/4)
+                    
+                    Slider(value: self.$filterVM.price, in: 0...400000, step: 1000)
+                }.padding(.bottom, 30)
+                
                 
                 NavigationLink(destination: FilterResult().environmentObject(self.filterVM), isActive: self.$goToResult) {
                     EmptyView()
                 }
+                
+
                 Text( "SHOW RESULTS" )
                     .font( .custom("Montserrat-Italic", size: 16))
                     .foregroundColor(Color.white)

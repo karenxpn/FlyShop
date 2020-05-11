@@ -12,7 +12,7 @@ import Firebase
 class FilterService {
     let db = Firestore.firestore()
     
-    func fetchFilteredData(new: Bool, sale: Bool, brand: String, category: String, gender: String, size: [String], type: String, completion: @escaping ( [ProductModel]?) -> () ) {
+    func fetchFilteredData(new: Bool, sale: Bool, brand: String, category: String, gender: String, size: [String], type: String, price: Double, completion: @escaping ( [ProductModel]?) -> () ) {
         
         db.collection("AllShops").addSnapshotListener { (snapshot, error) in
             if error != nil {
@@ -53,6 +53,7 @@ class FilterService {
                                                                         for image in images {
                                                                             imageArray.append(image)
                                                                         }
+
                                                                         
                                                                         let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type)
                                                                         productArray.append(model)
@@ -98,12 +99,14 @@ class FilterService {
                     filteredCategory = filteredCategory.filter{ $0.category.contains(category) }
                     let filteredGender = filteredCategory.filter{ $0.gender.contains(gender) }
                     
+                    
                     var filteredSale = [ProductModel]()
                     if sale {
                         filteredSale = filteredCategory.filter{ $0.sale != 0 }
                     } else {
                         filteredSale = filteredGender
                     }
+                    
                     
                     var filteredNew = [ProductModel]()
                     if new {
@@ -122,12 +125,25 @@ class FilterService {
                         filteredSize = filteredNew
                     }
                     
+                    print(filteredSize)
+                    
+                    var filterPrice = [ProductModel]()
+                    for index in 0..<filteredSize.count {
+                        let priceWithSale = filteredSize[index].productPrice - filteredSize[index].productPrice*filteredSize[index].sale/100
+                        if priceWithSale <= Int( price ) {
+                            filterPrice.append(filteredSize[index])
+                        }
+                        
+                    }
+                    //let filterPrice = filteredSize.filter{ $0.productPrice <= Int( price )}
+                    
                     var filteredType = [ProductModel]()
                     if type != "" {
-                        filteredType = filteredSize.filter { $0.type.contains(type) }
+                        filteredType = filterPrice.filter { $0.type.contains(type) }
                     } else {
-                        filteredType = filteredSize
+                        filteredType = filterPrice
                     }
+                    
                     completion( filteredType )
                 }
 
