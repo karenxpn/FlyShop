@@ -8,261 +8,211 @@
 
 import SwiftUI
 
+enum ActiveSheet {
+    case brand, size, accessories
+}
+
 struct FilterView: View {
     
     @State private var showAler: Bool = false
     @ObservedObject var filterVM = FilterViewModel()
     @State private var showSheet: Bool = false
+    @State private var activeSheet: ActiveSheet = .brand
+    @State private var goToResult: Bool = false
+    
     
     var body: some View {
         
-        
-        VStack {
-            Section(header: SortSectionHeader()) {
-                VStack {
-                    HStack {
-                        Text( "NEWEST")
-                            .font( .custom("Montserrat-Italic", size: 14))
-                        
-                        Spacer()
-                        
-                        Image( self.filterVM.checkedNew ? "checked" : "unchecked")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                    }.onTapGesture {
-                        self.filterVM.checkedNew.toggle()
-                        if self.filterVM.checkedSale {
-                            self.filterVM.checkedSale.toggle()
-                        }
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text( "SALES" )
-                            .font( .custom("Montserrat-Italic", size: 14))
-                        
-                        
-                        Spacer()
-                        
-                        Image( self.filterVM.checkedSale ? "checked" : "unchecked")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                    }.onTapGesture {
-                        self.filterVM.checkedSale.toggle()
-                        if self.filterVM.checkedNew {
-                            self.filterVM.checkedNew.toggle()
-                        }
-                    }
-                    
-                    Divider()
-                }
-            }
-            
-            Text( "" ).frame(height: 70)
-            
-            Section(header: FilterBySectionHeader()) {
-                VStack {
-                    HStack {
-                        Text( "GENDER" )
-                            .font( .custom("Montserrat-Italic", size: 14))
-                        
-                        
-                        Spacer()
-                        
-                        ZStack {
-                            
-                            Circle().fill( self.filterVM.femaleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
-                            
-                            Image( "womenGender" )
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                        }.padding(2)
-                            .onTapGesture {
-                                self.filterVM.femaleGender.toggle()
-                                if self.filterVM.maleGender {
-                                    self.filterVM.maleGender.toggle()
-                                }
-                        }
-                        
-                        ZStack {
-                            
-                            Circle().fill(self.filterVM.maleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
-                            
-                            Image( "manGender" )
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                        }.padding(2)
-                            .onTapGesture {
-                                self.filterVM.maleGender.toggle()
-                                if self.filterVM.femaleGender {
-                                    self.filterVM.femaleGender.toggle()
-                                }
-                        }
-                        
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text( "CATEGORY" )
-                            .font( .custom("Montserrat-Italic", size: 14))
-                        
-                        
-                        Spacer()
-                        
-                        Text( "Clothes" )
-                            .font( .custom("Montserrat-Italic", size: 12))
-                            .foregroundColor(Color.white)
-                            .padding([.top, .bottom], 8)
-                            .padding([.horizontal], 12)
-                            .background( self.filterVM.clothes ? Color.blue : Color.gray)
-                            .cornerRadius(20)
-                            .onTapGesture {
-                                self.filterVM.size = [String]()
-                                self.filterVM.clothes.toggle()
-                                if self.filterVM.shoes {
-                                    self.filterVM.shoes.toggle()
-                                }
-                                if self.filterVM.accessories {
-                                    self.filterVM.accessories.toggle()
-                                }
-                        }
-                        
-                        Text( "Shoes" )
-                            .font( .custom("Montserrat-Italic", size: 12))
-                            .foregroundColor(Color.white)
-                            .padding([.top, .bottom], 8)
-                            .padding([.horizontal], 12)
-                            .background(self.filterVM.shoes ? Color.blue : Color.gray)
-                            .cornerRadius(20)
-                            .onTapGesture {
-                                self.filterVM.size = [String]()
-                                self.filterVM.shoes.toggle()
-                                if self.filterVM.clothes {
-                                    self.filterVM.clothes.toggle()
-                                }
-                                if self.filterVM.accessories {
-                                    self.filterVM.accessories.toggle()
-                                }
-                        }
-                        
-                        Text( "Accessories" )
-                            .font( .custom("Montserrat-Italic", size: 12))
-                            .foregroundColor(Color.white)
-                            .padding([.top, .bottom], 8)
-                            .padding([.horizontal], 12)
-                            .background(self.filterVM.accessories ? Color.blue : Color.gray)
-                            .cornerRadius(20)
-                            .onTapGesture {
-                                self.filterVM.accessories.toggle()
-                                if self.filterVM.shoes {
-                                    self.filterVM.shoes.toggle()
-                                }
-                                if self.filterVM.clothes {
-                                    self.filterVM.clothes.toggle()
-                                }
-                        }
-                        
-                    }.padding([.bottom, .top], 6)
-                    
-                    Divider()
-                    
-                    
-                    if self.filterVM.accessories == false {
+        ScrollView{
+            VStack {
+                Section(header: SortSectionHeader()) {
+                    VStack {
                         HStack {
-                            Text( "SIZE" )
+                            Text( "NEWEST")
+                                .font( .custom("Montserrat-Italic", size: 14))
+                            
+                            Spacer()
+                            
+                            Image( self.filterVM.checkedNew ? "checked" : "unchecked")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25)
+                        }.onTapGesture {
+                            self.filterVM.checkedNew.toggle()
+                            if self.filterVM.checkedSale {
+                                self.filterVM.checkedSale.toggle()
+                            }
+                        }
+                        
+                        Divider()
+                        
+                        HStack {
+                            Text( "SALES" )
                                 .font( .custom("Montserrat-Italic", size: 14))
                             
                             
                             Spacer()
                             
-                            HStack {
-                                Text( self.filterVM.size.isEmpty ? "Your size" : self.getSizes() )
-                                    .font( .custom("Montserrat-Italic", size: 14))
-                                    .foregroundColor(Color.white)
-                                    .padding([.top, .bottom], 6)
-                                    .padding([.trailing, .leading], 12)
-                                    .background(Color.blue)
-                                    .cornerRadius(20)
+                            Image( self.filterVM.checkedSale ? "checked" : "unchecked")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25)
+                        }.onTapGesture {
+                            self.filterVM.checkedSale.toggle()
+                            if self.filterVM.checkedNew {
+                                self.filterVM.checkedNew.toggle()
+                            }
+                        }
+                        
+                        Divider()
+                    }
+                }
+                
+                Section(header: FilterBySectionHeader()) {
+                    VStack {
+                        
+                        // Gender Filter
+                        HStack {
+                            Text( "GENDER" )
+                                .font( .custom("Montserrat-Italic", size: 14))
+                            
+                            
+                            Spacer()
+                            
+                            ZStack {
                                 
-                                Text( "+" )
-                                    .font( .custom("Montserrat-Italic", size: 20))
-                                    .foregroundColor(Color.white)
-                                    .padding([.leading, .trailing], 12)
-                                    .padding([.top, .bottom], 6)
-                                    .background(Color.blue)
-                                    .cornerRadius(30)
-                                    .onTapGesture {
-                                        if self.filterVM.maleGender || self.filterVM.femaleGender {
-                                            if self.filterVM.shoes || self.filterVM.clothes {
+                                Circle().fill( self.filterVM.femaleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
+                                
+                                Image( "womenGender" )
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                            }.padding(2)
+                                .onTapGesture {
+                                    self.filterVM.femaleGender.toggle()
+                                    if self.filterVM.maleGender {
+                                        self.filterVM.maleGender.toggle()
+                                    }
+                            }
+                            
+                            ZStack {
+                                
+                                Circle().fill(self.filterVM.maleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
+                                
+                                Image( "manGender" )
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                            }.padding(2)
+                                .onTapGesture {
+                                    self.filterVM.maleGender.toggle()
+                                    if self.filterVM.femaleGender {
+                                        self.filterVM.femaleGender.toggle()
+                                    }
+                            }
+                            
+                        }
+                        
+                        Divider()
+                        
+                        BrandFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet).environmentObject(self.filterVM)
+                        
+                        Divider()
+                        
+                        CategoryFilter().environmentObject(self.filterVM)
+                        
+                        Divider()
+                        
+                        
+                        TypeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet).environmentObject(self.filterVM)
+                        
+                        Divider()
+                        
+                        // Size filter
+                        if self.filterVM.category != "Accessories" {
+                            HStack {
+                                Text( "SIZE" )
+                                    .font( .custom("Montserrat-Italic", size: 14))
+                                
+                                
+                                Spacer()
+                                
+                                HStack {
+                                    Text( self.filterVM.size.isEmpty ? "Your size" : self.getSizes() )
+                                        .font( .custom("Montserrat-Italic", size: 14))
+                                        .foregroundColor(Color.white)
+                                        .padding([.top, .bottom], 6)
+                                        .padding([.trailing, .leading], 12)
+                                        .background(Color.blue)
+                                        .cornerRadius(20)
+                                    
+                                    Text( "+" )
+                                        .font( .custom("Montserrat-Italic", size: 20))
+                                        .foregroundColor(Color.white)
+                                        .padding([.leading, .trailing], 12)
+                                        .padding([.top, .bottom], 6)
+                                        .background(Color.blue)
+                                        .cornerRadius(30)
+                                        .onTapGesture {
+                                            if ( self.filterVM.maleGender || self.filterVM.femaleGender ) && ( self.filterVM.category == "Clothes" || self.filterVM.category == "Shoes" ) && self.filterVM.type != "" {
+                                                self.activeSheet = .size
                                                 self.showSheet = true
-                                            } else {
+                                            }
+                                            else {
                                                 self.showAler.toggle()
                                             }
-                                        }
-                                        else {
-                                            self.showAler.toggle()
-                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text( "PRICE" )
-                            .font( .custom("Montserrat-Italic", size: 14))               
-                        Spacer()
-                        
-                        Slider(value: self.$filterVM.price, in: 0...800000, step: 500)
-                            .accentColor(Color.red)
                         
                     }
                 }
-            }
-            
-            Spacer()
-            
-            Text( "SHOW RESULTS" )
-                .font( .custom("Montserrat-Italic", size: 16))
-                .foregroundColor(Color.white)
-                .frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height/16)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .onTapGesture {
-                    // perform search in database to shop filtered items to the user
-                    print(self.filterVM.size)
-                    
-            }
-            
-        }.padding()
-            .sheet(isPresented: self.$showSheet, content: {
+                
+                Spacer()
+                
+                NavigationLink(destination: FilterResult().environmentObject(self.filterVM), isActive: self.$goToResult) {
+                    EmptyView()
+                }
+                Text( "SHOW RESULTS" )
+                    .font( .custom("Montserrat-Italic", size: 16))
+                    .foregroundColor(Color.white)
+                    .frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height/16)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .onTapGesture {
+                        // perform search in database to shop filtered items to the user
+                        
+                        if ( self.filterVM.femaleGender || self.filterVM.maleGender ) && self.filterVM.category != "" && self.filterVM.type != "" {
+                            self.filterVM.getFilteredData()
+                            self.goToResult = true
+                        } else {
+                            self.showAler.toggle()
+                        }
+                        
+                }
+                
+            }.padding()
+        }
+        .sheet(isPresented: self.$showSheet, content: {
+            if self.activeSheet == .size {
                 if self.filterVM.maleGender {
-                    if self.filterVM.shoes {
-                        SizeChart(showSheet: self.$showSheet, gender: "Male", category: "Shoes")
-                            .environmentObject(self.filterVM)
-                    } else if self.filterVM.clothes {
-                        SizeChart(showSheet: self.$showSheet,gender: "Male", category: "Clothes")
-                            .environmentObject(self.filterVM)
-                    }
+                    SizeChart(showSheet: self.$showSheet, gender: "Male", category: self.filterVM.category, type: self.filterVM.type)
+                        .environmentObject(self.filterVM)
+
                 } else {
-                    if self.filterVM.shoes {
-                        SizeChart(showSheet: self.$showSheet,gender: "Male", category: "Shoes")
-                            .environmentObject(self.filterVM)
-                    } else if self.filterVM.clothes {
-                        SizeChart(showSheet: self.$showSheet,gender: "Male", category: "Clothes")
-                            .environmentObject(self.filterVM)
-                    }
+                    SizeChart(showSheet: self.$showSheet,gender: "Female", category: self.filterVM.category, type: self.filterVM.type)
+                        .environmentObject(self.filterVM)
                 }
-            })
+            } else if self.activeSheet == .brand {
+                BrandSheet( showSheet: self.$showSheet).environmentObject(self.filterVM)
+            } else if self.activeSheet == .accessories {
+                AccessoriesSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category))
+                    .environmentObject(self.filterVM)
+            }
+        })
             .alert(isPresented: self.$showAler, content: {
-                Alert(title: Text( "Error"), message: Text( "You haven't selected gender or category"), dismissButton: .default(Text( "OK" )))
+                Alert(title: Text( "Error"), message: Text( "You haven't selected gender/category/type"), dismissButton: .default(Text( "OK" )))
             })
             .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
@@ -272,11 +222,10 @@ struct FilterView: View {
                 self.filterVM.checkedNew = false
                 self.filterVM.maleGender = false
                 self.filterVM.femaleGender = false
-                self.filterVM.shoes = false
-                self.filterVM.clothes = false
-                self.filterVM.accessories = false
+                self.filterVM.category = ""
                 self.filterVM.size = [String]()
-                self.filterVM.price = 0
+                self.filterVM.brand = ""
+                self.filterVM.type = ""
             }, label: {
                 Text( "Clear" )
                     .font( .custom("Montserrat-Italic", size: 16))
@@ -330,3 +279,132 @@ struct FilterBySectionHeader: View {
     }
 }
 
+
+struct CategoryFilter: View {
+    
+    @EnvironmentObject var filterVM: FilterViewModel
+    var body: some View {
+        // CategoryFilter
+        HStack {
+            Text( "CATEGORY" )
+                .font( .custom("Montserrat-Italic", size: 14))
+            
+            
+            Spacer()
+            
+            ForEach(FilterTypeModel().categories(), id: \.self) { category in
+                Text( category )
+                    .font( .custom("Montserrat-Italic", size: 12))
+                    .foregroundColor(Color.white)
+                    .padding([.top, .bottom], 8)
+                    .padding([.horizontal], 12)
+                    .background( self.filterVM.category == category ? Color.blue : Color.gray)
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        self.filterVM.category = category
+                    }
+                
+            }
+
+        }.padding([.bottom, .top], 6)
+    }
+}
+
+struct BrandFilter: View {
+    
+    @EnvironmentObject var filterVM: FilterViewModel
+    @Binding var activeSheet: ActiveSheet
+    @Binding var showSheet: Bool
+    
+    var body: some View {
+        // Brand Filter
+        HStack {
+            Text( "BRAND" )
+                .font( .custom("Montserrat-Italic", size: 14))
+            
+            Spacer()
+            
+            HStack {
+                Text( self.filterVM.brand == "" ? "Select Brand" : self.filterVM.brand )
+                    .font( .custom("Montserrat-Italic", size: 14))
+                    .foregroundColor(Color.white)
+                    .padding([.top, .bottom], 6)
+                    .padding([.trailing, .leading], 12)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                
+                Text( "+" )
+                    .font( .custom("Montserrat-Italic", size: 20))
+                    .foregroundColor(Color.white)
+                    .padding([.leading, .trailing], 12)
+                    .padding([.top, .bottom], 6)
+                    .background(Color.blue)
+                    .cornerRadius(30)
+                    .onTapGesture {
+                        self.activeSheet = .brand
+                        self.showSheet.toggle()
+                        
+                }
+            }
+        }
+    }
+}
+
+struct TypeFilter: View {
+    
+    @EnvironmentObject var filterVM : FilterViewModel
+    @Binding var activeSheet: ActiveSheet
+    @Binding var showSheet: Bool
+    
+    var body: some View {
+        // Type Filter
+        
+        HStack {
+            Text( "TYPE" )
+                .font( .custom("Montserrat-Italic", size: 14))
+            
+            Spacer()
+            
+            
+            ForEach( FilterTypeModel().categoryType(category: self.filterVM.category), id: \.self) { type in
+                if self.filterVM.category != "Accessories" {
+                    Text( type )
+                        .font( .custom("Montserrat-Italic", size: 12))
+                        .foregroundColor(Color.white)
+                        .padding([.top, .bottom], 8)
+                        .padding([.horizontal], 12)
+                        .background( self.filterVM.type == type ? Color.blue : Color.gray)
+                        .cornerRadius(20)
+                        .onTapGesture {
+                            self.filterVM.type = type
+                    }
+                }
+            }
+            
+            if self.filterVM.category == "Accessories" {
+                HStack {
+                    Text( self.filterVM.type == "" ? "Select Type" : self.filterVM.type )
+                        .font( .custom("Montserrat-Italic", size: 14))
+                        .foregroundColor(Color.white)
+                        .padding([.top, .bottom], 6)
+                        .padding([.trailing, .leading], 12)
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                    
+                    Text( "+" )
+                        .font( .custom("Montserrat-Italic", size: 20))
+                        .foregroundColor(Color.white)
+                        .padding([.leading, .trailing], 12)
+                        .padding([.top, .bottom], 6)
+                        .background(Color.blue)
+                        .cornerRadius(30)
+                        .onTapGesture {
+                            self.activeSheet = .accessories
+                            self.showSheet.toggle()
+                            
+                    }
+                }
+            }
+        }
+    }
+}

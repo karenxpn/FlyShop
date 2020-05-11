@@ -15,16 +15,17 @@ struct SizeChart: View {
     
     let gender: String
     let category: String
-    @State private var checkList = [Bool]( repeating: false, count: 11)
+    let type: String
+    @State private var checkList = [Bool]( repeating: false, count: 20)
     
     
     var body: some View {
         NavigationView {
             List {
                 
-                ForEach( 0..<SizeModel().sizeChart(gender: self.gender, category: self.category).count) { index in
+                ForEach( 0..<SizeModel().sizeChart(gender: self.gender, category: self.category, type: self.type).count) { index in
                     HStack {
-                        Text( SizeModel().sizeChart(gender: self.gender, category: self.category)[index] )
+                        Text( SizeModel().sizeChart(gender: self.gender, category: self.category, type: self.type)[index] )
                         Spacer()
                         if self.checkList[index] == true {
                             Image(systemName: "checkmark")
@@ -44,9 +45,9 @@ struct SizeChart: View {
                 
                 self.filterVM.size.removeAll(keepingCapacity: false)
                 
-                for index in 0..<SizeModel().sizeChart( gender: self.gender, category: self.category ).count {
+                for index in 0..<SizeModel().sizeChart( gender: self.gender, category: self.category, type: self.type ).count {
                     if self.checkList[index] == true {
-                        self.filterVM.size.append(SizeModel().sizeChart( gender: self.gender, category: self.category )[index])
+                        self.filterVM.size.append(SizeModel().sizeChart( gender: self.gender, category: self.category, type: self.type)[index])
                     }
                 }
                 
@@ -62,6 +63,6 @@ struct SizeChart: View {
 
 struct SizeChart_Previews: PreviewProvider {
     static var previews: some View {
-        SizeChart(showSheet: .constant(false), gender: "", category: "")
+        SizeChart(showSheet: .constant(false), gender: "", category: "", type: "")
     }
 }

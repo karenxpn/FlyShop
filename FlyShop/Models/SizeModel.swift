@@ -9,16 +9,24 @@
 import Foundation
 
 struct SizeModel {
-    func sizeChart(gender: String, category: String) -> [String]{
+    func sizeChart(gender: String, category: String, type: String ) -> [String]{
         
         if category == "Shoes" {
-            if gender == "Men" {
+            if gender == "Male" {
                 return ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"]
             } else {
                 return ["35", "36", "37", "38", "39", "40", "41"]
             }
         } else {
-            return ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+            if type == "Top" || type == "Underwear" {
+                return ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+            } else {
+                if gender == "Male" {
+                    return ["28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44"]
+                } else {
+                    return ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"]
+                }
+            }
         }
     }
 }

@@ -1,35 +1,20 @@
 //
-//  NewService.swift
+//  FilterService.swift
 //  FlyShop
 //
-//  Created by Karen Mirakyan on 5/7/20.
+//  Created by Karen Mirakyan on 5/11/20.
 //  Copyright © 2020 Karen Mirakyan. All rights reserved.
 //
 
 import Foundation
 import Firebase
 
-class NewService {
+class FilterService {
     let db = Firestore.firestore()
     
-    func convertToDate( startDate: String ) -> Int {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "hy")
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+    func fetchFilteredData( category: String, gender: String, size: [String], type: String, completion: @escaping ( [ProductModel]?) -> () ) {
         
-        let formatedStartDate = dateFormatter.date(from: startDate)
-        let currentDate = Date()
-        let components = Set<Calendar.Component>([.day])
-        let differenceOfDate = Calendar.current.dateComponents(components, from: formatedStartDate!, to: currentDate)
-        
-        return differenceOfDate.day!
-        
-    }
-    
-    func getNew(completion: @escaping ( [ProductModel]?) -> ()) {
-        
-        
-        self.db.collection("AllShops").getDocuments { (snapshot, error) in
+        db.collection("AllShops").addSnapshotListener { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
@@ -38,14 +23,12 @@ class NewService {
             }
             
             if snapshot?.isEmpty == false {
-                
+                                
                 var productArray = [ProductModel]()
                 
                 for document in snapshot!.documents {
                     
-                    let data = document.data()
-                    
-                    if let products = data[ "products"] as? [[String: Any]] {
+                    if let products = document.get( "products" ) as? [[String: Any]] {
                         for product in products {
                             if let price = product["productPrice"] as? Int {
                                 if let name = product["productName"] as? String {
@@ -55,6 +38,7 @@ class NewService {
                                                 if let sale = product["sale"] as? Int {
                                                     if let gender = product["gender"] as? String {
                                                         if let type = product["type"] as? String {
+                                                            
                                                             if let size = product["productSize"] as? [String] {
                                                                 var sizeArray = [String]()
                                                                 for productSize in size {
@@ -68,7 +52,6 @@ class NewService {
                                                                     }
                                                                     
                                                                     let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type)
-                                                                    
                                                                     productArray.append(model)
                                                                 }
                                                             }
@@ -85,12 +68,29 @@ class NewService {
                 }
                 
                 DispatchQueue.main.async {
-                    completion( productArray.filter{ self.convertToDate(startDate: $0.date) <= 30} )
+                    let filteredCategory = productArray.filter{ $0.category.contains(category) }
+                    let filterdGender = filteredCategory.filter{ $0.gender.contains(gender) }
+                    
+                    var filteredSize = [ProductModel]()
+                    if size.isEmpty == false {
+
+                        for currentSize in size {
+                            filteredSize = filterdGender.filter{ $0.productSize.contains(currentSize)}
+                        }
+                    } else {
+                        filteredSize = filterdGender
+                    }
+                    
+                    var filteredType = [ProductModel]()
+                    if type != "" {
+                        filteredType = filteredSize.filter { $0.type.contains(type) }
+                    } else {
+                        filteredType = filteredSize
+                    }
+                    completion( filteredType )
                 }
             }
         }
-        
-        
         
     }
 }

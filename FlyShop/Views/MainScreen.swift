@@ -33,7 +33,7 @@ struct MainScreen: View {
             } else if self.viewRouter.currentView == "sales" {
                 SaleView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "cart" {
-                Text( "cart" ).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                CartView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
             
             HStack( alignment: .top) {
