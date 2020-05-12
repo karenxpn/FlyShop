@@ -88,8 +88,8 @@ struct SingleShop: View {
 
                             Spacer()
                             
-                            Slider(value: self.$allShopsFilterVM.price, in: 0...400000, step: 100)
-                                .accentColor(Color.red)
+                            Slider(value: self.$allShopsFilterVM.price, in: 0...400000, step: 1000)
+                                .accentColor(Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                                 .frame(width: UIScreen.main.bounds.size.width * 0.5)
                         }
                         
@@ -102,7 +102,5 @@ struct SingleShop: View {
                 
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
-
     }
-    
 }
