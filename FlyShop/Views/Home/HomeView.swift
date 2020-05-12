@@ -7,10 +7,13 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeView: View {
     
     @ObservedObject var homeVM = HomeViewModel()
+    @State private var selection: String = ""
+    let coursor = [Image("cursor"), Image("cursor"), Image("cursor"), Image("cursor"), Image("cursor")]
     
     var body: some View {
         
@@ -25,11 +28,12 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    TrendGrid()
+                    TrendGrid().environmentObject(self.homeVM)
+                    
+                    Spacer()
                     
                     CategorySelector().environmentObject(self.homeVM)
                 }
-                
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
         
@@ -71,9 +75,11 @@ struct CategorySelector: View {
                     
                 }.background( self.homeVM.category == self.categoryNames[index] ? Color(UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 1)) : Color.clear )
                     .cornerRadius(15)
-                    .padding(.vertical, 12)
+                    .padding(.top, 12)
+                    .padding(.bottom, 20)
                     .onTapGesture {
                         self.homeVM.category = self.categoryNames[index]
+                        self.homeVM.getTrends()
                 }
             }
         }
@@ -102,26 +108,75 @@ struct Header: View {
 }
 
 struct TrendGrid: View {
+    
+    @EnvironmentObject var homeVM: HomeViewModel
+    
     var body: some View {
         
         ZStack {
-            Rectangle().stroke(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.4)), lineWidth: 1.5)
+            
+            if self.homeVM.trendList.isEmpty == false {
+                HStack {
+                    VStack {
+                        HStack{
+                            WebImage(url: URL(string: self.homeVM.trendList[0].image) )
+                            .resizable()
+                            .scaledToFit()
+                                .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+
+                            WebImage(url: URL(string: self.homeVM.trendList[1].image) )
+                            .resizable()
+                            .scaledToFit()
+                                .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+
+                        }
+                        
+                        WebImage(url: URL(string: self.homeVM.trendList[3].image) )
+                        .resizable()
+                        .scaledToFit()
+                            .frame(width: ( 2 * (UIScreen.main.bounds.size.width - 30 )/3 ) - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+                        
+                        
+                        
+                        HStack{
+                            WebImage(url: URL(string: self.homeVM.trendList[4].image) )
+                            .resizable()
+                            .scaledToFit()
+                                .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+
+                            WebImage(url: URL(string: self.homeVM.trendList[5].image) )
+                            .resizable()
+                            .scaledToFit()
+                                .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+
+                        }
+                    }
+                    
+                    
+                    WebImage(url: URL(string: self.homeVM.trendList[2].image) )
+                    .resizable()
+                    .scaledToFit()
+                        .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6 - 12)
+                }
+            }
+            
+            Rectangle().stroke(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3)), lineWidth: 1.5)
             
             VStack {
                 Spacer()
-                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.4))).frame(width: UIScreen.main.bounds.size.width - 60, height: 1.5)
+                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3))).frame(width: UIScreen.main.bounds.size.width - 30, height: 1.5)
                 Spacer()
-                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.4))).frame(width: UIScreen.main.bounds.size.width - 60, height: 1.5)
+                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3))).frame(width: UIScreen.main.bounds.size.width - 30, height: 1.5)
                 Spacer()
             }
             
             HStack {
-                 Spacer()
-                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.4))).frame(width: 1.5, height: UIScreen.main.bounds.size.height * 0.6)
-                 Spacer()
-                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.4))).frame(width: 1.5, height: UIScreen.main.bounds.size.height * 0.6)
-                 Spacer()
-             }
-        }.frame(width: UIScreen.main.bounds.size.width - 60, height: UIScreen.main.bounds.size.height * 0.6)
+                Spacer()
+                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3))).frame(width: 1.5, height: UIScreen.main.bounds.size.height * 0.6)
+                Spacer()
+                Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3))).frame(width: 1.5, height: UIScreen.main.bounds.size.height * 0.6)
+                Spacer()
+            }
+        }.frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height * 0.6)
     }
 }
