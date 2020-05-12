@@ -66,6 +66,8 @@
 		FFB0236C2468CFC100FC135D /* FilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236B2468CFC100FC135D /* FilterResult.swift */; };
 		FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */; };
 		FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236F246AD44A00FC135D /* HomeViewModel.swift */; };
+		FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02371246AE5AD00FC135D /* HomeService.swift */; };
+		FFB02374246AE5E900FC135D /* TrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02373246AE5E900FC135D /* TrendModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		FFB0236B2468CFC100FC135D /* FilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResult.swift; sourceTree = "<group>"; };
 		FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsFilter.swift; sourceTree = "<group>"; };
 		FFB0236F246AD44A00FC135D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FFB02371246AE5AD00FC135D /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		FFB02373246AE5E900FC135D /* TrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,7 @@
 				FF1C80FC24644020000E5D88 /* NewService.swift */,
 				FFB023422465B67300FC135D /* SaleService.swift */,
 				FFB023692468CAB400FC135D /* FilterService.swift */,
+				FFB02371246AE5AD00FC135D /* HomeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				FF1C80F824643A42000E5D88 /* ProductModel.swift */,
 				FFB0235C2468618000FC135D /* ProductViewModel.swift */,
 				FFB023652468B8B900FC135D /* FilterTypeModel.swift */,
+				FFB02373246AE5E900FC135D /* TrendModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				FFB023612468A30500FC135D /* CartView.swift in Sources */,
 				FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */,
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
+				FFB02374246AE5E900FC135D /* TrendModel.swift in Sources */,
 				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FFB023592468364300FC135D /* SelectedProduct.swift in Sources */,
@@ -534,6 +541,7 @@
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
 				FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */,
+				FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */,
 				FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
