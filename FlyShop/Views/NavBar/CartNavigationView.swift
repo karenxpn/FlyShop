@@ -11,23 +11,10 @@ import SwiftUIX
 
 struct CartNavigationView: View {
     var body: some View {
-        HStack {
-            VStack {
-                Text( "My Cart" )
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 16))
-                
-                Text( "124000" )
-                    .foregroundColor(Color.white)
-            }
-            
-            Spacer()
-            
             Image("main")
             .resizable()
             .scaledToFit()
-                .frame(width: 40, height: 40)
-        }
+                .frame(width: 50, height: 50)
     }
 }
 

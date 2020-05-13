@@ -11,9 +11,11 @@ import SDWebImageSwiftUI
 
 struct SelectedProduct: View {
     
+    @EnvironmentObject var cartVM: CartViewModel
     let product: ProductViewModel
     @State private var showSheet: Bool = false
     @State private var size: String = "Size"
+    @State private var activeAlert: ActiveAlert = .error
     @State private var showAlert: Bool = false
     
     var body: some View {
@@ -100,6 +102,7 @@ struct SelectedProduct: View {
                                     .cornerRadius(15)
                             }
                         }
+                        Spacer()
                     }
                     
                     
@@ -116,6 +119,12 @@ struct SelectedProduct: View {
                             .padding()
                     }.onTapGesture {
                         if self.size == "Size" {
+                            self.activeAlert = .error
+                            self.showAlert.toggle()
+                        } else {
+                            let cartModel = CartModel(product: self.product, size: self.size)
+                            self.cartVM.cartProducts.append(cartModel)
+                            self.activeAlert = .success
                             self.showAlert.toggle()
                         }
                         print( "Fire!!! TODO List" )
@@ -123,7 +132,11 @@ struct SelectedProduct: View {
                     
                 }.padding()
             }.alert(isPresented: self.$showAlert, content: {
-                Alert(title: Text( "Error"), message: Text( "Select Size"), dismissButton: .default(Text( "OK")))
+                if self.activeAlert == .error {
+                    return Alert(title: Text( "Error"), message: Text( "Select Size"), dismissButton: .default(Text( "OK")))
+                } else {
+                    return Alert(title: Text( "Congratulations"), message: Text( "This product has been added to your cart"), dismissButton: .default(Text( "OK")))
+                }
             })
             .sheet(isPresented: self.$showSheet) {
                 SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)

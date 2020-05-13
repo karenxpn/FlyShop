@@ -11,6 +11,8 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var category: String = "Clothes"
     @Published var trendList = [TrendViewModel]()
+    @Published var productId = ""
+    @Published var foundProduct = [ProductViewModel]()
     
     init() {
         getTrends()
@@ -20,6 +22,14 @@ class HomeViewModel: ObservableObject {
         HomeService().fetchTrends(category: self.category) { (result) in
             if let result = result {
                 self.trendList = result.map(TrendViewModel.init)
+            }
+        }
+    }
+    
+    func getProductById() {
+        HomeService().fetchWithProductId(id: productId) { (result) in
+            if let result = result {
+                self.foundProduct = result.map(ProductViewModel.init)
             }
         }
     }
@@ -37,5 +47,9 @@ struct TrendViewModel: Identifiable {
     
     var image: String {
         self.trendModel.image
+    }
+    
+    var productId: String {
+        self.trendModel.productId
     }
 }

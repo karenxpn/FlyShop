@@ -91,6 +91,8 @@ struct SingleProduct: View {
                         
                     }
                     
+                    
+                    
                 }.padding([.top, .bottom], 6)
                     .padding([.trailing, .leading], 10)
                     .background(Color.white)
