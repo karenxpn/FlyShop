@@ -313,6 +313,7 @@ struct CategoryFilter: View {
                     .background( self.filterVM.category == category ? Color.blue : Color.gray)
                     .cornerRadius(20)
                     .onTapGesture {
+                        self.filterVM.type = ""
                         self.filterVM.category = category
                     }
                 

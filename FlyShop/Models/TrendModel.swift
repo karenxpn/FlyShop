@@ -12,4 +12,5 @@ struct TrendModel: Identifiable {
     var id = UUID()
     var image: String
     var category: String
+    var productId: String
 }

@@ -68,6 +68,11 @@
 		FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236F246AD44A00FC135D /* HomeViewModel.swift */; };
 		FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02371246AE5AD00FC135D /* HomeService.swift */; };
 		FFB02374246AE5E900FC135D /* TrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02373246AE5E900FC135D /* TrendModel.swift */; };
+		FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02375246B4A3600FC135D /* TrendSingleProduct.swift */; };
+		FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02377246C2B5500FC135D /* CartNavigationText.swift */; };
+		FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02379246C2C0500FC135D /* CartViewModel.swift */; };
+		FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */; };
+		FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0237D246C4D0200FC135D /* CartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +141,11 @@
 		FFB0236F246AD44A00FC135D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FFB02371246AE5AD00FC135D /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		FFB02373246AE5E900FC135D /* TrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendModel.swift; sourceTree = "<group>"; };
+		FFB02375246B4A3600FC135D /* TrendSingleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendSingleProduct.swift; sourceTree = "<group>"; };
+		FFB02377246C2B5500FC135D /* CartNavigationText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartNavigationText.swift; sourceTree = "<group>"; };
+		FFB02379246C2C0500FC135D /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemPreview.swift; sourceTree = "<group>"; };
+		FFB0237D246C4D0200FC135D /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +274,7 @@
 				FFB023442465B74B00FC135D /* SaleViewModel.swift */,
 				FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */,
 				FFB0236F246AD44A00FC135D /* HomeViewModel.swift */,
+				FFB02379246C2C0500FC135D /* CartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 				FFB0235C2468618000FC135D /* ProductViewModel.swift */,
 				FFB023652468B8B900FC135D /* FilterTypeModel.swift */,
 				FFB02373246AE5E900FC135D /* TrendModel.swift */,
+				FFB0237D246C4D0200FC135D /* CartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +364,7 @@
 				FFB023632468B36300FC135D /* BrandSheet.swift */,
 				FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */,
 				FFB0236B2468CFC100FC135D /* FilterResult.swift */,
+				FFB02375246B4A3600FC135D /* TrendSingleProduct.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -370,6 +383,7 @@
 			children = (
 				FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */,
 				FFB0235E2468A26200FC135D /* CartNavigationView.swift */,
+				FFB02377246C2B5500FC135D /* CartNavigationText.swift */,
 			);
 			path = NavBar;
 			sourceTree = "<group>";
@@ -378,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB023602468A30500FC135D /* CartView.swift */,
+				FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -509,6 +524,7 @@
 				FFB0236C2468CFC100FC135D /* FilterResult.swift in Sources */,
 				FFB023412465B50900FC135D /* SaleView.swift in Sources */,
 				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
+				FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
@@ -526,6 +542,7 @@
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
+				FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */,
 				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
@@ -533,6 +550,7 @@
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
+				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,
 				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
 				FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */,
@@ -549,9 +567,11 @@
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */,
+				FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */,
 				FFB0235F2468A26200FC135D /* CartNavigationView.swift in Sources */,
 				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */,
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
 				FF1C80F524643719000E5D88 /* SingleNewProduct.swift in Sources */,

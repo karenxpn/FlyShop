@@ -33,6 +33,8 @@ struct HomeView: View {
                     Spacer()
                     
                     CategorySelector().environmentObject(self.homeVM)
+                    
+                    Spacer()
                 }
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
@@ -75,8 +77,7 @@ struct CategorySelector: View {
                     
                 }.background( self.homeVM.category == self.categoryNames[index] ? Color(UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 1)) : Color.clear )
                     .cornerRadius(15)
-                    .padding(.top, 12)
-                    .padding(.bottom, 20)
+                    .padding(.vertical, 15)
                     .onTapGesture {
                         self.homeVM.category = self.categoryNames[index]
                         self.homeVM.getTrends()
@@ -110,6 +111,7 @@ struct Header: View {
 struct TrendGrid: View {
     
     @EnvironmentObject var homeVM: HomeViewModel
+    @State private var showSingleProduct: Bool = false
     
     var body: some View {
         
@@ -117,46 +119,82 @@ struct TrendGrid: View {
             
             if self.homeVM.trendList.isEmpty == false {
                 HStack {
+                    NavigationLink(destination: TrendSingleProduct().environmentObject(self.homeVM), isActive: self.$showSingleProduct) {
+                        EmptyView()
+                    }
                     VStack {
                         HStack{
                             WebImage(url: URL(string: self.homeVM.trendList[0].image) )
-                            .resizable()
-                            .scaledToFit()
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
-
+                                .onTapGesture {
+                                    self.homeVM.productId = self.homeVM.trendList[0].productId
+                                    print( "\(self.homeVM.trendList[0].productId)")
+                                    self.homeVM.getProductById()
+                                    self.showSingleProduct = true
+                            }
+                            
                             WebImage(url: URL(string: self.homeVM.trendList[1].image) )
-                            .resizable()
-                            .scaledToFit()
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
-
+                                .onTapGesture {
+                                    self.homeVM.productId = self.homeVM.trendList[1].productId
+                                    self.homeVM.getProductById()
+                                    self.showSingleProduct = true
+                            }
                         }
                         
                         WebImage(url: URL(string: self.homeVM.trendList[3].image) )
-                        .resizable()
-                        .scaledToFit()
+                            .resizable()
+                            .scaledToFit()
                             .frame(width: ( 2 * (UIScreen.main.bounds.size.width - 30 )/3 ) - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+                            .onTapGesture {
+                                self.homeVM.productId = self.homeVM.trendList[3].productId
+                                self.homeVM.getProductById()
+
+                                self.showSingleProduct = true
+                        }
                         
                         
                         
                         HStack{
                             WebImage(url: URL(string: self.homeVM.trendList[4].image) )
-                            .resizable()
-                            .scaledToFit()
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+                                .onTapGesture {
+                                    self.homeVM.productId = self.homeVM.trendList[4].productId
+                                    self.homeVM.getProductById()
 
+                                    self.showSingleProduct = true
+                            }
+                            
                             WebImage(url: URL(string: self.homeVM.trendList[5].image) )
-                            .resizable()
-                            .scaledToFit()
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
+                                .onTapGesture {
+                                    self.homeVM.productId = self.homeVM.trendList[5].productId
+                                    self.homeVM.getProductById()
 
+                                    self.showSingleProduct = true
+                            }
                         }
                     }
                     
                     
                     WebImage(url: URL(string: self.homeVM.trendList[2].image) )
-                    .resizable()
-                    .scaledToFit()
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6 - 12)
+                        .onTapGesture {
+                            self.homeVM.productId = self.homeVM.trendList[2].productId
+                            self.homeVM.getProductById()
+
+                            self.showSingleProduct = true
+                    }
                 }
             }
             
@@ -178,5 +216,6 @@ struct TrendGrid: View {
                 Spacer()
             }
         }.frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height * 0.6)
+            .background(Color(UIColor(red: 23/255, green: 33/255, blue: 45/255, alpha: 1)))
     }
 }
