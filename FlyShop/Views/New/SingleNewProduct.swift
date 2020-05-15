@@ -48,7 +48,7 @@ struct SingleNewProduct: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 60, height: 60)
                         .offset(x: UIScreen.main.bounds.size.width/6.5,
-                                y: -UIScreen.main.bounds.size.height/12.5)
+                                y: UIScreen.main.bounds.size.height == 667.0 ? -UIScreen.main.bounds.size.height/12 : -UIScreen.main.bounds.size.height/12.5)
                 }
                 
             }.padding([.top, .bottom], 6)

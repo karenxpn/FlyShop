@@ -59,7 +59,7 @@ struct CartItemPreview: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)
-                .offset(x: UIScreen.main.bounds.size.width/5, y: -UIScreen.main.bounds.size.height/8)
+                .offset(x: UIScreen.main.bounds.size.width/5, y: UIScreen.main.bounds.size.height == 667.0 ? -UIScreen.main.bounds.size.height/7 : -UIScreen.main.bounds.size.height/8)
                 .onTapGesture {
                     self.cartVM.cartProducts = self.cartVM.cartProducts.filter{$0.id != self.product.id}
             }

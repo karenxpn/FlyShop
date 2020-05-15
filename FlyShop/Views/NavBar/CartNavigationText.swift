@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct CartNavigationText: View {
+    
+    let title: String
+    
     var body: some View {
-        Text("My Cart")
+        Text(self.title)
             .foregroundColor(Color.white)
             .font(.custom("McLaren-Regular", size: 18))
     }
@@ -18,6 +21,6 @@ struct CartNavigationText: View {
 
 struct CartNavigationText_Previews: PreviewProvider {
     static var previews: some View {
-        CartNavigationText()
+        CartNavigationText(title: "My Cart")
     }
 }

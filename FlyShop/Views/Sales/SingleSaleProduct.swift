@@ -47,14 +47,14 @@ struct SingleSaleProduct: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 60, height: 60)
                         .offset(x: UIScreen.main.bounds.size.width/6.5,
-                                y: -UIScreen.main.bounds.size.height/12.5)
+                                y: UIScreen.main.bounds.size.height == 667.0 ? -UIScreen.main.bounds.size.height/12 : -UIScreen.main.bounds.size.height/12.5)
                     
                     Text( "\(product.sale)%")
                         .foregroundColor(Color.white)
                         .font(.system(size: 20))
                         .rotationEffect(.degrees(40))
                         .offset(x: UIScreen.main.bounds.size.width/5.5,
-                                y: -UIScreen.main.bounds.size.height/11.5)
+                                y: UIScreen.main.bounds.size.height == 667.0 ? -UIScreen.main.bounds.size.height/11 : -UIScreen.main.bounds.size.height/11.5)
                     
                 }
                 
