@@ -48,4 +48,20 @@ struct ProductViewModel: Identifiable {
     var priceWithSale: String {
         String(self.productModel.productPrice - self.productModel.productPrice * self.productModel.sale/100 )
     }
+    
+    var productId: String {
+        self.productModel.productId
+    }
+    
+    var date: String {
+        self.productModel.date
+    }
+    
+    var type: String {
+        self.productModel.type
+    }
+    
+    var gender: String {
+        self.productModel.gender
+    }
 }

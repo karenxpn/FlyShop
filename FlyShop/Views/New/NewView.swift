@@ -56,11 +56,11 @@ struct TopChat: View {
     var body: some View {
         HStack(alignment: .bottom) {
             
-            Image("Circle" )
+            Image("main" )
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 50, height: 50)
-                .background(Color( UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)))
+                .background(Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                 .cornerRadius(35)
             
             
@@ -89,7 +89,7 @@ struct BottomChat: View {
                 Spacer()
                 ZStack {
                     
-                    Rectangle().fill(Color(UIColor(red: 20/255, green: 210/255, blue: 184/255, alpha: 1)))
+                    Rectangle().fill(LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 0.175, green: 0.788, blue: 0.921, alpha: 1)), Color(UIColor(red: 0.078, green: 0.824, blue: 0.722, alpha: 1))]), startPoint: .top, endPoint: .bottom))
                         //this is the gradient for the background
                         .frame(width: UIScreen.main.bounds.size.width-200, height: UIScreen.main.bounds.size.height/13)
                         .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])

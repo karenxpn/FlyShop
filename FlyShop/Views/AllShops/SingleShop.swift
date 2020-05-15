@@ -61,7 +61,11 @@ struct SingleShop: View {
                                 .background( self.allShopsFilterVM.category == "Shoes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    self.allShopsFilterVM.category = "Shoes"
+                                    if self.allShopsFilterVM.category == "Shoes" {
+                                        self.allShopsFilterVM.category = ""
+                                    } else {
+                                        self.allShopsFilterVM.category = "Shoes"
+                                    }
                             }
                             
                             Text( "Accessories" )
@@ -72,7 +76,11 @@ struct SingleShop: View {
                                 .background( self.allShopsFilterVM.category == "Accessories" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    self.allShopsFilterVM.category = "Accessories"
+                                    if self.allShopsFilterVM.category == "Accessories" {
+                                        self.allShopsFilterVM.category = ""
+                                    } else {
+                                        self.allShopsFilterVM.category = "Accessories"
+                                    }
                             }
                         }
                         

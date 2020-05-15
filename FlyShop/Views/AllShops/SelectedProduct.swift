@@ -17,6 +17,7 @@ struct SelectedProduct: View {
     @State private var size: String = "Size"
     @State private var activeAlert: ActiveAlert = .error
     @State private var showAlert: Bool = false
+    @State private var image: String = ""
     
     var body: some View {
         
@@ -37,10 +38,10 @@ struct SelectedProduct: View {
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
-                            WebImage(url: URL(string: product.image[0]))
+                            WebImage(url: self.image == "" ? URL(string: product.image[0]) : URL(string: image) )
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/4 )
+                                .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/3 )
                                 .cornerRadius(15)
                         }
                         
@@ -88,6 +89,28 @@ struct SelectedProduct: View {
                                     self.showSheet.toggle()
                             }
                             
+                            Button(action: {
+                                if self.size == "Size" {
+                                    self.activeAlert = .error
+                                    self.showAlert.toggle()
+                                } else {
+                                    let cartModel = CartModel(product: self.product, size: self.size)
+                                    self.cartVM.cartProducts.append(cartModel)
+                                    self.activeAlert = .success
+                                    self.showAlert.toggle()
+                                }
+                            }) {
+                                Text("To Cart")
+                                    .foregroundColor(Color.white)
+                                    .font(.custom("McLaren-Regular", size: 15))
+                                    .padding(6)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 50)
+                                            .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
+                                )
+                            }.padding(.top, 12)
+                            
+                            
                             Spacer()
                         }
                         
@@ -100,35 +123,22 @@ struct SelectedProduct: View {
                                     .scaledToFill()
                                     .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/5 )
                                     .cornerRadius(15)
+                                    .onTapGesture {
+                                        self.image = image
+                                }
+                                
                             }
                         }
-                        Spacer()
                     }
                     
+                }
+                
+                
+                ZStack {
                     
-                    ZStack {
-                        
-                        Circle().fill(Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1))).frame(width: 50, height: 50)
-                        
-                        
-                        Image("plus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .cornerRadius(10)
-                            .padding()
-                    }.onTapGesture {
-                        if self.size == "Size" {
-                            self.activeAlert = .error
-                            self.showAlert.toggle()
-                        } else {
-                            let cartModel = CartModel(product: self.product, size: self.size)
-                            self.cartVM.cartProducts.append(cartModel)
-                            self.activeAlert = .success
-                            self.showAlert.toggle()
-                        }
-                        print( "Fire!!! TODO List" )
-                    }
+                    Circle().fill(Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1))).frame(width: 50, height: 50)
+                    
+                    
                     
                 }.padding()
             }.alert(isPresented: self.$showAlert, content: {
@@ -138,8 +148,8 @@ struct SelectedProduct: View {
                     return Alert(title: Text( "Congratulations"), message: Text( "This product has been added to your cart"), dismissButton: .default(Text( "OK")))
                 }
             })
-            .sheet(isPresented: self.$showSheet) {
-                SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
+                .sheet(isPresented: self.$showSheet) {
+                    SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }

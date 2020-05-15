@@ -73,6 +73,9 @@
 		FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB02379246C2C0500FC135D /* CartViewModel.swift */; };
 		FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */; };
 		FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0237D246C4D0200FC135D /* CartModel.swift */; };
+		FFFDA04C246EA7BC002EA40D /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04B246EA7BC002EA40D /* CartService.swift */; };
+		FFFDA04E246EB03F002EA40D /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04D246EB03F002EA40D /* ReviewModel.swift */; };
+		FFFDA050246F396B002EA40D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04F246F396B002EA40D /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +149,9 @@
 		FFB02379246C2C0500FC135D /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemPreview.swift; sourceTree = "<group>"; };
 		FFB0237D246C4D0200FC135D /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		FFFDA04B246EA7BC002EA40D /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		FFFDA04D246EB03F002EA40D /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		FFFDA04F246F396B002EA40D /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 				FFB023422465B67300FC135D /* SaleService.swift */,
 				FFB023692468CAB400FC135D /* FilterService.swift */,
 				FFB02371246AE5AD00FC135D /* HomeService.swift */,
+				FFFDA04B246EA7BC002EA40D /* CartService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +327,7 @@
 				FFB023652468B8B900FC135D /* FilterTypeModel.swift */,
 				FFB02373246AE5E900FC135D /* TrendModel.swift */,
 				FFB0237D246C4D0200FC135D /* CartModel.swift */,
+				FFFDA04D246EB03F002EA40D /* ReviewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 			children = (
 				FFB023602468A30500FC135D /* CartView.swift */,
 				FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */,
+				FFFDA04F246F396B002EA40D /* Review.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -539,9 +548,11 @@
 				FFB023592468364300FC135D /* SelectedProduct.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
+				FFFDA050246F396B002EA40D /* Review.swift in Sources */,
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
+				FFFDA04C246EA7BC002EA40D /* CartService.swift in Sources */,
 				FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */,
 				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
@@ -555,6 +566,7 @@
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
 				FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */,
 				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
+				FFFDA04E246EB03F002EA40D /* ReviewModel.swift in Sources */,
 				FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,

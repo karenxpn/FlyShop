@@ -122,6 +122,7 @@ struct TrendGrid: View {
                     NavigationLink(destination: TrendSingleProduct().environmentObject(self.homeVM), isActive: self.$showSingleProduct) {
                         EmptyView()
                     }
+                    
                     VStack {
                         HStack{
                             WebImage(url: URL(string: self.homeVM.trendList[0].image) )
@@ -153,7 +154,7 @@ struct TrendGrid: View {
                             .onTapGesture {
                                 self.homeVM.productId = self.homeVM.trendList[3].productId
                                 self.homeVM.getProductById()
-
+                                
                                 self.showSingleProduct = true
                         }
                         
@@ -167,7 +168,7 @@ struct TrendGrid: View {
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[4].productId
                                     self.homeVM.getProductById()
-
+                                    
                                     self.showSingleProduct = true
                             }
                             
@@ -178,7 +179,7 @@ struct TrendGrid: View {
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[5].productId
                                     self.homeVM.getProductById()
-
+                                    
                                     self.showSingleProduct = true
                             }
                         }
@@ -192,7 +193,7 @@ struct TrendGrid: View {
                         .onTapGesture {
                             self.homeVM.productId = self.homeVM.trendList[2].productId
                             self.homeVM.getProductById()
-
+                            
                             self.showSingleProduct = true
                     }
                 }
@@ -214,6 +215,35 @@ struct TrendGrid: View {
                 Spacer()
                 Rectangle().fill(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3))).frame(width: 1.5, height: UIScreen.main.bounds.size.height * 0.6)
                 Spacer()
+            }
+            
+            VStack {
+                HStack{
+                    Image("pins")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .offset(x: -3, y: -3)
+                    Spacer()
+                    Image("pins")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .offset(x: 3, y: -3)
+                }
+                
+                Spacer()
+                
+                HStack{
+                    Image("pins")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .offset(x: -3, y: 3)
+                    Spacer()
+                    Image("pins")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .offset(x: 3, y: 3)
+                }
+
             }
         }.frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height * 0.6)
             .background(Color(UIColor(red: 23/255, green: 33/255, blue: 45/255, alpha: 1)))
