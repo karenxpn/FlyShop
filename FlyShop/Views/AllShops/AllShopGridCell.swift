@@ -19,10 +19,7 @@ struct AllShopGridCell : View {
         NavigationLink(destination: SingleShop(shopModel: self.shopModel)) {
             VStack {
                 
-                Text( shopModel.name )
-                    .font(.custom("Montserrat-Italic", size: 12))
-                    .foregroundColor(Color.gray)
-
+                TextDesign(text: shopModel.name, size: 14, font: "Montserrat-ExtraLight", color: Color.gray)
                 
                 WebImage(url: URL(string: shopModel.image ))
                     .resizable()

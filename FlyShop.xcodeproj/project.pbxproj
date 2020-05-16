@@ -76,6 +76,9 @@
 		FFFDA04C246EA7BC002EA40D /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04B246EA7BC002EA40D /* CartService.swift */; };
 		FFFDA04E246EB03F002EA40D /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04D246EB03F002EA40D /* ReviewModel.swift */; };
 		FFFDA050246F396B002EA40D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA04F246F396B002EA40D /* Review.swift */; };
+		FFFDA074247084A6002EA40D /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA073247084A6002EA40D /* ImageCarousel.swift */; };
+		FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFFDA075247094B1002EA40D /* Montserrat-ExtraLight.ttf */; };
+		FFFDA07824709550002EA40D /* TextDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA07724709550002EA40D /* TextDesign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +155,9 @@
 		FFFDA04B246EA7BC002EA40D /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		FFFDA04D246EB03F002EA40D /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		FFFDA04F246F396B002EA40D /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		FFFDA073247084A6002EA40D /* ImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
+		FFFDA075247094B1002EA40D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		FFFDA07724709550002EA40D /* TextDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDesign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +295,7 @@
 		FF1C807F2461C366000E5D88 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FFFDA075247094B1002EA40D /* Montserrat-ExtraLight.ttf */,
 				FF1C807D2461C2D5000E5D88 /* McLaren-Regular.ttf */,
 				FF1C80EC2463652E000E5D88 /* Montserrat-Light.ttf */,
 				FF1C807E2461C337000E5D88 /* Montserrat-Italic.ttf */,
@@ -337,6 +344,8 @@
 			children = (
 				FF1C80B624633EE9000E5D88 /* Loading.swift */,
 				FFB0235624660F8F00FC135D /* SearchBar.swift */,
+				FFFDA073247084A6002EA40D /* ImageCarousel.swift */,
+				FFFDA07724709550002EA40D /* TextDesign.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -475,6 +484,7 @@
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
 				FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
+				FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */,
 				FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */,
 				FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */,
 				FF1C80802461C38D000E5D88 /* McLaren-Regular.ttf in Resources */,
@@ -549,6 +559,7 @@
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
 				FFFDA050246F396B002EA40D /* Review.swift in Sources */,
+				FFFDA074247084A6002EA40D /* ImageCarousel.swift in Sources */,
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
@@ -582,6 +593,7 @@
 				FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */,
 				FFB0235F2468A26200FC135D /* CartNavigationView.swift in Sources */,
 				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
+				FFFDA07824709550002EA40D /* TextDesign.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
 				FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */,
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,

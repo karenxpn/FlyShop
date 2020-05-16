@@ -28,8 +28,8 @@ struct FilterView: View {
                 Section(header: SortSectionHeader()) {
                     VStack {
                         HStack {
-                            Text( "NEWEST")
-                                .font( .custom("Montserrat-Italic", size: 14))
+                            
+                            TextDesign(text: "NEWEST", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             Spacer()
                             
@@ -47,8 +47,7 @@ struct FilterView: View {
                         Divider()
                         
                         HStack {
-                            Text( "SALES" )
-                                .font( .custom("Montserrat-Italic", size: 14))
+                            TextDesign(text: "SALES", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             
                             Spacer()
@@ -75,15 +74,14 @@ struct FilterView: View {
                         
                         // Gender Filter
                         HStack {
-                            Text( "GENDER" )
-                                .font( .custom("Montserrat-Italic", size: 14))
                             
+                            TextDesign(text: "GENDER", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             Spacer()
                             
                             ZStack {
                                 
-                                Circle().fill( self.filterVM.femaleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
+                                Circle().fill( self.filterVM.femaleGender ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
                                 
                                 Image( "womenGender" )
                                     .resizable()
@@ -99,7 +97,7 @@ struct FilterView: View {
                             
                             ZStack {
                                 
-                                Circle().fill(self.filterVM.maleGender ? Color.blue : Color.gray).frame(width: 40, height: 40)
+                                Circle().fill(self.filterVM.maleGender ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
                                 
                                 Image( "manGender" )
                                     .resizable()
@@ -133,27 +131,24 @@ struct FilterView: View {
                         // Size filter
                         if self.filterVM.category != "Accessories" {
                             HStack {
-                                Text( "SIZE" )
-                                    .font( .custom("Montserrat-Italic", size: 14))
+                                TextDesign(text: "SIZE", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+                                
                                 
                                 
                                 Spacer()
                                 
                                 HStack {
-                                    Text( self.filterVM.size.isEmpty ? "Your size" : self.getSizes() )
-                                        .font( .custom("Montserrat-Italic", size: 14))
-                                        .foregroundColor(Color.white)
+                                    
+                                    TextDesign(text: self.filterVM.size.isEmpty ? "Your size" : self.getSizes(), size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                                         .padding([.top, .bottom], 6)
                                         .padding([.trailing, .leading], 12)
-                                        .background(Color.blue)
+                                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                                         .cornerRadius(20)
                                     
-                                    Text( "+" )
-                                        .font( .custom("Montserrat-Italic", size: 20))
-                                        .foregroundColor(Color.white)
+                                    TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
                                         .padding([.leading, .trailing], 12)
                                         .padding([.top, .bottom], 6)
-                                        .background(Color.blue)
+                                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                                         .cornerRadius(30)
                                         .onTapGesture {
                                             if ( self.filterVM.maleGender || self.filterVM.femaleGender ) && ( self.filterVM.category == "Clothes" || self.filterVM.category == "Shoes" ) && self.filterVM.type != "" {
@@ -164,6 +159,8 @@ struct FilterView: View {
                                                 self.showAler.toggle()
                                             }
                                     }
+                                    
+                                    
                                 }
                             }
                         }
@@ -185,12 +182,9 @@ struct FilterView: View {
                     EmptyView()
                 }
                 
-
-                Text( "SHOW RESULTS" )
-                    .font( .custom("Montserrat-Italic", size: 16))
-                    .foregroundColor(Color.white)
+                TextDesign(text: "SHOW RESULTS", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
                     .frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height/16)
-                    .background(Color.blue)
+                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(10)
                     .onTapGesture {
                         // perform search in database to shop filtered items to the user
@@ -211,7 +205,7 @@ struct FilterView: View {
                 if self.filterVM.maleGender {
                     SizeChart(showSheet: self.$showSheet, gender: "Male", category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
-
+                    
                 } else {
                     SizeChart(showSheet: self.$showSheet,gender: "Female", category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
@@ -239,9 +233,8 @@ struct FilterView: View {
                 self.filterVM.brand = ""
                 self.filterVM.type = ""
             }, label: {
-                Text( "Clear" )
-                    .font( .custom("Montserrat-Italic", size: 16))
-                    .foregroundColor(Color.white)
+                
+                TextDesign(text: "Clear", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
             }))
         
     }
@@ -270,9 +263,9 @@ struct SortSectionHeader : View {
     var body: some View {
         
         HStack {
-            Text( "SORT BY" )
-                .font( .custom("Montserrat-Italic", size: 12))
-                .foregroundColor(Color.gray)
+            
+            TextDesign(text: "SORT BY", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
+            
             Spacer()
         }
         
@@ -283,9 +276,9 @@ struct SortSectionHeader : View {
 struct FilterBySectionHeader: View {
     var body: some View {
         HStack {
-            Text( "FILTER BY" )
-                .font( .custom("Montserrat-Italic", size: 12))
-                .foregroundColor(Color.gray)
+            
+            TextDesign(text: "FILTER BY", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
+            
             Spacer()
         }
     }
@@ -298,27 +291,26 @@ struct CategoryFilter: View {
     var body: some View {
         // CategoryFilter
         HStack {
-            Text( "CATEGORY" )
-                .font( .custom("Montserrat-Italic", size: 14))
+            
+            TextDesign(text: "CATEGORY", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
             
             
             Spacer()
             
             ForEach(FilterTypeModel().categories(), id: \.self) { category in
-                Text( category )
-                    .font( .custom("Montserrat-Italic", size: 12))
-                    .foregroundColor(Color.white)
+                
+                TextDesign(text: category, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.top, .bottom], 8)
                     .padding([.horizontal], 12)
-                    .background( self.filterVM.category == category ? Color.blue : Color.gray)
+                    .background( self.filterVM.category == category ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
                     .cornerRadius(20)
                     .onTapGesture {
                         self.filterVM.type = ""
                         self.filterVM.category = category
-                    }
+                }
                 
             }
-
+            
         }.padding([.bottom, .top], 6)
     }
 }
@@ -332,26 +324,23 @@ struct BrandFilter: View {
     var body: some View {
         // Brand Filter
         HStack {
-            Text( "BRAND" )
-                .font( .custom("Montserrat-Italic", size: 14))
+            
+            TextDesign(text: "BRAND", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
             
             Spacer()
             
             HStack {
-                Text( self.filterVM.brand == "" ? "Select Brand" : self.filterVM.brand )
-                    .font( .custom("Montserrat-Italic", size: 14))
-                    .foregroundColor(Color.white)
+                
+                TextDesign(text:  self.filterVM.brand == "" ? "Select Brand" : self.filterVM.brand, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.top, .bottom], 6)
                     .padding([.trailing, .leading], 12)
-                    .background(Color.blue)
+                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(20)
                 
-                Text( "+" )
-                    .font( .custom("Montserrat-Italic", size: 20))
-                    .foregroundColor(Color.white)
+                TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.leading, .trailing], 12)
                     .padding([.top, .bottom], 6)
-                    .background(Color.blue)
+                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(30)
                     .onTapGesture {
                         self.activeSheet = .brand
@@ -373,20 +362,20 @@ struct TypeFilter: View {
         // Type Filter
         
         HStack {
-            Text( "TYPE" )
-                .font( .custom("Montserrat-Italic", size: 14))
+            
+            TextDesign(text: "TYPE", size: 13, font: "Montserrat-ExtraLight", color: Color.black)
+            
             
             Spacer()
             
             
             ForEach( FilterTypeModel().categoryType(category: self.filterVM.category), id: \.self) { type in
                 if self.filterVM.category != "Accessories" {
-                    Text( type )
-                        .font( .custom("Montserrat-Italic", size: 12))
-                        .foregroundColor(Color.white)
+                    
+                    TextDesign(text: type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                         .padding([.top, .bottom], 8)
                         .padding([.horizontal], 12)
-                        .background( self.filterVM.type == type ? Color.blue : Color.gray)
+                        .background( self.filterVM.type == type ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
                         .cornerRadius(20)
                         .onTapGesture {
                             self.filterVM.type = type
@@ -396,20 +385,17 @@ struct TypeFilter: View {
             
             if self.filterVM.category == "Accessories" {
                 HStack {
-                    Text( self.filterVM.type == "" ? "Select Type" : self.filterVM.type )
-                        .font( .custom("Montserrat-Italic", size: 14))
-                        .foregroundColor(Color.white)
+                    
+                    TextDesign(text: self.filterVM.type == "" ? "Select Type" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                         .padding([.top, .bottom], 6)
                         .padding([.trailing, .leading], 12)
-                        .background(Color.blue)
+                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                         .cornerRadius(20)
                     
-                    Text( "+" )
-                        .font( .custom("Montserrat-Italic", size: 20))
-                        .foregroundColor(Color.white)
+                    TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
                         .padding([.leading, .trailing], 12)
                         .padding([.top, .bottom], 6)
-                        .background(Color.blue)
+                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                         .cornerRadius(30)
                         .onTapGesture {
                             self.activeSheet = .accessories

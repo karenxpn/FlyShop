@@ -22,10 +22,9 @@ struct SingleNewProduct: View {
                 ZStack {
                     
                     VStack {
-                        Text( product.name )
-                            .foregroundColor(Color.gray)
-                            .font(.custom("Montserrat-Light", size: 14))
                         
+                        TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
                         WebImage(url: URL(string: product.image[0]))
@@ -34,12 +33,9 @@ struct SingleNewProduct: View {
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
-                        Text( product.price)
-                            .foregroundColor(Color.gray)
-                            .font(.custom("Montserrat-Italic", size: 15))
+                        TextDesign(text: product.price, size: 14, font: "Montserrat-ExtraLight", color: Color.gray)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
-                        
                     }
                     
                     

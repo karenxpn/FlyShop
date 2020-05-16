@@ -35,118 +35,103 @@ struct TrendSingleProduct: View {
                     
                     VStack( spacing: 20) {
                         
+ 
+                        VStack {
+                            
+                            Text( self.homeVM.foundProduct[0].name )
+                                .foregroundColor(Color.gray)
+                                .font(.custom("Montserrat-Light", size: 18))
+                                .padding(.top, 12 )
+
+                            
+                            Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
+                            
+                            ImageCarouselView(numberOfImages: self.homeVM.foundProduct[0].image.count) {
+                                ForEach( self.homeVM.foundProduct[0].image, id: \.self ) { image in
+                                    
+                                    WebImage(url:URL(string: image) )
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3 )
+                                        .cornerRadius(15)
+                                    
+                                }
+                            }.frame(height: 300, alignment: .center)
+                        }.background(Color.white)
+                        .cornerRadius(15)
+                        
+                            
                         
                         HStack {
-                            
+                                
                             VStack {
                                 
-                                Text( self.homeVM.foundProduct[0].name )
-                                    .foregroundColor(Color.gray)
-                                    .font(.custom("Montserrat-Light", size: 18))
-                                
-                                Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
-                                
-                                WebImage(url: self.image == "" ? URL(string: self.homeVM.foundProduct[0].image[0]) : URL(string: image))
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/3 )
-                                    .cornerRadius(15)
-                            }
-                            
-                            Spacer()
-                            
-                            VStack( spacing: 20) {
-                                
-                                Text( "Price" )
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Montserrat-Light", size: 28))
-                                
-                                Text( self.self.homeVM.foundProduct[0].sale == 0 ? self.homeVM.foundProduct[0].price : self.homeVM.foundProduct[0].priceWithSale )
-                                    .foregroundColor(self.self.homeVM.foundProduct[0].sale == 0 ? Color.white : Color.red)
-                                    .font(.custom("Montserrat-Light", size: 28))
-                                
-                            }.padding()
-                        }
-                        
-                        HStack {
-                            
-                            VStack {
-                                
-                                Text( "Description" )
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Montserrat-Light", size: 28))
+                                TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                     .frame( width: UIScreen.main.bounds.size.width/2)
                                     .padding([.top, .bottom])
                                 
-                                Text( self.homeVM.foundProduct[0].description )
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Montserrat-Light", size: 28))
-                                    .frame( width: UIScreen.main.bounds.size.width/2)
-                                    .padding(.bottom)
+                                TextDesign(text: self.homeVM.foundProduct[0].description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
+                                      .frame( width: UIScreen.main.bounds.size.width/2)
+                                      .multilineTextAlignment(.center)
+                                      .padding(.bottom)
+                                      .padding(.leading, 8)
+                              }
                                 
-                                
-                                Text( self.size )
-                                    .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Montserrat-Light", size: 26))
-                                    .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
-                                    .cornerRadius(10)
-                                    .multilineTextAlignment(.leading)
-                                    .padding([.top, .bottom], 6)
-                                    .onTapGesture {
-                                        self.showSheet.toggle()
-                                }
-                                
-                                Button(action: {
-                                    if self.size == "Size" {
-                                        self.activeAlert = .error
-                                        self.showAlert.toggle()
-                                    } else {
-                                        let cartModel = CartModel(product: self.homeVM.foundProduct[0], size: self.size)
-                                        self.cartVM.cartProducts.append(cartModel)
-                                        self.activeAlert = .success
-                                        self.showAlert.toggle()
-                                    }
-                                }) {
-                                    Text("To Cart")
-                                        .foregroundColor(Color.white)
-                                        .font(.custom("McLaren-Regular", size: 15))
-                                        .padding(6)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 50)
-                                                .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
-                                    )
-                                }.padding(.top, 12)
-                                
-                                Spacer()
-                            }
+ 
                             
                             Spacer()
-                            
-                            VStack {
-                                ForEach(self.homeVM.foundProduct[0].image, id: \.self) { image in
-                                    WebImage(url: URL(string: image))
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/5 )
-                                        .cornerRadius(15)
-                                    .onTapGesture {
-                                            self.image = image
-                                    }
-                                }
+
+                            VStack( alignment: .center, spacing: 4) {
                                 
+                                TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+
+                                TextDesign(text: self.self.homeVM.foundProduct[0].sale == 0 ? self.homeVM.foundProduct[0].price : self.homeVM.foundProduct[0].priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.self.homeVM.foundProduct[0].sale == 0 ? Color.white : Color.red)
+
+
+                                TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
+                                     .frame( width: UIScreen.main.bounds.size.width/2 - 60)
+                                     .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
+                                     .cornerRadius(10)
+                                     .multilineTextAlignment(.leading)
+                                     .padding([.top, .bottom], 6)
+                                     .onTapGesture {
+                                         self.showSheet.toggle()
+                                 }
+
+                                 Button(action: {
+                                     if self.size == "Size" {
+                                         self.activeAlert = .error
+                                         self.showAlert.toggle()
+                                     } else {
+                                         let cartModel = CartModel(product: self.homeVM.foundProduct[0], size: self.size)
+                                         self.cartVM.cartProducts.append(cartModel)
+                                         self.activeAlert = .success
+                                         self.showAlert.toggle()
+                                     }
+                                 }) {
+                                     Text("To Cart")
+                                         .foregroundColor(Color.white)
+                                         .font(.custom("McLaren-Regular", size: 15))
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 6)
+                                         .background(
+                                             RoundedRectangle(cornerRadius: 50)
+                                                 .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
+                                     )
+                                 }.padding(.top, 12)
+
                                 Spacer()
-                            }
+
+                            }.padding()
                         }
-                        
-                        
-                    }.padding()
+
+                    }
                 }
             }.alert(isPresented: self.$showAlert, content: {
                 if self.activeAlert == .error {
-                    return Alert(title: Text( "Error"), message: Text( "Select Size"), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Error"), message: Text( "Please Select Size"), dismissButton: .default(Text( "OK")))
                 } else {
-                    return Alert(title: Text( "Congratulations" ), message: Text( "This item has been added to cart" ), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Congratulations" ), message: Text( "This product has been added to your cart" ), dismissButton: .default(Text( "OK")))
                 }
             })
                 .sheet(isPresented: self.$showSheet) {

@@ -20,9 +20,8 @@ struct CartItemPreview: View {
                 VStack {
                     
                     VStack {
-                        Text( product.product.name )
-                            .foregroundColor(Color.gray)
-                            .font(.custom("Montserrat-Light", size: 14))
+                        
+                        TextDesign(text: product.product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
@@ -32,9 +31,7 @@ struct CartItemPreview: View {
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
-                        Text( self.product.product.sale == 0 ? product.product.price : product.product.priceWithSale )
-                            .foregroundColor(self.product.product.sale == 0 ? Color.gray : Color.red)
-                            .font(.custom("Montserrat-Italic", size: 15))
+                        TextDesign(text: self.product.product.sale == 0 ? product.product.price : product.product.priceWithSale, size: 14, font: "Montserrat-ExtraLight", color: self.product.product.sale == 0 ? Color.gray : Color.red)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
                         
@@ -45,14 +42,13 @@ struct CartItemPreview: View {
                     .background(Color.white)
                     .cornerRadius(15)
                 
-                
-                Text( self.product.size )
+                TextDesign(text: self.product.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
                     .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                    .foregroundColor(Color.white)
-                    .font(.custom("Montserrat-Light", size: 26))
                     .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
                     .cornerRadius(10)
                     .padding(.top, 6)
+                
+                
             }
             
             Image("removeButton")

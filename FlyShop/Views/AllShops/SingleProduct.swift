@@ -24,9 +24,8 @@ struct SingleProduct: View {
                         
                         
                         VStack {
-                            Text( product.name )
-                                .foregroundColor(Color.gray)
-                                .font(.custom("Montserrat-Light", size: 14))
+                            
+                            TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
@@ -36,9 +35,7 @@ struct SingleProduct: View {
                                 .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                                 .cornerRadius(10)
                             
-                            Text( self.product.sale == 0 ? product.price : product.priceWithSale )
-                                .foregroundColor(self.product.sale == 0 ? Color.gray : Color.red)
-                                .font(.custom("Montserrat-Italic", size: 15))
+                            TextDesign(text: self.product.sale == 0 ? product.price : product.priceWithSale, size: 14, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.gray : Color.red)
                                 .padding(.trailing)
                                 .offset(x: UIScreen.main.bounds.size.width/6.5)
                             
@@ -55,9 +52,8 @@ struct SingleProduct: View {
                     ZStack {
                         
                         VStack {
-                            Text( product.name )
-                                .foregroundColor(Color.gray)
-                                .font(.custom("Montserrat-Light", size: 14))
+                            
+                            TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
@@ -67,9 +63,7 @@ struct SingleProduct: View {
                                 .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                                 .cornerRadius(10)
                             
-                            Text( product.priceWithSale )
-                                .foregroundColor(Color.red)
-                                .font(.custom("Montserrat-Italic", size: 15))
+                            TextDesign(text: product.priceWithSale, size: 14, font: "Montserrat-ExtraLight", color: Color.red)
                                 .padding(.trailing)
                                 .offset(x: UIScreen.main.bounds.size.width/6.5)
                         }

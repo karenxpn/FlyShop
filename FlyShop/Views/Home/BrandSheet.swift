@@ -43,9 +43,8 @@ struct BrandSheet: View {
             .navigationBarItems(trailing: Button(action: {
                 self.showSheet.toggle()
             }, label: {
-                Text( "Save" )
-                    .font(.custom("Montserrat-Italic", size: 16))
-                    .foregroundColor(.white)
+                
+                TextDesign(text: "Save", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
                 
             }))
         }

@@ -53,9 +53,9 @@ struct SizeChart: View {
                 
                 self.showSheet.toggle()
             }, label: {
-                Text( "Save" )
-                    .font(.custom("Montserrat-Italic", size: 16))
-                    .foregroundColor(.white)
+                
+                TextDesign(text: "Save", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
+
         }))
         }
     }

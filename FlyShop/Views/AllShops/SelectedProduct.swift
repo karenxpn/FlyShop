@@ -17,7 +17,7 @@ struct SelectedProduct: View {
     @State private var size: String = "Size"
     @State private var activeAlert: ActiveAlert = .error
     @State private var showAlert: Bool = false
-    @State private var image: String = ""
+    //@State private var image: String = ""
     
     var body: some View {
         
@@ -28,59 +28,58 @@ struct SelectedProduct: View {
             ScrollView {
                 VStack( spacing: 20) {
                     
-                    HStack {
+                    
+                    VStack {
                         
-                        VStack {
-                            
-                            Text( product.name )
-                                .foregroundColor(Color.gray)
-                                .font(.custom("Montserrat-Light", size: 18))
-                            
-                            Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
-                            
-                            WebImage(url: self.image == "" ? URL(string: product.image[0]) : URL(string: image) )
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.size.width/2, height: UIScreen.main.bounds.size.height/3 )
-                                .cornerRadius(15)
-                        }
+                        TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.gray)
+                            .padding(.top, 12 )
                         
-                        Spacer()
+                        Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        VStack( spacing: 20) {
-                            
-                            Text( "Price" )
-                                .foregroundColor(Color.white)
-                                .font(.custom("Montserrat-Light", size: 28))
-                            
-                            Text( self.product.sale == 0 ? product.price : product.priceWithSale )
-                                .foregroundColor(self.product.sale == 0 ? Color.white : Color.red)
-                                .font(.custom("Montserrat-Light", size: 28))
-                            
-                        }.padding()
-                    }
+                        ImageCarouselView(numberOfImages: self.product.image.count) {
+                            ForEach( self.product.image, id: \.self ) { image in
+                                
+                                WebImage(url:URL(string: image) )
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3 )
+                                    .cornerRadius(15)
+                                
+                            }
+                        }.frame(height: 300, alignment: .center)
+                    }.background(Color.white)
+                        .cornerRadius(15)
+                    
+                    
+                    
                     
                     HStack {
                         
                         VStack {
                             
-                            Text( "Description" )
-                                .foregroundColor(Color.white)
-                                .font(.custom("Montserrat-Light", size: 28))
+                            TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 .frame( width: UIScreen.main.bounds.size.width/2)
                                 .padding([.top, .bottom])
                             
-                            Text( product.description )
-                                .foregroundColor(Color.white)
-                                .font(.custom("Montserrat-Light", size: 28))
+                            TextDesign(text: product.description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
                                 .frame( width: UIScreen.main.bounds.size.width/2)
+                                .multilineTextAlignment(.center)
                                 .padding(.bottom)
+                                .padding(.leading, 8)
+                            
+                        }
+                        
+                        Spacer()
+                        
+                        VStack( alignment: .center, spacing: 4) {
+                            
+                            TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             
                             
-                            Text( self.size )
+                            TextDesign(text: self.product.sale == 0 ? product.price : product.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.white : Color.red)
+                            
+                            TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
                                 .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                                .foregroundColor(Color.white)
-                                .font(.custom("Montserrat-Light", size: 26))
                                 .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
                                 .cornerRadius(10)
                                 .multilineTextAlignment(.leading)
@@ -103,47 +102,25 @@ struct SelectedProduct: View {
                                 Text("To Cart")
                                     .foregroundColor(Color.white)
                                     .font(.custom("McLaren-Regular", size: 15))
-                                    .padding(6)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
                                     .background(
                                         RoundedRectangle(cornerRadius: 50)
                                             .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
                                 )
                             }.padding(.top, 12)
                             
-                            
                             Spacer()
-                        }
-                        
-                        Spacer()
-                        
-                        VStack {
-                            ForEach(product.image, id: \.self) { image in
-                                WebImage(url: URL(string: image))
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/5 )
-                                    .cornerRadius(15)
-                                    .onTapGesture {
-                                        self.image = image
-                                }
-                                
-                            }
-                        }
+                            
+                        }.padding()
                     }
                     
                 }
                 
                 
-                ZStack {
-                    
-                    Circle().fill(Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1))).frame(width: 50, height: 50)
-                    
-                    
-                    
-                }.padding()
             }.alert(isPresented: self.$showAlert, content: {
                 if self.activeAlert == .error {
-                    return Alert(title: Text( "Error"), message: Text( "Select Size"), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Error"), message: Text( "Please Select Size"), dismissButton: .default(Text( "OK")))
                 } else {
                     return Alert(title: Text( "Congratulations"), message: Text( "This product has been added to your cart"), dismissButton: .default(Text( "OK")))
                 }

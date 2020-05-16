@@ -67,9 +67,8 @@ struct CategorySelector: View {
                             .scaledToFit()
                             .frame(width: 20, height: 20)
                         
-                        Text( self.categoryNames[index])
-                            .font(.custom("Montserrat-Italic", size: 14))
-                            .foregroundColor(Color.white)
+                        TextDesign(text: self.categoryNames[index], size: 13, font: "Montserrat-ExtraLight", color: Color.white)
+                        
                         
                     }.padding(.vertical, 5)
                         .padding(.horizontal, 10)
@@ -92,8 +91,9 @@ struct Header: View {
     var body: some View {
         HStack {
             Spacer()
-            Text( "TRENDS" ).font(.custom("Montserrat-Italic", size: 28))
-                .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1)).offset( x: 18)
+            
+            TextDesign(text: "TRENDS", size: 27, font: "Montserrat-ExtraLight", color: Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
+                .offset( x: 18)
             
             
             Spacer()
@@ -243,7 +243,7 @@ struct TrendGrid: View {
                         .frame(width: 10, height: 10)
                         .offset(x: 3, y: 3)
                 }
-
+                
             }
         }.frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height * 0.6)
             .background(Color(UIColor(red: 23/255, green: 33/255, blue: 45/255, alpha: 1)))

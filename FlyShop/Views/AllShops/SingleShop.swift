@@ -32,18 +32,15 @@ struct SingleShop: View {
                     
                     VStack( spacing: 5) {
                         HStack {
-                            Text( shopModel.name )
-                                .font(.custom("Montserrat-Italic", size: 14))
-                                .foregroundColor(Color.white)
+                            
+                            TextDesign(text: shopModel.name, size: 13, font: "Montserrat-ExtraLight", color: Color.white)
                             
                             Spacer()
                             
-                            Text( "Clothes" )
-                                .font( .custom("Montserrat-Italic", size: 12))
-                                .foregroundColor(Color.white)
+                            TextDesign(text: "Clothes", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Clothes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
+                                .background( self.allShopsFilterVM.category == "Clothes" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                                 .cornerRadius(20)
                                 .onTapGesture {
                                     if self.allShopsFilterVM.category == "Clothes" {
@@ -53,12 +50,10 @@ struct SingleShop: View {
                                     }
                             }
                             
-                            Text( "Shoes" )
-                                .font( .custom("Montserrat-Italic", size: 12))
-                                .foregroundColor(Color.white)
+                            TextDesign(text: "Shoes", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Shoes" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
+                                .background( self.allShopsFilterVM.category == "Shoes" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                                 .cornerRadius(20)
                                 .onTapGesture {
                                     if self.allShopsFilterVM.category == "Shoes" {
@@ -68,12 +63,10 @@ struct SingleShop: View {
                                     }
                             }
                             
-                            Text( "Accessories" )
-                                .font( .custom("Montserrat-Italic", size: 12))
-                                .foregroundColor(Color.white)
+                            TextDesign(text: "Accessories", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Accessories" ? Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)) : Color.gray)
+                                .background( self.allShopsFilterVM.category == "Accessories" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                                 .cornerRadius(20)
                                 .onTapGesture {
                                     if self.allShopsFilterVM.category == "Accessories" {
@@ -85,15 +78,14 @@ struct SingleShop: View {
                         }
                         
                         HStack {
-                            Text( self.allShopsFilterVM.price == 0 ? "Price" : String(format: "%.0f", self.allShopsFilterVM.price))
-                                .font( .custom("Montserrat-Italic", size: 14))
-                                .foregroundColor(Color.white)
+                            
+                            TextDesign(text: self.allShopsFilterVM.price == 0 ? "Price" : String(format: "%.0f", self.allShopsFilterVM.price), size: 13, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 6)
                                 .padding([.trailing, .leading], 12)
-                                .background(Color.blue)
+                                .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                                 .cornerRadius(20)
                             
-
+                            
                             Spacer()
                             
                             Slider(value: self.$allShopsFilterVM.price, in: 0...400000, step: 1000)

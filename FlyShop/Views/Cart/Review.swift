@@ -19,9 +19,8 @@ struct Review: View {
             VStack {
                 
                 VStack {
-                    Text( product.productName )
-                        .foregroundColor(Color.gray)
-                        .font(.custom("Montserrat-Light", size: 14))
+                    
+                    TextDesign(text: product.productName, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                     
                     Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                     
@@ -31,11 +30,12 @@ struct Review: View {
                         .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                         .cornerRadius(10)
                     
-                    Text( self.product.sale == 0 ? "\(product.productPrice)": "\(product.productPrice - product.productPrice*product.sale/100)" )
-                        .foregroundColor(self.product.sale == 0 ? Color.gray : Color.red)
-                        .font(.custom("Montserrat-Italic", size: 15))
+                    TextDesign(text:  self.product.sale == 0 ? "\(product.productPrice)": "\(product.productPrice - product.productPrice*product.sale/100)", size: 14, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.gray : Color.red)
                         .padding(.trailing)
                         .offset(x: UIScreen.main.bounds.size.width/6.5)
+                    
+                    
+                    
                     
                 }
                 
@@ -45,13 +45,13 @@ struct Review: View {
                 .cornerRadius(15)
             
             
-            Text( self.product.size )
+            TextDesign(text: self.product.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
                 .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                .foregroundColor(Color.white)
-                .font(.custom("Montserrat-Light", size: 26))
                 .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
                 .cornerRadius(10)
                 .padding(.top, 6)
+            
+            
         }
     }
 }

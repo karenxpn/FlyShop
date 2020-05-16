@@ -71,10 +71,7 @@ struct TopChat: View {
                     .frame(width: UIScreen.main.bounds.size.width-110, height: UIScreen.main.bounds.size.height/14)
                     .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
                 
-                Text( message )
-                    .foregroundColor(Color.white)
-                    .font(.custom("Montserrat-Italic", size: 14))
-                
+                TextDesign(text: message, size: 13, font: "Montserrat-ExtraLight", color: Color.white)
                 
                 
             }.padding(.leading, 12)
@@ -94,17 +91,14 @@ struct BottomChat: View {
                         .frame(width: UIScreen.main.bounds.size.width-200, height: UIScreen.main.bounds.size.height/13)
                         .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
                     
-                    Text( "Sounds Good!\nI have to check now!")
-                        .foregroundColor(Color.white)
-                        .font(.custom("Montserrat-Italic", size: 14))
+                    TextDesign(text: "Sounds Good!\nI have to check now", size: 13, font: "Montserrat-ExtraLight", color: Color.white)
+
                     
                 }.padding(.leading, 12)
             }.padding([.bottom, .trailing])
             
-            Text( self.getDate() + "PM" )
-                .foregroundColor(Color.gray)
-                .font(.custom("Montserrat-Italic", size: 12))
-                .offset(x: UIScreen.main.bounds.size.width/2.5, y: -20)
+            TextDesign(text: self.getDate() + "PM", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
+                .offset(x: UIScreen.main.bounds.size.width/2.5, y: -20 )
         }
     }
     
