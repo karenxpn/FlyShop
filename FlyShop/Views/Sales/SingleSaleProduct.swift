@@ -22,9 +22,9 @@ struct SingleSaleProduct: View {
                 ZStack {
                     
                     VStack {
-                        Text( product.name )
-                            .foregroundColor(Color.gray)
-                            .font(.custom("Montserrat-Light", size: 14))
+                        
+                        TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
@@ -34,11 +34,15 @@ struct SingleSaleProduct: View {
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
-                        Text( product.priceWithSale )
-                            .foregroundColor(Color.red)
-                            .font(.custom("Montserrat-Italic", size: 15))
+                        TextDesign(text: product.priceWithSale, size: 15, font: "Montserrat-ExtraLight", color: Color.red)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
+
+//                        Text( product.priceWithSale )
+//                            .foregroundColor(Color.red)
+//                            .font(.custom("Montserrat-ExtraLight", size: 15))
+//                            .padding(.trailing)
+//                            .offset(x: UIScreen.main.bounds.size.width/6.5)
                     }
                     
                     

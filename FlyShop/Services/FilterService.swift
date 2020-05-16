@@ -94,17 +94,17 @@ class FilterService {
                     
                     var filteredCategory = [ProductModel]()
                     
-                    for shops in filteredShops {
-                        filteredCategory.append(contentsOf: shops.products )
+                    for shop in filteredShops {
+                        filteredCategory.append(contentsOf: shop.products )
                     }
                     
-                    filteredCategory = filteredCategory.filter{ $0.category.contains(category) }
-                    let filteredGender = filteredCategory.filter{ $0.gender.contains(gender) }
+                    filteredCategory = filteredCategory.filter{ $0.category == category }
+                    let filteredGender = filteredCategory.filter{ $0.gender == gender }
                     
                     
                     var filteredSale = [ProductModel]()
                     if sale {
-                        filteredSale = filteredCategory.filter{ $0.sale != 0 }
+                        filteredSale = filteredGender.filter{ $0.sale != 0 }
                     } else {
                         filteredSale = filteredGender
                     }
