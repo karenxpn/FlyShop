@@ -80,7 +80,11 @@ struct AllShopsView: View {
                     Loading()
                 }
             }
-                
+            .navigationBarItems(trailing: Button(action: {
+                self.search = ""
+            }, label: {
+                TextDesign(text: "Clear", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+            }))
             .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
     }
