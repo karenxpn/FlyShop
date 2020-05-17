@@ -17,7 +17,6 @@ struct SelectedProduct: View {
     @State private var size: String = "Size"
     @State private var activeAlert: ActiveAlert = .error
     @State private var showAlert: Bool = false
-    //@State private var image: String = ""
     
     var body: some View {
         
@@ -31,7 +30,7 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.gray)
+                        TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.black)
                             .padding(.top, 12 )
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
@@ -42,78 +41,73 @@ struct SelectedProduct: View {
                                 WebImage(url:URL(string: image) )
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3 )
+                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/2 )
                                     .cornerRadius(15)
                                 
                             }
-                        }.frame(height: 300, alignment: .center)
+                        }.frame(height: UIScreen.main.bounds.size.height/2, alignment: .center)
                     }.background(Color.white)
                         .cornerRadius(15)
                     
                     
-                    
-                    
-                    HStack {
+                    VStack {
                         
-                        VStack {
-                            
-                            TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
-                                .frame( width: UIScreen.main.bounds.size.width/2)
-                                .padding([.top, .bottom])
-                            
-                            TextDesign(text: product.description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
-                                .frame( width: UIScreen.main.bounds.size.width/2)
-                                .multilineTextAlignment(.center)
-                                .padding(.bottom)
-                                .padding(.leading, 8)
-                            
-                        }
+                        TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+                            .padding(.bottom)
                         
-                        Spacer()
                         
-                        VStack( alignment: .center, spacing: 4) {
-                            
+                        TextDesign(text: product.description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom)
+                            .padding(.horizontal, 8)
+                        
+                        
+                        HStack {
                             TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+                                .padding([.top, .bottom], 6)
                             
                             
                             TextDesign(text: self.product.sale == 0 ? product.price : product.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.white : Color.red)
-                            
-                            TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
-                                .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                                .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
-                                .cornerRadius(10)
-                                .multilineTextAlignment(.leading)
                                 .padding([.top, .bottom], 6)
-                                .onTapGesture {
-                                    self.showSheet.toggle()
+                        }
+                        
+                        
+                        TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
+                            .frame( width: UIScreen.main.bounds.size.width/2 - 40)
+                            .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
+                            .cornerRadius(10)
+                            .multilineTextAlignment(.leading)
+                            .padding([.top, .bottom], 6)
+                            .onTapGesture {
+                                self.showSheet.toggle()
+                        }
+                        
+                        Button(action: {
+                            if self.size == "Size" {
+                                self.activeAlert = .error
+                                self.showAlert.toggle()
+                            } else {
+                                let cartModel = CartModel(product: self.product, size: self.size)
+                                self.cartVM.cartProducts.append(cartModel)
+                                self.activeAlert = .success
+                                self.showAlert.toggle()
                             }
-                            
-                            Button(action: {
-                                if self.size == "Size" {
-                                    self.activeAlert = .error
-                                    self.showAlert.toggle()
-                                } else {
-                                    let cartModel = CartModel(product: self.product, size: self.size)
-                                    self.cartVM.cartProducts.append(cartModel)
-                                    self.activeAlert = .success
-                                    self.showAlert.toggle()
-                                }
-                            }) {
-                                Text("To Cart")
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("McLaren-Regular", size: 15))
-                                    .padding(.horizontal, 12)
-                                    .padding(.vertical, 6)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 50)
-                                            .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
-                                )
-                            }.padding(.top, 12)
-                            
-                            Spacer()
-                            
-                        }.padding()
-                    }
+                        }) {
+                            Text("To Cart")
+                                .foregroundColor(Color.white)
+                                .font(.custom("McLaren-Regular", size: 15))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 50)
+                                        .fill(Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)))
+                            )
+                        }.padding(.top, 12)
+                        
+                        Spacer()
+                        
+                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .scrollOptions(direction: .vertical, showsIndicators: false)
                     
                 }
                 
