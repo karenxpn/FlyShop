@@ -27,7 +27,7 @@ struct ImageCarouselView<Content: View>: View {
             HStack( alignment: .center, spacing: 0) {
                 self.content
             }
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/2, alignment: .leading)
             .offset(x: CGFloat(self.currentIndex) * -UIScreen.main.bounds.size.width, y: 0)
             .animation(.spring())
             .gesture(DragGesture()
