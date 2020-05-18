@@ -44,7 +44,7 @@ class HomeService {
         }
     }
     
-    func fetchWithProductId( id: String, completion: @escaping ( [ProductModel]? ) -> ()) {
+    func fetchWithProductId( id: String, completion: @escaping ( ProductModel? ) -> ()) {
         db.collection("AllShops").getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
@@ -54,7 +54,9 @@ class HomeService {
             }
             
             if snapshot?.isEmpty == false {
-                var productsArray = [ProductModel]()
+                                
+                var foundProduct: ProductModel? = nil
+                
                 for document in snapshot!.documents {
                     if let products = document.get( "products" ) as? [[String: Any]] {
                         for product in products {
@@ -84,7 +86,7 @@ class HomeService {
                                                                         let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type, productId: productId)
                                                                         
                                                                         if model.productId == id {
-                                                                            productsArray.append(model)
+                                                                            foundProduct = (model)
                                                                         }
                                                                     }
                                                                 }
@@ -102,7 +104,7 @@ class HomeService {
                 }
                 
                 DispatchQueue.main.async {
-                    completion( productsArray )
+                    completion( foundProduct )
                 }
                 
             }

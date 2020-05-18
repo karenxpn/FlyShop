@@ -301,7 +301,7 @@ struct CategoryFilter: View {
                 
                 TextDesign(text: category, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.top, .bottom], 8)
-                    .padding([.horizontal], 12)
+                    .padding([.horizontal], 10)
                     .background( self.filterVM.category == category ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
                     .cornerRadius(20)
                     .onTapGesture {
