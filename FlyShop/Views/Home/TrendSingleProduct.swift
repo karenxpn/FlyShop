@@ -21,9 +21,7 @@ struct TrendSingleProduct: View {
     @State private var size: String = "Size"
     @State private var showAlert: Bool = false
     @State private var activeAlert: ActiveAlert = .error
-    @State private var image: String = ""
-    
-    
+    @State private var image: String = ""    
     
     var body: some View {
         ZStack {
@@ -31,21 +29,22 @@ struct TrendSingleProduct: View {
             AllShopsBackground()
             
             ScrollView {
-                if self.homeVM.foundProduct.isEmpty != true {
+                //find the product withID and check if it is found or not
+                if self.homeVM.foundProduct != nil {
                     
                     VStack( spacing: 20) {
                         
                         
                         VStack {
                             
-                            TextDesign(text: self.homeVM.foundProduct[0].name, size: 18, font: "Montserrat-ExtraLight", color: Color.black)
+                            TextDesign(text: self.homeVM.foundProduct!.name, size: 18, font: "Montserrat-ExtraLight", color: Color.black)
                                 .padding(.top, 12 )
                             
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
-                            ImageCarouselView(numberOfImages: self.homeVM.foundProduct[0].image.count) {
-                                ForEach( self.homeVM.foundProduct[0].image, id: \.self ) { image in
+                            ImageCarouselView(numberOfImages: self.homeVM.foundProduct!.image.count) {
+                                ForEach( self.homeVM.foundProduct!.image, id: \.self ) { image in
                                     
                                     WebImage(url:URL(string: image) )
                                         .resizable()
@@ -66,7 +65,7 @@ struct TrendSingleProduct: View {
                                 .padding(.bottom)
 
                             
-                            TextDesign(text: self.homeVM.foundProduct[0].description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: self.homeVM.foundProduct!.description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
                                 .multilineTextAlignment(.center)
                                 .padding(.bottom)
                                 .padding(.horizontal, 8)
@@ -75,7 +74,7 @@ struct TrendSingleProduct: View {
                             HStack {
                                 TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 
-                                TextDesign(text: self.self.homeVM.foundProduct[0].sale == 0 ? self.homeVM.foundProduct[0].price : self.homeVM.foundProduct[0].priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.self.homeVM.foundProduct[0].sale == 0 ? Color.white : Color.red)
+                                TextDesign(text: self.homeVM.foundProduct!.sale == 0 ? self.homeVM.foundProduct!.price : self.homeVM.foundProduct!.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.homeVM.foundProduct!.sale == 0 ? Color.white : Color.red)
                             }
                             
                             
@@ -94,7 +93,7 @@ struct TrendSingleProduct: View {
                                     self.activeAlert = .error
                                     self.showAlert.toggle()
                                 } else {
-                                    let cartModel = CartModel(product: self.homeVM.foundProduct[0], size: self.size)
+                                    let cartModel = CartModel(product: self.homeVM.foundProduct!, size: self.size)
                                     self.cartVM.cartProducts.append(cartModel)
                                     self.activeAlert = .success
                                     self.showAlert.toggle()
@@ -125,7 +124,7 @@ struct TrendSingleProduct: View {
                 }
             })
                 .sheet(isPresented: self.$showSheet) {
-                    SizeSheet(sizeList: self.self.homeVM.foundProduct[0].size, showSeet: self.$showSheet, selectedSize: self.$size)
+                    SizeSheet(sizeList: self.homeVM.foundProduct!.size, showSeet: self.$showSheet, selectedSize: self.$size)
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }

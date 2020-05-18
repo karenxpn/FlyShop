@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     @Published var category: String = "Clothes"
     @Published var trendList = [TrendViewModel]()
     @Published var productId = ""
-    @Published var foundProduct = [ProductViewModel]()
+    @Published var foundProduct: ProductViewModel? = nil
     
     init() {
         getTrends()
@@ -29,7 +29,7 @@ class HomeViewModel: ObservableObject {
     func getProductById() {
         HomeService().fetchWithProductId(id: productId) { (result) in
             if let result = result {
-                self.foundProduct = result.map(ProductViewModel.init)
+                self.foundProduct = ProductViewModel(model: result)
             }
         }
     }

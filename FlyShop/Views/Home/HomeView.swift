@@ -23,15 +23,18 @@ struct HomeView: View {
                 
                 VStack {
                     
+                    // header includes text TRENDS and filter
+                    
                     Header()
                     
                     Spacer()
                     
-                    
+                    // Trend grid consists of 6 images that show most often bought products
                     TrendGrid().environmentObject(self.homeVM)
                     
                     Spacer()
                     
+                    // CategorySelector -> clothes, shoes, accessories
                     CategorySelector().environmentObject(self.homeVM)
                     
                     Spacer()
@@ -74,10 +77,12 @@ struct CategorySelector: View {
                         .padding(.horizontal, 10)
                     
                     
+                    // background -- selected category is covered with gray background
                 }.background( self.homeVM.category == self.categoryNames[index] ? Color(UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 1)) : Color.clear )
                     .cornerRadius(15)
                     .padding(.vertical, 15)
                     .onTapGesture {
+                        // change the category in the viewModel to change the grid view
                         self.homeVM.category = self.categoryNames[index]
                         self.homeVM.getTrends()
                 }
@@ -119,10 +124,12 @@ struct TrendGrid: View {
             
             if self.homeVM.trendList.isEmpty == false {
                 HStack {
+                    // navigation for each item in the grid
                     NavigationLink(destination: TrendSingleProduct().environmentObject(self.homeVM), isActive: self.$showSingleProduct) {
                         EmptyView()
                     }
                     
+                    // create gird manually
                     VStack {
                         HStack{
                             WebImage(url: URL(string: self.homeVM.trendList[0].image) )
@@ -199,6 +206,7 @@ struct TrendGrid: View {
                 }
             }
             
+            // grid lines
             Rectangle().stroke(Color( UIColor(red: 108/255, green: 123/255, blue: 138/255, alpha: 0.3)), lineWidth: 1.5)
             
             VStack {
@@ -217,6 +225,7 @@ struct TrendGrid: View {
                 Spacer()
             }
             
+            // corner pins for the grid view
             VStack {
                 HStack{
                     Image("pins")
