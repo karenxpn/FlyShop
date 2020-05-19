@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct ReviewModel:  Identifiable {
-    var id = UUID()
-    
+struct ReviewModel:  Codable {    
     var category: String
     var image: [String]
     var productPrice: Int

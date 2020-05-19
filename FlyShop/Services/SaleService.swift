@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 class SaleService {
     
@@ -29,48 +30,10 @@ class SaleService {
                 
                 for document in snapshot!.documents {
                     
-                    let data = document.data()
-                    
-                    if let products = data[ "products"] as? [[String: Any]] {
-                        for product in products {
-                            if let price = product["productPrice"] as? Int {
-                                if let name = product["productName"] as? String {
-                                    if let description = product["description"] as? String {
-                                        if let date = product["date"] as? String {
-                                            if let category = product["category"] as? String {
-                                                if let sale = product["sale"] as? Int {
-                                                    if let gender = product["gender"] as? String {
-                                                        if let type = product["type"] as? String {
-                                                            if let productId = product["productId"] as? String {
-                                                                
-                                                                if let size = product["productSize"] as? [String] {
-                                                                    var sizeArray = [String]()
-                                                                    for productSize in size {
-                                                                        sizeArray.append(productSize)
-                                                                    }
-                                                                    
-                                                                    if let images = product["image"] as? [String] {
-                                                                        var imageArray = [String]()
-                                                                        for image in images {
-                                                                            imageArray.append(image)
-                                                                        }
-                                                                        
-                                                                        let model = ProductModel(category: category, image: imageArray, productPrice: price, productName: name, productSize: sizeArray, description: description, date: date, sale: sale, gender: gender, type: type, productId: productId)
-                                                                        
-                                                                        productArray.append(model)
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                    if let model = try? document.data(as: ShopModel.self) {
+                        productArray.append(contentsOf: model.products)
                     }
+                    
                 }
                 
                 DispatchQueue.main.async {
