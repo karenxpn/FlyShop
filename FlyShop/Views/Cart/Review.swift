@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct Review: View {
     
-    let product: ReviewModel
+    let product: ReviewViewModel
     @EnvironmentObject var cartVM: CartViewModel
     
     var body: some View {

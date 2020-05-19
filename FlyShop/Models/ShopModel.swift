@@ -7,9 +7,8 @@
 //
 
 import Foundation
-struct ShopModel: Identifiable {
+struct ShopModel: Decodable {
     
-    var id = UUID()
     var shopName: String
     var image: String
     var products: [ProductModel]

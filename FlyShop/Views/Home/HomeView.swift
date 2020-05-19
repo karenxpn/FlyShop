@@ -12,8 +12,6 @@ import SDWebImageSwiftUI
 struct HomeView: View {
     
     @ObservedObject var homeVM = HomeViewModel()
-    @State private var selection: String = ""
-    let coursor = [Image("cursor"), Image("cursor"), Image("cursor"), Image("cursor"), Image("cursor")]
     
     var body: some View {
         

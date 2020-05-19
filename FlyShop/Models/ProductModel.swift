@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct ProductModel: Identifiable {
-    var id = UUID()
-    
+struct ProductModel: Codable {    
     var category: String
     var image: [String]
     var productPrice: Int
