@@ -54,6 +54,8 @@ struct SingleProduct: View {
                         VStack {
                             
                             TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+                                .frame(width: UIScreen.main.bounds.size.width/2 - 40)
+                                .lineLimit(1)
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             

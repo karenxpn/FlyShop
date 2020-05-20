@@ -24,7 +24,8 @@ struct SingleSaleProduct: View {
                     VStack {
                         
                         TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
-
+                            .frame(width: UIScreen.main.bounds.size.width/2 - 40)
+                            .lineLimit(1)
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
@@ -37,12 +38,7 @@ struct SingleSaleProduct: View {
                         TextDesign(text: product.priceWithSale, size: 15, font: "Montserrat-ExtraLight", color: Color.red)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
-
-//                        Text( product.priceWithSale )
-//                            .foregroundColor(Color.red)
-//                            .font(.custom("Montserrat-ExtraLight", size: 15))
-//                            .padding(.trailing)
-//                            .offset(x: UIScreen.main.bounds.size.width/6.5)
+                        
                     }
                     
                     

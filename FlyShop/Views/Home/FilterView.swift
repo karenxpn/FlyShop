@@ -170,7 +170,7 @@ struct FilterView: View {
                 
                 HStack {
                     
-                    Text( String(format: "%.0f", self.filterVM.price) )
+                    Text( self.filterVM.price == 0 ? "Price" : String(format: "%.0f", self.filterVM.price) )
                         .foregroundColor(Color.black)
                         .frame(width: UIScreen.main.bounds.size.width/4)
                     
