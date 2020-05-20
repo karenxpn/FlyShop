@@ -17,6 +17,7 @@ struct SelectedProduct: View {
     @State private var size: String = "Size"
     @State private var activeAlert: ActiveAlert = .error
     @State private var showAlert: Bool = false
+    @State private var expanded: Bool = false
     
     var body: some View {
         
@@ -35,17 +36,20 @@ struct SelectedProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        ImageCarouselView(numberOfImages: self.product.image.count) {
+                        ImageCarouselView(numberOfImages: self.product.image.count, expanded: self.expanded) {
                             ForEach( self.product.image, id: \.self ) { image in
                                 
                                 WebImage(url:URL(string: image) )
                                     .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/2 )
+                                    .aspectRatio(contentMode: self.expanded ? .fit : .fill)
+                                    .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
                                     .cornerRadius(15)
+                                    .onTapGesture {
+                                        self.expanded.toggle()
+                                }
                                 
                             }
-                        }.frame(height: UIScreen.main.bounds.size.height/2, alignment: .center)
+                        }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
                     }.background(Color.white)
                         .cornerRadius(15)
                     

@@ -30,41 +30,41 @@ struct AllShopsView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10)
                         
                         VStack( spacing: 0) {
-                        Text( "Shops List" ).foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
-                            .font(.custom("McLaren-Regular", size: 25))
-                        
-                        if showSearch {
+                            Text( "Shops List" ).foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
+                                .font(.custom("McLaren-Regular", size: 25))
                             
-                            // search field here
-                            // as soon as the keyboard is closed search field should close and the search button appear
-                            TextField("Search", text: self.$search)
-                                .frame(width: UIScreen.main.bounds.size.width * 0.8)
-                                .padding([.leading, .trailing])
-                                .padding([.vertical], 6)
-                                .background(Color.gray)
-                                .foregroundColor(Color.white)
-                                .cornerRadius(10)
-                                .offset(y: 10)
-                            
-                        } else {
-                        
-                            Image("searchicon")
-                                .resizable()
-                                .frame(width: UIScreen.main.bounds.size.width/13, height: UIScreen.main.bounds.size.height/27)
-                                .onTapGesture {
-                                    withAnimation{
-                                        self.showSearch = true
-                                    }
+                            if showSearch {
+                                
+                                // search field here
+                                // as soon as the keyboard is closed search field should close and the search button appear
+                                TextField("Search", text: self.$search)
+                                    .frame(width: UIScreen.main.bounds.size.width * 0.8)
+                                    .padding([.leading, .trailing])
+                                    .padding([.vertical], 6)
+                                    .background(Color.gray)
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(10)
+                                    .offset(y: 10)
+                                
+                            } else {
+                                
+                                Image("searchicon")
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.size.width/13, height: UIScreen.main.bounds.size.height/27)
+                                    .onTapGesture {
+                                        withAnimation{
+                                            self.showSearch = true
+                                        }
+                                }
                             }
-                        }
                         }
                     }
                     
                     if self.allShopVM.showLoading != true {
                         WaterfallGrid( self.allShopVM.allShops
                             .filter{
-                                    self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
-                            }) { shop in
+                                self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
+                        }) { shop in
                             AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
                         }.transition(AnyTransition.slide)
                             .animation(.default)
@@ -85,7 +85,7 @@ struct AllShopsView: View {
             }, label: {
                 TextDesign(text: "Clear", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
             }))
-            .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
+                .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
     }
 }

@@ -21,7 +21,8 @@ struct TrendSingleProduct: View {
     @State private var size: String = "Size"
     @State private var showAlert: Bool = false
     @State private var activeAlert: ActiveAlert = .error
-    @State private var image: String = ""    
+    @State private var image: String = ""
+    @State private var expanded: Bool = false
     
     var body: some View {
         ZStack {
@@ -43,17 +44,22 @@ struct TrendSingleProduct: View {
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
-                            ImageCarouselView(numberOfImages: self.homeVM.foundProduct!.image.count) {
+                            ImageCarouselView(numberOfImages: self.homeVM.foundProduct!.image.count, expanded: self.expanded) {
                                 ForEach( self.homeVM.foundProduct!.image, id: \.self ) { image in
                                     
                                     WebImage(url:URL(string: image) )
                                         .resizable()
-                                        .scaledToFill()
-                                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/2 )
+                                        .aspectRatio(contentMode: self.expanded ? .fit : .fill)
+                                        .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
                                         .cornerRadius(15)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                self.expanded.toggle()
+                                            }
+                                    }
                                     
                                 }
-                            }.frame(height: UIScreen.main.bounds.size.height/2, alignment: .center)
+                            }.frame(height: self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
                         }.background(Color.white)
                             .cornerRadius(15)
                         
@@ -63,7 +69,7 @@ struct TrendSingleProduct: View {
                             
                             TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding(.bottom)
-
+                            
                             
                             TextDesign(text: self.homeVM.foundProduct!.description, size: 21, font: "Montserrat-ExtraLight", color: Color.white)
                                 .multilineTextAlignment(.center)

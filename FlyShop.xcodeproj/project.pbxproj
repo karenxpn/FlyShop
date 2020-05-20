@@ -79,6 +79,7 @@
 		FFFDA074247084A6002EA40D /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA073247084A6002EA40D /* ImageCarousel.swift */; };
 		FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFFDA075247094B1002EA40D /* Montserrat-ExtraLight.ttf */; };
 		FFFDA07824709550002EA40D /* TextDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA07724709550002EA40D /* TextDesign.swift */; };
+		FFFDA07A247422E5002EA40D /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFDA079247422E5002EA40D /* ReviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,7 @@
 		FFFDA073247084A6002EA40D /* ImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
 		FFFDA075247094B1002EA40D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		FFFDA07724709550002EA40D /* TextDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDesign.swift; sourceTree = "<group>"; };
+		FFFDA079247422E5002EA40D /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +337,7 @@
 				FFB02373246AE5E900FC135D /* TrendModel.swift */,
 				FFB0237D246C4D0200FC135D /* CartModel.swift */,
 				FFFDA04D246EB03F002EA40D /* ReviewModel.swift */,
+				FFFDA079247422E5002EA40D /* ReviewViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
+				FFFDA07A247422E5002EA40D /* ReviewViewModel.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
