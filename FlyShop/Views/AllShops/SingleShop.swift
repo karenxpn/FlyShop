@@ -23,14 +23,14 @@ struct SingleShop: View {
             AllShopsBackground()
             
             
-            VStack( spacing: 20 ) {
+            VStack( spacing: 0) {
                 
                 ZStack {
                     Image("singleShopFilter" )
                         .resizable()
                         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
                     
-                    VStack( spacing: 5) {
+                    VStack {
                         HStack {
                             
                             TextDesign(text: shopModel.name, size: 13, font: "Montserrat-ExtraLight", color: Color.white)

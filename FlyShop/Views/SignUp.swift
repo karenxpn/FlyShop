@@ -35,6 +35,7 @@ struct SignUp: View {
                     TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
                         .padding([.top, .bottom], 14)
                         .keyboardType(.numberPad)
+                        .foregroundColor(Color.white)
                         .font( .custom("Montserrat-Light", size: 16)).multilineTextAlignment(.center)
                     
                 }.padding([.leading, .trailing], 12)
@@ -82,6 +83,10 @@ struct SignUp: View {
                 .onAppear {
                     self.keyboardNotification()
             }
+            
+            if self.authVM.showLoading {
+                Loading()
+            }
         }.alert(isPresented: self.$showAlert, content: {
             Alert(title: Text( "Error"), message: Text( "Enter your phone number/ verification code"), dismissButton: .default(Text( "OK")))
         })
@@ -121,6 +126,7 @@ struct NumberInput: View {
         HStack{
             Text( "+374" )
                 .font( .custom("Montserrat-Italic", size: 35))
+                .foregroundColor(Color.white)
             
             Image( "cursor" )
                 .resizable()
@@ -128,8 +134,8 @@ struct NumberInput: View {
             
             TextField("", text: self.$authVM.number)
                 .keyboardType(.numberPad)
+                .foregroundColor(Color.white)
                 .font( .custom("Montserrat-Italic", size: 35))
-                
                 .frame( height: 35)
             
             Image( "signUpNumberAttr" )
