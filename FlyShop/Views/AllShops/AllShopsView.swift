@@ -71,6 +71,8 @@ struct AllShopsView: View {
                             .offset(y: self.showSearch ? 10 : 0)
                     }
                     
+                    Spacer()
+                    
                 }.gesture(DragGesture().onChanged{_ in
                     self.showSearch = false
                     UIApplication.shared.endEditing()

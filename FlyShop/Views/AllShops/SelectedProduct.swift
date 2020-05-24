@@ -45,8 +45,9 @@ struct SelectedProduct: View {
                                     .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
                                     .cornerRadius(15)
                                     .onTapGesture {
-                                        self.expanded.toggle()
-                                }
+                                        withAnimation {
+                                            self.expanded.toggle()
+                                        }                                }
                                 
                             }
                         }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)

@@ -97,7 +97,7 @@ struct CheckAvailability: View {
                         )
                     }
                     Spacer()
-                }.offset(y:20)
+                }.offset(y: UIScreen.main.bounds.size.height/55)
             }
         }
     }
