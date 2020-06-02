@@ -1,3 +1,17 @@
 [
-
+  {
+    "libraryIdentifier" : "7eb017d1437e7015345283194be8d3dc",
+    "format" : "model",
+    "displayName" : "toy_robot_vintage.usdz"
+  },
+  {
+    "libraryIdentifier" : "2a18f7b5bcc7e2db4fe77197065b86b9",
+    "format" : "model",
+    "displayName" : "shoes.usdz"
+  },
+  {
+    "libraryIdentifier" : "4b9470358b665c2b607b83b24812d2cc",
+    "format" : "model",
+    "displayName" : "Puma_Basket_Shoe_Sneakers_3D_Scan.usdz"
+  }
 ]

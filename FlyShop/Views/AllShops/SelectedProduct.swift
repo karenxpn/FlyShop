@@ -16,6 +16,7 @@ struct SelectedProduct: View {
     @State private var showSheet: Bool = false
     @State private var size: String = "Size"
     @State private var activeAlert: ActiveAlert = .error
+    @State private var activeSheet: ActiveSheet = .brand
     @State private var showAlert: Bool = false
     @State private var expanded: Bool = false
     
@@ -47,7 +48,9 @@ struct SelectedProduct: View {
                                     .onTapGesture {
                                         withAnimation {
                                             self.expanded.toggle()
-                                        }                                }
+                                        }
+                                        
+                                }
                                 
                             }
                         }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
@@ -56,6 +59,17 @@ struct SelectedProduct: View {
                     
                     
                     VStack {
+                        
+                        TextDesign(text: "View AR", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                            .onTapGesture {
+                                self.activeSheet = .arView
+                                self.showSheet = true
+                        }
+                        
                         
                         TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             .padding(.bottom)
@@ -84,6 +98,7 @@ struct SelectedProduct: View {
                             .multilineTextAlignment(.leading)
                             .padding([.top, .bottom], 6)
                             .onTapGesture {
+                                self.activeSheet = .size
                                 self.showSheet.toggle()
                         }
                         
@@ -125,14 +140,12 @@ struct SelectedProduct: View {
                 }
             })
                 .sheet(isPresented: self.$showSheet) {
-                    SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
+                    if self.activeSheet == .arView {
+                        ARContentVIew()
+                    } else if self.activeSheet == .size {
+                        SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
+                    }
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }
-
-//struct SelectedProduct_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SelectedProduct()
-//    }
-//}

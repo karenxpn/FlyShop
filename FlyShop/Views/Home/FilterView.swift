@@ -9,7 +9,7 @@
 import SwiftUI
 
 enum ActiveSheet {
-    case brand, size, accessories
+    case brand, size, accessories, arView
 }
 
 struct FilterView: View {

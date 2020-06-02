@@ -15,7 +15,6 @@ struct CartView: View {
     
     @EnvironmentObject var cartVM: CartViewModel
     @State private var showAlert: Bool = false
-    @State private var showAR: Bool = false
     
     var body: some View {
         NavigationView {
@@ -32,15 +31,12 @@ struct CartView: View {
                             .padding(.top, 12)
                     }
                     
-                    Buy(showAlert: self.$showAlert, showAR: self.$showAR)
+                    Buy(showAlert: self.$showAlert)
                 }
                 
                 
                 
             }
-            .sheet(isPresented: self.$showAR, content: {
-                ARContentVIew()
-            })
             .alert(isPresented: self.$showAlert, content: {
                 Alert(title: Text( "Proceed with the payment" ), message: Text( "Are you sure to buy these items" ), dismissButton: .default(Text( "OK" )))
             })
@@ -60,7 +56,6 @@ struct CartView_Previews: PreviewProvider {
 struct Buy: View {
     @EnvironmentObject var cartVM: CartViewModel
     @Binding var showAlert: Bool
-    @Binding var showAR: Bool
     var body: some View {
         ZStack {
             
@@ -83,8 +78,7 @@ struct Buy: View {
                     Spacer()
                     Button(action: {
                         
-                        self.showAR.toggle()
-                        //self.showAlert.toggle()
+                        self.showAlert.toggle()
                         // Do payment here
                         // Do the check here
                         // Post all items to firebase under userId and maka calls)))
