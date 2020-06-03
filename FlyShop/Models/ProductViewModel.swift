@@ -64,4 +64,8 @@ struct ProductViewModel: Identifiable {
     var gender: String {
         self.productModel.gender
     }
+    
+    var ar: Bool {
+        self.productModel.ar
+    }
 }
