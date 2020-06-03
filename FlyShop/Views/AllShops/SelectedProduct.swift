@@ -60,7 +60,7 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        if product.category == "Կոշիկ" {
+                        if product.ar {
                             TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding(.vertical, 5)
                                 .padding(.horizontal)

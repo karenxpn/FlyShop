@@ -20,4 +20,5 @@ struct ProductModel: Codable {
     var gender: String
     var type: String
     var productId: String
+    var ar: Bool
 }
