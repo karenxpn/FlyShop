@@ -18,7 +18,7 @@ struct TrendSingleProduct: View {
     @EnvironmentObject var cartVM: CartViewModel
     @EnvironmentObject var homeVM: HomeViewModel
     @State private var showSheet: Bool = false
-    @State private var size: String = "Size"
+    @State private var size: String = "Չափս"
     @State private var showAlert: Bool = false
     @State private var activeAlert: ActiveAlert = .error
     @State private var image: String = ""
@@ -67,7 +67,7 @@ struct TrendSingleProduct: View {
                         
                         VStack {
                             
-                            TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: "Նկարագրություն", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding(.bottom)
                             
                             
@@ -78,7 +78,7 @@ struct TrendSingleProduct: View {
                             
                             
                             HStack {
-                                TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+                                TextDesign(text: "Գինը", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 
                                 TextDesign(text: self.homeVM.foundProduct!.sale == 0 ? self.homeVM.foundProduct!.price : self.homeVM.foundProduct!.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.homeVM.foundProduct!.sale == 0 ? Color.white : Color.red)
                             }
@@ -95,7 +95,7 @@ struct TrendSingleProduct: View {
                             }
                             
                             Button(action: {
-                                if self.size == "Size" {
+                                if self.size == "Չափս" {
                                     self.activeAlert = .error
                                     self.showAlert.toggle()
                                 } else {
@@ -105,7 +105,7 @@ struct TrendSingleProduct: View {
                                     self.showAlert.toggle()
                                 }
                             }) {
-                                Text("To Cart")
+                                Text("Ավելացնել Զամբյուղ")
                                     .foregroundColor(Color.white)
                                     .font(.custom("McLaren-Regular", size: 15))
                                     .padding(.horizontal, 12)
@@ -124,9 +124,9 @@ struct TrendSingleProduct: View {
                 }
             }.alert(isPresented: self.$showAlert, content: {
                 if self.activeAlert == .error {
-                    return Alert(title: Text( "Error"), message: Text( "Please Select Size"), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Սխալ"), message: Text( "Խնդրում ենք ընտրել չափը"), dismissButton: .default(Text( "Լավ")))
                 } else {
-                    return Alert(title: Text( "Congratulations" ), message: Text( "This product has been added to your cart" ), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Շնորհավոր" ), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:" ), dismissButton: .default(Text( "Լավ")))
                 }
             })
                 .sheet(isPresented: self.$showSheet) {

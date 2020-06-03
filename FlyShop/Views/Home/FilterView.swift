@@ -29,7 +29,7 @@ struct FilterView: View {
                     VStack {
                         HStack {
                             
-                            TextDesign(text: "NEWEST", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+                            TextDesign(text: "Նոր", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             Spacer()
                             
@@ -47,7 +47,7 @@ struct FilterView: View {
                         Divider()
                         
                         HStack {
-                            TextDesign(text: "SALES", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+                            TextDesign(text: "Զեղչված", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             
                             Spacer()
@@ -75,7 +75,7 @@ struct FilterView: View {
                         // Gender Filter
                         HStack {
                             
-                            TextDesign(text: "GENDER", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+                            TextDesign(text: "Սեռը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                             
                             Spacer()
                             
@@ -129,9 +129,9 @@ struct FilterView: View {
                         Divider()
                         
                         // Size filter
-                        if self.filterVM.category != "Accessories" {
+                        if self.filterVM.category != "Աքսեսուարներ" {
                             HStack {
-                                TextDesign(text: "SIZE", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+                                TextDesign(text: "Չափը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
                                 
                                 
                                 
@@ -139,7 +139,7 @@ struct FilterView: View {
                                 
                                 HStack {
                                     
-                                    TextDesign(text: self.filterVM.size.isEmpty ? "Your size" : self.getSizes(), size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+                                    TextDesign(text: self.filterVM.size.isEmpty ? "Ձեր չափը" : self.getSizes(), size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                                         .padding([.top, .bottom], 6)
                                         .padding([.trailing, .leading], 12)
                                         .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
@@ -151,7 +151,7 @@ struct FilterView: View {
                                         .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                                         .cornerRadius(30)
                                         .onTapGesture {
-                                            if ( self.filterVM.maleGender || self.filterVM.femaleGender ) && ( self.filterVM.category == "Clothes" || self.filterVM.category == "Shoes" ) && self.filterVM.type != "" {
+                                            if ( self.filterVM.maleGender || self.filterVM.femaleGender ) && ( self.filterVM.category == "Հագուստ" || self.filterVM.category == "Կոշիկ" ) && self.filterVM.type != "" {
                                                 self.activeSheet = .size
                                                 self.showSheet = true
                                             }
@@ -170,7 +170,7 @@ struct FilterView: View {
                 
                 HStack {
                     
-                    Text( self.filterVM.price == 0 ? "Price" : String(format: "%.0f", self.filterVM.price) )
+                    Text( self.filterVM.price == 0 ? "Գինը" : String(format: "%.0f", self.filterVM.price) )
                         .foregroundColor(Color.black)
                         .frame(width: UIScreen.main.bounds.size.width/4)
                     
@@ -182,7 +182,28 @@ struct FilterView: View {
                     EmptyView()
                 }
                 
-                TextDesign(text: "SHOW RESULTS", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
+                HStack {
+                    
+                    Spacer()
+                
+                    TextDesign(text: "AR\nԱպրանքներ", size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 5)
+                        .background(Color.green)
+                        .cornerRadius(30)
+                        .onTapGesture {
+                            // Show AR products in result screen
+                            
+                    }
+                }.padding(.trailing, 15)
+                
+                Text( "").frame( height: 30)
+
+                
+                Spacer()
+                
+                TextDesign(text: "Ցուցադրել Արդյունքները", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
                     .frame(width: UIScreen.main.bounds.size.width - 30, height: UIScreen.main.bounds.size.height/16)
                     .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(10)
@@ -203,11 +224,11 @@ struct FilterView: View {
         .sheet(isPresented: self.$showSheet, content: {
             if self.activeSheet == .size {
                 if self.filterVM.maleGender {
-                    SizeChart(showSheet: self.$showSheet, gender: "Male", category: self.filterVM.category, type: self.filterVM.type)
+                    SizeChart(showSheet: self.$showSheet, gender: "Տղամարդու", category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
                     
                 } else {
-                    SizeChart(showSheet: self.$showSheet,gender: "Female", category: self.filterVM.category, type: self.filterVM.type)
+                    SizeChart(showSheet: self.$showSheet,gender: "Իգական", category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
                 }
             } else if self.activeSheet == .brand {
@@ -218,7 +239,7 @@ struct FilterView: View {
             }
         })
             .alert(isPresented: self.$showAler, content: {
-                Alert(title: Text( "Error"), message: Text( "You haven't selected gender/category/type"), dismissButton: .default(Text( "OK" )))
+                Alert(title: Text( "Սխալ"), message: Text( "Դուք չեք ընտրել սեռը/կատեգորիա/տեսակը"), dismissButton: .default(Text( "Լավ" )))
             })
             .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
@@ -234,7 +255,7 @@ struct FilterView: View {
                 self.filterVM.type = ""
             }, label: {
                 
-                TextDesign(text: "Clear", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                TextDesign(text: "Մաքրել", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
             }))
         
     }
@@ -264,7 +285,7 @@ struct SortSectionHeader : View {
         
         HStack {
             
-            TextDesign(text: "SORT BY", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
+            TextDesign(text: "Դասավորել ըստ", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
             
             Spacer()
         }
@@ -277,7 +298,7 @@ struct FilterBySectionHeader: View {
     var body: some View {
         HStack {
             
-            TextDesign(text: "FILTER BY", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
+            TextDesign(text: "Զտել ըստ", size: 11, font: "Montserrat-ExtraLight", color: Color.gray)
             
             Spacer()
         }
@@ -292,7 +313,7 @@ struct CategoryFilter: View {
         // CategoryFilter
         HStack {
             
-            TextDesign(text: "CATEGORY", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+            TextDesign(text: "Կատեգորիա", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
             
             
             Spacer()
@@ -302,6 +323,7 @@ struct CategoryFilter: View {
                 TextDesign(text: category, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.top, .bottom], 8)
                     .padding([.horizontal], 10)
+                .lineLimit(1)
                     .background( self.filterVM.category == category ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
                     .cornerRadius(20)
                     .onTapGesture {
@@ -325,13 +347,13 @@ struct BrandFilter: View {
         // Brand Filter
         HStack {
             
-            TextDesign(text: "BRAND", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
+            TextDesign(text: "Ապրանքանիշը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
             
             Spacer()
             
             HStack {
                 
-                TextDesign(text:  self.filterVM.brand == "" ? "Select Brand" : self.filterVM.brand, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+                TextDesign(text:  self.filterVM.brand == "" ? "Ընտրեք ապրանքանիշը" : self.filterVM.brand, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                     .padding([.top, .bottom], 6)
                     .padding([.trailing, .leading], 12)
                     .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
@@ -363,14 +385,14 @@ struct TypeFilter: View {
         
         HStack {
             
-            TextDesign(text: "TYPE", size: 13, font: "Montserrat-ExtraLight", color: Color.black)
+            TextDesign(text: "Տիպ", size: 13, font: "Montserrat-ExtraLight", color: Color.black)
             
             
             Spacer()
             
             
             ForEach( FilterTypeModel().categoryType(category: self.filterVM.category), id: \.self) { type in
-                if self.filterVM.category != "Accessories" {
+                if self.filterVM.category != "Աքսեսուարներ" {
                     
                     TextDesign(text: type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                         .padding([.top, .bottom], 8)
@@ -383,10 +405,10 @@ struct TypeFilter: View {
                 }
             }
             
-            if self.filterVM.category == "Accessories" {
+            if self.filterVM.category == "Աքսեսուարներ" {
                 HStack {
                     
-                    TextDesign(text: self.filterVM.type == "" ? "Select Type" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+                    TextDesign(text: self.filterVM.type == "" ? "Ընտրեք տեսակը" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
                         .padding([.top, .bottom], 6)
                         .padding([.trailing, .leading], 12)
                         .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))

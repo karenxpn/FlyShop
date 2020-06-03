@@ -9,7 +9,7 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var category: String = "Clothes"
+    @Published var category: String = "Հագուստ"
     @Published var trendList = [TrendViewModel]()
     @Published var productId = ""
     @Published var foundProduct: ProductViewModel? = nil
@@ -34,22 +34,4 @@ class HomeViewModel: ObservableObject {
         }
     }
     
-}
-
-struct TrendViewModel: Identifiable {
-    
-    var id = UUID()
-    var trendModel: TrendModel
-    
-    init(model: TrendModel) {
-        self.trendModel = model
-    }
-    
-    var image: String {
-        self.trendModel.image
-    }
-    
-    var productId: String {
-        self.trendModel.productId
-    }
 }

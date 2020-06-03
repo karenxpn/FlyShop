@@ -37,49 +37,50 @@ struct SingleShop: View {
                             
                             Spacer()
                             
-                            TextDesign(text: "Clothes", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: "Հագուստ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Clothes" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Հագուստ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    if self.allShopsFilterVM.category == "Clothes" {
+                                    if self.allShopsFilterVM.category == "Հագուստ" {
                                         self.allShopsFilterVM.category = ""
                                     } else {
-                                        self.allShopsFilterVM.category = "Clothes"
+                                        self.allShopsFilterVM.category = "Հագուստ"
                                     }
                             }
                             
-                            TextDesign(text: "Shoes", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: "Կոշիկ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Shoes" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Կոշիկ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    if self.allShopsFilterVM.category == "Shoes" {
+                                    if self.allShopsFilterVM.category == "Կոշիկ" {
                                         self.allShopsFilterVM.category = ""
                                     } else {
-                                        self.allShopsFilterVM.category = "Shoes"
+                                        self.allShopsFilterVM.category = "Կոշիկ"
                                     }
                             }
                             
-                            TextDesign(text: "Accessories", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: "Աքսեսուարներ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 8)
                                 .padding([.horizontal], 12)
-                                .background( self.allShopsFilterVM.category == "Accessories" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                .background( self.allShopsFilterVM.category == "Աքսեսուարներ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                            .lineLimit(1)
                                 .cornerRadius(20)
                                 .onTapGesture {
-                                    if self.allShopsFilterVM.category == "Accessories" {
+                                    if self.allShopsFilterVM.category == "Աքսեսուարներ" {
                                         self.allShopsFilterVM.category = ""
                                     } else {
-                                        self.allShopsFilterVM.category = "Accessories"
+                                        self.allShopsFilterVM.category = "Աքսեսուարներ"
                                     }
                             }
                         }
                         
                         HStack {
                             
-                            TextDesign(text: self.allShopsFilterVM.price == 0 ? "Price" : String(format: "%.0f", self.allShopsFilterVM.price), size: 13, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: self.allShopsFilterVM.price == 0 ? "Գինը" : String(format: "%.0f", self.allShopsFilterVM.price), size: 13, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 6)
                                 .padding([.trailing, .leading], 12)
                                 .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))

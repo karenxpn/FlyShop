@@ -32,7 +32,7 @@ struct SignUp: View {
                 
                 VStack {
                     
-                    TextField( "Confirmation Code", text: self.$authVM.confirmationCode)
+                    TextField( "Հաստատման կոդ", text: self.$authVM.confirmationCode)
                         .padding([.top, .bottom], 14)
                         .keyboardType(.numberPad)
                         .foregroundColor(Color.white)
@@ -46,7 +46,7 @@ struct SignUp: View {
                     .cornerRadius(8)
                 
                 VStack {
-                    Text( "Sign Up")
+                    Text( "Գրանցվել")
                         .foregroundColor(Color.white)
                         .font( .custom("Montserrat-Light", size: 20))
                     
@@ -66,12 +66,12 @@ struct SignUp: View {
                 }
                 
                 
-                Text( "YOUR CHOICE" )
+                Text( "Ձեր ընտրությունը" )
                     .foregroundColor(Color.white)
                     .font( .custom("Montserrat-Light", size: 14))
                     .padding()
                 
-                Text( "OUR CARE" )
+                Text( "Մեր հոգսն է" )
                     .foregroundColor(Color.white)
                     .font( .custom("Montserrat-Light", size: 20))
                     .padding(6)

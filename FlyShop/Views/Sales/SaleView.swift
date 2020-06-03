@@ -20,7 +20,7 @@ struct SaleView: View {
                 AllShopsBackground()
                 
                 VStack {
-                    TopChat(message: "It looks like we have SALES\nHurry up to get something!")
+                    TopChat(message: "Կարծես թե զեղչեր ունենք:\nԲաց մի՛ թող այս հնարավորությունը:")
                     
                     WaterfallGrid(self.saleVM.productsUnderSale) { product in
                         SingleSaleProduct(product: product)

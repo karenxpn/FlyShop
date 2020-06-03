@@ -30,7 +30,7 @@ struct AllShopsView: View {
                             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/10)
                         
                         VStack( spacing: 0) {
-                            Text( "Shops List" ).foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
+                            Text( "Խանութների Ցանկ" ).foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                                 .font(.custom("McLaren-Regular", size: 25))
                             
                             if showSearch {
@@ -85,7 +85,7 @@ struct AllShopsView: View {
             .navigationBarItems(trailing: Button(action: {
                 self.search = ""
             }, label: {
-                TextDesign(text: "Clear", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                TextDesign(text: "Մաքրել", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
             }))
                 .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
