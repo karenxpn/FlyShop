@@ -20,7 +20,7 @@ struct NewView: View {
                 AllShopsBackground()
                 
                 VStack{
-                    TopChat(message: "Hi, we have something new for you!")
+                    TopChat(message: "Բարեւ Ձեզ!\nՄենք ձեզ համար նոր տեսականի ունենք:")
                     
                     
                     WaterfallGrid(self.newVM.newItemList) { product in
@@ -91,7 +91,7 @@ struct BottomChat: View {
                         .frame(width: UIScreen.main.bounds.size.width-200, height: UIScreen.main.bounds.size.height/13)
                         .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
                     
-                    TextDesign(text: "Sounds Good!\nI have to check now", size: 13, font: "Montserrat-ExtraLight", color: Color.white)
+                    TextDesign(text: "Բարի! Հիմա կնայեմ:", size: 13, font: "Montserrat-ExtraLight", color: Color.white)
 
                     
                 }.padding(.leading, 12)

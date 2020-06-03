@@ -43,7 +43,7 @@ struct AccessoriesSheet: View {
                 self.showSheet.toggle()
             }, label: {
                 
-                TextDesign(text: "Save", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
+                TextDesign(text: "Պահպանել", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
             }))
         }
     }

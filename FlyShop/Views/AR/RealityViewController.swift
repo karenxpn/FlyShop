@@ -15,7 +15,7 @@ class RealityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add a background color a placerholder
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
         //Comment out below this when previewing!
         // Create a new ARView
         let arView = ARView(frame: UIScreen.main.bounds)
@@ -25,5 +25,13 @@ class RealityViewController: UIViewController {
         let boxAnchor = try! Experience.loadBox()
         // Add the box anchor to the scene
         arView.scene.anchors.append(boxAnchor)
+        
+        let textView = UITextView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40))
+
+        textView.text = "Մոտեցրեք ապա հեռվացրեք մակերեսի վրա"
+        textView.textAlignment = .center
+        textView.textColor = .black
+        
+        view.addSubview(textView)
     }
 }

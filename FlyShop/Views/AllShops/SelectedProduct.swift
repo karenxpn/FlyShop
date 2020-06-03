@@ -14,7 +14,7 @@ struct SelectedProduct: View {
     @EnvironmentObject var cartVM: CartViewModel
     let product: ProductViewModel
     @State private var showSheet: Bool = false
-    @State private var size: String = "Size"
+    @State private var size: String = "Չափս"
     @State private var activeAlert: ActiveAlert = .error
     @State private var activeSheet: ActiveSheet = .brand
     @State private var showAlert: Bool = false
@@ -60,18 +60,19 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: "View AR", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-                            .padding(.vertical, 5)
-                            .padding(.horizontal)
-                            .background(Color.green)
-                            .cornerRadius(20)
-                            .onTapGesture {
-                                self.activeSheet = .arView
-                                self.showSheet = true
+                        if product.category == "Կոշիկ" {
+                            TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                                .padding(.vertical, 5)
+                                .padding(.horizontal)
+                                .background(Color.green)
+                                .cornerRadius(20)
+                                .onTapGesture {
+                                    self.activeSheet = .arView
+                                    self.showSheet = true
+                            }
                         }
-                        
-                        
-                        TextDesign(text: "Description", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+
+                        TextDesign(text: "Նկարագրություն", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             .padding(.bottom)
                         
                         
@@ -82,7 +83,7 @@ struct SelectedProduct: View {
                         
                         
                         HStack {
-                            TextDesign(text: "Price", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
+                            TextDesign(text: "Գինը", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 .padding([.top, .bottom], 6)
                             
                             
@@ -103,7 +104,7 @@ struct SelectedProduct: View {
                         }
                         
                         Button(action: {
-                            if self.size == "Size" {
+                            if self.size == "Չափս" {
                                 self.activeAlert = .error
                                 self.showAlert.toggle()
                             } else {
@@ -113,7 +114,7 @@ struct SelectedProduct: View {
                                 self.showAlert.toggle()
                             }
                         }) {
-                            Text("To Cart")
+                            Text("Ավելացնել Զամբյուղ")
                                 .foregroundColor(Color.white)
                                 .font(.custom("McLaren-Regular", size: 15))
                                 .padding(.horizontal, 12)
@@ -134,9 +135,9 @@ struct SelectedProduct: View {
                 
             }.alert(isPresented: self.$showAlert, content: {
                 if self.activeAlert == .error {
-                    return Alert(title: Text( "Error"), message: Text( "Please Select Size"), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Սխալ"), message: Text( "Խնդրում ենք ընտրել չափը"), dismissButton: .default(Text( "Լավ")))
                 } else {
-                    return Alert(title: Text( "Congratulations"), message: Text( "This product has been added to your cart"), dismissButton: .default(Text( "OK")))
+                    return Alert(title: Text( "Շնորհավոր" ), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:" ), dismissButton: .default(Text( "Լավ")))
                 }
             })
                 .sheet(isPresented: self.$showSheet) {

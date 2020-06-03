@@ -40,7 +40,7 @@ struct SizeChart: View {
                 Spacer()
             }
         .navigationBarHidden(false)
-            .navigationBarTitle(Text("Choose yor size"), displayMode: .inline)
+            .navigationBarTitle(Text("Ընտրեք ձեր չափը"), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
                 
                 self.filterVM.size.removeAll(keepingCapacity: false)
@@ -54,7 +54,7 @@ struct SizeChart: View {
                 self.showSheet.toggle()
             }, label: {
                 
-                TextDesign(text: "Save", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
+                TextDesign(text: "Պահպանել", size: 15, font: "Montserrat-ExtraLight", color: Color.white)
 
         }))
         }

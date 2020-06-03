@@ -83,7 +83,7 @@ struct Buy: View {
                         // Do the check here
                         // Post all items to firebase under userId and maka calls)))
                     }) {
-                        Text( "Buy")
+                        Text( "Գնել")
                             .foregroundColor(Color.white)
                             .font(.custom("McLaren-Regular", size: 15))
                             .padding(.horizontal, 15)

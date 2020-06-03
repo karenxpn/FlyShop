@@ -12,6 +12,7 @@ import SDWebImageSwiftUI
 struct HomeView: View {
     
     @ObservedObject var homeVM = HomeViewModel()
+    @State var infoSheet: Bool = false
     
     var body: some View {
         
@@ -38,6 +39,16 @@ struct HomeView: View {
                     Spacer()
                 }
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
+                .navigationBarItems(trailing: Button(action: {
+                    self.infoSheet.toggle()
+                }, label: {
+                    Image( systemName: "info.circle" )
+                        .font(Font.system(.title))
+                        .foregroundColor(Color.white)
+                }))
+                .sheet(isPresented: self.$infoSheet) {
+                    InfoSheet()
+            }
         }
         
         
@@ -53,7 +64,7 @@ struct HomeView_Previews: PreviewProvider {
 struct CategorySelector: View {
     
     let categoryImages = ["clothes", "shoes", "accessories"]
-    let categoryNames = ["Clothes", "Shoes", "Accessories"]
+    let categoryNames = ["Հագուստ", "Կոշիկ", "Աքսեսուարներ"]
     @EnvironmentObject var homeVM: HomeViewModel
     
     var body: some View {

@@ -10,12 +10,12 @@ import Foundation
 
 struct FilterTypeModel {
     
-    let filterCategories = ["Clothes", "Shoes", "Accessories"]
+    let filterCategories = ["Հագուստ", "Կոշիկ", "Աքսեսուարներ"]
     
     let typeMap = [
-        "Clothes" : ["Top", "Bottom", "Underwear"],
-        "Shoes" : ["Autumn-Winter", "Spring-Summer"],
-        "Accessories" : ["Watches","Sunglasses","Bags","Hats","Belts","Jewelery"]
+        "Հագուստ" : ["Top", "Bottom", "Ներքնազգեստ"],
+        "Կոշիկ" : ["Աշուն-Ձմեռ", "Գարուն-Ամառ"],
+        "Աքսեսուարներ" : ["Ժամացույցներ","Արևային ակնոց","Պայուսակներ","Գլխարկներ","Գոտիներ","Զարդեր"]
     ]
 }
 
