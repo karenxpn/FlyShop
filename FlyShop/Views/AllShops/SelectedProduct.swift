@@ -67,6 +67,7 @@ struct SelectedProduct: View {
                                 .background(Color.green)
                                 .cornerRadius(20)
                                 .onTapGesture {
+                                    UserDefaults.standard.set(self.product.name, forKey: "AR")
                                     self.activeSheet = .arView
                                     self.showSheet = true
                             }

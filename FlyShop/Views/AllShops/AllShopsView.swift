@@ -22,7 +22,7 @@ struct AllShopsView: View {
                 AllShopsBackground()
                 
                 
-                VStack( spacing: 6) {
+                VStack{
                     
                     ZStack {
                         Image("searchRectangle")
@@ -60,6 +60,8 @@ struct AllShopsView: View {
                         }
                     }
                     
+                    Spacer()
+                    
                     if self.allShopVM.showLoading != true {
                         WaterfallGrid( self.allShopVM.allShops
                             .filter{
@@ -70,9 +72,7 @@ struct AllShopsView: View {
                             .animation(.default)
                             .offset(y: self.showSearch ? 10 : 0)
                     }
-                    
-                    Spacer()
-                    
+                                        
                 }.gesture(DragGesture().onChanged{_ in
                     self.showSearch = false
                     UIApplication.shared.endEditing()

@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */; };
-		FF0D7EDD24855F5B00EE96B0 /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EDC24855F5B00EE96B0 /* RealityViewController.swift */; };
-		FF0D7EDF24855F8200EE96B0 /* RealityIntegratedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EDE24855F8200EE96B0 /* RealityIntegratedViewController.swift */; };
 		FF0D7EE12485602B00EE96B0 /* ARContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */; };
-		FF0D7EE32485604E00EE96B0 /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE22485604E00EE96B0 /* RealityView.swift */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
 		FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805924616F23000E5D88 /* ContentView.swift */; };
@@ -51,13 +48,16 @@
 		FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FA24643B71000E5D88 /* NewViewModel.swift */; };
 		FF1C80FD24644020000E5D88 /* NewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FC24644020000E5D88 /* NewService.swift */; };
 		FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DE9D72486EF8800178CA9 /* SVGImage.swift */; };
-		FF57BBAF2485615100A364B1 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = FF57BBAE2485615100A364B1 /* Experience.rcproject */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
 		FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */; };
 		FF9209F624884850003D2E9C /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F524884850003D2E9C /* AboutUs.swift */; };
 		FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F724884AC2003D2E9C /* Shipping.swift */; };
+		FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A1F24886EF8003D2E9C /* RealityViewController.swift */; };
+		FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */; };
+		FF920A2624887270003D2E9C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2524887270003D2E9C /* Experience.rcproject */; };
+		FF920A2824887291003D2E9C /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2724887291003D2E9C /* RealityView.swift */; };
 		FFB023412465B50900FC135D /* SaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023402465B50900FC135D /* SaleView.swift */; };
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
@@ -98,10 +98,7 @@
 		06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
 		72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
 		ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF0D7EDC24855F5B00EE96B0 /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
-		FF0D7EDE24855F8200EE96B0 /* RealityIntegratedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityIntegratedViewController.swift; sourceTree = "<group>"; };
 		FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentVIew.swift; sourceTree = "<group>"; };
-		FF0D7EE22485604E00EE96B0 /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C805724616F23000E5D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,13 +141,16 @@
 		FF1C80FA24643B71000E5D88 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
 		FF1C80FC24644020000E5D88 /* NewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService.swift; sourceTree = "<group>"; };
 		FF2DE9D72486EF8800178CA9 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
-		FF57BBAE2485615100A364B1 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		FF9209EC24882573003D2E9C /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		FF9209F024883E8B003D2E9C /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnPolicy.swift; sourceTree = "<group>"; };
 		FF9209F524884850003D2E9C /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
 		FF9209F724884AC2003D2E9C /* Shipping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
+		FF920A1F24886EF8003D2E9C /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
+		FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityIntegratedViewController.swift; sourceTree = "<group>"; };
+		FF920A2524887270003D2E9C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		FF920A2724887291003D2E9C /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
 		FFB023402465B50900FC135D /* SaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleView.swift; sourceTree = "<group>"; };
 		FFB023422465B67300FC135D /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
 		FFB023442465B74B00FC135D /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
@@ -219,11 +219,11 @@
 		FF0D7ED7248559DA00EE96B0 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				FF57BBAE2485615100A364B1 /* Experience.rcproject */,
-				FF0D7EDC24855F5B00EE96B0 /* RealityViewController.swift */,
-				FF0D7EDE24855F8200EE96B0 /* RealityIntegratedViewController.swift */,
+				FF920A2524887270003D2E9C /* Experience.rcproject */,
 				FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */,
-				FF0D7EE22485604E00EE96B0 /* RealityView.swift */,
+				FF920A1F24886EF8003D2E9C /* RealityViewController.swift */,
+				FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */,
+				FF920A2724887291003D2E9C /* RealityView.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -600,7 +600,7 @@
 				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
 				FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */,
 				FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */,
-				FF57BBAF2485615100A364B1 /* Experience.rcproject in Sources */,
+				FF920A2824887291003D2E9C /* RealityView.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
@@ -615,7 +615,6 @@
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
 				FFB023592468364300FC135D /* SelectedProduct.swift in Sources */,
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
-				FF0D7EE32485604E00EE96B0 /* RealityView.swift in Sources */,
 				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
 				FFFDA050246F396B002EA40D /* Review.swift in Sources */,
 				FFFDA074247084A6002EA40D /* ImageCarousel.swift in Sources */,
@@ -627,7 +626,6 @@
 				FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */,
 				FFFDA04C246EA7BC002EA40D /* CartService.swift in Sources */,
 				FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */,
-				FF0D7EDD24855F5B00EE96B0 /* RealityViewController.swift in Sources */,
 				FFB023432465B67300FC135D /* SaleService.swift in Sources */,
 				FF1C80952461FF95000E5D88 /* TabItemModel.swift in Sources */,
 				FF1C80902461EDA0000E5D88 /* ViewRouter.swift in Sources */,
@@ -636,7 +634,6 @@
 				FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
 				FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */,
-				FF0D7EDF24855F8200EE96B0 /* RealityIntegratedViewController.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
 				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,
 				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
@@ -648,13 +645,16 @@
 				FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
+				FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */,
 				FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */,
 				FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */,
 				FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
 				FFFDA07A247422E5002EA40D /* ReviewViewModel.swift in Sources */,
+				FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
+				FF920A2624887270003D2E9C /* Experience.rcproject in Sources */,
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */,
