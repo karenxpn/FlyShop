@@ -58,6 +58,28 @@
 		FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */; };
 		FF920A2624887270003D2E9C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2524887270003D2E9C /* Experience.rcproject */; };
 		FF920A2824887291003D2E9C /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2724887291003D2E9C /* RealityView.swift */; };
+		FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */; };
+		FF920A2D24897FE8003D2E9C /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */; };
+		FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */; };
+		FF920A3124898131003D2E9C /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3024898131003D2E9C /* PaymentDetailsResponse.swift */; };
+		FF920A3324898309003D2E9C /* ConfirmPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3224898309003D2E9C /* ConfirmPaymentRequest.swift */; };
+		FF920A352489834E003D2E9C /* ConfirmPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A342489834E003D2E9C /* ConfirmPaymentResponse.swift */; };
+		FF920A3724898391003D2E9C /* CancelPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3624898391003D2E9C /* CancelPaymentRequest.swift */; };
+		FF920A39248983BF003D2E9C /* CancelPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A38248983BF003D2E9C /* CancelPaymentResponse.swift */; };
+		FF920A3B248983EE003D2E9C /* RefundPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3A248983EE003D2E9C /* RefundPaymentRequest.swift */; };
+		FF920A3D24898434003D2E9C /* RefundPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3C24898434003D2E9C /* RefundPaymentResponse.swift */; };
+		FF920A3F2489848F003D2E9C /* TransactionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A3E2489848F003D2E9C /* TransactionClient.swift */; };
+		FF920A41248984DA003D2E9C /* TransactionClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A40248984DA003D2E9C /* TransactionClientResponse.swift */; };
+		FF920A432489858C003D2E9C /* ProblemTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A422489858C003D2E9C /* ProblemTransactions.swift */; };
+		FF920A45248985DC003D2E9C /* MakeBindingPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A44248985DC003D2E9C /* MakeBindingPaymentRequest.swift */; };
+		FF920A472489865E003D2E9C /* MakeBindingPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A462489865E003D2E9C /* MakeBindingPaymentResponse.swift */; };
+		FF920A4924898746003D2E9C /* GetBindingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A4824898746003D2E9C /* GetBindingRequest.swift */; };
+		FF920A4B24898775003D2E9C /* GetBindingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A4A24898775003D2E9C /* GetBindingsResponse.swift */; };
+		FF920A4D248987AE003D2E9C /* CardBindingFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A4C248987AE003D2E9C /* CardBindingFiled.swift */; };
+		FF920A4F2489AE62003D2E9C /* DeactivateBindingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A4E2489AE62003D2E9C /* DeactivateBindingRequest.swift */; };
+		FF920A512489AEA8003D2E9C /* DeactivateBindingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A502489AEA8003D2E9C /* DeactivateBindingResponse.swift */; };
+		FF920A532489AEEE003D2E9C /* ActivateBindingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A522489AEEE003D2E9C /* ActivateBindingRequest.swift */; };
+		FF920A552489AF2C003D2E9C /* ActivateBindingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A542489AF2C003D2E9C /* ActivateBindingResponse.swift */; };
 		FFB023412465B50900FC135D /* SaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023402465B50900FC135D /* SaleView.swift */; };
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
@@ -151,6 +173,28 @@
 		FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityIntegratedViewController.swift; sourceTree = "<group>"; };
 		FF920A2524887270003D2E9C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		FF920A2724887291003D2E9C /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
+		FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
+		FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
+		FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
+		FF920A3024898131003D2E9C /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
+		FF920A3224898309003D2E9C /* ConfirmPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentRequest.swift; sourceTree = "<group>"; };
+		FF920A342489834E003D2E9C /* ConfirmPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentResponse.swift; sourceTree = "<group>"; };
+		FF920A3624898391003D2E9C /* CancelPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPaymentRequest.swift; sourceTree = "<group>"; };
+		FF920A38248983BF003D2E9C /* CancelPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelPaymentResponse.swift; sourceTree = "<group>"; };
+		FF920A3A248983EE003D2E9C /* RefundPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundPaymentRequest.swift; sourceTree = "<group>"; };
+		FF920A3C24898434003D2E9C /* RefundPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundPaymentResponse.swift; sourceTree = "<group>"; };
+		FF920A3E2489848F003D2E9C /* TransactionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionClient.swift; sourceTree = "<group>"; };
+		FF920A40248984DA003D2E9C /* TransactionClientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionClientResponse.swift; sourceTree = "<group>"; };
+		FF920A422489858C003D2E9C /* ProblemTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTransactions.swift; sourceTree = "<group>"; };
+		FF920A44248985DC003D2E9C /* MakeBindingPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBindingPaymentRequest.swift; sourceTree = "<group>"; };
+		FF920A462489865E003D2E9C /* MakeBindingPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBindingPaymentResponse.swift; sourceTree = "<group>"; };
+		FF920A4824898746003D2E9C /* GetBindingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBindingRequest.swift; sourceTree = "<group>"; };
+		FF920A4A24898775003D2E9C /* GetBindingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBindingsResponse.swift; sourceTree = "<group>"; };
+		FF920A4C248987AE003D2E9C /* CardBindingFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBindingFiled.swift; sourceTree = "<group>"; };
+		FF920A4E2489AE62003D2E9C /* DeactivateBindingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateBindingRequest.swift; sourceTree = "<group>"; };
+		FF920A502489AEA8003D2E9C /* DeactivateBindingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateBindingResponse.swift; sourceTree = "<group>"; };
+		FF920A522489AEEE003D2E9C /* ActivateBindingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateBindingRequest.swift; sourceTree = "<group>"; };
+		FF920A542489AF2C003D2E9C /* ActivateBindingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateBindingResponse.swift; sourceTree = "<group>"; };
 		FFB023402465B50900FC135D /* SaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleView.swift; sourceTree = "<group>"; };
 		FFB023422465B67300FC135D /* SaleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleService.swift; sourceTree = "<group>"; };
 		FFB023442465B74B00FC135D /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
@@ -365,6 +409,7 @@
 		FF1C80932461FF8A000E5D88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF920A2924897F12003D2E9C /* vPosModels */,
 				FF1C80942461FF95000E5D88 /* TabItemModel.swift */,
 				FF1C80AA24632DA7000E5D88 /* SizeModel.swift */,
 				FF1C80B224633B99000E5D88 /* ShopModel.swift */,
@@ -439,6 +484,35 @@
 				FF9209F724884AC2003D2E9C /* Shipping.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		FF920A2924897F12003D2E9C /* vPosModels */ = {
+			isa = PBXGroup;
+			children = (
+				FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */,
+				FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */,
+				FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */,
+				FF920A3024898131003D2E9C /* PaymentDetailsResponse.swift */,
+				FF920A3224898309003D2E9C /* ConfirmPaymentRequest.swift */,
+				FF920A342489834E003D2E9C /* ConfirmPaymentResponse.swift */,
+				FF920A3624898391003D2E9C /* CancelPaymentRequest.swift */,
+				FF920A38248983BF003D2E9C /* CancelPaymentResponse.swift */,
+				FF920A3A248983EE003D2E9C /* RefundPaymentRequest.swift */,
+				FF920A3C24898434003D2E9C /* RefundPaymentResponse.swift */,
+				FF920A3E2489848F003D2E9C /* TransactionClient.swift */,
+				FF920A40248984DA003D2E9C /* TransactionClientResponse.swift */,
+				FF920A422489858C003D2E9C /* ProblemTransactions.swift */,
+				FF920A44248985DC003D2E9C /* MakeBindingPaymentRequest.swift */,
+				FF920A462489865E003D2E9C /* MakeBindingPaymentResponse.swift */,
+				FF920A4824898746003D2E9C /* GetBindingRequest.swift */,
+				FF920A4A24898775003D2E9C /* GetBindingsResponse.swift */,
+				FF920A4C248987AE003D2E9C /* CardBindingFiled.swift */,
+				FF920A4E2489AE62003D2E9C /* DeactivateBindingRequest.swift */,
+				FF920A502489AEA8003D2E9C /* DeactivateBindingResponse.swift */,
+				FF920A522489AEEE003D2E9C /* ActivateBindingRequest.swift */,
+				FF920A542489AF2C003D2E9C /* ActivateBindingResponse.swift */,
+			);
+			path = vPosModels;
 			sourceTree = "<group>";
 		};
 		FFB0233F2465B4F400FC135D /* Sales */ = {
@@ -595,12 +669,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF920A3B248983EE003D2E9C /* RefundPaymentRequest.swift in Sources */,
 				FFB0236C2468CFC100FC135D /* FilterResult.swift in Sources */,
+				FF920A4924898746003D2E9C /* GetBindingRequest.swift in Sources */,
 				FFB023412465B50900FC135D /* SaleView.swift in Sources */,
+				FF920A4F2489AE62003D2E9C /* DeactivateBindingRequest.swift in Sources */,
 				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
 				FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */,
 				FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */,
 				FF920A2824887291003D2E9C /* RealityView.swift in Sources */,
+				FF920A352489834E003D2E9C /* ConfirmPaymentResponse.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
@@ -610,6 +688,8 @@
 				FFB023612468A30500FC135D /* CartView.swift in Sources */,
 				FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */,
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
+				FF920A552489AF2C003D2E9C /* ActivateBindingResponse.swift in Sources */,
+				FF920A3D24898434003D2E9C /* RefundPaymentResponse.swift in Sources */,
 				FFB02374246AE5E900FC135D /* TrendModel.swift in Sources */,
 				FF1C80FD24644020000E5D88 /* NewService.swift in Sources */,
 				FF1C80A924632393000E5D88 /* SizeChart.swift in Sources */,
@@ -617,9 +697,14 @@
 				FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */,
 				FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */,
 				FFFDA050246F396B002EA40D /* Review.swift in Sources */,
+				FF920A3324898309003D2E9C /* ConfirmPaymentRequest.swift in Sources */,
 				FFFDA074247084A6002EA40D /* ImageCarousel.swift in Sources */,
+				FF920A2D24897FE8003D2E9C /* InitPaymentResponse.swift in Sources */,
+				FF920A512489AEA8003D2E9C /* DeactivateBindingResponse.swift in Sources */,
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
+				FF920A4D248987AE003D2E9C /* CardBindingFiled.swift in Sources */,
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
+				FF920A41248984DA003D2E9C /* TransactionClientResponse.swift in Sources */,
 				FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
 				FF9209F624884850003D2E9C /* AboutUs.swift in Sources */,
@@ -636,22 +721,29 @@
 				FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
 				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,
+				FF920A3124898131003D2E9C /* PaymentDetailsResponse.swift in Sources */,
 				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
 				FF0D7EE12485602B00EE96B0 /* ARContentVIew.swift in Sources */,
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
 				FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */,
 				FF1C807A24618E8B000E5D88 /* AuthViewModel.swift in Sources */,
+				FF920A3F2489848F003D2E9C /* TransactionClient.swift in Sources */,
+				FF920A532489AEEE003D2E9C /* ActivateBindingRequest.swift in Sources */,
 				FFFDA04E246EB03F002EA40D /* ReviewModel.swift in Sources */,
 				FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
+				FF920A4B24898775003D2E9C /* GetBindingsResponse.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
 				FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */,
 				FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */,
 				FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */,
+				FF920A3724898391003D2E9C /* CancelPaymentRequest.swift in Sources */,
+				FF920A45248985DC003D2E9C /* MakeBindingPaymentRequest.swift in Sources */,
 				FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */,
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
 				FFFDA07A247422E5002EA40D /* ReviewViewModel.swift in Sources */,
+				FF920A432489858C003D2E9C /* ProblemTransactions.swift in Sources */,
 				FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
 				FF920A2624887270003D2E9C /* Experience.rcproject in Sources */,
@@ -661,6 +753,7 @@
 				FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */,
 				FFB0235F2468A26200FC135D /* CartNavigationView.swift in Sources */,
 				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
+				FF920A472489865E003D2E9C /* MakeBindingPaymentResponse.swift in Sources */,
 				FFFDA07824709550002EA40D /* TextDesign.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
 				FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */,
@@ -670,6 +763,9 @@
 				FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */,
 				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
+				FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */,
+				FF920A39248983BF003D2E9C /* CancelPaymentResponse.swift in Sources */,
+				FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */,
 				FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
