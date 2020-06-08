@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct GetBindingsResponse: Decodable {
+struct GetBindingsResponse: Codable {
     var ResponseCode: String
     var ResponseMessage: String
     var CardBindingFileds: [CardBindingFiled]

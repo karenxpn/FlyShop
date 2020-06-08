@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct PaymentDetailsResponse: Decodable {
+struct PaymentDetailsResponse: Codable {
     var Amount: Decimal
     var ApprovedAmount: Decimal
     var ApprovalCode: String

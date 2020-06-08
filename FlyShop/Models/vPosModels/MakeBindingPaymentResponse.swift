@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct MakeBindingPaymentResponse: Decodable {
+struct MakeBindingPaymentResponse: Codable {
     var Amount: Decimal
     var ApprovedAmount: Decimal
     var ApprovalCode: String

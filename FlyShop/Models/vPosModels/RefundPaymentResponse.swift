@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct RefundPaymentResponse: Decodable {
+struct RefundPaymentResponse: Codable {
     var Opaque: String
     var ResponseCode: String
     var ResponseMessage: String

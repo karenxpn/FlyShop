@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct ConfirmPaymentResponse: Decodable {
+struct ConfirmPaymentResponse: Codable {
     var ResponseCode: String
     var ResponseMessage: String
     var Opaque: String
