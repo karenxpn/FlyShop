@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct CardBindingFiled: Decodable {
+struct CardBindingFiled: Codable {
     var CardPan: String
     var ExpDate: String
     var IsAvtive: Bool

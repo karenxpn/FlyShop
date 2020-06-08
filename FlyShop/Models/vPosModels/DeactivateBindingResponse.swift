@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct DeactivateBindingResponse: Decodable {
+struct DeactivateBindingResponse: Codable {
     var ResponseCode: String
     var ResponseMessage: String
     var CardHolderID: String

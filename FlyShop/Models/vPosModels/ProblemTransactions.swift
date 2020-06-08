@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct ProblemTransactions: Decodable {
+struct ProblemTransactions: Codable {
     var CardNumber: String
     var ErrorMessage: String
     var OrderID: Int

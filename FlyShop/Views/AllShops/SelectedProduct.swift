@@ -148,6 +148,7 @@ struct SelectedProduct: View {
                         SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
                     }
             }
+
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }

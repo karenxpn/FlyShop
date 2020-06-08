@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct InitPaymentResponse: Decodable {
+struct InitPaymentResponse: Codable {
     var PaymentID: String
     var ResponseCode: Int
     var ResponseMessage: String

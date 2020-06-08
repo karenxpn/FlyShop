@@ -20,8 +20,7 @@ struct NewView: View {
                 AllShopsBackground()
                 
                 VStack{
-                    TopChat(message: "Բարեւ Ձեզ!\nՄենք ձեզ համար նոր տեսականի ունենք:")
-                    
+                    TopChat(message: "Բարեւ Ձեզ!\nՄենք Ձեր համար նոր տեսականի ունենք:")
                     
                     WaterfallGrid(self.newVM.newItemList) { product in
                         SingleNewProduct(product: product)
@@ -68,7 +67,7 @@ struct TopChat: View {
                 
                 Rectangle().fill(LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 0.391, green: 0.352, blue: 1, alpha: 1)), Color(UIColor(red: 0.647, green: 0.451, blue: 1, alpha: 1))]), startPoint: .top, endPoint: .bottom))
                     //this is the gradient for the background
-                    .frame(width: UIScreen.main.bounds.size.width-110, height: UIScreen.main.bounds.size.height/14)
+                    .frame(width: UIScreen.main.bounds.size.width-110, height: UIScreen.main.bounds.size.height == 896.0 ? UIScreen.main.bounds.size.height/12 : UIScreen.main.bounds.size.height/14)
                     .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
                 
                 TextDesign(text: message, size: 13, font: "Montserrat-ExtraLight", color: Color.white)
