@@ -33,6 +33,7 @@ struct SelectedProduct: View {
                     VStack {
                         
                         TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.black)
+                            .lineLimit(1)
                             .padding(.top, 12 )
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
@@ -93,19 +94,22 @@ struct SelectedProduct: View {
                         }
                         
                         
-                        TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
-                            .frame( width: UIScreen.main.bounds.size.width/2 - 40)
-                            .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
-                            .cornerRadius(10)
-                            .multilineTextAlignment(.leading)
-                            .padding([.top, .bottom], 6)
-                            .onTapGesture {
-                                self.activeSheet = .size
-                                self.showSheet.toggle()
+                        if self.product.category != "Աքսեսուարներ" {
+                            TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
+                                .frame( width: UIScreen.main.bounds.size.width/2 - 40)
+                                .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
+                                .cornerRadius(10)
+                                .multilineTextAlignment(.leading)
+                                .padding([.top, .bottom], 6)
+                                .onTapGesture {
+                                    self.activeSheet = .size
+                                    self.showSheet.toggle()
+                            }
                         }
+
                         
                         Button(action: {
-                            if self.size == "Չափս" {
+                            if self.size == "Չափս" && self.product.category != "Աքսեսուարներ" {
                                 self.activeAlert = .error
                                 self.showAlert.toggle()
                             } else {

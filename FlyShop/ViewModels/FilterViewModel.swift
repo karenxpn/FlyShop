@@ -11,8 +11,7 @@ import Foundation
 class FilterViewModel: ObservableObject {
     @Published var checkedSale: Bool = false
     @Published var checkedNew: Bool = false
-    @Published var maleGender: Bool = false
-    @Published var femaleGender: Bool = false
+    @Published var gender: String = ""
     @Published var category: String = "Հագուստ"
     @Published var size = [String]()
     @Published var brand: String = ""
@@ -23,7 +22,7 @@ class FilterViewModel: ObservableObject {
     @Published var filteredItems = [ProductViewModel]()
     
     func getFilteredData() {
-        FilterService().fetchFilteredData(new: self.checkedNew, sale: self.checkedSale, brand: brand, category: category, gender: self.maleGender ? "Արական" : "Իգական", size: self.size, type: self.type, price: self.price) { (result) in
+        FilterService().fetchFilteredData(new: self.checkedNew, sale: self.checkedSale, brand: brand, category: category, gender: self.gender, size: self.size, type: self.type, price: self.price) { (result) in
             if let result = result {
                 self.filteredItems = result.map(ProductViewModel.init)
             }

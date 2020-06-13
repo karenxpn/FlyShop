@@ -9,7 +9,7 @@
 import SwiftUI
 
 enum ActiveSheet {
-    case brand, size, accessories, arView
+    case brand, size, accessories, shoes, clothes, arView
 }
 
 struct FilterView: View {
@@ -81,7 +81,7 @@ struct FilterView: View {
                             
                             ZStack {
                                 
-                                Circle().fill( self.filterVM.femaleGender ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
+                                Circle().fill( self.filterVM.gender == "Իգական" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
                                 
                                 Image( "womenGender" )
                                     .resizable()
@@ -89,15 +89,12 @@ struct FilterView: View {
                                     .frame(width: 30, height: 30)
                             }.padding(2)
                                 .onTapGesture {
-                                    self.filterVM.femaleGender.toggle()
-                                    if self.filterVM.maleGender {
-                                        self.filterVM.maleGender.toggle()
-                                    }
+                                    self.filterVM.gender = "Իգական"
                             }
                             
                             ZStack {
                                 
-                                Circle().fill(self.filterVM.maleGender ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
+                                Circle().fill(self.filterVM.gender == "Արական" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
                                 
                                 Image( "manGender" )
                                     .resizable()
@@ -105,10 +102,7 @@ struct FilterView: View {
                                     .frame(width: 30, height: 30)
                             }.padding(2)
                                 .onTapGesture {
-                                    self.filterVM.maleGender.toggle()
-                                    if self.filterVM.femaleGender {
-                                        self.filterVM.femaleGender.toggle()
-                                    }
+                                    self.filterVM.gender = "Արական"
                             }
                             
                         }
@@ -151,7 +145,7 @@ struct FilterView: View {
                                         .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                                         .cornerRadius(30)
                                         .onTapGesture {
-                                            if ( self.filterVM.maleGender || self.filterVM.femaleGender ) && ( self.filterVM.category == "Հագուստ" || self.filterVM.category == "Կոշիկ" ) && self.filterVM.type != "" {
+                                            if ( self.filterVM.gender != "" ) && ( self.filterVM.category == "Հագուստ" || self.filterVM.category == "Կոշիկ" ) && self.filterVM.type != "" {
                                                 self.activeSheet = .size
                                                 self.showSheet = true
                                             }
@@ -210,7 +204,7 @@ struct FilterView: View {
                     .onTapGesture {
                         // perform search in database to shop filtered items to the user
                         
-                        if ( self.filterVM.femaleGender || self.filterVM.maleGender ) && self.filterVM.category != "" && self.filterVM.type != "" {
+                        if ( self.filterVM.gender != "" ) && self.filterVM.category != "" && self.filterVM.type != "" {
                             self.filterVM.getFilteredData()
                             self.goToResult = true
                         } else {
@@ -223,18 +217,13 @@ struct FilterView: View {
         }
         .sheet(isPresented: self.$showSheet, content: {
             if self.activeSheet == .size {
-                if self.filterVM.maleGender {
-                    SizeChart(showSheet: self.$showSheet, gender: "Տղամարդու", category: self.filterVM.category, type: self.filterVM.type)
+                SizeChart(showSheet: self.$showSheet, gender: self.filterVM.gender, category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
-                    
-                } else {
-                    SizeChart(showSheet: self.$showSheet,gender: "Իգական", category: self.filterVM.category, type: self.filterVM.type)
-                        .environmentObject(self.filterVM)
-                }
+
             } else if self.activeSheet == .brand {
                 BrandSheet( showSheet: self.$showSheet).environmentObject(self.filterVM)
-            } else if self.activeSheet == .accessories {
-                AccessoriesSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category))
+            } else if self.activeSheet == .shoes || self.activeSheet == .clothes || self.activeSheet == .accessories{
+                TypeSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category))
                     .environmentObject(self.filterVM)
             }
         })
@@ -247,8 +236,7 @@ struct FilterView: View {
                 // perform the action here
                 self.filterVM.checkedSale = false
                 self.filterVM.checkedNew = false
-                self.filterVM.maleGender = false
-                self.filterVM.femaleGender = false
+                self.filterVM.gender = ""
                 self.filterVM.category = ""
                 self.filterVM.size = [String]()
                 self.filterVM.brand = ""
@@ -390,40 +378,28 @@ struct TypeFilter: View {
             
             Spacer()
             
-            
-            ForEach( FilterTypeModel().categoryType(category: self.filterVM.category), id: \.self) { type in
-                if self.filterVM.category != "Աքսեսուարներ" {
-                    
-                    TextDesign(text: type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                        .padding([.top, .bottom], 8)
-                        .padding([.horizontal], 12)
-                        .background( self.filterVM.type == type ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
-                        .cornerRadius(20)
-                        .onTapGesture {
-                            self.filterVM.type = type
-                    }
-                }
-            }
-            
-            if self.filterVM.category == "Աքսեսուարներ" {
-                HStack {
-                    
-                    TextDesign(text: self.filterVM.type == "" ? "Ընտրեք տեսակը" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                        .padding([.top, .bottom], 6)
-                        .padding([.trailing, .leading], 12)
-                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                        .cornerRadius(20)
-                    
-                    TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
-                        .padding([.leading, .trailing], 12)
-                        .padding([.top, .bottom], 6)
-                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                        .cornerRadius(30)
-                        .onTapGesture {
+            HStack {
+                
+                TextDesign(text: self.filterVM.type == "" ? "Ընտրեք տեսակը" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+                    .padding([.top, .bottom], 6)
+                    .padding([.trailing, .leading], 12)
+                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
+                    .cornerRadius(20)
+                
+                TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
+                    .padding([.leading, .trailing], 12)
+                    .padding([.top, .bottom], 6)
+                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
+                    .cornerRadius(30)
+                    .onTapGesture {
+                        if self.filterVM.category == "Կոշիկ" {
+                            self.activeSheet = .shoes
+                        } else if self.filterVM.category == "Հագուստ" {
+                            self.activeSheet = .clothes
+                        } else if self.filterVM.category == "Աքսեսուարներ" {
                             self.activeSheet = .accessories
-                            self.showSheet.toggle()
-                            
-                    }
+                        }
+                        self.showSheet.toggle()
                 }
             }
         }
