@@ -48,6 +48,7 @@
 		FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FA24643B71000E5D88 /* NewViewModel.swift */; };
 		FF1C80FD24644020000E5D88 /* NewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FC24644020000E5D88 /* NewService.swift */; };
 		FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DE9D72486EF8800178CA9 /* SVGImage.swift */; };
+		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
@@ -95,7 +96,6 @@
 		FFB023612468A30500FC135D /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023602468A30500FC135D /* CartView.swift */; };
 		FFB023642468B36300FC135D /* BrandSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023632468B36300FC135D /* BrandSheet.swift */; };
 		FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023652468B8B900FC135D /* FilterTypeModel.swift */; };
-		FFB023682468BCCA00FC135D /* AccessoriesSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */; };
 		FFB0236A2468CAB400FC135D /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023692468CAB400FC135D /* FilterService.swift */; };
 		FFB0236C2468CFC100FC135D /* FilterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236B2468CFC100FC135D /* FilterResult.swift */; };
 		FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */; };
@@ -164,6 +164,7 @@
 		FF1C80FC24644020000E5D88 /* NewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService.swift; sourceTree = "<group>"; };
 		FF2DE9D72486EF8800178CA9 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 		FF5EB336248DAF760021D49D /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
+		FF69F9F8249574A90044F077 /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
 		FF9209EC24882573003D2E9C /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		FF9209F024883E8B003D2E9C /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
@@ -210,7 +211,6 @@
 		FFB023602468A30500FC135D /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		FFB023632468B36300FC135D /* BrandSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSheet.swift; sourceTree = "<group>"; };
 		FFB023652468B8B900FC135D /* FilterTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTypeModel.swift; sourceTree = "<group>"; };
-		FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesSheet.swift; sourceTree = "<group>"; };
 		FFB023692468CAB400FC135D /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		FFB0236B2468CFC100FC135D /* FilterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResult.swift; sourceTree = "<group>"; };
 		FFB0236D2469FF2400FC135D /* AllShopsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllShopsFilter.swift; sourceTree = "<group>"; };
@@ -465,16 +465,24 @@
 		FF1C80F72464380F000E5D88 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FF69F9F724956E050044F077 /* Filter */,
 				FF9209F424884534003D2E9C /* Info */,
 				FF1C80822461D03B000E5D88 /* HomeView.swift */,
-				FF1C80A6246320F7000E5D88 /* FilterView.swift */,
-				FF1C80A824632393000E5D88 /* SizeChart.swift */,
-				FFB023632468B36300FC135D /* BrandSheet.swift */,
-				FFB023672468BCCA00FC135D /* AccessoriesSheet.swift */,
 				FFB0236B2468CFC100FC135D /* FilterResult.swift */,
 				FFB02375246B4A3600FC135D /* TrendSingleProduct.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FF69F9F724956E050044F077 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C80A6246320F7000E5D88 /* FilterView.swift */,
+				FF1C80A824632393000E5D88 /* SizeChart.swift */,
+				FFB023632468B36300FC135D /* BrandSheet.swift */,
+				FF69F9F8249574A90044F077 /* TypeSheet.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		FF9209F424884534003D2E9C /* Info */ = {
@@ -686,7 +694,6 @@
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
-				FFB023682468BCCA00FC135D /* AccessoriesSheet.swift in Sources */,
 				FFB023612468A30500FC135D /* CartView.swift in Sources */,
 				FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */,
 				FF1C80B124633B76000E5D88 /* AllShopsViewModel.swift in Sources */,
@@ -720,6 +727,7 @@
 				FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */,
 				FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */,
 				FF1C80832461D03B000E5D88 /* HomeView.swift in Sources */,
+				FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */,
 				FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */,
 				FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */,
 				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,

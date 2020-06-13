@@ -1,19 +1,19 @@
 //
-//  AccessoriesSheet.swift
+//  TypeSheet.swift
 //  FlyShop
 //
-//  Created by Karen Mirakyan on 5/11/20.
+//  Created by Karen Mirakyan on 6/14/20.
 //  Copyright © 2020 Karen Mirakyan. All rights reserved.
 //
 
 import SwiftUI
 
-struct AccessoriesSheet: View {
+struct TypeSheet: View {
     
     @EnvironmentObject var filterVM: FilterViewModel
+    @State private var checkList = [Bool]( repeating: false, count: 20)
     @Binding var showSheet: Bool
     let typeArray: [String]
-    @State private var checkList = [Bool]( repeating: false, count: 20)
     
     
     var body: some View {
@@ -49,8 +49,8 @@ struct AccessoriesSheet: View {
     }
 }
 
-struct AccessoriesSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        AccessoriesSheet(showSheet: .constant(false), typeArray: [""])
-    }
-}
+//struct TypeSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TypeSheet(showSheet: .constant(false))
+//    }
+//}

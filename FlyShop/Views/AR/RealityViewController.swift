@@ -26,7 +26,7 @@ class RealityViewController: UIViewController {
         // Load the "Box" scene from the "Experience" Reality File
         
         let scene = UserDefaults.standard.string(forKey: "AR")
-        if scene == "Pull Bear Grey Ash Sneakers" {
+        if scene == "Pull & Bear High Classic Shoes" {
             if let boxScene = try? Experience.loadScene(){
                 arView.scene.anchors.append(boxScene)
             }

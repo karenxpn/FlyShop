@@ -39,6 +39,7 @@ struct TrendSingleProduct: View {
                         VStack {
                             
                             TextDesign(text: self.homeVM.foundProduct!.name, size: 18, font: "Montserrat-ExtraLight", color: Color.black)
+                            .lineLimit(1)
                                 .padding(.top, 12 )
                             
                             
@@ -83,16 +84,18 @@ struct TrendSingleProduct: View {
                                 TextDesign(text: self.homeVM.foundProduct!.sale == 0 ? self.homeVM.foundProduct!.price : self.homeVM.foundProduct!.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.homeVM.foundProduct!.sale == 0 ? Color.white : Color.red)
                             }
                             
-                            
-                            TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
-                                .frame( width: UIScreen.main.bounds.size.width/2 - 60)
-                                .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
-                                .cornerRadius(10)
-                                .multilineTextAlignment(.leading)
-                                .padding([.top, .bottom], 6)
-                                .onTapGesture {
-                                    self.showSheet.toggle()
+                            if self.homeVM.foundProduct?.category != "Աքսեսուարներ" {
+                                TextDesign(text: self.size, size: 25, font: "Montserrat-ExtraLight", color: Color.white)
+                                    .frame( width: UIScreen.main.bounds.size.width/2 - 60)
+                                    .background(Color( UIColor( red: 35/255, green: 204/255, blue: 214/255, alpha: 1)))
+                                    .cornerRadius(10)
+                                    .multilineTextAlignment(.leading)
+                                    .padding([.top, .bottom], 6)
+                                    .onTapGesture {
+                                        self.showSheet.toggle()
+                                }
                             }
+
                             
                             Button(action: {
                                 if self.size == "Չափս" {
