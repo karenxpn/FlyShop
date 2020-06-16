@@ -219,10 +219,3 @@ struct FilterBySectionHeader: View {
         }
     }
 }
-
-
-
-
-
-
-

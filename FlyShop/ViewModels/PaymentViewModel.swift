@@ -24,6 +24,7 @@ class PaymentViewModel: ObservableObject {
             if let response = initPaymentResponse {
                 if response.ResponseCode == 1 {
                     self.paymentID = response.PaymentID
+                    print("https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentID)&lang=am")
                     self.showWeb = true
                 }
                 print(response)

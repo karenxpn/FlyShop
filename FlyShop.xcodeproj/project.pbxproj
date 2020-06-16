@@ -60,6 +60,7 @@
 		FF69FA0C249822410044F077 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0B249822410044F077 /* WebView.swift */; };
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
 		FF69FA102498ED6A0044F077 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF69FA0F2498ED6A0044F077 /* .gitignore */; };
+		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
@@ -186,6 +187,7 @@
 		FF69FA0B249822410044F077 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FF69FA0D2498236C0044F077 /* PaymentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebView.swift; sourceTree = "<group>"; };
 		FF69FA0F2498ED6A0044F077 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FF69FA122499329C0044F077 /* GetPaymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentDetails.swift; sourceTree = "<group>"; };
 		FF9209EC24882573003D2E9C /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		FF9209F024883E8B003D2E9C /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
@@ -434,19 +436,16 @@
 		FF1C80932461FF8A000E5D88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF69FA112498F5450044F077 /* ViewModels */,
 				FF920A2924897F12003D2E9C /* vPosModels */,
 				FF1C80942461FF95000E5D88 /* TabItemModel.swift */,
 				FF1C80AA24632DA7000E5D88 /* SizeModel.swift */,
 				FF1C80B224633B99000E5D88 /* ShopModel.swift */,
 				FF1C80F824643A42000E5D88 /* ProductModel.swift */,
-				FFB0235C2468618000FC135D /* ProductViewModel.swift */,
 				FFB023652468B8B900FC135D /* FilterTypeModel.swift */,
 				FFB02373246AE5E900FC135D /* TrendModel.swift */,
 				FFB0237D246C4D0200FC135D /* CartModel.swift */,
 				FFFDA04D246EB03F002EA40D /* ReviewModel.swift */,
-				FFFDA079247422E5002EA40D /* ReviewViewModel.swift */,
-				FF9209EC24882573003D2E9C /* TrendViewModel.swift */,
-				FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,8 +516,20 @@
 			isa = PBXGroup;
 			children = (
 				FF69FA072497EAD40044F077 /* InitPayment.swift */,
+				FF69FA122499329C0044F077 /* GetPaymentDetails.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FF69FA112498F5450044F077 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0235C2468618000FC135D /* ProductViewModel.swift */,
+				FFFDA079247422E5002EA40D /* ReviewViewModel.swift */,
+				FF9209EC24882573003D2E9C /* TrendViewModel.swift */,
+				FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		FF9209F424884534003D2E9C /* Info */ = {
@@ -824,6 +835,7 @@
 				FF920A39248983BF003D2E9C /* CancelPaymentResponse.swift in Sources */,
 				FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */,
 				FF69FA0124959DAB0044F077 /* GenderFilter.swift in Sources */,
+				FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */,
 				FF1C80BD2463417B000E5D88 /* AllShopGridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
