@@ -13,6 +13,8 @@ target 'FlyShop' do
 	pod 'SDWebImageSwiftUI'
 	pod 'WaterfallGrid'
 	pod "Macaw", "0.9.6"
+	pod 'Alamofire', '~> 5.2'
+
 
 
 
