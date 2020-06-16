@@ -14,6 +14,7 @@ import WaterfallGrid
 struct CartView: View {
     
     @EnvironmentObject var cartVM: CartViewModel
+    @ObservedObject var paymentVM = PaymentViewModel()
     @State private var showAlert: Bool = false
     
     var body: some View {
@@ -31,7 +32,11 @@ struct CartView: View {
                             .padding(.top, 12)
                     }
                     
-                    Buy(showAlert: self.$showAlert)
+                    Buy(showAlert: self.$showAlert).environmentObject(self.paymentVM)
+                    
+                    NavigationLink(destination: PaymentWebView().environmentObject(self.paymentVM), isActive: self.$paymentVM.showWeb) {
+                        EmptyView()
+                    }
                 }
                 
                 
@@ -55,6 +60,7 @@ struct CartView_Previews: PreviewProvider {
 
 struct Buy: View {
     @EnvironmentObject var cartVM: CartViewModel
+    @EnvironmentObject var paymentVM: PaymentViewModel
     @Binding var showAlert: Bool
     var body: some View {
         ZStack {
@@ -78,7 +84,13 @@ struct Buy: View {
                     Spacer()
                     Button(action: {
                         
-                        self.showAlert.toggle()
+                        for product in self.cartVM.cartProducts {
+                            self.paymentVM.description += ( "\(product.product.name)" )
+                        }
+                        
+                        self.paymentVM.initPayment()
+                        
+                        //self.showAlert.toggle()
                         // Do payment here
                         // Do the check here
                         // Post all items to firebase under userId and maka calls)))
