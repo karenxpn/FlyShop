@@ -22,6 +22,7 @@ struct CartItemPreview: View {
                     VStack {
                         
                         TextDesign(text: product.product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+                            .lineLimit(1)
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         

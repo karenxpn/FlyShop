@@ -34,5 +34,4 @@ struct MakeBindingPaymentResponse: Codable {
     var CardHolderID: String
     var BindingID: String
     var ActionCode: String
-    
 }

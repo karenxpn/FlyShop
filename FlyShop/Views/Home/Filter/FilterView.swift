@@ -14,7 +14,7 @@ enum ActiveSheet {
 
 struct FilterView: View {
     
-    @State private var showAler: Bool = false
+    @State private var showAlert: Bool = false
     @ObservedObject var filterVM = FilterViewModel()
     @State private var showSheet: Bool = false
     @State private var activeSheet: ActiveSheet = .brand
@@ -73,39 +73,7 @@ struct FilterView: View {
                     VStack {
                         
                         // Gender Filter
-                        HStack {
-                            
-                            TextDesign(text: "Սեռը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
-                            
-                            Spacer()
-                            
-                            ZStack {
-                                
-                                Circle().fill( self.filterVM.gender == "Իգական" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
-                                
-                                Image( "womenGender" )
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                            }.padding(2)
-                                .onTapGesture {
-                                    self.filterVM.gender = "Իգական"
-                            }
-                            
-                            ZStack {
-                                
-                                Circle().fill(self.filterVM.gender == "Արական" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray).frame(width: 40, height: 40)
-                                
-                                Image( "manGender" )
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                            }.padding(2)
-                                .onTapGesture {
-                                    self.filterVM.gender = "Արական"
-                            }
-                            
-                        }
+                        GenderFilter().environmentObject(self.filterVM)
                         
                         Divider()
                         
@@ -124,39 +92,8 @@ struct FilterView: View {
                         
                         // Size filter
                         if self.filterVM.category != "Աքսեսուարներ" {
-                            HStack {
-                                TextDesign(text: "Չափը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
-                                
-                                
-                                
-                                Spacer()
-                                
-                                HStack {
-                                    
-                                    TextDesign(text: self.filterVM.size.isEmpty ? "Ձեր չափը" : self.getSizes(), size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                                        .padding([.top, .bottom], 6)
-                                        .padding([.trailing, .leading], 12)
-                                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                                        .cornerRadius(20)
-                                    
-                                    TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
-                                        .padding([.leading, .trailing], 12)
-                                        .padding([.top, .bottom], 6)
-                                        .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                                        .cornerRadius(30)
-                                        .onTapGesture {
-                                            if ( self.filterVM.gender != "" ) && ( self.filterVM.category == "Հագուստ" || self.filterVM.category == "Կոշիկ" ) && self.filterVM.type != "" {
-                                                self.activeSheet = .size
-                                                self.showSheet = true
-                                            }
-                                            else {
-                                                self.showAler.toggle()
-                                            }
-                                    }
-                                    
-                                    
-                                }
-                            }
+                            SizeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet, showAlert: self.$showAlert)
+                                .environmentObject(self.filterVM)
                         }
                         
                     }
@@ -208,7 +145,7 @@ struct FilterView: View {
                             self.filterVM.getFilteredData()
                             self.goToResult = true
                         } else {
-                            self.showAler.toggle()
+                            self.showAlert.toggle()
                         }
                         
                 }
@@ -227,7 +164,7 @@ struct FilterView: View {
                     .environmentObject(self.filterVM)
             }
         })
-            .alert(isPresented: self.$showAler, content: {
+            .alert(isPresented: self.$showAlert, content: {
                 Alert(title: Text( "Սխալ"), message: Text( "Դուք չեք ընտրել սեռը/կատեգորիա/տեսակը"), dismissButton: .default(Text( "Լավ" )))
             })
             .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
@@ -248,17 +185,7 @@ struct FilterView: View {
         
     }
     
-    func getSizes() -> String {
-        var sizeString = ""
-        for i in 0..<self.filterVM.size.count {
-            if i != self.filterVM.size.count-1 {
-                sizeString += self.filterVM.size[i] + ","
-            } else {
-                sizeString += self.filterVM.size[i]
-            }
-        }
-        return sizeString
-    }
+
     
 }
 
@@ -294,114 +221,8 @@ struct FilterBySectionHeader: View {
 }
 
 
-struct CategoryFilter: View {
-    
-    @EnvironmentObject var filterVM: FilterViewModel
-    var body: some View {
-        // CategoryFilter
-        HStack {
-            
-            TextDesign(text: "Կատեգորիա", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
-            
-            
-            Spacer()
-            
-            ForEach(FilterTypeModel().categories(), id: \.self) { category in
-                
-                TextDesign(text: category, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                    .padding([.top, .bottom], 8)
-                    .padding([.horizontal], 10)
-                .lineLimit(1)
-                    .background( self.filterVM.category == category ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color.gray)
-                    .cornerRadius(20)
-                    .onTapGesture {
-                        self.filterVM.type = ""
-                        self.filterVM.category = category
-                }
-                
-            }
-            
-        }.padding([.bottom, .top], 6)
-    }
-}
 
-struct BrandFilter: View {
-    
-    @EnvironmentObject var filterVM: FilterViewModel
-    @Binding var activeSheet: ActiveSheet
-    @Binding var showSheet: Bool
-    
-    var body: some View {
-        // Brand Filter
-        HStack {
-            
-            TextDesign(text: "Ապրանքանիշը", size: 14, font: "Montserrat-ExtraLight", color: Color.black)
-            
-            Spacer()
-            
-            HStack {
-                
-                TextDesign(text:  self.filterVM.brand == "" ? "Ընտրեք ապրանքանիշը" : self.filterVM.brand, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                    .padding([.top, .bottom], 6)
-                    .padding([.trailing, .leading], 12)
-                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                    .cornerRadius(20)
-                
-                TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
-                    .padding([.leading, .trailing], 12)
-                    .padding([.top, .bottom], 6)
-                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                    .cornerRadius(30)
-                    .onTapGesture {
-                        self.activeSheet = .brand
-                        self.showSheet.toggle()
-                        
-                }
-            }
-        }
-    }
-}
 
-struct TypeFilter: View {
-    
-    @EnvironmentObject var filterVM : FilterViewModel
-    @Binding var activeSheet: ActiveSheet
-    @Binding var showSheet: Bool
-    
-    var body: some View {
-        // Type Filter
-        
-        HStack {
-            
-            TextDesign(text: "Տիպ", size: 13, font: "Montserrat-ExtraLight", color: Color.black)
-            
-            
-            Spacer()
-            
-            HStack {
-                
-                TextDesign(text: self.filterVM.type == "" ? "Ընտրեք տեսակը" : self.filterVM.type, size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                    .padding([.top, .bottom], 6)
-                    .padding([.trailing, .leading], 12)
-                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                    .cornerRadius(20)
-                
-                TextDesign(text: "+", size: 20, font: "Montserrat-ExtraLight", color: Color.white)
-                    .padding([.leading, .trailing], 12)
-                    .padding([.top, .bottom], 6)
-                    .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
-                    .cornerRadius(30)
-                    .onTapGesture {
-                        if self.filterVM.category == "Կոշիկ" {
-                            self.activeSheet = .shoes
-                        } else if self.filterVM.category == "Հագուստ" {
-                            self.activeSheet = .clothes
-                        } else if self.filterVM.category == "Աքսեսուարներ" {
-                            self.activeSheet = .accessories
-                        }
-                        self.showSheet.toggle()
-                }
-            }
-        }
-    }
-}
+
+
+
