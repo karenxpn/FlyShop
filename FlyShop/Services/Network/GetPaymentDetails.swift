@@ -11,7 +11,7 @@ import Alamofire
 
 class GetPaymentDetails {
     func getDetails(model: PaymentDetailsRequest, completion: @escaping( PaymentDetailsResponse?) -> () ){
-        guard let url = URL(string: "\(URLS().BASE_URL)InitPayment" ) else {
+        guard let url = URL(string: "\(URLS().BASE_URL)GetPaymentDetails" ) else {
             DispatchQueue.main.async {
                 completion( nil )
             }
@@ -21,9 +21,9 @@ class GetPaymentDetails {
         AF.request(url,
                    method: .post,
                    parameters: model,
-                   encoder: JSONParameterEncoder.default).responseDecodable( of: PaymentDetailsResponse.self ) { (response) in
+                   encoder: JSONParameterEncoder.default).responseDecodable(of: PaymentDetailsResponse.self) { (response) in
                     DispatchQueue.main.async {
-                        completion( response.value)
+                        completion( response.value )
                     }
         }
     }

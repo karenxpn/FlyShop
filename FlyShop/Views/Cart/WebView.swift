@@ -38,14 +38,19 @@ struct WebView: UIViewRepresentable {
         
         
         func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+            
             print("POLICY")
             print(navigationResponse.response.description)
             decisionHandler( .allow )
         }
+        
+        func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
     }
     
     var url: String
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }

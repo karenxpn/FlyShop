@@ -7,6 +7,19 @@
 //
 
 import Foundation
+
+//enum PaymentsEnum: Int {
+//    case None = 0
+//    case Arca = 1
+//    case MasterCard = 2
+//    case Visa = 3
+//    case Reward = 4
+//    case MainRest = 5
+//    case BindingMainRest = 6
+//    case PayPal = 7
+//    case PayX = 11
+//}
+
 struct PaymentDetailsResponse: Codable {
     var Amount: Decimal
     var ApprovedAmount: Decimal
@@ -20,14 +33,14 @@ struct PaymentDetailsResponse: Codable {
     var Description: String
     var MerchantId: String
     var Opaque: String
-    var OrderID: Int
+    var OrderID: String
     var PaymentState: String
-    //var PaymentType: PaymentsEnum TODO
+    var PaymentType: Int
     var ResponseCode: String
     var rrn: String
     var TerminalId: String
     var TrxnDescription: String
-    var OrderStatus: Int
+    var OrderStatus: String
     var RefundedAmount: Decimal
     var CardHolderID: String
     var MDOrderID: String
