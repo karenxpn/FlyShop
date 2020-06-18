@@ -26,7 +26,6 @@ struct CartView: View {
                 VStack {
                     
                     
-                    Spacer()
                     WaterfallGrid(self.cartVM.cartProducts) { product in
                         CartItemPreview(product: product)
                             .padding(.top, 12)
@@ -88,8 +87,8 @@ struct Buy: View {
                             self.paymentVM.description += ( "\(product.product.name)" )
                         }
                         
-                        self.paymentVM.initPayment()
-                        
+                        //self.paymentVM.initPayment()
+                        self.paymentVM.getResponse()
                         //self.showAlert.toggle()
                         // Do payment here
                         // Do the check here

@@ -61,6 +61,8 @@
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
 		FF69FA102498ED6A0044F077 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF69FA0F2498ED6A0044F077 /* .gitignore */; };
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
+		FF69FA18249AB2DE0044F077 /* Redirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA17249AB2DE0044F077 /* Redirect.swift */; };
+		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
@@ -188,6 +190,8 @@
 		FF69FA0D2498236C0044F077 /* PaymentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebView.swift; sourceTree = "<group>"; };
 		FF69FA0F2498ED6A0044F077 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FF69FA122499329C0044F077 /* GetPaymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentDetails.swift; sourceTree = "<group>"; };
+		FF69FA17249AB2DE0044F077 /* Redirect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redirect.swift; sourceTree = "<group>"; };
+		FF69FA19249AB4320044F077 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
 		FF9209EC24882573003D2E9C /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		FF9209F024883E8B003D2E9C /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
@@ -517,6 +521,7 @@
 			children = (
 				FF69FA072497EAD40044F077 /* InitPayment.swift */,
 				FF69FA122499329C0044F077 /* GetPaymentDetails.swift */,
+				FF69FA17249AB2DE0044F077 /* Redirect.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				FF920A522489AEEE003D2E9C /* ActivateBindingRequest.swift */,
 				FF920A542489AF2C003D2E9C /* ActivateBindingResponse.swift */,
 				FF69FA042496E87F0044F077 /* URLS.swift */,
+				FF69FA19249AB4320044F077 /* RedirectResponse.swift */,
 			);
 			path = vPosModels;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
 				FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */,
 				FF1C80AD24633798000E5D88 /* AllShopsView.swift in Sources */,
+				FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */,
 				FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */,
 				FF1C80A32462B25E000E5D88 /* FilterViewModel.swift in Sources */,
 				FFB023612468A30500FC135D /* CartView.swift in Sources */,
@@ -821,6 +828,7 @@
 				FFB0237A246C2C0500FC135D /* CartViewModel.swift in Sources */,
 				FFB0235F2468A26200FC135D /* CartNavigationView.swift in Sources */,
 				FF1C80B324633B99000E5D88 /* ShopModel.swift in Sources */,
+				FF69FA18249AB2DE0044F077 /* Redirect.swift in Sources */,
 				FF920A472489865E003D2E9C /* MakeBindingPaymentResponse.swift in Sources */,
 				FFFDA07824709550002EA40D /* TextDesign.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,

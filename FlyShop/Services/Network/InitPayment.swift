@@ -11,7 +11,7 @@ import Alamofire
 
 class InitPayment {
     func initPayment( model: InitPaymentRequest ,completion: @escaping ( InitPaymentResponse? ) -> () ) {
-        guard let postURL = URL(string: "https://servicestest.ameriabank.am/VPOS/api/VPOS/InitPayment" ) else {
+        guard let postURL = URL(string: "\(URLS().BASE_URL)InitPayment" ) else {
             DispatchQueue.main.async {
                 completion( nil )
             }
