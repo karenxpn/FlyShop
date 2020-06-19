@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AlertX",
+        "repositoryURL": "https://github.com/neel-makhecha/AlertX.git",
+        "state": {
+          "branch": "master",
+          "revision": "d5f82d61521c019ec83571c16f3351e7ef8191d0",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftUIX",
         "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
         "state": {

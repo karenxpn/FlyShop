@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import AlertX
 
 enum ActiveAlert {
     case error, success
@@ -125,13 +126,13 @@ struct TrendSingleProduct: View {
                         
                     }
                 }
-            }.alert(isPresented: self.$showAlert, content: {
+            }.alertX(isPresented: self.$showAlert) {
                 if self.activeAlert == .error {
-                    return Alert(title: Text( "Սխալ"), message: Text( "Խնդրում ենք ընտրել չափը"), dismissButton: .default(Text( "Լավ")))
+                    return AlertX(title: Text( "Սխալ"), message: Text( "Խնդրում ենք ընտրել չափը"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
                 } else {
-                    return Alert(title: Text( "Շնորհավոր" ), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:" ), dismissButton: .default(Text( "Լավ")))
+                    return AlertX(title: Text( "Շնորհավոր"), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
                 }
-            })
+            }
                 .sheet(isPresented: self.$showSheet) {
                     SizeSheet(sizeList: self.homeVM.foundProduct!.size, showSeet: self.$showSheet, selectedSize: self.$size)
             }

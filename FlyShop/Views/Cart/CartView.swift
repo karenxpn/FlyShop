@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftUIX
 import WaterfallGrid
 import Alamofire
+import AlertX
 
 
 struct CartView: View {
@@ -38,9 +39,26 @@ struct CartView: View {
                     }
                 }
             }
-            .alert(isPresented: self.$paymentVM.showAlert, content: {
-                return Alert(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), dismissButton: .default(Text( "OK" )))
+            .alertX(isPresented: self.$paymentVM.showAlert, content: {
+                
+                if self.paymentVM.paymentDetails != nil {
+                    return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
+                        print("Complete Payment")
+                    }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
+                                                   alertTextColor: Color.white,
+                                                   enableShadow: true,
+                                                   enableRoundedCorners: true,
+                                                   enableTransparency: true,
+                                                   cancelButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)),
+                                                   cancelButtonTextColor: Color.white,
+                                                   defaultButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)), defaultButtonTextColor: Color.white),
+                        animation: .defaultEffect())
+                } else {
+                    return AlertX(title: Text( "" ))
+                }
+
             })
+            
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }
