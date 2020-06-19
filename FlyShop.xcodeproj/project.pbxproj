@@ -63,6 +63,7 @@
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
 		FF69FA1C249C1F4C0044F077 /* Redirect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA1B249C1F4C0044F077 /* Redirect.swift */; };
+		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
@@ -264,6 +265,7 @@
 			files = (
 				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
 				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
+				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +631,7 @@
 			name = FlyShop;
 			packageProductDependencies = (
 				FFB023492465DCD100FC135D /* SwiftUIX */,
+				FF69FA1E249D4B7C0044F077 /* AlertX */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -660,6 +663,7 @@
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
 				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -1042,6 +1046,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -1053,6 +1065,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;
+			productName = AlertX;
+		};
 		FFB023492465DCD100FC135D /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */;

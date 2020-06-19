@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AlertX
 
 enum ActiveSheet {
     case brand, size, accessories, shoes, clothes, arView
@@ -163,9 +164,10 @@ struct FilterView: View {
                 TypeSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category))
                     .environmentObject(self.filterVM)
             }
-        })
-            .alert(isPresented: self.$showAlert, content: {
-                Alert(title: Text( "Սխալ"), message: Text( "Դուք չեք ընտրել սեռը/կատեգորիա/տեսակը"), dismissButton: .default(Text( "Լավ" )))
+        }).alertX(isPresented: self.$showAlert, content: {
+                AlertX(title: Text( "Սխալ" ), message: Text( "Դուք չեք ընտրել սեռը/կատեգորիա/տեսակը" ), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
+                
+                
             })
             .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
