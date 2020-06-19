@@ -13,43 +13,8 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     
-    final class Coordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
-        var webView: WebView
-        
-        init(_ webView: WebView) {
-            self.webView = webView
-        }
-        
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            print("DID FINISH")
-        }
-        
-        func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-            print("CONFIRM")
-            print(message)
-            completionHandler( true )
-        }
-        
-        func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-            print("ALERT")
-            print( message )
-            completionHandler()
-        }
-        
-        
-        func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-            
-            print("POLICY")
-            print(navigationResponse.response.description)
-            decisionHandler( .allow )
-        }
-        
-        func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
-        }
-    }
-    
     var url: String
+    @EnvironmentObject var paymentVM: PaymentViewModel
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -69,6 +34,44 @@ struct WebView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: WKWebView , context: Context) {
+        
+    }
+    
+    final class Coordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
+        var webView: WebView
+        
+        init(_ webView: WebView) {
+            self.webView = webView
+        }
+        
+        func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+            completionHandler( true )
+        }
+        
+        func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+            completionHandler()
+        }
+        
+        
+        func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+            
+            
+            if webView.url?.absoluteString.contains("/ArcaResponse") == true {
+                decisionHandler( .cancel )
+                self.webView.paymentVM.showWeb = false
+                self.webView.paymentVM.done = true
+                self.webView.paymentVM.getResponse()
+            } else {
+                decisionHandler( .allow )
+            }
+        }
+        
+        func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+            print("Challenge")
+            print(challenge)
+            completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        }
+        
         
     }
 }
