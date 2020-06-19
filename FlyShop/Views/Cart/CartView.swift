@@ -41,7 +41,7 @@ struct CartView: View {
             }
             .alertX(isPresented: self.$paymentVM.showAlert, content: {
                 
-                if self.paymentVM.paymentDetails != nil {
+                if self.paymentVM.activeAlert == .success {
                     return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
                         print("Complete Payment")
                     }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
@@ -54,11 +54,19 @@ struct CartView: View {
                                                    defaultButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)), defaultButtonTextColor: Color.white),
                         animation: .defaultEffect())
                 } else {
-                    return AlertX(title: Text( "" ))
+                    return AlertX(title: Text( "Սխալ" ), message: Text( self.paymentVM.errorMessage ), primaryButton: .default(Text( "OK" )), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
+                                                   alertTextColor: Color.white,
+                                                   enableShadow: true,
+                                                   enableRoundedCorners: true,
+                                                   enableTransparency: true,
+                                                   cancelButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)),
+                                                   cancelButtonTextColor: Color.white,
+                                                   defaultButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)), defaultButtonTextColor: Color.white),
+                        animation: .defaultEffect())
                 }
-
+                
             })
-            
+                
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }
@@ -103,11 +111,19 @@ struct Buy: View {
                     Spacer()
                     Button(action: {
                         
-                        for product in self.cartVM.cartProducts {
-                            self.paymentVM.description += ( "\(product.product.name)" )
+                        if self.coutTotal() == 0 {
+                            self.paymentVM.activeAlert = .error
+                            self.paymentVM.showAlert = true
+                            self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
+                        } else {
+                            
+                            // add description for transaction
+                            for product in self.cartVM.cartProducts {
+                                self.paymentVM.description += ( "\(product.product.name)" )
+                            }
+                            
+                            self.paymentVM.initPayment()
                         }
-                        
-                        self.paymentVM.initPayment()
                     }) {
                         Text( "Գնել")
                             .foregroundColor(Color.white)
