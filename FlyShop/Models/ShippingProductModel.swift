@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct ReviewModel:  Codable {    
+struct ShippingProductModel: Codable {
     var category: String
     var image: [String]
     var productPrice: Int
     var productName: String
-    var productSize: [String]
     var description: String
     var date: String
     var sale: Int
@@ -21,6 +20,6 @@ struct ReviewModel:  Codable {
     var type: String
     var productId: String
     var size: String
-    var inReview: Bool
-    var available: Bool
+    var id: String
+    var shipped: Bool
 }

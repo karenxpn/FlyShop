@@ -17,6 +17,7 @@ struct CartView: View {
     
     @EnvironmentObject var cartVM: CartViewModel
     @ObservedObject var paymentVM = PaymentViewModel()
+    @State private var showShippingItems: Bool = false
     
     var body: some View {
         NavigationView {
@@ -26,6 +27,26 @@ struct CartView: View {
                 
                 VStack {
                     
+                    if !self.cartVM.shippingProductsList.products.isEmpty {
+                        VStack {
+                            HStack {
+                                Image( "shipping" )
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame( width: 100, height: 100 )
+                                
+                                Text( "Ապրանքներ որոնք ճանապարհին են" )
+                            }.padding()
+                        }
+                        .background(Color.white)
+                        .cornerRadius(20)
+                    .padding(4)
+                        .shadow(color: Color.gray, radius: 8, x: 8, y: 8)
+                        .onTapGesture {
+                            self.showShippingItems = true
+                            self.cartVM.shippingProducts()
+                        }
+                    }
                     
                     WaterfallGrid(self.cartVM.cartProducts) { product in
                         CartItemPreview(product: product)
@@ -37,13 +58,17 @@ struct CartView: View {
                     NavigationLink(destination: PaymentWebView().environmentObject(self.paymentVM), isActive: self.$paymentVM.showWeb) {
                         EmptyView()
                     }
+                    
+                    NavigationLink(destination: ShippingItems().environmentObject(self.cartVM), isActive: self.$showShippingItems) {
+                        EmptyView()
+                    }
                 }
             }
             .alertX(isPresented: self.$paymentVM.showAlert, content: {
                 
                 if self.paymentVM.activeAlert == .success {
                     return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
-                        print("Complete Payment")
+                        self.cartVM.postProducts()
                     }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
                                                    alertTextColor: Color.white,
                                                    enableShadow: true,
