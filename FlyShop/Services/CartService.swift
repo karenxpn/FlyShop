@@ -33,27 +33,33 @@ class CartService {
                          "shipped": false] )
         }
         
-        self.getShippingProducts { (shippingModel) in
-            if let model = shippingModel {
-                
-                for product in model.products {
-                    order.append([
-                        "size" : product.size,
-                        "category" : product.category,
-                        "date" : product.date,
-                        "description" : product.description,
-                        "image" : product.image,
-                        "productId" : product.productId,
-                        "productName" : product.productName,
-                        "productPrice" : product.productPrice,
-                        "sale" : product.sale,
-                        "gender" : product.gender,
-                        "type": product.type,
-                        "id": product.productId,
-                        "shipped": product.shipped
-                    ])
+        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).getDocument { (snapshot, error) in
+            if error != nil {
+                DispatchQueue.main.async {
+                    completion( false )
                 }
-
+                return
+            }
+            
+            if let snapshot = snapshot, snapshot.exists {
+                let products = try? snapshot.data(as: ShippingModel.self)
+                for product in products!.products {
+                        order.append([
+                            "size" : product.size,
+                            "category" : product.category,
+                            "date" : product.date,
+                            "description" : product.description,
+                            "image" : product.image,
+                            "productId" : product.productId,
+                            "productName" : product.productName,
+                            "productPrice" : product.productPrice,
+                            "sale" : product.sale,
+                            "gender" : product.gender,
+                            "type": product.type,
+                            "id": product.productId,
+                            "shipped": product.shipped
+                        ])
+                    }
             }
             
             self.db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).setData(["products" : order]) { (error) in
@@ -72,7 +78,6 @@ class CartService {
     }
     
     func getShippingProducts(completion: @escaping (ShippingModel?) -> ()) {
-        
         db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).getDocument { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {

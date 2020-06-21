@@ -27,7 +27,7 @@ struct CartView: View {
                 
                 VStack {
                     
-                    if !self.cartVM.shippingProductsList.products.isEmpty {
+                    if !self.cartVM.shippingProductsList.products.filter{ $0.shipped == false }.isEmpty {
                         VStack {
                             HStack {
                                 Image( "shipping" )
@@ -91,7 +91,6 @@ struct CartView: View {
                 }
                 
             })
-                
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }

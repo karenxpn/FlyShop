@@ -14,7 +14,7 @@ struct ShippingItems: View {
     
     var body: some View {
         List {
-            ForEach( self.cartVM.shippingProductsList.products, id: \.productId ) { product in
+            ForEach( self.cartVM.shippingProductsList.products.filter{ $0.shipped == false }, id: \.productId ) { product in
                 HStack {
                     
                     WebImage(url: URL(string: product.image[0]))
