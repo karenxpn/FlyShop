@@ -30,7 +30,6 @@ class FilterService {
                     if let shop = try? document.data(as: ShopModel.self) {
                         shops.append(shop)
                     }
-
                 }
                 
                 DispatchQueue.main.async {
@@ -90,7 +89,6 @@ class FilterService {
                         }
                         
                     }
-                    //let filterPrice = filteredSize.filter{ $0.productPrice <= Int( price )}
                     
                     var filteredType = [ProductModel]()
                     if type != "" {

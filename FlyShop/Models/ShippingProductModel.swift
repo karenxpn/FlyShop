@@ -20,6 +20,5 @@ struct ShippingProductModel: Codable {
     var type: String
     var productId: String
     var size: String
-    var id: String
     var shipped: Bool
 }

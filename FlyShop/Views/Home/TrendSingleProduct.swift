@@ -82,7 +82,7 @@ struct TrendSingleProduct: View {
                             HStack {
                                 TextDesign(text: "Գինը", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                                 
-                                TextDesign(text: self.homeVM.foundProduct!.sale == 0 ? self.homeVM.foundProduct!.price : self.homeVM.foundProduct!.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.homeVM.foundProduct!.sale == 0 ? Color.white : Color.red)
+                                TextDesign(text: "\(self.homeVM.foundProduct!.price)դր.", size: 27, font: "Montserrat-ExtraLight", color: self.homeVM.foundProduct!.sale == 0 ? Color.white : Color.red)
                             }
                             
                             if self.homeVM.foundProduct?.category != "Աքսեսուարներ" {

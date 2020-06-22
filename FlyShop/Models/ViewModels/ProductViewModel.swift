@@ -22,7 +22,7 @@ struct ProductViewModel: Identifiable {
     }
     
     var price: String {
-        String(self.productModel.productPrice)
+        String(self.productModel.productPrice - self.productModel.productPrice * self.productModel.sale/100 )
     }
     
     var name: String {
@@ -43,10 +43,6 @@ struct ProductViewModel: Identifiable {
     
     var category: String {
         self.productModel.category
-    }
-    
-    var priceWithSale: String {
-        String(self.productModel.productPrice - self.productModel.productPrice * self.productModel.sale/100 )
     }
     
     var productId: String {

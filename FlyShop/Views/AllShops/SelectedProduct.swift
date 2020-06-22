@@ -90,7 +90,7 @@ struct SelectedProduct: View {
                                 .padding([.top, .bottom], 6)
                             
                             
-                            TextDesign(text: self.product.sale == 0 ? product.price : product.priceWithSale, size: 27, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.white : Color.red)
+                            TextDesign(text: "\(product.price)դր.", size: 27, font: "Montserrat-ExtraLight", color: self.product.sale == 0 ? Color.white : Color.red)
                                 .padding([.top, .bottom], 6)
                         }
                         
