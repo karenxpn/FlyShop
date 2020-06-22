@@ -10,7 +10,7 @@ import Foundation
 
 struct ProductModel: Codable {    
     var category: String
-    var image: [String]
+    var imagesByColor: [ProductColorImage]
     var productPrice: Int
     var productName: String
     var productSize: [String]

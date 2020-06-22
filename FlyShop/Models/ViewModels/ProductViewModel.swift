@@ -17,8 +17,17 @@ struct ProductViewModel: Identifiable {
         self.productModel = model
     }
     
-    var image: [String] {
-        self.productModel.image
+    var images: [String] {
+        var appendedImage = [String]()
+        for imagesByColor in productModel.imagesByColor {
+            appendedImage.append(contentsOf: imagesByColor.images)
+        }
+        
+        return appendedImage
+    }
+    
+    var colorImage: [ProductColorImage] {
+        self.productModel.imagesByColor
     }
     
     var price: String {

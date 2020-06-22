@@ -20,7 +20,7 @@ struct NewView: View {
                 AllShopsBackground()
                 
                 VStack{
-                    TopChat(message: "Բարեւ Ձեզ!\nՄենք Ձեր համար նոր տեսականի ունենք:")
+                    TopChat(message: "Բարեւ Ձեզ!\nՄենք ունենք նոր տեսականի Ձեզ համար:")
                     
                     WaterfallGrid(self.newVM.newItemList) { product in
                         SingleNewProduct(product: product)
