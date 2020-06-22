@@ -23,7 +23,7 @@ class CartService {
                          "category" : model.product.category,
                          "date" : model.product.date,
                          "description" : model.product.description,
-                         "image" : model.product.image,
+                         "image" : model.product.images,
                          "productId" : model.product.productId,
                          "productName" : model.product.name,
                          "productPrice" : Int( model.product.price )!,
@@ -92,6 +92,5 @@ class CartService {
                 }
             }
         }
-        
     }
 }

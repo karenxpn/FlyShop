@@ -50,6 +50,8 @@
 		FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DE9D72486EF8800178CA9 /* SVGImage.swift */; };
 		FF379F17249EB213006ED6DB /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F16249EB213006ED6DB /* ShippingModel.swift */; };
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
+		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
+		FF379F1F24A1649B006ED6DB /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1E24A1649B006ED6DB /* ColorModel.swift */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
 		FF69F9FD24959D280044F077 /* BrandFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FC24959D280044F077 /* BrandFilter.swift */; };
@@ -179,6 +181,8 @@
 		FF2DE9D72486EF8800178CA9 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 		FF379F16249EB213006ED6DB /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
 		FF379F18249EB404006ED6DB /* ShippingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingItems.swift; sourceTree = "<group>"; };
+		FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColorImage.swift; sourceTree = "<group>"; };
+		FF379F1E24A1649B006ED6DB /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		FF5EB336248DAF760021D49D /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		FF69F9F8249574A90044F077 /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
 		FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
@@ -448,11 +452,13 @@
 				FF1C80AA24632DA7000E5D88 /* SizeModel.swift */,
 				FF1C80B224633B99000E5D88 /* ShopModel.swift */,
 				FF1C80F824643A42000E5D88 /* ProductModel.swift */,
+				FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */,
 				FFB023652468B8B900FC135D /* FilterTypeModel.swift */,
 				FFB02373246AE5E900FC135D /* TrendModel.swift */,
 				FFB0237D246C4D0200FC135D /* CartModel.swift */,
 				FFFDA04D246EB03F002EA40D /* ShippingProductModel.swift */,
 				FF379F16249EB213006ED6DB /* ShippingModel.swift */,
+				FF379F1E24A1649B006ED6DB /* ColorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
 				FF9209F624884850003D2E9C /* AboutUs.swift in Sources */,
+				FF379F1F24A1649B006ED6DB /* ColorModel.swift in Sources */,
 				FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */,
 				FFFDA04C246EA7BC002EA40D /* CartService.swift in Sources */,
 				FFB0237C246C2F8F00FC135D /* CartItemPreview.swift in Sources */,
@@ -816,6 +823,7 @@
 				FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */,
 				FFB0236E2469FF2400FC135D /* AllShopsFilter.swift in Sources */,
 				FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */,
+				FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */,
 				FF920A3724898391003D2E9C /* CancelPaymentRequest.swift in Sources */,
 				FF920A45248985DC003D2E9C /* MakeBindingPaymentRequest.swift in Sources */,
 				FFB02370246AD44A00FC135D /* HomeViewModel.swift in Sources */,

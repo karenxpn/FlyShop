@@ -20,6 +20,7 @@ struct SelectedProduct: View {
     @State private var activeSheet: ActiveSheet = .brand
     @State private var showAlert: Bool = false
     @State private var expanded: Bool = false
+    @State private var color: String = ""
     
     var body: some View {
         
@@ -39,42 +40,75 @@ struct SelectedProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        ImageCarouselView(numberOfImages: self.product.image.count, expanded: self.expanded) {
-                            ForEach( self.product.image, id: \.self ) { image in
-                                
-                                WebImage(url:URL(string: image) )
-                                    .resizable()
-                                    .aspectRatio(contentMode: self.expanded ? .fit : .fill)
-                                    .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
-                                    .cornerRadius(15)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            self.expanded.toggle()
-                                        }
-                                        
+                        
+                        if self.color == "" {
+                            ImageCarouselView(numberOfImages: self.product.images.count, expanded: self.expanded) {
+                                ForEach( self.product.images, id: \.self ) { image in
+                                    
+                                    WebImage(url:URL(string: image) )
+                                        .resizable()
+                                        .aspectRatio(contentMode: self.expanded ? .fit : .fill)
+                                        .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
+                                        .cornerRadius(15)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                self.expanded.toggle()
+                                            }
+                                            
+                                    }
+                                    
                                 }
-                                
-                            }
-                        }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
+                            }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
+                        } else {
+                            ImageCarouselView.init(numberOfImages: ColorModel().getColorImages(color: self.color, obj: self.product.colorImage).count, expanded: self.expanded) {
+                                ForEach( ColorModel().getColorImages(color: self.color, obj: self.product.colorImage), id: \.self ) { image in
+                                    WebImage(url:URL(string: image) )
+                                        .resizable()
+                                        .aspectRatio(contentMode: self.expanded ? .fit : .fill)
+                                        .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
+                                        .cornerRadius(15)
+                                    
+                                }
+                            }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
+                        }
+                        
+                        
                     }.background(Color.white)
                         .cornerRadius(15)
                     
                     
                     VStack {
                         
-                        if product.ar {
-                            TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-                                .padding(.vertical, 5)
-                                .padding(.horizontal)
-                                .background(Color.green)
-                                .cornerRadius(20)
-                                .onTapGesture {
-                                    UserDefaults.standard.set(self.product.name, forKey: "AR")
-                                    self.activeSheet = .arView
-                                    self.showSheet = true
+                        HStack {
+                            
+                            ForEach( self.product.colorImage, id: \.color ) { item in
+                                Circle().stroke(Color.white, lineWidth: self.color == item.color ? 3 : 0)
+                                    .overlay(Circle().fill( ColorModel().getColors(color: item.color)) )
+                                    .frame(width: 30, height: 30)
+                                    .onTapGesture {
+                                        self.color = item.color
+                                        withAnimation {
+                                            self.expanded = true
+                                            
+                                        }
+                                        
+                                }
+                            }
+                            
+                            if product.ar {
+                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal)
+                                    .background(Color.green)
+                                    .cornerRadius(20)
+                                    .onTapGesture {
+                                        UserDefaults.standard.set(self.product.name, forKey: "AR")
+                                        self.activeSheet = .arView
+                                        self.showSheet = true
+                                }
                             }
                         }
-
+                        
                         TextDesign(text: "Նկարագրություն", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             .padding(.bottom)
                         
@@ -107,14 +141,14 @@ struct SelectedProduct: View {
                                     self.showSheet.toggle()
                             }
                         }
-
+                        
                         
                         Button(action: {
-                            if self.size == "Չափս" && self.product.category != "Աքսեսուարներ" {
+                            if ( self.size == "Չափս" && self.product.category != "Աքսեսուարներ" ) || self.color == "" {
                                 self.activeAlert = .error
                                 self.showAlert.toggle()
                             } else {
-                                let cartModel = CartModel(product: self.product, size: self.size)
+                                let cartModel = CartModel(product: self.product, size: self.size, color: self.color)
                                 self.cartVM.cartProducts.append(cartModel)
                                 self.activeAlert = .success
                                 self.showAlert.toggle()
@@ -146,14 +180,14 @@ struct SelectedProduct: View {
                     return AlertX(title: Text( "Շնորհավոր"), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
                 }
             }
-                .sheet(isPresented: self.$showSheet) {
-                    if self.activeSheet == .arView {
-                        ARContentVIew()
-                    } else if self.activeSheet == .size {
-                        SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
-                    }
+            .sheet(isPresented: self.$showSheet) {
+                if self.activeSheet == .arView {
+                    ARContentVIew()
+                } else if self.activeSheet == .size {
+                    SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
+                }
             }
-
+            
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }

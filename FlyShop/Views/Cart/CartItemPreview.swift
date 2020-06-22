@@ -26,7 +26,7 @@ struct CartItemPreview: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.product.image[0]))
+                        WebImage(url: URL(string: product.product.images[0]))
                             .resizable()
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
