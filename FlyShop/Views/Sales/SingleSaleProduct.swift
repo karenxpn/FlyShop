@@ -35,7 +35,7 @@ struct SingleSaleProduct: View {
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
-                        TextDesign(text: product.priceWithSale, size: 15, font: "Montserrat-ExtraLight", color: Color.red)
+                        TextDesign(text: "\(product.price)դր.", size: 15, font: "Montserrat-ExtraLight", color: Color.red)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
                         

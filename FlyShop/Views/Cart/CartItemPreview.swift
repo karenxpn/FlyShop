@@ -32,7 +32,7 @@ struct CartItemPreview: View {
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
-                        TextDesign(text: self.product.product.sale == 0 ? product.product.price : product.product.priceWithSale, size: 14, font: "Montserrat-ExtraLight", color: self.product.product.sale == 0 ? Color.gray : Color.red)
+                        TextDesign(text: "\(product.product.price)դր.", size: 14, font: "Montserrat-ExtraLight", color: self.product.product.sale == 0 ? Color.gray : Color.red)
                             .padding(.trailing)
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
                         

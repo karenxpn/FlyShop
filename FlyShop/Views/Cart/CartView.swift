@@ -170,7 +170,7 @@ struct Buy: View {
         var total = 0
         
         for product in self.cartVM.cartProducts {
-            total += Int ( product.product.priceWithSale )!
+            total += Int ( product.product.price )!
         }
         
         return total

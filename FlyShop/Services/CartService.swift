@@ -8,7 +8,8 @@
 
 import Foundation
 import Firebase
-import MessageUI
+import Alamofire
+
 class CartService {
     let db = Firestore.firestore()
     
@@ -25,11 +26,10 @@ class CartService {
                          "image" : model.product.image,
                          "productId" : model.product.productId,
                          "productName" : model.product.name,
-                         "productPrice" : Int( model.product.priceWithSale )!,
+                         "productPrice" : Int( model.product.price )!,
                          "sale" : model.product.sale,
                          "gender" : model.product.gender,
                          "type": model.product.type,
-                         "id": model.product.productId,
                          "shipped": false] )
         }
         
@@ -56,7 +56,6 @@ class CartService {
                             "sale" : product.sale,
                             "gender" : product.gender,
                             "type": product.type,
-                            "id": product.productId,
                             "shipped": product.shipped
                         ])
                     }
