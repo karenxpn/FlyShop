@@ -11,5 +11,4 @@ struct CartModel: Identifiable {
     var id = UUID()
     var product: ProductViewModel
     var size: String
-    var color: String
 }
