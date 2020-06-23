@@ -20,7 +20,6 @@ struct SelectedProduct: View {
     @State private var activeSheet: ActiveSheet = .brand
     @State private var showAlert: Bool = false
     @State private var expanded: Bool = false
-    @State private var color: String = ""
     
     var body: some View {
         
@@ -40,9 +39,7 @@ struct SelectedProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        
-                        if self.color == "" {
-                            ImageCarouselView(numberOfImages: self.product.images.count, expanded: self.expanded) {
+                        ImageCarouselView(numberOfImages: self.product.images.count, expanded: self.expanded) {
                                 ForEach( self.product.images, id: \.self ) { image in
                                     
                                     WebImage(url:URL(string: image) )
@@ -59,18 +56,7 @@ struct SelectedProduct: View {
                                     
                                 }
                             }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
-                        } else {
-                            ImageCarouselView.init(numberOfImages: ColorModel().getColorImages(color: self.color, obj: self.product.colorImage).count, expanded: self.expanded) {
-                                ForEach( ColorModel().getColorImages(color: self.color, obj: self.product.colorImage), id: \.self ) { image in
-                                    WebImage(url:URL(string: image) )
-                                        .resizable()
-                                        .aspectRatio(contentMode: self.expanded ? .fit : .fill)
-                                        .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
-                                        .cornerRadius(15)
-                                    
-                                }
-                            }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
-                        }
+                        
                         
                         
                     }.background(Color.white)
@@ -79,33 +65,16 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        HStack {
-                            
-                            ForEach( self.product.colorImage, id: \.color ) { item in
-                                Circle().stroke(Color.white, lineWidth: self.color == item.color ? 3 : 0)
-                                    .overlay(Circle().fill( ColorModel().getColors(color: item.color)) )
-                                    .frame(width: 30, height: 30)
-                                    .onTapGesture {
-                                        self.color = item.color
-                                        withAnimation {
-                                            self.expanded = true
-                                            
-                                        }
-                                        
-                                }
-                            }
-                            
-                            if product.ar {
-                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-                                    .padding(.vertical, 5)
-                                    .padding(.horizontal)
-                                    .background(Color.green)
-                                    .cornerRadius(20)
-                                    .onTapGesture {
-                                        UserDefaults.standard.set(self.product.name, forKey: "AR")
-                                        self.activeSheet = .arView
-                                        self.showSheet = true
-                                }
+                        if product.ar {
+                            TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                                .padding(.vertical, 5)
+                                .padding(.horizontal)
+                                .background(Color.green)
+                                .cornerRadius(20)
+                                .onTapGesture {
+                                    UserDefaults.standard.set(self.product.name, forKey: "AR")
+                                    self.activeSheet = .arView
+                                    self.showSheet = true
                             }
                         }
                         
@@ -144,11 +113,11 @@ struct SelectedProduct: View {
                         
                         
                         Button(action: {
-                            if ( self.size == "Չափս" && self.product.category != "Աքսեսուարներ" ) || self.color == "" {
+                            if self.size == "Չափս" && self.product.category != "Աքսեսուարներ" {
                                 self.activeAlert = .error
                                 self.showAlert.toggle()
                             } else {
-                                let cartModel = CartModel(product: self.product, size: self.size, color: self.color)
+                                let cartModel = CartModel(product: self.product, size: self.size)
                                 self.cartVM.cartProducts.append(cartModel)
                                 self.activeAlert = .success
                                 self.showAlert.toggle()

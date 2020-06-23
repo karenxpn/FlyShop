@@ -24,7 +24,6 @@ struct TrendSingleProduct: View {
     @State private var activeAlert: ActiveAlert = .error
     @State private var image: String = ""
     @State private var expanded: Bool = false
-    @State private var color: String = ""
 
     
     var body: some View {
@@ -48,7 +47,6 @@ struct TrendSingleProduct: View {
                             
                             Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                             
-                            if self.color == "" {
                                 ImageCarouselView(numberOfImages: self.homeVM.foundProduct!.images.count, expanded: self.expanded) {
                                     ForEach( self.homeVM.foundProduct!.images, id: \.self ) { image in
                                         
@@ -66,18 +64,7 @@ struct TrendSingleProduct: View {
                                         
                                     }
                                 }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
-                            } else {
-                                ImageCarouselView.init(numberOfImages: ColorModel().getColorImages(color: self.color, obj: self.homeVM.foundProduct!.colorImage).count, expanded: self.expanded) {
-                                    ForEach( ColorModel().getColorImages(color: self.color, obj: self.homeVM.foundProduct!.colorImage), id: \.self ) { image in
-                                        WebImage(url:URL(string: image) )
-                                            .resizable()
-                                            .aspectRatio(contentMode: self.expanded ? .fit : .fill)
-                                            .frame(width: UIScreen.main.bounds.size.width, height: self.expanded ?  UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2 )
-                                            .cornerRadius(15)
-                                        
-                                    }
-                                }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
-                            }
+                           
                                 
                         }.background(Color.white)
                             .cornerRadius(15)
@@ -120,7 +107,7 @@ struct TrendSingleProduct: View {
                                     self.activeAlert = .error
                                     self.showAlert.toggle()
                                 } else {
-                                    let cartModel = CartModel(product: self.homeVM.foundProduct!, size: self.size, color: self.color)
+                                    let cartModel = CartModel(product: self.homeVM.foundProduct!, size: self.size)
                                     self.cartVM.cartProducts.append(cartModel)
                                     self.activeAlert = .success
                                     self.showAlert.toggle()

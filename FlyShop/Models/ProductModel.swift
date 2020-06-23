@@ -9,16 +9,17 @@
 import Foundation
 
 struct ProductModel: Codable {    
-    var category: String
-    var imagesByColor: [ProductColorImage]
-    var productPrice: Int
     var productName: String
-    var productSize: [String]
-    var description: String
-    var date: String
+    var productId: String
+    var images: [String]
+    var productPrice: Int
     var sale: Int
     var gender: String
+    var category: String
     var type: String
-    var productId: String
+    var productSize: [String]
+    var description: String
+    var color: String
+    var date: String
     var ar: Bool
 }
