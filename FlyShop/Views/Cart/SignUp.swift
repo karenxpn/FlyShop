@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AlertX
 
 struct SignUp: View {
     
@@ -87,10 +88,10 @@ struct SignUp: View {
             if self.authVM.showLoading {
                 Loading()
             }
-        }.alert(isPresented: self.$showAlert, content: {
-            Alert(title: Text( "Error"), message: Text( "Enter your phone number/ verification code"), dismissButton: .default(Text( "OK")))
-        })
-            .onTapGesture {
+        }.alertX(isPresented: self.$showAlert, content: {
+            AlertX(title: Text( "Սխալ" ), message: Text( "Մուտքագրեք հեռախոսահամարը և հաստատման կոդը" ), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
+
+        }) .onTapGesture {
                 UIApplication.shared.endEditing()
         }
     }

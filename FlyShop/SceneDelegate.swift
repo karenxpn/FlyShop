@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,6 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
         let cartVM = CartViewModel()
+        let authVM = AuthViewModel()
+        
+        if Auth.auth().currentUser == nil {
+            authVM.userShouldLog = true
+        }
         
         let newAppearance = UINavigationBarAppearance()
         newAppearance.configureWithOpaqueBackground()
@@ -33,7 +39,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(cartVM))
+            window.rootViewController = UIHostingController(rootView: contentView
+                .environmentObject(cartVM)
+                .environmentObject(authVM))
             self.window = window
             window.makeKeyAndVisible()
         }

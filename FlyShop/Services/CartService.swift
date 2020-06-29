@@ -77,7 +77,7 @@ class CartService {
     }
     
     func getShippingProducts(completion: @escaping (ShippingModel?) -> ()) {
-        db.collection("Orders").document(Auth.auth().currentUser!.phoneNumber!).getDocument { (snapshot, error) in
+        db.collection("Orders").document(Auth.auth().currentUser?.phoneNumber ?? "Admin").getDocument { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
