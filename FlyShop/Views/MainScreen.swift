@@ -44,57 +44,61 @@ struct MainScreen: View {
             }
             
             if self.viewRouter.currentView != "cart" {
-                
-                HStack( alignment: .top) {
-                    HStack {
-                        ForEach( 0..<self.tabItems.count ) { index in
-                            ZStack {
-                                Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
-                                    .frame(width: 50, height: 50)
-                                
-                                self.tabItems[index].image
-                                    .resizable()
-                                    .aspectRatio(contentMode: index == 2 ? .fill : .fit)
-                                    .padding()
-                                    .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
-                                    .onTapGesture {
-                                        self.designSelectedItem(index: index)
-                                        self.viewRouter.currentView = self.tabItems[index].title
-                                }
-                            }
-                        }
-                    }
-                }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
-                    .padding(.bottom, 15)
+                TabView(selected: self.$selected, tabItems: self.tabItems)
+                    .environmentObject(self.viewRouter)
+
             } else {
                 if self.authVM.userShouldLog == false || Auth.auth().currentUser != nil {
-                    HStack( alignment: .top) {
-                        HStack {
-                            ForEach( 0..<self.tabItems.count ) { index in
-                                ZStack {
-                                    Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
-                                        .frame(width: 50, height: 50)
-                                    
-                                    self.tabItems[index].image
-                                        .resizable()
-                                        .aspectRatio(contentMode: index == 2 ? .fill : .fit)
-                                        .padding()
-                                        .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
-                                        .onTapGesture {
-                                            self.designSelectedItem(index: index)
-                                            self.viewRouter.currentView = self.tabItems[index].title
-                                    }
-                                }
-                            }
-                        }
-                    }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
-                        .padding(.bottom, 15)
+                    TabView(selected: self.$selected, tabItems: self.tabItems)
+                        .environmentObject(self.viewRouter)
+
                 }
             }
 
             
             
         }.edgesIgnoringSafeArea(.bottom)
+    }
+    
+    func designSelectedItem ( index: Int ) {
+        for i in 0..<self.selected.count {
+            self.selected[i] = false
+        }
+        
+        self.selected[index] = true
+    }
+}
+
+struct TabView: View {
+    
+    @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var authVM: AuthViewModel
+    @Binding var selected: [Bool]
+    let selectedColor = Color(red: 218/255, green: 218/255, blue: 218/255, opacity: 0.6)
+    let tabItems: [TabItemModel]
+    
+    var body: some View {
+        HStack( alignment: .top) {
+            HStack {
+                ForEach( 0..<self.tabItems.count ) { index in
+                    ZStack {
+                        Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
+                            .frame(width: 50, height: 50)
+                        
+                        self.tabItems[index].image
+                            .resizable()
+                            .aspectRatio(contentMode: index == 2 ? .fill : .fit)
+                            .padding()
+                            .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
+                            .onTapGesture {
+                                self.designSelectedItem(index: index)
+                                self.viewRouter.currentView = self.tabItems[index].title
+                        }
+                    }
+                }
+            }
+        }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
+            .padding(.bottom, 15)
     }
     
     func designSelectedItem ( index: Int ) {
