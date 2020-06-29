@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import Firebase
 
 class AuthViewModel: ObservableObject {
-    @Published var userLogged: Bool = false
+    @Published var userShouldLog: Bool = false
     @Published var number: String = ""
     @Published var confirmationCode: String = ""
     @Published var showLoading: Bool = false
+    
     
     func signUp() {
         AuthService().signUp(phoneNumber: self.number)
@@ -23,7 +25,7 @@ class AuthViewModel: ObservableObject {
         AuthService().signIn(verificationCode: self.confirmationCode) { (result) in
             if result == true {
                 self.showLoading = false
-                self.userLogged = true
+                self.userShouldLog = false
             }
         }
     }

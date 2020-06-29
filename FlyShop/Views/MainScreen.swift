@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MainScreen: View {
     
     @ObservedObject var viewRouter = ViewRouter()
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var selected = [false, false, true, false, false]
     let selectedColor = Color(red: 218/255, green: 218/255, blue: 218/255, opacity: 0.6)
     let tabItems = TabItemModel.getTabItems()
@@ -33,30 +35,63 @@ struct MainScreen: View {
             } else if self.viewRouter.currentView == "sales" {
                 SaleView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             } else if self.viewRouter.currentView == "cart" {
-                CartView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                
+                if self.authVM.userShouldLog == true || Auth.auth().currentUser == nil {
+                    SignUp().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                } else {
+                    CartView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                }
             }
             
-            HStack( alignment: .top) {
-                HStack {
-                    ForEach( 0..<self.tabItems.count ) { index in
-                        ZStack {
-                            Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
-                                .frame(width: 50, height: 50)
-                            
-                            self.tabItems[index].image
-                                .resizable()
-                                .aspectRatio(contentMode: index == 2 ? .fill : .fit)
-                                .padding()
-                                .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
-                                .onTapGesture {
-                                    self.designSelectedItem(index: index)
-                                    self.viewRouter.currentView = self.tabItems[index].title
+            if self.viewRouter.currentView != "cart" {
+                
+                HStack( alignment: .top) {
+                    HStack {
+                        ForEach( 0..<self.tabItems.count ) { index in
+                            ZStack {
+                                Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
+                                    .frame(width: 50, height: 50)
+                                
+                                self.tabItems[index].image
+                                    .resizable()
+                                    .aspectRatio(contentMode: index == 2 ? .fill : .fit)
+                                    .padding()
+                                    .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
+                                    .onTapGesture {
+                                        self.designSelectedItem(index: index)
+                                        self.viewRouter.currentView = self.tabItems[index].title
+                                }
                             }
                         }
                     }
+                }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
+                    .padding(.bottom, 15)
+            } else {
+                if self.authVM.userShouldLog == false || Auth.auth().currentUser != nil {
+                    HStack( alignment: .top) {
+                        HStack {
+                            ForEach( 0..<self.tabItems.count ) { index in
+                                ZStack {
+                                    Circle().foregroundColor(self.selected[index] ? self.selectedColor : Color.white)
+                                        .frame(width: 50, height: 50)
+                                    
+                                    self.tabItems[index].image
+                                        .resizable()
+                                        .aspectRatio(contentMode: index == 2 ? .fill : .fit)
+                                        .padding()
+                                        .frame(width: UIScreen.main.bounds.size.width/6, height: UIScreen.main.bounds.size.width/6)
+                                        .onTapGesture {
+                                            self.designSelectedItem(index: index)
+                                            self.viewRouter.currentView = self.tabItems[index].title
+                                    }
+                                }
+                            }
+                        }
+                    }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
+                        .padding(.bottom, 15)
                 }
-            }.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/15)
-                .padding(.bottom, 15)
+            }
+
             
             
         }.edgesIgnoringSafeArea(.bottom)

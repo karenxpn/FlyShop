@@ -11,14 +11,16 @@ import SwiftUIX
 import WaterfallGrid
 import Alamofire
 import AlertX
+import Firebase
 
 
 struct CartView: View {
     
     @EnvironmentObject var cartVM: CartViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @ObservedObject var paymentVM = PaymentViewModel()
     @State private var showShippingItems: Bool = false
-    
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -48,6 +50,7 @@ struct CartView: View {
                         }
                     }
                     
+                    
                     WaterfallGrid(self.cartVM.cartProducts) { product in
                         CartItemPreview(product: product)
                             .padding(.top, 12)
@@ -63,8 +66,7 @@ struct CartView: View {
                         EmptyView()
                     }
                 }
-            }
-            .alertX(isPresented: self.$paymentVM.showAlert, content: {
+            }.alertX(isPresented: self.$paymentVM.showAlert, content: {
                 
                 if self.paymentVM.activeAlert == .success {
                     return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
@@ -89,8 +91,10 @@ struct CartView: View {
                                                    defaultButtonColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 1)), defaultButtonTextColor: Color.white),
                         animation: .defaultEffect())
                 }
-                
             })
+//                .sheet(isPresented: self.$authVM.userShouldLog, content: {
+//                    SignUp().environmentObject(self.authVM)
+//                })
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }
@@ -113,6 +117,9 @@ struct CartView_Previews: PreviewProvider {
 struct Buy: View {
     @EnvironmentObject var cartVM: CartViewModel
     @EnvironmentObject var paymentVM: PaymentViewModel
+    @EnvironmentObject var authVM: AuthViewModel
+
+    
     var body: some View {
         ZStack {
             
@@ -136,16 +143,22 @@ struct Buy: View {
                     Button(action: {
                         
                         if self.coutTotal() == 0 {
-                            self.paymentVM.activeAlert = .error
-                            self.paymentVM.showAlert = true
-                            self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
-                        } else {
-                            
-                            // add description for transaction
+                             self.paymentVM.activeAlert = .error
+                             self.paymentVM.showAlert = true
+                             self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
+//                            do {
+//                                try Auth.auth().signOut()
+//
+//                            }
+//                            catch {
+//                            print("lsdkja")
+//                            }
+                         } else {
+//                             add description for transaction
                             for product in self.cartVM.cartProducts {
                                 self.paymentVM.description += ( "\(product.product.name)" )
                             }
-                            
+
                             self.paymentVM.initPayment()
                         }
                     }) {

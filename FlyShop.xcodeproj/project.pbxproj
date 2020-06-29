@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */; };
+		E65193732C773178C274820F /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */; };
 		FF0D7EE12485602B00EE96B0 /* ARContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
@@ -15,7 +15,6 @@
 		FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1C805B24616F25000E5D88 /* Assets.xcassets */; };
 		FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1C805E24616F25000E5D88 /* Preview Assets.xcassets */; };
 		FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */; };
-		FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */; };
 		FF1C806D246172A7000E5D88 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C806C246172A7000E5D88 /* Background.swift */; };
 		FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C806E2461737F000E5D88 /* SignUp.swift */; };
 		FF1C807224617BA3000E5D88 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C807124617BA3000E5D88 /* AuthService.swift */; };
@@ -47,10 +46,10 @@
 		FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80F824643A42000E5D88 /* ProductModel.swift */; };
 		FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FA24643B71000E5D88 /* NewViewModel.swift */; };
 		FF1C80FD24644020000E5D88 /* NewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C80FC24644020000E5D88 /* NewService.swift */; };
-		FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DE9D72486EF8800178CA9 /* SVGImage.swift */; };
 		FF379F17249EB213006ED6DB /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F16249EB213006ED6DB /* ShippingModel.swift */; };
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
+		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
 		FF69F9FD24959D280044F077 /* BrandFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FC24959D280044F077 /* BrandFilter.swift */; };
@@ -132,9 +131,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
-		72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
-		ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
+		875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentVIew.swift; sourceTree = "<group>"; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +143,6 @@
 		FF1C805E24616F25000E5D88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF1C806124616F25000E5D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1C806324616F25000E5D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF1C806C246172A7000E5D88 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		FF1C806E2461737F000E5D88 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		FF1C807124617BA3000E5D88 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -177,10 +175,10 @@
 		FF1C80F824643A42000E5D88 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		FF1C80FA24643B71000E5D88 /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
 		FF1C80FC24644020000E5D88 /* NewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService.swift; sourceTree = "<group>"; };
-		FF2DE9D72486EF8800178CA9 /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 		FF379F16249EB213006ED6DB /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
 		FF379F18249EB404006ED6DB /* ShippingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingItems.swift; sourceTree = "<group>"; };
 		FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColorImage.swift; sourceTree = "<group>"; };
+		FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF5EB336248DAF760021D49D /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		FF69F9F8249574A90044F077 /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
 		FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
@@ -265,9 +263,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E5F3B5D21C57CE40DE4324 /* Pods_FlyShop.framework in Frameworks */,
 				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
 				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
+				E65193732C773178C274820F /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,16 +275,16 @@
 		68E4629599D57A41A8F8B15D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */,
-				72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */,
+				875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */,
+				2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9DDBD4414A864672232374F1 /* Frameworks */ = {
+		893B44D056F7E77C3A00A3EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECA8A25BF1AAED73018D40B9 /* Pods_FlyShop.framework */,
+				D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,7 +308,7 @@
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
 				68E4629599D57A41A8F8B15D /* Pods */,
-				9DDBD4414A864672232374F1 /* Frameworks */,
+				893B44D056F7E77C3A00A3EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,8 +334,8 @@
 				FF1C805924616F23000E5D88 /* ContentView.swift */,
 				FF1C805B24616F25000E5D88 /* Assets.xcassets */,
 				FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */,
+				FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */,
 				FF1C806324616F25000E5D88 /* Info.plist */,
-				FF1C806924616F9D000E5D88 /* GoogleService-Info.plist */,
 				FF5EB336248DAF760021D49D /* privacy_policy.md */,
 				FF1C807F2461C366000E5D88 /* fonts */,
 				FF1C805D24616F25000E5D88 /* Preview Content */,
@@ -365,7 +363,6 @@
 				FF1C80F324643705000E5D88 /* New */,
 				FF1C80B824633EF9000E5D88 /* Utils */,
 				FF1C80862461D941000E5D88 /* Backgrounds */,
-				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FF1C807B24619000000E5D88 /* MainScreen.swift */,
 			);
 			path = Views;
@@ -467,7 +464,6 @@
 				FFB0235624660F8F00FC135D /* SearchBar.swift */,
 				FFFDA073247084A6002EA40D /* ImageCarousel.swift */,
 				FFFDA07724709550002EA40D /* TextDesign.swift */,
-				FF2DE9D72486EF8800178CA9 /* SVGImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -605,6 +601,7 @@
 		FFB023622468A31A00FC135D /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C806E2461737F000E5D88 /* SignUp.swift */,
 				FFB023602468A30500FC135D /* CartView.swift */,
 				FFB0237B246C2F8F00FC135D /* CartItemPreview.swift */,
 				FF69FA0B249822410044F077 /* WebView.swift */,
@@ -621,11 +618,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1C806624616F25000E5D88 /* Build configuration list for PBXNativeTarget "FlyShop" */;
 			buildPhases = (
-				9F29D763B648CC9898C13478 /* [CP] Check Pods Manifest.lock */,
+				230D034776421131455B3229 /* [CP] Check Pods Manifest.lock */,
 				FF1C804E24616F23000E5D88 /* Sources */,
 				FF1C804F24616F23000E5D88 /* Frameworks */,
 				FF1C805024616F23000E5D88 /* Resources */,
-				7D6BF86DD5487EA6B592554E /* [CP] Embed Pods Frameworks */,
+				072BC442760FEFE624ACD18D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -647,7 +644,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Karen Mirakyan";
 				TargetAttributes = {
 					FF1C805124616F23000E5D88 = {
@@ -683,8 +680,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF69FA102498ED6A0044F077 /* .gitignore in Resources */,
+				FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */,
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
-				FF1C806A24616F9D000E5D88 /* GoogleService-Info.plist in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
 				FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */,
 				FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */,
@@ -696,7 +693,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7D6BF86DD5487EA6B592554E /* [CP] Embed Pods Frameworks */ = {
+		072BC442760FEFE624ACD18D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -713,7 +710,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F29D763B648CC9898C13478 /* [CP] Check Pods Manifest.lock */ = {
+		230D034776421131455B3229 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -782,7 +779,6 @@
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
 				FF69FA0324959E730044F077 /* SizeFilter.swift in Sources */,
 				FF920A41248984DA003D2E9C /* TransactionClientResponse.swift in Sources */,
-				FF2DE9D82486EF8800178CA9 /* SVGImage.swift in Sources */,
 				FFB0235B24683DB700FC135D /* SizeSheet.swift in Sources */,
 				FF9209F624884850003D2E9C /* AboutUs.swift in Sources */,
 				FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */,
@@ -896,6 +892,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -956,6 +953,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -986,43 +984,47 @@
 		};
 		FF1C806724616F25000E5D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06A6E7E0044B32B51B50BCD8 /* Pods-FlyShop.debug.xcconfig */;
+			baseConfigurationReference = 875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
-				DEVELOPMENT_TEAM = Z9LZT27D3M;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlyShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.developer.store.FlyShop;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FF1C806824616F25000E5D88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72E37F185DC125B8DA91FC11 /* Pods-FlyShop.release.xcconfig */;
+			baseConfigurationReference = 2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
-				DEVELOPMENT_TEAM = Z9LZT27D3M;
+				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlyShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.developer.store.FlyShop;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
