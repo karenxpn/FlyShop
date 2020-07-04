@@ -27,7 +27,9 @@ struct GenderFilter: View {
                     .frame(width: 30, height: 30)
             }.padding(2)
                 .onTapGesture {
-                    self.filterVM.gender = "Իգական"
+                    withAnimation {
+                        self.filterVM.gender = "Իգական"
+                    }
             }
             
             ZStack {
@@ -40,10 +42,12 @@ struct GenderFilter: View {
                     .frame(width: 30, height: 30)
             }.padding(2)
                 .onTapGesture {
-                    self.filterVM.gender = "Արական"
+                    withAnimation {
+                        self.filterVM.gender = "Արական"
+                    }
             }
-            
-        }    }
+        }
+    }
 }
 
 struct GenderFilter_Previews: PreviewProvider {

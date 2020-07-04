@@ -11,5 +11,5 @@ struct ShopModel: Decodable {
     
     var shopName: String
     var image: String
-    var products: [ProductModel]
+    //var products: [ProductModel]
 }

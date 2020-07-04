@@ -13,6 +13,7 @@ import WaterfallGrid
 struct SingleShop: View {
     
     @ObservedObject var allShopsFilterVM = AllShopsFilter()
+    @EnvironmentObject var shopVM: ShopViewModel
     
     let shopModel: ShopListViewModel
     
@@ -97,10 +98,11 @@ struct SingleShop: View {
                         
                     }.padding([.leading, .trailing])
                 }
-                WaterfallGrid(self.allShopsFilterVM.filter(model: self.shopModel)) { product in
-                    SingleProduct(product: product)
-                }
                 
+                WaterfallGrid(self.allShopsFilterVM.filter(products: self.shopVM.shopProducts)) { product in
+                    SingleProduct(product: product)
+                    
+                }
             }
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }

@@ -11,6 +11,7 @@ import SwiftUI
 import UIKit
 
 struct RealityIntegratedViewController: UIViewControllerRepresentable {
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<RealityIntegratedViewController>) -> RealityIntegratedViewController.UIViewControllerType {
         return RealityViewController()
     }

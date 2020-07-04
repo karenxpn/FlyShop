@@ -24,7 +24,7 @@ class FilterViewModel: ObservableObject {
     func getFilteredData() {
         FilterService().fetchFilteredData(new: self.checkedNew, sale: self.checkedSale, brand: brand, category: category, gender: self.gender, size: self.size, type: self.type, price: self.price) { (result) in
             if let result = result {
-                self.filteredItems = result.map(ProductViewModel.init)
+                self.filteredItems = result
             }
         }
     }

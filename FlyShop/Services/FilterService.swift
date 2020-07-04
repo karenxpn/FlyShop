@@ -12,9 +12,9 @@ import Firebase
 class FilterService {
     let db = Firestore.firestore()
     
-    func fetchFilteredData(new: Bool, sale: Bool, brand: String, category: String, gender: String, size: [String], type: String, price: Double, completion: @escaping ( [ProductModel]?) -> () ) {
+    func fetchFilteredData(new: Bool, sale: Bool, brand: String, category: String, gender: String, size: [String], type: String, price: Double, completion: @escaping ( [ProductViewModel]?) -> () ) {
         
-        db.collection("AllShops").addSnapshotListener { (snapshot, error) in
+        db.collection("AllShops").getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
@@ -23,86 +23,51 @@ class FilterService {
             }
             
             if snapshot?.isEmpty == false {
-                var shops = [ShopModel]()
+                var products = [ProductModel]()
                 
-                for document in snapshot!.documents {
- 
-                    if let shop = try? document.data(as: ShopModel.self) {
-                        shops.append(shop)
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    
-                    var filteredShops = [ShopModel]()
-                    
-                    if brand != "" {
-                        for shop in shops {
-                            if shop.shopName == brand {
-                                filteredShops.append(shop)
+                for doc in snapshot!.documents {
+                    doc.reference.collection("products").addSnapshotListener { (snap, errorMessage) in
+                        if errorMessage != nil {
+                            DispatchQueue.main.async {
+                                completion( nil )
+                            }
+                            return
+                        }
+                        
+                        if snap?.isEmpty == false {
+                            for document in snap!.documents {
+                                if let model = try? document.data(as: ProductModel.self) {
+                                    products.append(model)
+                                }
+                            }
+                            
+                            
+                            DispatchQueue.main.async {
+//                                if brand != "" {
+//                                    products = products.filter{ $0.brand == brand}
+//                                }
+                                
+                                
+                                var filterProducts = products.map( ProductViewModel.init )
+                                
+                                
+                                filterProducts = filterProducts.filter{ $0.category == category }
+                                filterProducts = filterProducts.filter{ $0.gender == gender }
+                                if sale { filterProducts = filterProducts.filter{ $0.sale > 0 } }
+                                if new { filterProducts = filterProducts.filter { self.convertToDate(startDate: $0.date) <= 30 }}
+                                if size.isEmpty == false { filterProducts = filterProducts.filter{ $0.size == size } }
+                                filterProducts = filterProducts.filter { Int( $0.price )! <= Int( price ) }
+                                if type != "" { filterProducts = filterProducts.filter{ $0.type == type }}
+                                
+                                completion( filterProducts )
                             }
                         }
-                    } else {
-                        filteredShops = shops
-                    }
-                    
-                    var filteredCategory = [ProductModel]()
-                    
-                    for shop in filteredShops {
-                        filteredCategory.append(contentsOf: shop.products )
-                    }
-                    
-                    filteredCategory = filteredCategory.filter{ $0.category == category }
-                    let filteredGender = filteredCategory.filter{ $0.gender == gender }
-                    
-                    
-                    var filteredSale = [ProductModel]()
-                    if sale {
-                        filteredSale = filteredGender.filter{ $0.sale != 0 }
-                    } else {
-                        filteredSale = filteredGender
-                    }
-                    
-                    
-                    var filteredNew = [ProductModel]()
-                    if new {
-                        filteredNew = filteredSale.filter{ self.convertToDate(startDate: $0.date) <= 30 }
-                    } else {
-                        filteredNew = filteredSale
-                    }
-                    
-                    var filteredSize = [ProductModel]()
-                    if size.isEmpty == false {
-                        
-                        for currentSize in size {
-                            filteredSize = filteredNew.filter{ $0.productSize.contains(currentSize)}
-                        }
-                    } else {
-                        filteredSize = filteredNew
-                    }
-                                        
-                    var filterPrice = [ProductModel]()
-                    for index in 0..<filteredSize.count {
-                        let priceWithSale = filteredSize[index].productPrice - filteredSize[index].productPrice*filteredSize[index].sale/100
-                        if priceWithSale <= Int( price ) {
-                            filterPrice.append(filteredSize[index])
-                        }
                         
                     }
-                    
-                    var filteredType = [ProductModel]()
-                    if type != "" {
-                        filteredType = filterPrice.filter { $0.type.contains(type) }
-                    } else {
-                        filteredType = filterPrice
-                    }
-                    
-                    completion( filteredType )
                 }
                 
             }
         }
-        
     }
     
     func convertToDate( startDate: String ) -> Int {

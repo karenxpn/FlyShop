@@ -14,7 +14,6 @@ struct MainScreen: View {
     @ObservedObject var viewRouter = ViewRouter()
     @EnvironmentObject var authVM: AuthViewModel
     @State private var selected = [false, false, true, false, false]
-    let selectedColor = Color(red: 218/255, green: 218/255, blue: 218/255, opacity: 0.6)
     let tabItems = TabItemModel.getTabItems()
     
     init() {
