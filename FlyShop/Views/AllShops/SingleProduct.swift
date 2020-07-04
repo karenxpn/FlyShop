@@ -18,11 +18,9 @@ struct SingleProduct: View {
             if product.sale == 0 {
                 
                 VStack {
-                    
-                    
+
                     ZStack {
-                        
-                        
+
                         VStack {
                             
                             TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)

@@ -28,7 +28,6 @@ class NewService {
     
     func getNew(completion: @escaping ( [ProductModel]?) -> ()) {
         
-        
         self.db.collection("AllShops").getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
@@ -37,21 +36,34 @@ class NewService {
                 return
             }
             
-            if snapshot?.isEmpty == false {
+            if snapshot?.isEmpty != true {
                 
                 var productArray = [ProductModel]()
                 
-                for document in snapshot!.documents {
-                    
-                    if let model = try? document.data(as: ShopModel.self) {
-                        productArray.append(contentsOf: model.products)
+                for doc in snapshot!.documents {
+                    doc.reference.collection("products").order(by: "date", descending: false).addSnapshotListener { (snap, errorMessage) in
+                        if errorMessage != nil {
+                            DispatchQueue.main.async {
+                                completion( nil )
+                            }
+                            return
+                        }
+                        
+                        if snap?.isEmpty != true {
+                            for document in snap!.documents {
+                                if let model = try? document.data(as: ProductModel.self) {
+                                    productArray.append(model)
+                                }
+                            }
+                            
+                            DispatchQueue.main.async {
+                                completion( productArray.filter{ self.convertToDate(startDate: $0.date) <= 30} )
+                            }
+                        }
                     }
                 }
-                
-                DispatchQueue.main.async {
-                    completion( productArray.filter{ self.convertToDate(startDate: $0.date) <= 30} )
-                }
             }
+            
         }
  
     }

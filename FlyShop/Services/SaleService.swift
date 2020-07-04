@@ -15,7 +15,8 @@ class SaleService {
     let db = Firestore.firestore()
     
     func fetchData(completion: @escaping ( [ProductModel]? ) -> () ) {
-        db.collection("AllShops").getDocuments { (snapshot, error) in
+        
+        self.db.collection("AllShops").getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
@@ -23,23 +24,34 @@ class SaleService {
                 return
             }
             
-            
-            if snapshot?.isEmpty == false {
+            if snapshot?.isEmpty != true {
                 
                 var productArray = [ProductModel]()
                 
-                for document in snapshot!.documents {
-                    
-                    if let model = try? document.data(as: ShopModel.self) {
-                        productArray.append(contentsOf: model.products)
+                for doc in snapshot!.documents {
+                    doc.reference.collection("products").whereField("sale", isGreaterThan: 0).addSnapshotListener { (snap, errorMessage) in
+                        if errorMessage != nil {
+                            DispatchQueue.main.async {
+                                completion( nil )
+                            }
+                            return
+                        }
+                        
+                        if snap?.isEmpty != true {
+                            for document in snap!.documents {
+                                if let model = try? document.data(as: ProductModel.self) {
+                                    productArray.append(model)
+                                }
+                            }
+                            
+                            DispatchQueue.main.async {
+                                completion( productArray )
+                            }
+                        }
                     }
-                    
-                }
-                
-                DispatchQueue.main.async {
-                    completion( productArray.filter{ $0.sale != 0 } )
                 }
             }
+            
         }
     }
 }

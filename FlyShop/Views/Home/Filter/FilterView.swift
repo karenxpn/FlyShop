@@ -21,7 +21,6 @@ struct FilterView: View {
     @State private var activeSheet: ActiveSheet = .brand
     @State private var goToResult: Bool = false
     
-    
     var body: some View {
         
         ScrollView{
@@ -82,21 +81,23 @@ struct FilterView: View {
                         
                         Divider()
                         
-                        CategoryFilter().environmentObject(self.filterVM)
-                        
-                        Divider()
-                        
-                        
-                        TypeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet).environmentObject(self.filterVM)
-                        
-                        Divider()
-                        
-                        // Size filter
-                        if self.filterVM.category != "Աքսեսուարներ" {
-                            SizeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet, showAlert: self.$showAlert)
-                                .environmentObject(self.filterVM)
+                        if self.filterVM.gender != "" {
+
+                            CategoryFilter().environmentObject(self.filterVM)
+                            
+                            Divider()
+                            
+                                TypeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet).environmentObject(self.filterVM)
+                                
+                                Divider()
+                            
+                            // Size filter
+                            if self.filterVM.category != "Աքսեսուարներ" {
+                                SizeFilter(activeSheet: self.$activeSheet, showSheet: self.$showSheet, showAlert: self.$showAlert)
+                                    .environmentObject(self.filterVM)
+                            }
                         }
-                        
+ 
                     }
                 }
                 
@@ -114,23 +115,23 @@ struct FilterView: View {
                     EmptyView()
                 }
                 
-                HStack {
-                    
-                    Spacer()
-                
-                    TextDesign(text: "AR\nԱպրանքներ", size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 5)
-                        .background(Color.green)
-                        .cornerRadius(30)
-                        .onTapGesture {
-                            // Show AR products in result screen
-                            
-                    }
-                }.padding(.trailing, 15)
-                
-                Text( "").frame( height: 30)
+//                HStack {
+//
+//                    Spacer()
+//
+//                    TextDesign(text: "AR\nԱպրանքներ", size: 14, font: "Montserrat-ExtraLight", color: Color.white)
+//                        .multilineTextAlignment(.center)
+//                        .padding(.horizontal, 12)
+//                        .padding(.vertical, 5)
+//                        .background(Color.green)
+//                        .cornerRadius(30)
+//                        .onTapGesture {
+//                            // Show AR products in result screen
+//
+//                    }
+//                }.padding(.trailing, 15)
+//
+//                Text( "").frame( height: 30)
 
                 
                 Spacer()
@@ -157,17 +158,14 @@ struct FilterView: View {
             if self.activeSheet == .size {
                 SizeChart(showSheet: self.$showSheet, gender: self.filterVM.gender, category: self.filterVM.category, type: self.filterVM.type)
                         .environmentObject(self.filterVM)
-
             } else if self.activeSheet == .brand {
                 BrandSheet( showSheet: self.$showSheet).environmentObject(self.filterVM)
             } else if self.activeSheet == .shoes || self.activeSheet == .clothes || self.activeSheet == .accessories{
-                TypeSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category))
+                TypeSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category, gender: self.filterVM.gender))
                     .environmentObject(self.filterVM)
             }
         }).alertX(isPresented: self.$showAlert, content: {
                 AlertX(title: Text( "Սխալ" ), message: Text( "Դուք չեք ընտրել սեռը/կատեգորիա/տեսակը" ), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
-                
-                
             })
             .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: {
@@ -186,9 +184,6 @@ struct FilterView: View {
             }))
         
     }
-    
-
-    
 }
 
 struct FilterView_Previews: PreviewProvider {

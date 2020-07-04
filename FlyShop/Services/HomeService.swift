@@ -67,13 +67,13 @@ class HomeService {
                 }
                 
                 DispatchQueue.main.async {
-                    for shop in shopArray {
-                        for product in shop.products {
-                            if product.productId == id {
-                                foundProduct = product
-                            }
-                        }
-                    }
+//                    for shop in shopArray {
+//                        for product in shop.products {
+//                            if product.productId == id {
+//                                foundProduct = product
+//                            }
+//                        }
+//                    }
                     completion( foundProduct )
                 }
             }

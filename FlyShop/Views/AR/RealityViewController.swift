@@ -45,4 +45,8 @@ class RealityViewController: UIViewController {
         
         view.addSubview(textView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("View is loading")
+    }
 }

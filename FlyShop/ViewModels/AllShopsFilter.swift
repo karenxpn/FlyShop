@@ -14,13 +14,13 @@ class AllShopsFilter: ObservableObject {
     @Published var price: Double = 400000
     
     
-    func filter( model: ShopListViewModel) -> [ProductViewModel] {
+    func filter( products: [ProductViewModel]) -> [ProductViewModel] {
         var filteredList = [ProductViewModel]()
         
         if category != "" {
-            filteredList = model.products.filter{ $0.category == self.category }
+            filteredList = products.filter{ $0.category == self.category }
         } else {
-            filteredList = model.products
+            filteredList = products
         }
         
         return filteredList.filter{Int( $0.price )! <= Int( self.price )}
