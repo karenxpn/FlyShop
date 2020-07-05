@@ -11,7 +11,7 @@ import Firebase
 class ShopService {
     let db = Firestore.firestore()
     
-    func fetchShopProducts(shop: String, completion: @escaping ( ShopProductsModel? ) -> () ) {
+    func fetchShopProducts(shop: String, completion: @escaping ( [ProductModel]? ) -> () ) {
         db.collection("AllShops").document(shop).collection("products").addSnapshotListener { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
@@ -29,11 +29,9 @@ class ShopService {
                         products.append(model)
                     }
                 }
-                
-                let shopProducts = ShopProductsModel(products: products)
-                
+                                
                 DispatchQueue.main.async {
-                    completion( shopProducts )
+                    completion( products )
                 }
             }
         }
