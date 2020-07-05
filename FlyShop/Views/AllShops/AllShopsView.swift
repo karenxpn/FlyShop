@@ -14,14 +14,12 @@ struct AllShopsView: View {
     @State private var showSearch: Bool = false
     @State private var search: String = ""
     @ObservedObject var allShopVM = AllShopsViewModel()
-    @ObservedObject var shopVM = ShopViewModel()
     
     var body: some View {
         NavigationView {
             ZStack {
                 
                 AllShopsBackground()
-                
                 
                 VStack{
                     
@@ -69,7 +67,6 @@ struct AllShopsView: View {
                                 self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
                         }) { shop in
                             AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
-                                .environmentObject(self.shopVM)
 
                         }.transition(AnyTransition.slide)
                             .animation(.default)

@@ -12,7 +12,6 @@ import SDWebImageSwiftUI
 
 struct AllShopGridCell : View {
     
-    @EnvironmentObject var shopVM: ShopViewModel
     @State private var show: Bool = false
     var shopModel: ShopListViewModel
 
@@ -20,13 +19,11 @@ struct AllShopGridCell : View {
         
         VStack {
             
-            NavigationLink(destination: SingleShop(shopModel: self.shopModel).environmentObject(self.shopVM), isActive: self.$show) {
+            NavigationLink(destination: SingleShop(shopModel: self.shopModel), isActive: self.$show) {
                 EmptyView()
             }
             
             Button(action: {
-                self.shopVM.shopName = self.shopModel.name
-                self.shopVM.getProducts()
                 self.show.toggle()
             }) {
                 VStack {
