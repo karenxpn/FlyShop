@@ -1,6 +1,7 @@
 # FlyShop
 
 Services
+
     AuthService: 1) connect to server -> get verification code -> login with it
     AllShopService: fetch all shops from server in ShopModel form ( name, image )
     ShopService: fetch all products of given shop ( [ProductModel] )
@@ -14,6 +15,7 @@ Services
 
 
 ViewModels
+
     AuthViewModel: AuthService
     FilterViewModel: FilterService
     AllShopsViewModel: get all shops from server
