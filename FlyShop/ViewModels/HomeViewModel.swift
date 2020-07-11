@@ -12,6 +12,7 @@ class HomeViewModel: ObservableObject {
     @Published var category: String = "Հագուստ"
     @Published var trendList = [TrendViewModel]()
     @Published var productId = ""
+    @Published var shop = ""
     @Published var foundProduct: ProductViewModel? = nil
     
     init() {
@@ -27,7 +28,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func getProductById() {
-        HomeService().fetchWithProductId(id: productId) { (result) in
+        HomeService().fetchWithProductId(id: productId, shop: self.shop) { (result) in
             if let result = result {
                 self.foundProduct = ProductViewModel(model: result)
             }
