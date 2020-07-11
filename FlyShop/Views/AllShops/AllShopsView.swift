@@ -54,40 +54,57 @@ struct AllShopsView: View {
                                         withAnimation{
                                             self.showSearch = true
                                         }
-                                }
+                                    }
                             }
                         }
-                    }
+                    }.zIndex(1)
                     
-                    Spacer()
-                    
-                    if self.allShopVM.showLoading != true {
-                        WaterfallGrid( self.allShopVM.allShops
-                            .filter{
-                                self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
-                        }) { shop in
-                            AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
-
-                        }.transition(AnyTransition.slide)
+                    if #available(iOS 14.0, *) {
+                        let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                        
+                        ScrollView {
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach( self.allShopVM.allShops
+                                            .filter{
+                                                self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
+                                            } ) {   shop in
+                                    AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
+                                }
+                            }.zIndex(0)
+                            .transition(AnyTransition.slide)
                             .animation(.default)
                             .offset(y: self.showSearch ? 10 : 0)
+                        }
+                        
+                    } else {
+                        WaterfallGrid( self.allShopVM.allShops
+                                        .filter{
+                                            self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
+                                        }) { shop in
+                            AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
+                            
+                        }.transition(AnyTransition.slide)
+                        .animation(.default)
+                        .offset(y: self.showSearch ? 10 : 0)
                     }
-                                        
-                }.gesture(DragGesture().onChanged{_ in
+                    
+                }
+                .gesture(DragGesture().onChanged{_ in
                     self.showSearch = false
                     UIApplication.shared.endEditing()
                 })
                 
-                if self.allShopVM.showLoading {
-                    Loading()
-                }
+//                if self.allShopVM.showLoading == true {
+//                    Loading()
+//                        .zIndex(3)
+//                }
             }
             .navigationBarItems(trailing: Button(action: {
                 self.search = ""
             }, label: {
                 TextDesign(text: "Մաքրել", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
             }))
-                .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
+            .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
     }
 }

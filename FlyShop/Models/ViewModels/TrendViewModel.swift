@@ -24,4 +24,8 @@ struct TrendViewModel: Identifiable {
     var productId: String {
         self.trendModel.productId
     }
+    
+    var shop: String {
+        self.trendModel.shopId
+    }
 }

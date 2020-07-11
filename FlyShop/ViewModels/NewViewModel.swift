@@ -19,8 +19,8 @@ class NewViewModel: ObservableObject {
         self.showLoading = true
         NewService().getNew { (result) in
             if let result = result {
-                self.showLoading = false
                 self.newItemList = result.map( ProductViewModel.init )
+                self.showLoading = false
             }
         }
     }

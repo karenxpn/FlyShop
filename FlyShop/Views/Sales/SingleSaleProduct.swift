@@ -29,7 +29,7 @@ struct SingleSaleProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.images[0]))
+                        WebImage(url: URL(string: product.images[0]), context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)])
                             .resizable()
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )

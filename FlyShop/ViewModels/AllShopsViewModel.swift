@@ -22,8 +22,9 @@ class AllShopsViewModel: ObservableObject {
         self.showLoading = true
         AllShopService().getAllShops { result in
             if let result = result {
-                self.showLoading = false
                 self.allShops = result.map(ShopListViewModel.init)
+                print(self.allShops)
+                self.showLoading = false
             }
         }
     }
