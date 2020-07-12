@@ -63,7 +63,7 @@
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
-		FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */; };
+		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
 		FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF90A9A024B8F613007EC0C0 /* .gitignore */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
@@ -103,7 +103,7 @@
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
 		FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023462465B8A200FC135D /* SingleSaleProduct.swift */; };
-		FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftPackageProductDependency */; };
+		FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftUIX */; };
 		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
 		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
 		FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235624660F8F00FC135D /* SearchBar.swift */; };
@@ -265,8 +265,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */,
-				FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */,
+				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
+				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
 				040608E3314A3C28D01FB9D3 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,8 +633,8 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
-				FFB023492465DCD100FC135D /* SwiftPackageProductDependency */,
-				FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */,
+				FFB023492465DCD100FC135D /* SwiftUIX */,
+				FF69FA1E249D4B7C0044F077 /* AlertX */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -665,8 +665,8 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
-				FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */,
-				FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */,
+				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -1058,7 +1058,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */ = {
+		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
 			requirement = {
@@ -1066,7 +1066,7 @@
 				kind = branch;
 			};
 		};
-		FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */ = {
+		FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -1077,14 +1077,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */ = {
+		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */;
+			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;
 			productName = AlertX;
 		};
-		FFB023492465DCD100FC135D /* SwiftPackageProductDependency */ = {
+		FFB023492465DCD100FC135D /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */;
+			package = FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */

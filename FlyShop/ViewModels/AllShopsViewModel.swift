@@ -23,7 +23,6 @@ class AllShopsViewModel: ObservableObject {
         AllShopService().getAllShops { result in
             if let result = result {
                 self.allShops = result.map(ShopListViewModel.init)
-                print(self.allShops)
                 self.showLoading = false
             }
         }

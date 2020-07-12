@@ -28,8 +28,11 @@ struct SingleProduct: View {
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
                         WebImage(url: URL(string: product.images[0]), context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)])
+                            .placeholder(content: {
+                                Rectangle().foregroundColor(.gray)
+                            })
                             .resizable()
-                            .scaledToFill()
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
@@ -38,7 +41,7 @@ struct SingleProduct: View {
                             .offset(x: UIScreen.main.bounds.size.width/6.5)
                         
                     }
-                }//.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3)
+                }
                 .padding([.top, .bottom], 6)
                 .padding([.trailing, .leading], 10)
                 .background(Color.white)
@@ -56,9 +59,12 @@ struct SingleProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.images[0]), context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)] )
+                        WebImage(url: URL(string: product.images[0]),context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)] )
                             .resizable()
-                            .scaledToFill()
+                            .placeholder(content: {
+                                Rectangle().foregroundColor(.gray)
+                            })
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
