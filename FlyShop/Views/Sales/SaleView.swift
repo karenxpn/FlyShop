@@ -14,41 +14,43 @@ struct SaleView: View {
     @ObservedObject var saleVM = SaleViewModel()
     
     var body: some View {
-
+        
         NavigationView {
             ZStack {
                 AllShopsBackground()
                 
-                VStack {
-                    TopChat(message: "Կարծես թե զեղչեր ունենք:\nԲաց մի՛ թող այս հնարավորությունը:")
+                if self.saleVM.showLoading {
+                    Loading()
+                } else {
                     
-                    if #available(iOS 14.0, *) {
-                        let rows: [GridItem] = Array(repeating: .init(.fixed( UIScreen.main.bounds.size.height/3.5)), count: 2)
-
+                    VStack {
+                        TopChat(message: "Կարծես թե զեղչեր ունենք:\nԲաց մի՛ թող այս հնարավորությունը:")
                         
-                        ScrollView( .horizontal ) {
-                            LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
-                                ForEach( self.saleVM.productsUnderSale, id: \.id) { product in
-                                    SingleSaleProduct(product: product)
+                        
+                        if #available(iOS 14.0, *) {
+                            
+                            let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                            
+                            Spacer()
+                            ScrollView( .horizontal ) {
+                                LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
+                                    ForEach( self.saleVM.productsUnderSale, id: \.id) { product in
+                                        SingleSaleProduct(product: product)
+                                    }
                                 }
-                            }
+                            }.frame(maxHeight: .infinity)
+                            Spacer()
+                        } else {
+                            WaterfallGrid(self.saleVM.productsUnderSale) { product in
+                                SingleSaleProduct(product: product)
+                            }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                                animation: .easeInOut(duration: 0.5)
+                            )
                         }
-                    } else {
-                        WaterfallGrid(self.saleVM.productsUnderSale) { product in
-                            SingleSaleProduct(product: product)
-                        }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
-                            animation: .easeInOut(duration: 0.5)
-                        )
+                        
+                        BottomChat()
                     }
-                    
-
-                    
-                   BottomChat()
                 }
-                
-//                if self.saleVM.showLoading {
-//                    Loading()
-//                }
             }
             .navigationBarTitle(Text( "FlyShop"), displayMode: .inline)
         }
