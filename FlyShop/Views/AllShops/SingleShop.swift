@@ -9,6 +9,7 @@
 import SwiftUI
 import SwiftUIX
 import WaterfallGrid
+import QGrid
 
 struct SingleShop: View {
     
@@ -86,11 +87,8 @@ struct SingleShop: View {
                 
                 
                 if #available(iOS 14.0, *) {
-                    let columns = [
-                        GridItem(.flexible() ),
-                        GridItem(.flexible() )
-                    ]
-                    
+                    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+
                     AnyView( ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(self.shopVM.filter(), id: \.id ) { product in
@@ -100,7 +98,8 @@ struct SingleShop: View {
                     } )
                     
                 } else {
-                    WaterfallGrid(self.shopVM.filter(), id: \.id) { product in
+
+                    WaterfallGrid(self.shopVM.filter()) { product in
                         SingleProduct(product: product)
                     }.id(UUID())
                 }

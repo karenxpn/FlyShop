@@ -22,11 +22,27 @@ struct NewView: View {
                 VStack{
                     TopChat(message: "Բարեւ Ձեզ!\nՄենք ունենք նոր տեսականի Ձեզ համար:")
                     
-                    WaterfallGrid(self.newVM.newItemList) { product in
-                        SingleNewProduct(product: product)
-                    }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
-                        animation: .easeInOut(duration: 1)
-                    )
+                    if #available(iOS 14.0, *) {
+                        let rows: [GridItem] = Array(repeating: .init(.fixed( UIScreen.main.bounds.size.height/3.5)), count: 2)
+                        
+                        ScrollView( .horizontal ) {
+                            LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
+                                ForEach( self.newVM.newItemList, id: \.id) { product in
+                                    SingleSaleProduct(product: product)
+                                }
+                            }
+                        }
+                        
+                    } else {
+                        WaterfallGrid(self.newVM.newItemList) { product in
+                            SingleNewProduct(product: product)
+                        }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                            animation: .easeInOut(duration: 0.5)
+                        )
+                    }
+
+                    
+
                     
                     BottomChat()
                     
