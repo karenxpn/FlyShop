@@ -20,8 +20,8 @@ class ShopViewModel: ObservableObject {
         ShopService().fetchShopProducts(shop: shopName) { (shopProducts) in
             if let result = shopProducts {
                 self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
-                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
-                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
+//                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
+//                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
                 self.loading = false
             }
         }

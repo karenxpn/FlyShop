@@ -29,13 +29,14 @@ struct NewView: View {
                         if #available(iOS 14.0, *) {
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
                             
-                            ScrollView( .horizontal ) {
+                            AnyView ( ScrollView( .horizontal ) {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.newVM.newItemList, id: \.id) { product in
                                         SingleSaleProduct(product: product)
                                     }
                                 }
-                            }.frame(maxHeight: .infinity)
+                            }.frame(maxHeight: .infinity))
+                            
                             
                         } else {
                             WaterfallGrid(self.newVM.newItemList) { product in

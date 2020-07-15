@@ -13,9 +13,10 @@ class PaymentViewModel: ObservableObject {
     @Published var username: String = "3d19541048"
     @Published var password: String = "lazY2k"
     @Published var description: String = ""
-    @Published var orderID: Int = 2335169
+    @Published var orderID: Int = 2335189
     @Published var amount: Decimal = 10.0
     @Published var showWeb: Bool = false
+    @Published var showAddress: Bool = false
     @Published var paymentID: String = ""
     @Published var loading: Bool = false
     @Published var done: Bool = false
@@ -30,7 +31,7 @@ class PaymentViewModel: ObservableObject {
             if let response = initPaymentResponse {
                 if response.ResponseCode == 1 {
                     self.paymentID = response.PaymentID
-                    self.showWeb = true
+                    self.showAddress = true
                 } else {
                     self.activeAlert = .error
                     self.showAlert = true
@@ -47,8 +48,15 @@ class PaymentViewModel: ObservableObject {
                 self.paymentDetails = response
                 
                 if self.done {
-                    self.activeAlert = .success
-                    self.showAlert = true
+                    if response.ResponseCode == "00" {
+                        
+                        self.activeAlert = .success
+                        self.showAlert = true
+                    }
+                    else {
+                        self.activeAlert = .error
+                        self.showAlert = true
+                    }
                 }
             }
         }

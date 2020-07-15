@@ -58,9 +58,11 @@ struct CartView: View {
                     
                     Buy().environmentObject(self.paymentVM)
                     
-                    NavigationLink(destination: PaymentWebView().environmentObject(self.paymentVM), isActive: self.$paymentVM.showWeb) {
-                        EmptyView()
-                    }
+//                    NavigationLink(destination: Address()
+//                                    .environmentObject(self.paymentVM)
+//                                    .environmentObject(self.cartVM), isActive: self.$paymentVM.showAddress) {
+//                        EmptyView()
+//                    }
                     
                     NavigationLink(destination: ShippingItems().environmentObject(self.cartVM), isActive: self.$showShippingItems) {
                         EmptyView()
@@ -70,7 +72,14 @@ struct CartView: View {
                 
                 if self.paymentVM.activeAlert == .success {
                     return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
+                        
+                        let model = OrderDetails(PaymentID: self.paymentVM.paymentID, Username: self.paymentVM.username, Password: self.paymentVM.password, Amount: self.paymentVM.amount)
+                        let cardHolder = self.paymentVM.paymentDetails!.ClientName
+                        
+                        self.cartVM.client = cardHolder
+                        self.cartVM.orderDetails = model
                         self.cartVM.postProducts()
+                        
                     }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
                                                    alertTextColor: Color.white,
                                                    enableShadow: true,
@@ -92,9 +101,12 @@ struct CartView: View {
                         animation: .defaultEffect())
                 }
             })
-//                .sheet(isPresented: self.$authVM.userShouldLog, content: {
-//                    SignUp().environmentObject(self.authVM)
-//                })
+            .sheet(isPresented: self.$paymentVM.showAddress, content: {
+                Address()
+                                .environmentObject(self.paymentVM)
+                                .environmentObject(self.cartVM)
+            })
+
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }
@@ -146,13 +158,7 @@ struct Buy: View {
                              self.paymentVM.activeAlert = .error
                              self.paymentVM.showAlert = true
                              self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
-//                            do {
-//                                try Auth.auth().signOut()
-//
-//                            }
-//                            catch {
-//                            print("lsdkja")
-//                            }
+
                          } else {
 //                             add description for transaction
                             for product in self.cartVM.cartProducts {
