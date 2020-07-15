@@ -1,13 +1,13 @@
 //
-//  ConfirmPaymentRequest.swift
+//  OrderDetails.swift
 //  FlyShop
 //
-//  Created by Karen Mirakyan on 6/4/20.
+//  Created by Karen Mirakyan on 7/15/20.
 //  Copyright © 2020 Karen Mirakyan. All rights reserved.
 //
 
 import Foundation
-struct ConfirmPaymentRequest: Codable {
+struct OrderDetails {
     var PaymentID: String
     var Username: String
     var Password: String

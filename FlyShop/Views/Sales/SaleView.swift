@@ -31,15 +31,13 @@ struct SaleView: View {
                             
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
                             
-                            Spacer()
-                            ScrollView( .horizontal ) {
+                            AnyView( ScrollView( .horizontal ) {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.saleVM.productsUnderSale, id: \.id) { product in
                                         SingleSaleProduct(product: product)
                                     }
                                 }
-                            }.frame(maxHeight: .infinity)
-                            Spacer()
+                            }.frame(maxHeight: .infinity))
                         } else {
                             WaterfallGrid(self.saleVM.productsUnderSale) { product in
                                 SingleSaleProduct(product: product)

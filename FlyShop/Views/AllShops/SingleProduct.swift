@@ -89,7 +89,6 @@ struct SingleProduct: View {
                                 y: UIScreen.main.bounds.size.height == 667.0 ? -UIScreen.main.bounds.size.height/11 : -UIScreen.main.bounds.size.height/11.5)
                     
                 }
-                //.frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/3)
                 .padding([.top, .bottom], 6)
                 .padding([.trailing, .leading], 10)
                 .background(Color.white)

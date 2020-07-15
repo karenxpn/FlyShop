@@ -59,6 +59,7 @@ struct WebView: UIViewRepresentable {
             if webView.url?.absoluteString.contains("/ArcaResponse") == true {
                 decisionHandler( .cancel )
                 self.webView.paymentVM.showWeb = false
+                self.webView.paymentVM.showAddress = false
                 self.webView.paymentVM.done = true
                 self.webView.paymentVM.getResponse()
             } else {

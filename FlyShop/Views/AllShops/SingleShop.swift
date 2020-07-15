@@ -9,7 +9,6 @@
 import SwiftUI
 import SwiftUIX
 import WaterfallGrid
-import QGrid
 
 struct SingleShop: View {
     
@@ -21,12 +20,6 @@ struct SingleShop: View {
         self.shopModel = shopModel
         self.shopVM.shopName = self.shopModel.name
         self.shopVM.getProducts()
-        
-        //        UITableView.appearance().separatorStyle = .none
-        //        UITableViewCell.appearance().backgroundColor = .clear
-        //        UITableView.appearance().backgroundColor = .none
-        //        UITableViewCell.appearance().selectionStyle = .none
-        //        UITableViewCell.appearance().accessoryType = .none
     }
     
     var body: some View {

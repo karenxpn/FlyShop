@@ -334,6 +334,7 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - Nuke (9.1.1)
   - PromisesObjC (1.2.9)
   - SDWebImage (5.8.3):
     - SDWebImage/Core (= 5.8.3)
@@ -348,6 +349,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - FirebaseFirestoreSwift
+  - Nuke (~> 9.0)
   - SDWebImageSwiftUI
   - WaterfallGrid
 
@@ -373,6 +375,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Nuke
     - PromisesObjC
     - SDWebImage
     - SDWebImageSwiftUI
@@ -399,11 +402,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  Nuke: af4301b154d3afd8a3b045a5194a9a773a00b7a8
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
   WaterfallGrid: 568881d69470c0ffe635732dfafd859db1365989
 
-PODFILE CHECKSUM: 81ba0dcb062cb59976d5c4408875b7e7e51a91b3
+PODFILE CHECKSUM: 5a43e71976079d9281813e6085b1325181ddd890
 
 COCOAPODS: 1.9.1
