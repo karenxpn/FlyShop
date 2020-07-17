@@ -22,4 +22,5 @@ struct ProductModel: Codable {
     var color: String
     var date: String
     var ar: Bool
+    var brand: String
 }

@@ -58,6 +58,7 @@ class FilterService {
                                 if size.isEmpty == false { filterProducts = filterProducts.filter{ $0.size == size } }
                                 filterProducts = filterProducts.filter { Int( $0.price )! <= Int( price ) }
                                 if type != "" { filterProducts = filterProducts.filter{ $0.type == type }}
+                                if brand != "" { filterProducts = filterProducts.filter{ $0.brand == brand }}
                                 
                                 completion( filterProducts )
                             }
