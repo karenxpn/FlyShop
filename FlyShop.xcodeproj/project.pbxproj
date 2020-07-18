@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E979CB9AC46D7C7CE72EDB41 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD08D5E97083319C768E22B /* Pods_FlyShop.framework */; };
+		357EC5C2B6C823A765CF1701 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BAC013DF3EADBF8D7CD0A /* Pods_FlyShop.framework */; };
 		FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentView.swift */; };
+		FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3424C38A5C006B3B50 /* ARService.swift */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
 		FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805924616F23000E5D88 /* ContentView.swift */; };
@@ -66,9 +67,7 @@
 		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
 		FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73935924BF202000EB0B07 /* OrderDetails.swift */; };
 		FF81A07424BF898400C023EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07324BF898400C023EA /* Address.swift */; };
-		FF81A07924C23FB000C023EA /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FF81A07624C23FAD00C023EA /* toy_biplane.usdz */; };
 		FF81A07A24C23FB000C023EA /* Gotiner.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FF81A07724C23FAE00C023EA /* Gotiner.usdz */; };
-		FF81A07B24C23FB000C023EA /* toy_robot_vintage.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FF81A07824C23FB000C023EA /* toy_robot_vintage.usdz */; };
 		FF81A07D24C24E1300C023EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07C24C24E1300C023EA /* Model.swift */; };
 		FF81A08324C2563000C023EA /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF81A08224C2563000C023EA /* FocusEntity */; };
 		FF8E628324BD028D0025A703 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E628224BD028D0025A703 /* ImageLoader.swift */; };
@@ -80,7 +79,6 @@
 		FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */; };
 		FF9209F624884850003D2E9C /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F524884850003D2E9C /* AboutUs.swift */; };
 		FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F724884AC2003D2E9C /* Shipping.swift */; };
-		FF920A2624887270003D2E9C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2524887270003D2E9C /* Experience.rcproject */; };
 		FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */; };
 		FF920A2D24897FE8003D2E9C /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */; };
 		FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */; };
@@ -138,10 +136,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39C69E3A165E818BD1BA3986 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
-		5AD08D5E97083319C768E22B /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C4498B054485744FFA565C5 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
-		FF0D7EE02485602B00EE96B0 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentView.swift; sourceTree = "<group>"; };
+		372BAC013DF3EADBF8D7CD0A /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51E4B96410C74745623AC8F7 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		73C6F666767ABE3CC1C95C9F /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
+		FF0D7EE02485602B00EE96B0 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARContentView.swift; path = FlyShop/Views/AR/ARContentView.swift; sourceTree = SOURCE_ROOT; };
+		FF1BFB3424C38A5C006B3B50 /* ARService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARService.swift; sourceTree = "<group>"; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C805724616F23000E5D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,9 +201,7 @@
 		FF69FA19249AB4320044F077 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
 		FF73935924BF202000EB0B07 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		FF81A07324BF898400C023EA /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		FF81A07624C23FAD00C023EA /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
-		FF81A07724C23FAE00C023EA /* Gotiner.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Gotiner.usdz; sourceTree = "<group>"; };
-		FF81A07824C23FB000C023EA /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
+		FF81A07724C23FAE00C023EA /* Gotiner.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Gotiner.usdz; path = FlyShop/Views/AR/Models/Gotiner.usdz; sourceTree = SOURCE_ROOT; };
 		FF81A07C24C24E1300C023EA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FF8E628224BD028D0025A703 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FF8E628424BD02960025A703 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -215,7 +212,6 @@
 		FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnPolicy.swift; sourceTree = "<group>"; };
 		FF9209F524884850003D2E9C /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
 		FF9209F724884AC2003D2E9C /* Shipping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
-		FF920A2524887270003D2E9C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
 		FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
 		FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
@@ -279,35 +275,34 @@
 				FF81A08324C2563000C023EA /* FocusEntity in Frameworks */,
 				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
 				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
-				E979CB9AC46D7C7CE72EDB41 /* Pods_FlyShop.framework in Frameworks */,
+				357EC5C2B6C823A765CF1701 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C4D91DB7DFA73A9FA38AE6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372BAC013DF3EADBF8D7CD0A /* Pods_FlyShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68E4629599D57A41A8F8B15D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C4498B054485744FFA565C5 /* Pods-FlyShop.debug.xcconfig */,
-				39C69E3A165E818BD1BA3986 /* Pods-FlyShop.release.xcconfig */,
+				51E4B96410C74745623AC8F7 /* Pods-FlyShop.debug.xcconfig */,
+				73C6F666767ABE3CC1C95C9F /* Pods-FlyShop.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		DAF1E5335C3C81DB606D05C9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5AD08D5E97083319C768E22B /* Pods_FlyShop.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FF0D7ED7248559DA00EE96B0 /* AR */ = {
 			isa = PBXGroup;
 			children = (
 				FF81A07524C23F8000C023EA /* Models */,
-				FF920A2524887270003D2E9C /* Experience.rcproject */,
 				FF0D7EE02485602B00EE96B0 /* ARContentView.swift */,
 				FF81A07C24C24E1300C023EA /* Model.swift */,
 			);
@@ -321,7 +316,7 @@
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
 				68E4629599D57A41A8F8B15D /* Pods */,
-				DAF1E5335C3C81DB606D05C9 /* Frameworks */,
+				4C4D91DB7DFA73A9FA38AE6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,6 +388,7 @@
 				FFB02371246AE5AD00FC135D /* HomeService.swift */,
 				FFFDA04B246EA7BC002EA40D /* CartService.swift */,
 				FF9E769324AF84D80006E9AE /* ShopService.swift */,
+				FF1BFB3424C38A5C006B3B50 /* ARService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -558,8 +554,6 @@
 			isa = PBXGroup;
 			children = (
 				FF81A07724C23FAE00C023EA /* Gotiner.usdz */,
-				FF81A07624C23FAD00C023EA /* toy_biplane.usdz */,
-				FF81A07824C23FB000C023EA /* toy_robot_vintage.usdz */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -646,11 +640,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1C806624616F25000E5D88 /* Build configuration list for PBXNativeTarget "FlyShop" */;
 			buildPhases = (
-				A33303F504FB32B041990671 /* [CP] Check Pods Manifest.lock */,
+				92BCB496CE5AFCC9527D44B7 /* [CP] Check Pods Manifest.lock */,
 				FF1C804E24616F23000E5D88 /* Sources */,
 				FF1C804F24616F23000E5D88 /* Frameworks */,
 				FF1C805024616F23000E5D88 /* Resources */,
-				9514583B85640B8A88FD4B9A /* [CP] Embed Pods Frameworks */,
+				CC93D9BAC3463FB2BDFC61CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -709,9 +703,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF81A07924C23FB000C023EA /* toy_biplane.usdz in Resources */,
 				FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */,
-				FF81A07B24C23FB000C023EA /* toy_robot_vintage.usdz in Resources */,
 				FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */,
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
@@ -726,24 +718,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9514583B85640B8A88FD4B9A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A33303F504FB32B041990671 /* [CP] Check Pods Manifest.lock */ = {
+		92BCB496CE5AFCC9527D44B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -763,6 +738,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC93D9BAC3463FB2BDFC61CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -861,7 +853,6 @@
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
 				FF920A432489858C003D2E9C /* ProblemTransactions.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
-				FF920A2624887270003D2E9C /* Experience.rcproject in Sources */,
 				FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */,
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
@@ -880,6 +871,7 @@
 				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 				FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */,
+				FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */,
 				FF920A39248983BF003D2E9C /* CancelPaymentResponse.swift in Sources */,
 				FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */,
 				FF69FA0124959DAB0044F077 /* GenderFilter.swift in Sources */,
@@ -1020,7 +1012,7 @@
 		};
 		FF1C806724616F25000E5D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C4498B054485744FFA565C5 /* Pods-FlyShop.debug.xcconfig */;
+			baseConfigurationReference = 51E4B96410C74745623AC8F7 /* Pods-FlyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
@@ -1044,7 +1036,7 @@
 		};
 		FF1C806824616F25000E5D88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39C69E3A165E818BD1BA3986 /* Pods-FlyShop.release.xcconfig */;
+			baseConfigurationReference = 73C6F666767ABE3CC1C95C9F /* Pods-FlyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
