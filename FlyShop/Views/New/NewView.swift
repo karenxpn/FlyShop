@@ -24,7 +24,7 @@ struct NewView: View {
                 } else {
                     
                     VStack{
-                        TopChat(message: "Բարեւ Ձեզ!\nՄենք ունենք նոր տեսականի Ձեզ համար:")
+                        TopChat(message: "Բարեւ Ձեզ!\nՄենք նոր տեսականի ունենք Ձեզ համար:")
                         
                         if #available(iOS 14.0, *) {
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -47,7 +47,6 @@ struct NewView: View {
                         }
                         
                         BottomChat()
-                        
                     }
                 }
                 
