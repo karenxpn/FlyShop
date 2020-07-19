@@ -13,43 +13,23 @@ import FocusEntity
 
 struct ARContentView: View {
     
-    let selectedModelName: String
-    @State private var isPlacementEnabled = false
-    @State private var selectedModel: Model?
     @State private var modelConfiremedForPlacement: Model?
+    @ObservedObject var arViewModel: ARViewModel
     
-    var models: [Model] = {
-        // Dynamically get our model filenames
+    init(selectedModelName: String) {
+        self.arViewModel = ARViewModel()
+        self.arViewModel.productName = selectedModelName
+        self.arViewModel.getAR()
         
-        let filemanager = FileManager.default
-        
-        guard let path = Bundle.main.resourcePath, let files = try? filemanager.contentsOfDirectory(atPath: path) else {
-            return []
-        }
-        
-        var availableModels: [Model] = []
-        
-        for filename in files where filename.hasSuffix( "usdz" ) {
-            let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-            
-            let model = Model(modelName: modelName)
-
-            availableModels.append(model)
-        }
-        
-        return availableModels
-    }()
+    }
     
     var body: some View {
         
         ZStack( alignment: .bottom ) {
+            
             ARViewContainer(modelConfirmedForPlacement: self.$modelConfiremedForPlacement)
             
-            if self.isPlacementEnabled {
-                PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfiremedForPlacement: self.$modelConfiremedForPlacement)
-            } else {
-                ModelPickerView(passedModel: self.selectedModelName, isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, models: models)
-            }
+            PlacementButtonsView(selectedModel: self.$arViewModel.selectedModel, modelConfiremedForPlacement: self.$modelConfiremedForPlacement)
             
         }
     }
@@ -124,37 +104,8 @@ extension CustomARView: FEDelegate {
 }
 
 
-struct ModelPickerView: View {
-    
-    let passedModel: String
-    @Binding var isPlacementEnabled: Bool
-    @Binding var selectedModel: Model?
-    var models: [Model]
-    
-    var body: some View {
-        ScrollView( .horizontal ) {
-            HStack ( spacing: 20 ) {
-                ForEach( 0..<self.models.filter{$0.modelName == passedModel}.count) { index in
-                    Button(action: {
-                        self.isPlacementEnabled = true
-                        self.selectedModel = self.models[index]
-                    }, label: {
-                        Image(uiImage: self.models[index].image)
-                            .resizable()
-                            .frame(height: 80)
-                            .aspectRatio(1/1, contentMode: .fit)
-                            .cornerRadius(12)
-                    }).buttonStyle(PlainButtonStyle())
-                }
-            }
-        }.padding(20)
-        .background(Color.black.opacity(0.5))
-    }
-}
-
 struct PlacementButtonsView: View {
     
-    @Binding var isPlacementEnabled: Bool
     @Binding var selectedModel: Model?
     @Binding var modelConfiremedForPlacement: Model?
     
@@ -162,23 +113,19 @@ struct PlacementButtonsView: View {
         
         HStack {
             // cancel button
-            Button(action: {
-                self.isPlacementEnabled = false
-                self.selectedModel = nil
-            }, label: {
-                Image(systemName: "xmark")
-                    .frame(width: 60, height: 60)
-                    .font(.title)
-                    .background(Color.white.opacity(0.75))
-                    .cornerRadius(30)
-                    .padding(20)
-            })
-            
+//            Button(action: {
+//            }, label: {
+//                Image(systemName: "xmark")
+//                    .frame(width: 60, height: 60)
+//                    .font(.title)
+//                    .background(Color.white.opacity(0.75))
+//                    .cornerRadius(30)
+//                    .padding(20)
+//            })
+//
             // confirm button
             Button(action: {
                 self.modelConfiremedForPlacement = self.selectedModel
-                self.isPlacementEnabled = false
-                self.selectedModel = nil
             }, label: {
                 Image(systemName: "checkmark")
                     .frame(width: 60, height: 60)
@@ -187,7 +134,6 @@ struct PlacementButtonsView: View {
                     .cornerRadius(30)
                     .padding(20)
             })
-
         }
 
     }
