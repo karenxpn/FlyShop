@@ -15,13 +15,10 @@ class ARService {
     
     func fetchARProduct(productName: String, completion: @escaping( String? ) -> ()) {
 
-        let storage = Storage.storage().reference().child("AR Products/toy_biplane.usdz")
+        let storage = Storage.storage().reference().child("AR Products/\(productName).usdz")
         
         let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileURL = documentDirURL.appendingPathComponent("ARProducts").appendingPathExtension("usdz")
-        print("File path: \(fileURL.path)")
-        
-                
             
         storage.write(toFile: fileURL) { (url, error) in
             if error != nil {
@@ -42,13 +39,10 @@ class ARService {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-                .filter{ $0.pathExtension == "usdz" }
+            let fileURL = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+                .filter{ $0.pathExtension == "usdz" }.first!.absoluteString
             
-            print(fileURLs)
-            print(fileURLs.count)
-            
-            let model = Model(modelName: fileURLs.first!.absoluteString)
+            let model = Model(modelName: fileURL)
 
             DispatchQueue.main.async {
                 completion(model)
