@@ -69,7 +69,6 @@
 		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
 		FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73935924BF202000EB0B07 /* OrderDetails.swift */; };
 		FF81A07424BF898400C023EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07324BF898400C023EA /* Address.swift */; };
-		FF81A07A24C23FB000C023EA /* Gotiner.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FF81A07724C23FAE00C023EA /* Gotiner.usdz */; };
 		FF81A07D24C24E1300C023EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07C24C24E1300C023EA /* Model.swift */; };
 		FF81A08324C2563000C023EA /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF81A08224C2563000C023EA /* FocusEntity */; };
 		FF8E628324BD028D0025A703 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E628224BD028D0025A703 /* ImageLoader.swift */; };
@@ -205,7 +204,6 @@
 		FF69FA19249AB4320044F077 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
 		FF73935924BF202000EB0B07 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		FF81A07324BF898400C023EA /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		FF81A07724C23FAE00C023EA /* Gotiner.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Gotiner.usdz; path = FlyShop/Views/AR/Models/Gotiner.usdz; sourceTree = SOURCE_ROOT; };
 		FF81A07C24C24E1300C023EA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FF8E628224BD028D0025A703 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FF8E628424BD02960025A703 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 		FF0D7ED7248559DA00EE96B0 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				FF81A07524C23F8000C023EA /* Models */,
 				FF0D7EE02485602B00EE96B0 /* ARContentView.swift */,
 				FF81A07C24C24E1300C023EA /* Model.swift */,
 			);
@@ -556,14 +553,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		FF81A07524C23F8000C023EA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FF81A07724C23FAE00C023EA /* Gotiner.usdz */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		FF9209F424884534003D2E9C /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,7 +704,6 @@
 				FF1BFB3B24C3B814006B3B50 /* MYARPRODUCTS.usdz in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
 				FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */,
-				FF81A07A24C23FB000C023EA /* Gotiner.usdz in Resources */,
 				FF1C80812461C390000E5D88 /* Montserrat-Italic.ttf in Resources */,
 				FF1C805C24616F25000E5D88 /* Assets.xcassets in Resources */,
 				FF1C80802461C38D000E5D88 /* McLaren-Regular.ttf in Resources */,
