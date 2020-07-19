@@ -12,7 +12,6 @@ import Combine
 
 class Model {
     var modelName: String
-    var image: UIImage
     var modelEntity: ModelEntity?
     
     private var cancellable: AnyCancellable? = nil
@@ -20,10 +19,8 @@ class Model {
     init(modelName: String) {
         self.modelName = modelName
         
-        self.image = UIImage(named: modelName)!
-        
-        let filename = modelName + ".usdz"
-        self.cancellable = ModelEntity.loadModelAsync(named: filename)
+        //let filename = modelName + ".usdz"
+        self.cancellable = ModelEntity.loadModelAsync(contentsOf: URL(string: modelName)!, withName: "ARProducts")
             .sink(receiveCompletion: { (loadCompletion) in
                 // handle our error
                 print("Unable to load modelEntity for modelName: \(self.modelName)")

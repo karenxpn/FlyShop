@@ -10,6 +10,8 @@
 		357EC5C2B6C823A765CF1701 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BAC013DF3EADBF8D7CD0A /* Pods_FlyShop.framework */; };
 		FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentView.swift */; };
 		FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3424C38A5C006B3B50 /* ARService.swift */; };
+		FF1BFB3924C3A86D006B3B50 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */; };
+		FF1BFB3B24C3B814006B3B50 /* MYARPRODUCTS.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FF1BFB3A24C3B814006B3B50 /* MYARPRODUCTS.usdz */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
 		FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805924616F23000E5D88 /* ContentView.swift */; };
@@ -141,6 +143,8 @@
 		73C6F666767ABE3CC1C95C9F /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
 		FF0D7EE02485602B00EE96B0 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARContentView.swift; path = FlyShop/Views/AR/ARContentView.swift; sourceTree = SOURCE_ROOT; };
 		FF1BFB3424C38A5C006B3B50 /* ARService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARService.swift; sourceTree = "<group>"; };
+		FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		FF1BFB3A24C3B814006B3B50 /* MYARPRODUCTS.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = MYARPRODUCTS.usdz; sourceTree = "<group>"; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C805724616F23000E5D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FF90A9A024B8F613007EC0C0 /* .gitignore */,
+				FF1BFB3A24C3B814006B3B50 /* MYARPRODUCTS.usdz */,
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
 				68E4629599D57A41A8F8B15D /* Pods */,
@@ -413,6 +418,7 @@
 				FFB02379246C2C0500FC135D /* CartViewModel.swift */,
 				FF69FA092498115D0044F077 /* PaymentViewModel.swift */,
 				FF9E769724AF87160006E9AE /* ShopViewModel.swift */,
+				FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */,
 				FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */,
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
+				FF1BFB3B24C3B814006B3B50 /* MYARPRODUCTS.usdz in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
 				FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */,
 				FF81A07A24C23FB000C023EA /* Gotiner.usdz in Resources */,
@@ -863,6 +870,7 @@
 				FF920A472489865E003D2E9C /* MakeBindingPaymentResponse.swift in Sources */,
 				FFFDA07824709550002EA40D /* TextDesign.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FF1BFB3924C3A86D006B3B50 /* ARViewModel.swift in Sources */,
 				FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */,
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
