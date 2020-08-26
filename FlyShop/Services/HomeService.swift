@@ -43,7 +43,7 @@ class HomeService {
     }
     
     func fetchWithProductId( id: String, shop: String, completion: @escaping ( ProductModel? ) -> ()) {
-        db.collection("AllShops").document(shop).collection("products").getDocuments { (snapshot, error) in
+        db.collection("AllShops").document(shop).collection("products").whereField("productId", isEqualTo: id).getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
@@ -57,9 +57,8 @@ class HomeService {
                 
                 for document in snapshot!.documents {
                     if let model = try? document.data(as: ProductModel.self) {
-                        if model.productId == id {
-                            foundProduct = model
-                        }
+                        foundProduct = model
+                        break
                     }
                 }
                 

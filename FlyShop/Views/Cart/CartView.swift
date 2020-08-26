@@ -11,7 +11,6 @@ import SwiftUIX
 import WaterfallGrid
 import Alamofire
 import AlertX
-import Firebase
 
 
 struct CartView: View {
@@ -57,12 +56,6 @@ struct CartView: View {
                     }
                     
                     Buy().environmentObject(self.paymentVM)
-                    
-//                    NavigationLink(destination: Address()
-//                                    .environmentObject(self.paymentVM)
-//                                    .environmentObject(self.cartVM), isActive: self.$paymentVM.showAddress) {
-//                        EmptyView()
-//                    }
                     
                     NavigationLink(destination: ShippingItems().environmentObject(self.cartVM), isActive: self.$showShippingItems) {
                         EmptyView()
@@ -145,7 +138,7 @@ struct Buy: View {
                         .font(.custom("McLaren-Regular", size: 17))
                         .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                     
-                    Text( "\(coutTotal())" )
+                    Text( "\(countTotal())" )
                         .font(.custom("McLaren-Regular", size: 17))
                         .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                     
@@ -154,17 +147,15 @@ struct Buy: View {
                     Spacer()
                     Button(action: {
                         
-                        if self.coutTotal() == 0 {
+                        if self.countTotal() == 0 {
                              self.paymentVM.activeAlert = .error
                              self.paymentVM.showAlert = true
                              self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
 
                          } else {
 //                             add description for transaction
-                            for product in self.cartVM.cartProducts {
-                                self.paymentVM.description += ( "\(product.product.name)" )
-                            }
-
+                            self.paymentVM.description = "Order"
+                            //self.paymentVM.amount = Decimal ( self.countTotal() )
                             self.paymentVM.initPayment()
                         }
                     }) {
@@ -184,7 +175,7 @@ struct Buy: View {
         }
     }
     
-    func coutTotal() -> Int {
+    func countTotal() -> Int {
         
         var total = 0
         

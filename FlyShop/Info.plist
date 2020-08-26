@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>Allow Arbitrary Loads in Web Content</key>
 	<string>YES</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -26,6 +30,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.1086378208337-2f6jr7a0t6ll4p9mj6b9nh0h80di169e</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.develop-xpn.FlyShop</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>FlyShop</string>
 			</array>
 		</dict>
 	</array>

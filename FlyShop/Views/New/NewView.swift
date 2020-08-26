@@ -32,7 +32,7 @@ struct NewView: View {
                             AnyView ( ScrollView( .horizontal ) {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.newVM.newItemList, id: \.id) { product in
-                                        SingleSaleProduct(product: product)
+                                        SingleNewProduct(product: product)
                                     }
                                 }
                             }.frame(maxHeight: .infinity))

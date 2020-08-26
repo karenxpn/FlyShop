@@ -13,8 +13,7 @@ struct SizeSheet: View {
     let sizeList: [String]
     @Binding var showSeet: Bool
     @Binding var selectedSize: String
-    @State private var checkList = [Bool]( repeating: false, count: 11)
-    
+    @State private var checkList = [Bool]( repeating: false, count: 20)
     
     var body: some View {
         

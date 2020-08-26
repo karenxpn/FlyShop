@@ -19,9 +19,7 @@ class ShopViewModel: ObservableObject {
         self.shopProducts.removeAll(keepingCapacity: false)
         ShopService().fetchShopProducts(shop: shopName) { (shopProducts) in
             if let result = shopProducts {
-                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
-//                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
-//                self.shopProducts.append(contentsOf: result.map( ProductViewModel.init ))
+                self.shopProducts = result.map( ProductViewModel.init )
                 self.loading = false
             }
         }

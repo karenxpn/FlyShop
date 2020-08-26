@@ -16,11 +16,7 @@ class ARViewModel: ObservableObject {
             if searchResponse == nil {
                 print("something went wrong")
             } else {
-                print(searchResponse)
-                
                 ARService().getARProductWithPath(path: searchResponse!) { (model) in
-                    print(model?.modelName)
-                    print(model?.modelEntity)
                     self.selectedModel = model
                 }
             }

@@ -150,10 +150,6 @@ struct SelectedProduct: View {
                 }
             }
             
-            if self.showSheet == true {
-                Loading()
-            }
-            
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }
