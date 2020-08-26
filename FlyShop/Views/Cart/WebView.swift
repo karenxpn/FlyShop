@@ -55,7 +55,6 @@ struct WebView: UIViewRepresentable {
         
         func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
             
-            
             if webView.url?.absoluteString.contains("/ArcaResponse") == true {
                 decisionHandler( .cancel )
                 self.webView.paymentVM.showWeb = false
@@ -70,7 +69,5 @@ struct WebView: UIViewRepresentable {
         func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
             completionHandler(.useCredential, URLCredential(trust: challenge.protectionSpace.serverTrust!))
         }
-        
-        
     }
 }

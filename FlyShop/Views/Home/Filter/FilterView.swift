@@ -15,8 +15,8 @@ enum ActiveSheet {
 
 struct FilterView: View {
     
-    @State private var showAlert: Bool = false
     @ObservedObject var filterVM = FilterViewModel()
+    @State private var showAlert: Bool = false
     @State private var showSheet: Bool = false
     @State private var activeSheet: ActiveSheet = .brand
     @State private var goToResult: Bool = false
@@ -143,7 +143,7 @@ struct FilterView: View {
                     .onTapGesture {
                         // perform search in database to shop filtered items to the user
                         
-                        if ( self.filterVM.gender != "" ) && self.filterVM.category != "" && self.filterVM.type != "" {
+                        if ( self.filterVM.gender != "" ) && self.filterVM.category != "" {
                             self.filterVM.getFilteredData()
                             self.goToResult = true
                         } else {

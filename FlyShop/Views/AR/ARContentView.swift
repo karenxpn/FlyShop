@@ -112,28 +112,26 @@ struct PlacementButtonsView: View {
     var body: some View {
         
         HStack {
-            // cancel button
-//            Button(action: {
-//            }, label: {
-//                Image(systemName: "xmark")
-//                    .frame(width: 60, height: 60)
-//                    .font(.title)
-//                    .background(Color.white.opacity(0.75))
-//                    .cornerRadius(30)
-//                    .padding(20)
-//            })
-//
-            // confirm button
-            Button(action: {
-                self.modelConfiremedForPlacement = self.selectedModel
-            }, label: {
-                Image(systemName: "checkmark")
+            
+            if self.selectedModel == nil {
+                Image("loadAR")
+                    .resizable()
+                    .scaledToFit()
                     .frame(width: 60, height: 60)
-                    .font(.title)
-                    .background(Color.white.opacity(0.75))
                     .cornerRadius(30)
                     .padding(20)
-            })
+            } else {
+                Button(action: {
+                    self.modelConfiremedForPlacement = self.selectedModel
+                }, label: {
+                    Image(systemName: "checkmark")
+                        .frame(width: 60, height: 60)
+                        .font(.title)
+                        .background(Color.white.opacity(0.75))
+                        .cornerRadius(30)
+                        .padding(20)
+                })
+            }
         }
 
     }

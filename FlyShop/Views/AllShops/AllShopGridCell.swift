@@ -33,7 +33,7 @@ struct AllShopGridCell : View {
                     
                     WebImage(url: URL(string: shopModel.image ), context: [.imageThumbnailPixelSize : CGSize(width: 300, height: 300)])
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                         .frame(width: UIScreen.main.bounds.size.width/2 - 20, height: UIScreen.main.bounds.size.height/6 )
                         .cornerRadius(10)
                     
