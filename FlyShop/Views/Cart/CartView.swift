@@ -50,9 +50,23 @@ struct CartView: View {
                     }
                     
                     
-                    WaterfallGrid(self.cartVM.cartProducts) { product in
-                        CartItemPreview(product: product)
-                            .padding(.top, 12)
+                    if #available(iOS 14.0, *) {
+                        let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                        
+                        AnyView( ScrollView {
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach( self.cartVM.cartProducts) {   product in
+                                    CartItemPreview(product: product)
+                                        .padding(.top, 12)                                }
+                            }
+                        })
+                        
+                    } else {
+                    
+                        WaterfallGrid(self.cartVM.cartProducts) { product in
+                            CartItemPreview(product: product)
+                                .padding(.top, 12)
+                        }
                     }
                     
                     Buy().environmentObject(self.paymentVM)
@@ -94,10 +108,12 @@ struct CartView: View {
                         animation: .defaultEffect())
                 }
             })
-            .sheet(isPresented: self.$paymentVM.showAddress, content: {
+            .sheet(isPresented: self.$paymentVM.showAddress, onDismiss: {
+                self.paymentVM.showWeb = false
+            },content: {
                 Address()
-                                .environmentObject(self.paymentVM)
-                                .environmentObject(self.cartVM)
+                    .environmentObject(self.paymentVM)
+                    .environmentObject(self.cartVM)
             })
 
                 .navigationBarTitle(Text( ""), displayMode: .inline)
@@ -155,7 +171,7 @@ struct Buy: View {
                          } else {
 //                             add description for transaction
                             self.paymentVM.description = "Order"
-                            //self.paymentVM.amount = Decimal ( self.countTotal() )
+//                            self.paymentVM.amount = Decimal ( self.countTotal() )
                             self.paymentVM.initPayment()
                         }
                     }) {

@@ -28,31 +28,27 @@ class PaymentViewModel: ObservableObject {
     func initPayment() {
         
         InitPayment().updateOrderID { (updateResponse) in
-            if updateResponse == true {
-                InitPayment().fetchOrderID { (orderID) in
-                    if let orderID = orderID {
-                        self.orderID = orderID
-                        
-                        let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: self.amount, BackURL: nil, Opaque: nil, CardHolderID: nil)
-                        InitPayment().initPayment( model: model) { (initPaymentResponse) in
-                            if let response = initPaymentResponse {
-                                if response.ResponseCode == 1 {
-                                    self.paymentID = response.PaymentID
-                                    self.showAddress = true
-                                } else {
-                                    
-                                    // Update orderID( this may cause error )
-                                    self.activeAlert = .error
-                                    self.showAlert = true
-                                    self.errorMessage = response.ResponseMessage
-                                }
-                            }
+            if let orderID = updateResponse {
+                self.orderID = orderID
+                
+                let model = InitPaymentRequest(ClientID: self.clientID, Username: self.username, Password: self.password, Currency: nil, Description: self.description, OrderID: self.orderID, Amount: self.amount, BackURL: nil, Opaque: nil, CardHolderID: nil)
+                InitPayment().initPayment( model: model) { (initPaymentResponse) in
+                    if let response = initPaymentResponse {
+                        if response.ResponseCode == 1 {
+                            self.paymentID = response.PaymentID
+                            self.showAddress = true
+                        } else {
+
+                            // Update orderID( this may cause error )
+                            self.activeAlert = .error
+                            self.showAlert = true
+                            self.errorMessage = response.ResponseMessage
                         }
                     }
                 }
             }
         }
-
+        
     }
     
     func getResponse() {
@@ -66,7 +62,7 @@ class PaymentViewModel: ObservableObject {
                         
                         self.activeAlert = .success
                         self.showAlert = true
-
+                        
                     }
                     else {
                         self.errorMessage = response.Description
