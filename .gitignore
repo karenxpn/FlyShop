@@ -70,3 +70,4 @@ DerivedData
 *.xcuserstate
 
 GoogleService-Info.plist
+Credentials.swift

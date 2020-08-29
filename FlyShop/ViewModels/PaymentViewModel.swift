@@ -9,12 +9,12 @@
 import Foundation
 
 class PaymentViewModel: ObservableObject {
-    @Published var clientID: String = "a46b69d4-fae0-4b97-9c36-d65e769912e0"
-    @Published var username: String = "3d19541048"
-    @Published var password: String = "lazY2k"
+    @Published var clientID: String = Credentials().clientID
+    @Published var username: String = Credentials().username
+    @Published var password: String = Credentials().password
     @Published var description: String = ""
     @Published var orderID: Int = 0
-    @Published var amount: Decimal = 10
+    @Published var amount: Decimal = 0
     @Published var showWeb: Bool = false
     @Published var showAddress: Bool = false
     @Published var paymentID: String = ""
@@ -39,7 +39,6 @@ class PaymentViewModel: ObservableObject {
                             self.showAddress = true
                         } else {
 
-                            // Update orderID( this may cause error )
                             self.activeAlert = .error
                             self.showAlert = true
                             self.errorMessage = response.ResponseMessage
