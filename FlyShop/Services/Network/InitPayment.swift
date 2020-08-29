@@ -26,7 +26,7 @@ class InitPayment {
                 return nil
             }
             
-            guard let oldPopulation = sfDocument.get("OrderID") as? Int else {
+            guard let orlOrderID = sfDocument.get("OrderID") as? Int else {
                 let error = NSError(
                     domain: "AppErrorDomain",
                     code: -1,
@@ -38,8 +38,8 @@ class InitPayment {
                 return nil
             }
             
-            transaction.updateData(["OrderID": oldPopulation + 1], forDocument: sfReference)
-            return oldPopulation + 1
+            transaction.updateData(["OrderID": orlOrderID + 1], forDocument: sfReference)
+            return orlOrderID + 1
         } completion: { (object, error) in
             if error != nil {
                 DispatchQueue.main.async {
@@ -57,9 +57,7 @@ class InitPayment {
 
     }
     
-    
-    
-    
+
     func initPayment( model: InitPaymentRequest ,completion: @escaping ( InitPaymentResponse? ) -> () ) {
         guard let postURL = URL(string: "\(URLS().BASE_URL)InitPayment" ) else {
             DispatchQueue.main.async {

@@ -171,7 +171,7 @@ struct Buy: View {
                          } else {
 //                             add description for transaction
                             self.paymentVM.description = "Order"
-//                            self.paymentVM.amount = Decimal ( self.countTotal() )
+                            self.paymentVM.amount = Decimal ( self.countTotal() )
                             self.paymentVM.initPayment()
                         }
                     }) {

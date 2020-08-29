@@ -17,7 +17,7 @@ struct MainScreen: View {
     let tabItems = TabItemModel.getTabItems()
     
     init() {
-        UITableView.appearance().separatorStyle = .none
+//        UITableView.appearance().separatorStyle = .none
         UITableViewCell.appearance().backgroundColor = .white
     }
     
@@ -50,12 +50,8 @@ struct MainScreen: View {
                 if self.authVM.userShouldLog == false || Auth.auth().currentUser != nil {
                     TabView(selected: self.$selected, tabItems: self.tabItems)
                         .environmentObject(self.viewRouter)
-
                 }
             }
-
-            
-            
         }.edgesIgnoringSafeArea(.bottom)
     }
     
