@@ -36,8 +36,6 @@ class CartService {
         
         let details = [
             "PaymentID" : paymentDetails.PaymentID,
-            "Username" : paymentDetails.Username,
-            "Password" : paymentDetails.Password,
             "Amount" : paymentDetails.Amount,
             "Address": address,
             "CardHolder": cardHolder

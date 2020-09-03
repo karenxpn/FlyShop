@@ -40,7 +40,7 @@ struct TrendSingleProduct: View {
                         
                         VStack {
                             
-                            TextDesign(text: self.homeVM.foundProduct!.name, size: 18, font: "Montserrat-ExtraLight", color: Color.black)
+                            TextDesign(text: "\(self.homeVM.foundProduct!.brand): \(self.homeVM.foundProduct!.name)", size: 18, font: "Montserrat-ExtraLight", color: Color.black)
                             .lineLimit(1)
                                 .padding(.top, 12 )
                             

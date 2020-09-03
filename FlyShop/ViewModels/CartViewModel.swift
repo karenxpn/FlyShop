@@ -21,7 +21,7 @@ class CartViewModel: ObservableObject {
     }
     
     func postProducts() {
-        CartService().postOrderToFirestore(address: self.address, cardHolder: self.client, paymentDetails: self.orderDetails ?? OrderDetails(PaymentID: "", Username: "", Password: "", Amount: 0), cartModelArray: cartProducts) { (response) in
+        CartService().postOrderToFirestore(address: self.address, cardHolder: self.client, paymentDetails: self.orderDetails ?? OrderDetails(PaymentID: "", Amount: 0), cartModelArray: cartProducts) { (response) in
             if response == true {
                 self.cartProducts.removeAll(keepingCapacity: false)
             } else {
