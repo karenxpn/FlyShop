@@ -33,7 +33,7 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.black)
+                        TextDesign(text: "\(product.brand): \(product.name)", size: 17, font: "Montserrat-ExtraLight", color: Color.black)
                             .lineLimit(1)
                             .padding(.top, 12 )
                         
@@ -63,15 +63,15 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-//                        if product.ar {
-//                            NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
-//                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-//                                    .padding(.vertical, 5)
-//                                    .padding(.horizontal)
-//                                    .background(Color.green)
-//                                    .cornerRadius(20)
-//                            }
-//                        }
+                        if product.ar {
+                            NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
+                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal)
+                                    .background(Color.green)
+                                    .cornerRadius(20)
+                            }
+                        }
                         
                         TextDesign(text: "Նկարագրություն", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             .padding(.bottom)

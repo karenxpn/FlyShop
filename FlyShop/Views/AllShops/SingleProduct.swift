@@ -21,7 +21,7 @@ struct SingleProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+                        TextDesign(text: "\(product.brand): \(product.name)", size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                             .lineLimit(1)
                         
                         
