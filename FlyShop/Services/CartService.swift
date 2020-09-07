@@ -21,8 +21,6 @@ class CartService {
             
             order.append( ["size" : model.size,
                            "category" : model.product.category,
-                           "date" : model.product.date,
-                           "description" : model.product.description,
                            "image" : model.product.images,
                            "productId" : model.product.productId,
                            "productName" : model.product.name,
@@ -30,6 +28,7 @@ class CartService {
                            "sale" : model.product.sale,
                            "gender" : model.product.gender,
                            "type": model.product.type,
+                           "brand": model.product.brand,
                            "shipped": false,
                            "color": model.product.color] )
         }

@@ -57,7 +57,8 @@ struct CartView: View {
                             LazyVGrid(columns: columns, spacing: 20) {
                                 ForEach( self.cartVM.cartProducts) {   product in
                                     CartItemPreview(product: product)
-                                        .padding(.top, 12)                                }
+                                        .padding(.top, 12)
+                                }
                             }
                         })
                         
