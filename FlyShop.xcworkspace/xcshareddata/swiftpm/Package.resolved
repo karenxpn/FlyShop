@@ -11,11 +11,29 @@
         }
       },
       {
+        "package": "SmartHitTest",
+        "repositoryURL": "https://github.com/maxxfrazer/ARKit-SmartHitTest",
+        "state": {
+          "branch": null,
+          "revision": "2b7145d55ca273f1ec0328783f87e93b9473f9f5",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "FocusEntity",
+        "repositoryURL": "https://github.com/maxxfrazer/FocusEntity.git",
+        "state": {
+          "branch": null,
+          "revision": "4b4840678c618c675a84960cf11c50a8aecc0104",
+          "version": "1.1.1"
+        }
+      },
+      {
         "package": "SwiftUIX",
         "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
         "state": {
           "branch": "master",
-          "revision": "241b82623cea37abc1ce01b56469d467cdbc4ad0",
+          "revision": "5a51a5b749f7d1cfdbd86adf7eb3f42aaa158981",
           "version": null
         }
       }

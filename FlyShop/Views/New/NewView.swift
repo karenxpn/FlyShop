@@ -19,23 +19,37 @@ struct NewView: View {
             ZStack {
                 AllShopsBackground()
                 
-                VStack{
-                    TopChat(message: "Բարեւ Ձեզ!\nՄենք ունենք նոր տեսականի Ձեզ համար:")
-                    
-                    WaterfallGrid(self.newVM.newItemList) { product in
-                        SingleNewProduct(product: product)
-                    }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
-                        animation: .easeInOut(duration: 1)
-                    )
-                    
-                    BottomChat()
-                    
-                }
-                
                 if self.newVM.showLoading {
                     Loading()
+                } else {
+                    
+                    VStack{
+                        TopChat(message: "Բարեւ Ձեզ!\nՄենք նոր տեսականի ունենք Ձեզ համար:")
+                        
+                        if #available(iOS 14.0, *) {
+                            let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                            
+                            AnyView ( ScrollView( .horizontal ) {
+                                LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
+                                    ForEach( self.newVM.newItemList, id: \.id) { product in
+                                        SingleNewProduct(product: product)
+                                    }
+                                }
+                            }.frame(maxHeight: .infinity))
+                            
+                            
+                        } else {
+                            WaterfallGrid(self.newVM.newItemList) { product in
+                                SingleNewProduct(product: product)
+                            }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                                animation: .easeInOut(duration: 0.5)
+                            )
+                        }
+                        
+                        BottomChat()
+                    }
                 }
- 
+                
             }.navigationBarTitle(Text("FlyShop"), displayMode: .inline)
         }
     }
@@ -91,7 +105,7 @@ struct BottomChat: View {
                         .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
                     
                     TextDesign(text: "Բարի! Հիմա կնայեմ:", size: 13, font: "Montserrat-ExtraLight", color: Color.white)
-
+                    
                     
                 }.padding(.leading, 12)
             }.padding([.bottom, .trailing])
@@ -108,5 +122,5 @@ struct BottomChat: View {
         let stringDate = timeFormatter.string(from: time)
         return stringDate
     }
-
+    
 }

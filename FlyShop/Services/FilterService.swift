@@ -43,10 +43,6 @@ class FilterService {
                             
                             
                             DispatchQueue.main.async {
-//                                if brand != "" {
-//                                    products = products.filter{ $0.brand == brand}
-//                                }
-                                
                                 
                                 var filterProducts = products.map( ProductViewModel.init )
                                 
@@ -55,9 +51,15 @@ class FilterService {
                                 filterProducts = filterProducts.filter{ $0.gender == gender }
                                 if sale { filterProducts = filterProducts.filter{ $0.sale > 0 } }
                                 if new { filterProducts = filterProducts.filter { self.convertToDate(startDate: $0.date) <= 30 }}
-                                if size.isEmpty == false { filterProducts = filterProducts.filter{ $0.size == size } }
+                                if size.isEmpty == false {
+                                    
+                                    for filterSize in size {
+                                        filterProducts = filterProducts.filter{ $0.size.contains( filterSize ) }
+                                    }
+                                }
                                 filterProducts = filterProducts.filter { Int( $0.price )! <= Int( price ) }
                                 if type != "" { filterProducts = filterProducts.filter{ $0.type == type }}
+                                if brand != "" { filterProducts = filterProducts.filter{ $0.brand == brand }}
                                 
                                 completion( filterProducts )
                             }

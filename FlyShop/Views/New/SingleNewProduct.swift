@@ -23,13 +23,13 @@ struct SingleNewProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: product.name, size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
+                        TextDesign(text: "\(product.brand): \(product.name)" , size: 13, font: "Montserrat-ExtraLight", color: Color.gray)
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40)
                             .lineLimit(1)
 
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.images[0]))
+                        WebImage(url: URL(string: product.images[0]), context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)])
                             .resizable()
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )

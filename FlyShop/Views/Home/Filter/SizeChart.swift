@@ -25,16 +25,19 @@ struct SizeChart: View {
                 
                 ForEach( 0..<SizeModel().sizeChart(gender: self.gender, category: self.category, type: self.type).count) { index in
                     HStack {
-                        Text( SizeModel().sizeChart(gender: self.gender, category: self.category, type: self.type)[index] )
+                        Button(action: {
+                            self.checkList[index].toggle()
+                        }, label: {
+                            Text( SizeModel().sizeChart(gender: self.gender, category: self.category, type: self.type)[index] )
+                        })
+                        
                         Spacer()
+                        
                         if self.checkList[index] == true {
                             Image(systemName: "checkmark")
                                 .resizable()
                                 .frame(width: 15, height: 15)
                         }
-                    }.padding()
-                        .onTapGesture {
-                            self.checkList[index].toggle()
                     }
                 }
                 Spacer()

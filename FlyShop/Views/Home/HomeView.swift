@@ -91,9 +91,12 @@ struct CategorySelector: View {
                     .cornerRadius(15)
                     .padding(.vertical, 15)
                     .onTapGesture {
-                        // change the category in the viewModel to change the grid view
-                        self.homeVM.category = self.categoryNames[index]
-                        self.homeVM.getTrends()
+                        withAnimation{
+                            // change the category in the viewModel to change the grid view
+                            self.homeVM.category = self.categoryNames[index]
+                            self.homeVM.getTrends()
+                            
+                        }
                 }
             }
         }
@@ -147,7 +150,7 @@ struct TrendGrid: View {
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[0].productId
-                                    print( "\(self.homeVM.trendList[0].productId)")
+                                    self.homeVM.shop = self.homeVM.trendList[0].shop
                                     self.homeVM.getProductById()
                                     self.showSingleProduct = true
                             }
@@ -158,6 +161,7 @@ struct TrendGrid: View {
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[1].productId
+                                    self.homeVM.shop = self.homeVM.trendList[1].shop
                                     self.homeVM.getProductById()
                                     self.showSingleProduct = true
                             }
@@ -169,8 +173,8 @@ struct TrendGrid: View {
                             .frame(width: ( 2 * (UIScreen.main.bounds.size.width - 30 )/3 ) - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
                             .onTapGesture {
                                 self.homeVM.productId = self.homeVM.trendList[3].productId
+                                self.homeVM.shop = self.homeVM.trendList[3].shop
                                 self.homeVM.getProductById()
-                                
                                 self.showSingleProduct = true
                         }
                         
@@ -183,8 +187,8 @@ struct TrendGrid: View {
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[4].productId
+                                    self.homeVM.shop = self.homeVM.trendList[4].shop
                                     self.homeVM.getProductById()
-                                    
                                     self.showSingleProduct = true
                             }
                             
@@ -194,8 +198,8 @@ struct TrendGrid: View {
                                 .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6/3 - 12)
                                 .onTapGesture {
                                     self.homeVM.productId = self.homeVM.trendList[5].productId
+                                    self.homeVM.shop = self.homeVM.trendList[5].shop
                                     self.homeVM.getProductById()
-                                    
                                     self.showSingleProduct = true
                             }
                         }
@@ -208,8 +212,8 @@ struct TrendGrid: View {
                         .frame(width: ( UIScreen.main.bounds.size.width - 30 )/3 - 12, height: UIScreen.main.bounds.size.height * 0.6 - 12)
                         .onTapGesture {
                             self.homeVM.productId = self.homeVM.trendList[2].productId
+                            self.homeVM.shop = self.homeVM.trendList[2].shop
                             self.homeVM.getProductById()
-                            
                             self.showSingleProduct = true
                     }
                 }

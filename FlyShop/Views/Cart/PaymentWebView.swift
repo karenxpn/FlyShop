@@ -13,8 +13,14 @@ struct PaymentWebView: View {
     @EnvironmentObject var paymentVM: PaymentViewModel
     
     var body: some View {
-        WebView( url: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentVM.paymentID)")
-            .environmentObject(self.paymentVM)
+        
+//        if #available(iOS 14.0, *) {
+//            Link("", destination: URL(string: "https://servicestest.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentVM.paymentID)")!)
+//        } else {
+            WebView( url: "https://services.ameriabank.am/VPOS/Payments/Pay?id=\(self.paymentVM.paymentID)")
+                .environmentObject(self.paymentVM)
+//        }
+
     }
 }
 

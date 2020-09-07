@@ -33,7 +33,7 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        TextDesign(text: product.name, size: 17, font: "Montserrat-ExtraLight", color: Color.black)
+                        TextDesign(text: "\(product.brand): \(product.name)", size: 17, font: "Montserrat-ExtraLight", color: Color.black)
                             .lineLimit(1)
                             .padding(.top, 12 )
                         
@@ -57,8 +57,6 @@ struct SelectedProduct: View {
                                 }
                             }.frame(height:  self.expanded ? UIScreen.main.bounds.size.height/1.5 : UIScreen.main.bounds.size.height/2, alignment: .center)
                         
-                        
-                        
                     }.background(Color.white)
                         .cornerRadius(15)
                     
@@ -66,15 +64,12 @@ struct SelectedProduct: View {
                     VStack {
                         
                         if product.ar {
-                            TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-                                .padding(.vertical, 5)
-                                .padding(.horizontal)
-                                .background(Color.green)
-                                .cornerRadius(20)
-                                .onTapGesture {
-                                    UserDefaults.standard.set(self.product.name, forKey: "AR")
-                                    self.activeSheet = .arView
-                                    self.showSheet = true
+                            NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
+                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal)
+                                    .background(Color.green)
+                                    .cornerRadius(20)
                             }
                         }
                         
@@ -146,19 +141,13 @@ struct SelectedProduct: View {
                 if self.activeAlert == .error {
                     return AlertX(title: Text( "Սխալ"), message: Text( "Խնդրում ենք ընտրել չափը"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
                 } else {
-                    return AlertX(title: Text( "Շնորհավոր"), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
+                    return AlertX(title: Text( "Շնորհավորում ենք"), message: Text( "Այս ապրանքը ավելացվել է ձեր զամբյում:"), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
                 }
             }
             .sheet(isPresented: self.$showSheet) {
-                if self.activeSheet == .arView {
-                    ARContentVIew()
-                } else if self.activeSheet == .size {
+                if self.activeSheet == .size {
                     SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
                 }
-            }
-            
-            if self.showSheet == true {
-                Loading()
             }
             
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)

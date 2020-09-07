@@ -19,12 +19,13 @@ class ShopViewModel: ObservableObject {
         self.shopProducts.removeAll(keepingCapacity: false)
         ShopService().fetchShopProducts(shop: shopName) { (shopProducts) in
             if let result = shopProducts {
-                self.loading = false
                 self.shopProducts = result.map( ProductViewModel.init )
+                self.loading = false
             }
         }
     }
     
+
     func filter() -> [ProductViewModel] {
         if category != "" {
             return shopProducts.filter{ $0.category == self.category }

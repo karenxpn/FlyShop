@@ -8,6 +8,5 @@
 
 import Foundation
 struct URLS {
-    let BASE_URL = "https://servicestest.ameriabank.am/VPOS/api/VPOS/"
-    let TEST_URL = "https://testpayments.ameriabank.am/Admin/webservice/TransactionsInformationService.svc?wsdl"
+    let BASE_URL = "https://services.ameriabank.am/VPOS/api/VPOS/"
 }

@@ -20,20 +20,7 @@ extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
-}
-
-
-extension View {
-    func animate(using animation: Animation = Animation.easeInOut(duration: 1), _ action: @escaping () -> Void) -> some View {
-        return onAppear {
-            withAnimation(animation) {
-                action()
-            }
-        }
-    }
-}
-
-extension View {
+    
     func animateForever(using animation: Animation = Animation.easeInOut(duration: 1), autoreverses: Bool = false, _ action: @escaping () -> Void) -> some View {
         let repeated = animation.repeatForever(autoreverses: autoreverses)
 
@@ -43,5 +30,12 @@ extension View {
             }
         }
     }
+    
+    func animate(using animation: Animation = Animation.easeInOut(duration: 1), _ action: @escaping () -> Void) -> some View {
+        return onAppear {
+            withAnimation(animation) {
+                action()
+            }
+        }
+    }
 }
-

@@ -10,12 +10,10 @@ target 'FlyShop' do
 	pod 'Firebase/Firestore'
 	pod 'FirebaseFirestoreSwift'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Storage'
 	pod 'SDWebImageSwiftUI'
 	pod 'WaterfallGrid'
 	pod 'Alamofire', '~> 5.2'
-
-
-
 
 
 end

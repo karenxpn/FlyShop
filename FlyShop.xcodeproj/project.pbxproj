@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E65193732C773178C274820F /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */; };
-		FF0D7EE12485602B00EE96B0 /* ARContentVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */; };
+		BC2E851CEC6443EE0A9D7D68 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */; };
+		FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentView.swift */; };
+		FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3424C38A5C006B3B50 /* ARService.swift */; };
+		FF1BFB3924C3A86D006B3B50 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */; };
 		FF1C805624616F23000E5D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805524616F23000E5D88 /* AppDelegate.swift */; };
 		FF1C805824616F23000E5D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805724616F23000E5D88 /* SceneDelegate.swift */; };
 		FF1C805A24616F23000E5D88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C805924616F23000E5D88 /* ContentView.swift */; };
@@ -50,6 +52,8 @@
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
 		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
+		FF55397524FC53440005FF5E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF55397424FC53440005FF5E /* FocusEntity */; };
+		FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF685A3824FAC57600E8EBA5 /* Credentials.swift */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
 		FF69F9FD24959D280044F077 /* BrandFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FC24959D280044F077 /* BrandFilter.swift */; };
@@ -61,20 +65,21 @@
 		FF69FA0A2498115D0044F077 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA092498115D0044F077 /* PaymentViewModel.swift */; };
 		FF69FA0C249822410044F077 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0B249822410044F077 /* WebView.swift */; };
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
-		FF69FA102498ED6A0044F077 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF69FA0F2498ED6A0044F077 /* .gitignore */; };
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
 		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
+		FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73935924BF202000EB0B07 /* OrderDetails.swift */; };
+		FF81A07424BF898400C023EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07324BF898400C023EA /* Address.swift */; };
+		FF81A07D24C24E1300C023EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07C24C24E1300C023EA /* Model.swift */; };
+		FF8E628324BD028D0025A703 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E628224BD028D0025A703 /* ImageLoader.swift */; };
+		FF8E628524BD02960025A703 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E628424BD02960025A703 /* URLImage.swift */; };
+		FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FF90A9A024B8F613007EC0C0 /* .gitignore */; };
 		FF9209ED24882573003D2E9C /* TrendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EC24882573003D2E9C /* TrendViewModel.swift */; };
 		FF9209EF248825A8003D2E9C /* ShopListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */; };
 		FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F024883E8B003D2E9C /* InfoSheet.swift */; };
 		FF9209F3248844D3003D2E9C /* ReturnPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */; };
 		FF9209F624884850003D2E9C /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F524884850003D2E9C /* AboutUs.swift */; };
 		FF9209F824884AC2003D2E9C /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9209F724884AC2003D2E9C /* Shipping.swift */; };
-		FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A1F24886EF8003D2E9C /* RealityViewController.swift */; };
-		FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */; };
-		FF920A2624887270003D2E9C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2524887270003D2E9C /* Experience.rcproject */; };
-		FF920A2824887291003D2E9C /* RealityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2724887291003D2E9C /* RealityView.swift */; };
 		FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */; };
 		FF920A2D24897FE8003D2E9C /* InitPaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */; };
 		FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */; };
@@ -132,10 +137,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
-		875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
-		D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARContentVIew.swift; sourceTree = "<group>"; };
+		9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
+		BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		FF0D7EE02485602B00EE96B0 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARContentView.swift; path = FlyShop/Views/AR/ARContentView.swift; sourceTree = SOURCE_ROOT; };
+		FF1BFB3424C38A5C006B3B50 /* ARService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARService.swift; sourceTree = "<group>"; };
+		FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		FF1C805224616F23000E5D88 /* FlyShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C805524616F23000E5D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C805724616F23000E5D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +188,7 @@
 		FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColorImage.swift; sourceTree = "<group>"; };
 		FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF5EB336248DAF760021D49D /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
+		FF685A3824FAC57600E8EBA5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FF69F9F8249574A90044F077 /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
 		FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
 		FF69F9FC24959D280044F077 /* BrandFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFilter.swift; sourceTree = "<group>"; };
@@ -192,19 +200,20 @@
 		FF69FA092498115D0044F077 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		FF69FA0B249822410044F077 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FF69FA0D2498236C0044F077 /* PaymentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebView.swift; sourceTree = "<group>"; };
-		FF69FA0F2498ED6A0044F077 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FF69FA122499329C0044F077 /* GetPaymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaymentDetails.swift; sourceTree = "<group>"; };
 		FF69FA19249AB4320044F077 /* RedirectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectResponse.swift; sourceTree = "<group>"; };
+		FF73935924BF202000EB0B07 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
+		FF81A07324BF898400C023EA /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		FF81A07C24C24E1300C023EA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FF8E628224BD028D0025A703 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FF8E628424BD02960025A703 /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		FF90A9A024B8F613007EC0C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FF9209EC24882573003D2E9C /* TrendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewModel.swift; sourceTree = "<group>"; };
 		FF9209EE248825A8003D2E9C /* ShopListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewModel.swift; sourceTree = "<group>"; };
 		FF9209F024883E8B003D2E9C /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		FF9209F2248844D3003D2E9C /* ReturnPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnPolicy.swift; sourceTree = "<group>"; };
 		FF9209F524884850003D2E9C /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
 		FF9209F724884AC2003D2E9C /* Shipping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
-		FF920A1F24886EF8003D2E9C /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
-		FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityIntegratedViewController.swift; sourceTree = "<group>"; };
-		FF920A2524887270003D2E9C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
-		FF920A2724887291003D2E9C /* RealityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityView.swift; sourceTree = "<group>"; };
 		FF920A2A24897F48003D2E9C /* InitPaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentRequest.swift; sourceTree = "<group>"; };
 		FF920A2C24897FE8003D2E9C /* InitPaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitPaymentResponse.swift; sourceTree = "<group>"; };
 		FF920A2E248980F7003D2E9C /* PaymentDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsRequest.swift; sourceTree = "<group>"; };
@@ -265,40 +274,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF55397524FC53440005FF5E /* FocusEntity in Frameworks */,
 				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
 				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
-				E65193732C773178C274820F /* Pods_FlyShop.framework in Frameworks */,
+				BC2E851CEC6443EE0A9D7D68 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50261FD639E5DDCCA56EF552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68E4629599D57A41A8F8B15D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */,
-				2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */,
+				F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */,
+				9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		893B44D056F7E77C3A00A3EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D630BCD2266B1F866F1A2D78 /* Pods_FlyShop.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FF0D7ED7248559DA00EE96B0 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				FF920A2524887270003D2E9C /* Experience.rcproject */,
-				FF0D7EE02485602B00EE96B0 /* ARContentVIew.swift */,
-				FF920A1F24886EF8003D2E9C /* RealityViewController.swift */,
-				FF920A23248871F4003D2E9C /* RealityIntegratedViewController.swift */,
-				FF920A2724887291003D2E9C /* RealityView.swift */,
+				FF0D7EE02485602B00EE96B0 /* ARContentView.swift */,
+				FF81A07C24C24E1300C023EA /* Model.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -306,11 +313,11 @@
 		FF1C804924616F23000E5D88 = {
 			isa = PBXGroup;
 			children = (
-				FF69FA0F2498ED6A0044F077 /* .gitignore */,
+				FF90A9A024B8F613007EC0C0 /* .gitignore */,
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
 				68E4629599D57A41A8F8B15D /* Pods */,
-				893B44D056F7E77C3A00A3EA /* Frameworks */,
+				50261FD639E5DDCCA56EF552 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,6 +346,7 @@
 				FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */,
 				FF1C806324616F25000E5D88 /* Info.plist */,
 				FF5EB336248DAF760021D49D /* privacy_policy.md */,
+				FF685A3824FAC57600E8EBA5 /* Credentials.swift */,
 				FF1C807F2461C366000E5D88 /* fonts */,
 				FF1C805D24616F25000E5D88 /* Preview Content */,
 			);
@@ -382,6 +390,7 @@
 				FFB02371246AE5AD00FC135D /* HomeService.swift */,
 				FFFDA04B246EA7BC002EA40D /* CartService.swift */,
 				FF9E769324AF84D80006E9AE /* ShopService.swift */,
+				FF1BFB3424C38A5C006B3B50 /* ARService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 				FFB02379246C2C0500FC135D /* CartViewModel.swift */,
 				FF69FA092498115D0044F077 /* PaymentViewModel.swift */,
 				FF9E769724AF87160006E9AE /* ShopViewModel.swift */,
+				FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -456,6 +466,7 @@
 				FFB0237D246C4D0200FC135D /* CartModel.swift */,
 				FFFDA04D246EB03F002EA40D /* ShippingProductModel.swift */,
 				FF379F16249EB213006ED6DB /* ShippingModel.swift */,
+				FF73935924BF202000EB0B07 /* OrderDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +478,8 @@
 				FFB0235624660F8F00FC135D /* SearchBar.swift */,
 				FFFDA073247084A6002EA40D /* ImageCarousel.swift */,
 				FFFDA07724709550002EA40D /* TextDesign.swift */,
+				FF8E628224BD028D0025A703 /* ImageLoader.swift */,
+				FF8E628424BD02960025A703 /* URLImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -610,6 +623,7 @@
 				FF69FA0B249822410044F077 /* WebView.swift */,
 				FF69FA0D2498236C0044F077 /* PaymentWebView.swift */,
 				FF379F18249EB404006ED6DB /* ShippingItems.swift */,
+				FF81A07324BF898400C023EA /* Address.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -621,11 +635,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1C806624616F25000E5D88 /* Build configuration list for PBXNativeTarget "FlyShop" */;
 			buildPhases = (
-				230D034776421131455B3229 /* [CP] Check Pods Manifest.lock */,
+				9C113DA47E0BB72567022964 /* [CP] Check Pods Manifest.lock */,
 				FF1C804E24616F23000E5D88 /* Sources */,
 				FF1C804F24616F23000E5D88 /* Frameworks */,
 				FF1C805024616F23000E5D88 /* Resources */,
-				072BC442760FEFE624ACD18D /* [CP] Embed Pods Frameworks */,
+				B3CBC019A0296E1B15755007 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -635,6 +649,7 @@
 			packageProductDependencies = (
 				FFB023492465DCD100FC135D /* SwiftUIX */,
 				FF69FA1E249D4B7C0044F077 /* AlertX */,
+				FF55397424FC53440005FF5E /* FocusEntity */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -667,6 +682,7 @@
 			packageReferences = (
 				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
+				FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -682,7 +698,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF69FA102498ED6A0044F077 /* .gitignore in Resources */,
+				FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */,
 				FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */,
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
@@ -696,24 +712,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		072BC442760FEFE624ACD18D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		230D034776421131455B3229 /* [CP] Check Pods Manifest.lock */ = {
+		9C113DA47E0BB72567022964 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -735,6 +734,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3CBC019A0296E1B15755007 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -751,7 +767,6 @@
 				FF1C80FB24643B71000E5D88 /* NewViewModel.swift in Sources */,
 				FFB0237E246C4D0200FC135D /* CartModel.swift in Sources */,
 				FF9209F124883E8B003D2E9C /* InfoSheet.swift in Sources */,
-				FF920A2824887291003D2E9C /* RealityView.swift in Sources */,
 				FF920A352489834E003D2E9C /* ConfirmPaymentResponse.swift in Sources */,
 				FF9E769824AF87160006E9AE /* ShopViewModel.swift in Sources */,
 				FF1C80852461D068000E5D88 /* HomeViewBackground.swift in Sources */,
@@ -778,8 +793,11 @@
 				FF920A2D24897FE8003D2E9C /* InitPaymentResponse.swift in Sources */,
 				FF920A512489AEA8003D2E9C /* DeactivateBindingResponse.swift in Sources */,
 				FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */,
+				FF81A07D24C24E1300C023EA /* Model.swift in Sources */,
 				FF69FA0C249822410044F077 /* WebView.swift in Sources */,
 				FF920A4D248987AE003D2E9C /* CardBindingFiled.swift in Sources */,
+				FF8E628524BD02960025A703 /* URLImage.swift in Sources */,
+				FF81A07424BF898400C023EA /* Address.swift in Sources */,
 				FFB0235D2468618000FC135D /* ProductViewModel.swift in Sources */,
 				FF69FA0324959E730044F077 /* SizeFilter.swift in Sources */,
 				FF920A41248984DA003D2E9C /* TransactionClientResponse.swift in Sources */,
@@ -802,7 +820,8 @@
 				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,
 				FF920A3124898131003D2E9C /* PaymentDetailsResponse.swift in Sources */,
 				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
-				FF0D7EE12485602B00EE96B0 /* ARContentVIew.swift in Sources */,
+				FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */,
+				FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */,
 				FF69FA082497EAD40044F077 /* InitPayment.swift in Sources */,
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
 				FF1C80EE24636779000E5D88 /* SingleShop.swift in Sources */,
@@ -812,12 +831,12 @@
 				FF920A3F2489848F003D2E9C /* TransactionClient.swift in Sources */,
 				FF920A532489AEEE003D2E9C /* ActivateBindingRequest.swift in Sources */,
 				FFFDA04E246EB03F002EA40D /* ShippingProductModel.swift in Sources */,
+				FF8E628324BD028D0025A703 /* ImageLoader.swift in Sources */,
 				FFB023662468B8B900FC135D /* FilterTypeModel.swift in Sources */,
 				FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */,
 				FF1C80A7246320F7000E5D88 /* FilterView.swift in Sources */,
 				FF920A4B24898775003D2E9C /* GetBindingsResponse.swift in Sources */,
 				FF1C80AB24632DA8000E5D88 /* SizeModel.swift in Sources */,
-				FF920A2024886EF8003D2E9C /* RealityViewController.swift in Sources */,
 				FFB02372246AE5AD00FC135D /* HomeService.swift in Sources */,
 				FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */,
 				FF920A3724898391003D2E9C /* CancelPaymentRequest.swift in Sources */,
@@ -828,9 +847,8 @@
 				FF1C806D246172A7000E5D88 /* Background.swift in Sources */,
 				FFB023642468B36300FC135D /* BrandSheet.swift in Sources */,
 				FF920A432489858C003D2E9C /* ProblemTransactions.swift in Sources */,
-				FF920A24248871F4003D2E9C /* RealityIntegratedViewController.swift in Sources */,
 				FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */,
-				FF920A2624887270003D2E9C /* Experience.rcproject in Sources */,
+				FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */,
 				FF1C80F924643A42000E5D88 /* ProductModel.swift in Sources */,
 				FF1C807C24619000000E5D88 /* MainScreen.swift in Sources */,
 				FF1C80F2246431B9000E5D88 /* RoundedCorners.swift in Sources */,
@@ -840,6 +858,7 @@
 				FF920A472489865E003D2E9C /* MakeBindingPaymentResponse.swift in Sources */,
 				FFFDA07824709550002EA40D /* TextDesign.swift in Sources */,
 				FF1C806F2461737F000E5D88 /* SignUp.swift in Sources */,
+				FF1BFB3924C3A86D006B3B50 /* ARViewModel.swift in Sources */,
 				FFB02378246C2B5500FC135D /* CartNavigationText.swift in Sources */,
 				FF1C80AF24633823000E5D88 /* AllShopsBackground.swift in Sources */,
 				FF1C809724620B64000E5D88 /* NavigationConfigurator.swift in Sources */,
@@ -848,6 +867,7 @@
 				FF1C80B724633EE9000E5D88 /* Loading.swift in Sources */,
 				FF1C807724617EFC000E5D88 /* Extensions.swift in Sources */,
 				FF920A2B24897F48003D2E9C /* InitPaymentRequest.swift in Sources */,
+				FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */,
 				FF920A39248983BF003D2E9C /* CancelPaymentResponse.swift in Sources */,
 				FF920A2F248980F7003D2E9C /* PaymentDetailsRequest.swift in Sources */,
 				FF69FA0124959DAB0044F077 /* GenderFilter.swift in Sources */,
@@ -988,20 +1008,21 @@
 		};
 		FF1C806724616F25000E5D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 875CCA402646EC6E40B396F4 /* Pods-FlyShop.debug.xcconfig */;
+			baseConfigurationReference = F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlyShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1011,20 +1032,21 @@
 		};
 		FF1C806824616F25000E5D88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE1F0EEFC17E8AA64EC22A1 /* Pods-FlyShop.release.xcconfig */;
+			baseConfigurationReference = 9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlyShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1056,6 +1078,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
@@ -1075,6 +1105,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF55397424FC53440005FF5E /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
 		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;

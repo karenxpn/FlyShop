@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TrendModel: Identifiable {
-    var id = UUID()
+struct TrendModel: Codable {
     var image: String
     var category: String
     var productId: String
+    var shopId: String
 }

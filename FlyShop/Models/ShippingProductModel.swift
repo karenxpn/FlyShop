@@ -21,4 +21,5 @@ struct ShippingProductModel: Codable {
     var productId: String
     var size: String
     var shipped: Bool
+    var color: String
 }

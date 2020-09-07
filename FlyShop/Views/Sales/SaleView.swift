@@ -14,25 +14,40 @@ struct SaleView: View {
     @ObservedObject var saleVM = SaleViewModel()
     
     var body: some View {
-
+        
         NavigationView {
             ZStack {
                 AllShopsBackground()
                 
-                VStack {
-                    TopChat(message: "Կարծես թե զեղչեր ունենք:\nԲաց մի՛ թող այս հնարավորությունը:")
-                    
-                    WaterfallGrid(self.saleVM.productsUnderSale) { product in
-                        SingleSaleProduct(product: product)
-                    }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
-                        animation: .easeInOut(duration: 1)
-                    )
-                    
-                    BottomChat()
-                }
-                
                 if self.saleVM.showLoading {
                     Loading()
+                } else {
+                    
+                    VStack {
+                        TopChat(message: "Կարծես թե զեղչեր ունենք:\nԲաց մի՛ թող այս հնարավորությունը:")
+                        
+                        
+                        if #available(iOS 14.0, *) {
+                            
+                            let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                            
+                            AnyView( ScrollView( .horizontal ) {
+                                LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
+                                    ForEach( self.saleVM.productsUnderSale, id: \.id) { product in
+                                        SingleSaleProduct(product: product)
+                                    }
+                                }
+                            }.frame(maxHeight: .infinity))
+                        } else {
+                            WaterfallGrid(self.saleVM.productsUnderSale) { product in
+                                SingleSaleProduct(product: product)
+                            }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                                animation: .easeInOut(duration: 0.5)
+                            )
+                        }
+                        
+                        BottomChat()
+                    }
                 }
             }
             .navigationBarTitle(Text( "FlyShop"), displayMode: .inline)

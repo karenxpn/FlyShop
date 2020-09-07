@@ -14,6 +14,7 @@ struct SingleShop: View {
     
     @ObservedObject var shopVM = ShopViewModel()
     let shopModel: ShopListViewModel
+    let category = ["Հագուստ", "Կոշիկ", "Աքսեսուարներ"]
     
     init(shopModel: ShopListViewModel) {
         self.shopModel = shopModel
@@ -41,43 +42,20 @@ struct SingleShop: View {
                             
                             Spacer()
                             
-                            TextDesign(text: "Հագուստ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
-                                .padding([.top, .bottom], 8)
-                                .padding([.horizontal], 12)
-                                .background( self.shopVM.category == "Հագուստ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
-                                .cornerRadius(20)
-                                .onTapGesture {
-                                    if self.shopVM.category == "Հագուստ" {
-                                        self.shopVM.category = ""
-                                    } else {
-                                        self.shopVM.category = "Հագուստ"
-                                    }
-                            }
                             
-                            TextDesign(text: "Կոշիկ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
-                                .padding([.top, .bottom], 8)
-                                .padding([.horizontal], 12)
-                                .background( self.shopVM.category == "Կոշիկ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
-                                .cornerRadius(20)
-                                .onTapGesture {
-                                    if self.shopVM.category == "Կոշիկ" {
-                                        self.shopVM.category = ""
-                                    } else {
-                                        self.shopVM.category = "Կոշիկ"
-                                    }
-                            }
-                            
-                            TextDesign(text: "Աքսեսուարներ", size: 11, font: "Montserrat-ExtraLight", color: Color.white)
-                                .padding([.top, .bottom], 8)
-                                .padding([.horizontal], 12)
-                                .background( self.shopVM.category == "Աքսեսուարներ" ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
-                            .lineLimit(1)
-                                .cornerRadius(20)
-                                .onTapGesture {
-                                    if self.shopVM.category == "Աքսեսուարներ" {
-                                        self.shopVM.category = ""
-                                    } else {
-                                        self.shopVM.category = "Աքսեսուարներ"
+                            ForEach( self.category, id: \.self ) { currentCategory in
+                                TextDesign(text: currentCategory, size: 11, font: "Montserrat-ExtraLight", color: Color.white)
+                                    .lineLimit(1)
+                                    .padding([.top, .bottom], 8)
+                                    .padding([.horizontal], 12)
+                                    .background( self.shopVM.category == currentCategory ? Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)) : Color(UIColor(red: 21/255, green: 23/255, blue: 41/255, alpha: 1)))
+                                    .cornerRadius(20)
+                                    .onTapGesture {
+                                        if self.shopVM.category == currentCategory {
+                                            self.shopVM.category = ""
+                                        } else {
+                                            self.shopVM.category = currentCategory
+                                        }
                                     }
                             }
                         }
@@ -97,19 +75,33 @@ struct SingleShop: View {
                                 .accentColor(Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                                 .frame(width: UIScreen.main.bounds.size.width * 0.5)
                         }
-                        
-                        
                     }.padding([.leading, .trailing])
-                }
+                }.zIndex(1)
                 
-                WaterfallGrid(self.shopVM.filter()) { product in
-                    SingleProduct(product: product)
+                
+                if #available(iOS 14.0, *) {
+                    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+
+                    AnyView( ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(self.shopVM.filter(), id: \.id ) { product in
+                                SingleProduct(product: product)
+                            }
+                        }.zIndex(0)
+                    } )
+                    
+                } else {
+
+                    WaterfallGrid(self.shopVM.filter()) { product in
+                        SingleProduct(product: product)
+                    }.id(UUID())
                 }
             }
             
             if self.shopVM.loading {
                 Loading()
             }
-        }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
+        }.navigationBarTitle(Text( "FlyShop"), displayMode: .inline)
+        //.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
     }
 }

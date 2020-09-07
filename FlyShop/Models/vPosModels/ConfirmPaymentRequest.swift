@@ -11,4 +11,5 @@ struct ConfirmPaymentRequest: Codable {
     var PaymentID: String
     var Username: String
     var Password: String
+    var Amount: Decimal
 }

@@ -20,8 +20,8 @@ class SaleViewModel: ObservableObject {
         self.showLoading = true
         SaleService().fetchData { (result) in
             if let result = result {
-                self.showLoading = false
                 self.productsUnderSale = result.map(ProductViewModel.init)
+                self.showLoading = false
             }
         }
     }

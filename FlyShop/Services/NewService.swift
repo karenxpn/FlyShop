@@ -41,7 +41,7 @@ class NewService {
                 var productArray = [ProductModel]()
                 
                 for doc in snapshot!.documents {
-                    doc.reference.collection("products").addSnapshotListener { (snap, errorMessage) in
+                    doc.reference.collection("products").order(by: "date", descending: true).addSnapshotListener { (snap, errorMessage) in
                         if errorMessage != nil {
                             DispatchQueue.main.async {
                                 completion( nil )

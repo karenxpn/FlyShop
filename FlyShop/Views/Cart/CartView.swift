@@ -11,7 +11,6 @@ import SwiftUIX
 import WaterfallGrid
 import Alamofire
 import AlertX
-import Firebase
 
 
 struct CartView: View {
@@ -51,16 +50,26 @@ struct CartView: View {
                     }
                     
                     
-                    WaterfallGrid(self.cartVM.cartProducts) { product in
-                        CartItemPreview(product: product)
-                            .padding(.top, 12)
+                    if #available(iOS 14.0, *) {
+                        let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+                        
+                        AnyView( ScrollView {
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach( self.cartVM.cartProducts) {   product in
+                                    CartItemPreview(product: product)
+                                        .padding(.top, 12)                                }
+                            }
+                        })
+                        
+                    } else {
+                    
+                        WaterfallGrid(self.cartVM.cartProducts) { product in
+                            CartItemPreview(product: product)
+                                .padding(.top, 12)
+                        }
                     }
                     
                     Buy().environmentObject(self.paymentVM)
-                    
-                    NavigationLink(destination: PaymentWebView().environmentObject(self.paymentVM), isActive: self.$paymentVM.showWeb) {
-                        EmptyView()
-                    }
                     
                     NavigationLink(destination: ShippingItems().environmentObject(self.cartVM), isActive: self.$showShippingItems) {
                         EmptyView()
@@ -69,8 +78,15 @@ struct CartView: View {
             }.alertX(isPresented: self.$paymentVM.showAlert, content: {
                 
                 if self.paymentVM.activeAlert == .success {
-                    return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: AlertX.Button.default(Text("OK"), action: {
+                    return AlertX(title: Text( "Հաստատման Կոդ: \(self.paymentVM.paymentDetails!.ApprovalCode)" ), message: Text( "Վճարման կարգավիճակ: \(self.paymentVM.paymentDetails!.PaymentState)\nՔարտապանի անուն: \(self.paymentVM.paymentDetails!.ClientName)\nCard Number: \(self.paymentVM.paymentDetails!.CardNumber)\nԳումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.Amount))\nՀաստատված գումարը: \(formatDecimal(number: self.paymentVM.paymentDetails!.ApprovedAmount))\n" ), primaryButton: .default(Text("OK"), action: {
+                        
+                        let model = OrderDetails(PaymentID: self.paymentVM.paymentID, Amount: self.paymentVM.amount)
+                        let cardHolder = self.paymentVM.paymentDetails!.ClientName
+                        
+                        self.cartVM.client = cardHolder
+                        self.cartVM.orderDetails = model
                         self.cartVM.postProducts()
+                        
                     }), theme: AlertX.Theme.custom(windowColor: Color(UIColor(red: 97/255, green: 61/255, blue: 231/255, alpha: 0.3)),
                                                    alertTextColor: Color.white,
                                                    enableShadow: true,
@@ -92,9 +108,14 @@ struct CartView: View {
                         animation: .defaultEffect())
                 }
             })
-//                .sheet(isPresented: self.$authVM.userShouldLog, content: {
-//                    SignUp().environmentObject(self.authVM)
-//                })
+            .sheet(isPresented: self.$paymentVM.showAddress, onDismiss: {
+                self.paymentVM.showWeb = false
+            },content: {
+                Address()
+                    .environmentObject(self.paymentVM)
+                    .environmentObject(self.cartVM)
+            })
+
                 .navigationBarTitle(Text( ""), displayMode: .inline)
                 .navigationBarItems(leading: CartNavigationText(title: self.cartVM.navTitle), trailing: CartNavigationView())
         }
@@ -133,7 +154,7 @@ struct Buy: View {
                         .font(.custom("McLaren-Regular", size: 17))
                         .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                     
-                    Text( "\(coutTotal())" )
+                    Text( "\(countTotal())" )
                         .font(.custom("McLaren-Regular", size: 17))
                         .foregroundColor( Color(red: 20/255, green: 210/255, blue: 184/255, opacity: 1))
                     
@@ -142,23 +163,15 @@ struct Buy: View {
                     Spacer()
                     Button(action: {
                         
-                        if self.coutTotal() == 0 {
+                        if self.countTotal() == 0 {
                              self.paymentVM.activeAlert = .error
                              self.paymentVM.showAlert = true
                              self.paymentVM.errorMessage = "Ավելացրեք ապրանքներ Ձեր զամբյուղում"
-//                            do {
-//                                try Auth.auth().signOut()
-//
-//                            }
-//                            catch {
-//                            print("lsdkja")
-//                            }
+
                          } else {
 //                             add description for transaction
-                            for product in self.cartVM.cartProducts {
-                                self.paymentVM.description += ( "\(product.product.name)" )
-                            }
-
+                            self.paymentVM.description = "Order"
+                            self.paymentVM.amount = Decimal ( self.countTotal() )
                             self.paymentVM.initPayment()
                         }
                     }) {
@@ -178,7 +191,7 @@ struct Buy: View {
         }
     }
     
-    func coutTotal() -> Int {
+    func countTotal() -> Int {
         
         var total = 0
         

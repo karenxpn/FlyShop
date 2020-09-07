@@ -28,14 +28,11 @@ class HomeService {
                 var trends = [TrendModel]()
                 
                 for document in snapshot!.documents {
-                    if let image = document.get("image") as? String {
-                        if let category = document.get("category") as? String {
-                            if let productId = document.get( "productId") as? String {
-                                let model = TrendModel(image: image, category: category, productId: productId)
-                                trends.append(model)
-                            }
-                        }
+                    
+                    if let model = try? document.data(as: TrendModel.self ) {
+                        trends.append( model )
                     }
+
                 }
                 
                 DispatchQueue.main.async {
@@ -45,8 +42,8 @@ class HomeService {
         }
     }
     
-    func fetchWithProductId( id: String, completion: @escaping ( ProductModel? ) -> ()) {
-        db.collection("AllShops").getDocuments { (snapshot, error) in
+    func fetchWithProductId( id: String, shop: String, completion: @escaping ( ProductModel? ) -> ()) {
+        db.collection("AllShops").document(shop).collection("products").whereField("productId", isEqualTo: id).getDocuments { (snapshot, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     completion( nil )
@@ -54,26 +51,18 @@ class HomeService {
                 return
             }
             
+            
             if snapshot?.isEmpty == false {
-                                
-                var shopArray = [ShopModel]()
                 var foundProduct: ProductModel? = nil
                 
                 for document in snapshot!.documents {
-                    
-                    if let shop = try? document.data(as: ShopModel.self) {
-                        shopArray.append(shop)
+                    if let model = try? document.data(as: ProductModel.self) {
+                        foundProduct = model
+                        break
                     }
                 }
                 
                 DispatchQueue.main.async {
-//                    for shop in shopArray {
-//                        for product in shop.products {
-//                            if product.productId == id {
-//                                foundProduct = product
-//                            }
-//                        }
-//                    }
                     completion( foundProduct )
                 }
             }

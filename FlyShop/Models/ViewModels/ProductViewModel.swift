@@ -68,4 +68,8 @@ struct ProductViewModel: Identifiable {
     var color: String {
         self.productModel.color
     }
+    
+    var brand: String {
+        self.productModel.brand
+    }
 }
