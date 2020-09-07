@@ -51,7 +51,6 @@ struct SelectedProduct: View {
                                             withAnimation {
                                                 self.expanded.toggle()
                                             }
-                                            
                                     }
                                     
                                 }

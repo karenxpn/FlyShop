@@ -51,6 +51,7 @@ struct ARViewContainer: UIViewRepresentable {
             if let modelEntity = model.modelEntity {
                 let anchorEntity = AnchorEntity(plane: .any )
                 
+                modelEntity.setScale(SIMD3(repeating: 0.003), relativeTo: nil)
                 anchorEntity.addChild(modelEntity)
                 uiView.scene.addAnchor(anchorEntity)
             } else {
