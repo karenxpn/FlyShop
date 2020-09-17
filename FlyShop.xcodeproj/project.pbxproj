@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC2E851CEC6443EE0A9D7D68 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */; };
+		2C0D9DE8157C084A5906ECA1 /* Pods_FlyShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7990F8823FE601FE38DD46 /* Pods_FlyShop.framework */; };
 		FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D7EE02485602B00EE96B0 /* ARContentView.swift */; };
 		FF1BFB3524C38A5C006B3B50 /* ARService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3424C38A5C006B3B50 /* ARService.swift */; };
 		FF1BFB3924C3A86D006B3B50 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */; };
@@ -52,7 +52,7 @@
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
 		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
-		FF55397524FC53440005FF5E /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF55397424FC53440005FF5E /* FocusEntity */; };
+		FF5F41402512C104007AF24B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */; };
 		FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF685A3824FAC57600E8EBA5 /* Credentials.swift */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
@@ -67,7 +67,7 @@
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
-		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
+		FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */; };
 		FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73935924BF202000EB0B07 /* OrderDetails.swift */; };
 		FF81A07424BF898400C023EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07324BF898400C023EA /* Address.swift */; };
 		FF81A07D24C24E1300C023EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07C24C24E1300C023EA /* Model.swift */; };
@@ -108,7 +108,7 @@
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
 		FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023462465B8A200FC135D /* SingleSaleProduct.swift */; };
-		FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftUIX */; };
+		FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftPackageProductDependency */; };
 		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
 		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
 		FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235624660F8F00FC135D /* SearchBar.swift */; };
@@ -137,9 +137,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
-		BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		5B7990F8823FE601FE38DD46 /* Pods_FlyShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4A7F56DA0978541061AC86 /* Pods-FlyShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.debug.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.debug.xcconfig"; sourceTree = "<group>"; };
+		AED07B7236272AD499D58F93 /* Pods-FlyShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyShop.release.xcconfig"; path = "Target Support Files/Pods-FlyShop/Pods-FlyShop.release.xcconfig"; sourceTree = "<group>"; };
 		FF0D7EE02485602B00EE96B0 /* ARContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARContentView.swift; path = FlyShop/Views/AR/ARContentView.swift; sourceTree = SOURCE_ROOT; };
 		FF1BFB3424C38A5C006B3B50 /* ARService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARService.swift; sourceTree = "<group>"; };
 		FF1BFB3824C3A86D006B3B50 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
@@ -274,31 +274,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF55397524FC53440005FF5E /* FocusEntity in Frameworks */,
-				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
-				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
-				BC2E851CEC6443EE0A9D7D68 /* Pods_FlyShop.framework in Frameworks */,
+				FF5F41402512C104007AF24B /* BuildFile in Frameworks */,
+				FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */,
+				FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */,
+				2C0D9DE8157C084A5906ECA1 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50261FD639E5DDCCA56EF552 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BBEFD68BE8F4AB38B4FA3125 /* Pods_FlyShop.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		68E4629599D57A41A8F8B15D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */,
-				9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */,
+				AB4A7F56DA0978541061AC86 /* Pods-FlyShop.debug.xcconfig */,
+				AED07B7236272AD499D58F93 /* Pods-FlyShop.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9CC0547739776F9449022B79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B7990F8823FE601FE38DD46 /* Pods_FlyShop.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FF0D7ED7248559DA00EE96B0 /* AR */ = {
@@ -317,7 +317,7 @@
 				FF1C805424616F23000E5D88 /* FlyShop */,
 				FF1C805324616F23000E5D88 /* Products */,
 				68E4629599D57A41A8F8B15D /* Pods */,
-				50261FD639E5DDCCA56EF552 /* Frameworks */,
+				9CC0547739776F9449022B79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -635,11 +635,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF1C806624616F25000E5D88 /* Build configuration list for PBXNativeTarget "FlyShop" */;
 			buildPhases = (
-				9C113DA47E0BB72567022964 /* [CP] Check Pods Manifest.lock */,
+				91C34259A72386C7DD09CFE8 /* [CP] Check Pods Manifest.lock */,
 				FF1C804E24616F23000E5D88 /* Sources */,
 				FF1C804F24616F23000E5D88 /* Frameworks */,
 				FF1C805024616F23000E5D88 /* Resources */,
-				B3CBC019A0296E1B15755007 /* [CP] Embed Pods Frameworks */,
+				3CFCD8D807AA8507FD853E71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -647,9 +647,9 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
-				FFB023492465DCD100FC135D /* SwiftUIX */,
-				FF69FA1E249D4B7C0044F077 /* AlertX */,
-				FF55397424FC53440005FF5E /* FocusEntity */,
+				FFB023492465DCD100FC135D /* SwiftPackageProductDependency */,
+				FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */,
+				FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -680,9 +680,9 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
-				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
-				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
-				FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */,
+				FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */,
+				FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -712,7 +712,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9C113DA47E0BB72567022964 /* [CP] Check Pods Manifest.lock */ = {
+		3CFCD8D807AA8507FD853E71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91C34259A72386C7DD09CFE8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -732,23 +749,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3CBC019A0296E1B15755007 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlyShop/Pods-FlyShop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1008,11 +1008,11 @@
 		};
 		FF1C806724616F25000E5D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F210E392E54002BCA81BB1D2 /* Pods-FlyShop.debug.xcconfig */;
+			baseConfigurationReference = AB4A7F56DA0978541061AC86 /* Pods-FlyShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -1022,7 +1022,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.001;
+				MARKETING_VERSION = 1.5.006;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1032,11 +1032,11 @@
 		};
 		FF1C806824616F25000E5D88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9996B35301B50E7ABA2A85C7 /* Pods-FlyShop.release.xcconfig */;
+			baseConfigurationReference = AED07B7236272AD499D58F93 /* Pods-FlyShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -1046,7 +1046,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.001;
+				MARKETING_VERSION = 1.5.006;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1078,7 +1078,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+		FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
 			requirement = {
@@ -1086,7 +1086,7 @@
 				minimumVersion = 1.1.1;
 			};
 		};
-		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
+		FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
 			requirement = {
@@ -1094,7 +1094,7 @@
 				kind = branch;
 			};
 		};
-		FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+		FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -1105,19 +1105,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FF55397424FC53440005FF5E /* FocusEntity */ = {
+		FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF55397324FC53440005FF5E /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			package = FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */;
 			productName = FocusEntity;
 		};
-		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
+		FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;
+			package = FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */;
 			productName = AlertX;
 		};
-		FFB023492465DCD100FC135D /* SwiftUIX */ = {
+		FFB023492465DCD100FC135D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			package = FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */

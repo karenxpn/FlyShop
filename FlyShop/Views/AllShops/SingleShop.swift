@@ -89,7 +89,7 @@ struct SingleShop: View {
                             }
                         }.zIndex(0)
                     } )
-                    
+
                 } else {
 
                     WaterfallGrid(self.shopVM.filter()) { product in

@@ -17,7 +17,7 @@ class InitPayment {
         let db = Firestore.firestore()
         let sfReference = db.collection("OrderID").document("ORDERID")
         
-        db.runTransaction { (transaction, errorPointer) -> Any? in
+        db.runTransaction{ (transaction, errorPointer) -> Any? in
             let sfDocument: DocumentSnapshot
             do {
                 try sfDocument = transaction.getDocument(sfReference)

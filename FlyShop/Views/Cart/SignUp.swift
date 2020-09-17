@@ -13,7 +13,6 @@ struct SignUp: View {
     
     //Keyboard
     @State var value: CGFloat = 0
-    @State private var showAlert = false
     @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
@@ -62,7 +61,7 @@ struct SignUp: View {
                         if self.authVM.number != "" && self.authVM.confirmationCode != "" {
                             self.authVM.logTheUser()
                         } else {
-                            self.showAlert.toggle()
+                            self.authVM.showAlert = true
                         }
                 }
                 
@@ -88,7 +87,7 @@ struct SignUp: View {
             if self.authVM.showLoading {
                 Loading()
             }
-        }.alertX(isPresented: self.$showAlert, content: {
+        }.alertX(isPresented: self.$authVM.showAlert, content: {
             AlertX(title: Text( "Սխալ" ), message: Text( "Մուտքագրեք հեռախոսահամարը և հաստատման կոդը" ), primaryButton: .default(Text( "Լավ" )), theme: .graphite(withTransparency: true, roundedCorners: true ), animation: .classicEffect())
 
         }) .onTapGesture {

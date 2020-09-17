@@ -28,7 +28,7 @@ struct SaleView: View {
                         
                         
                         if #available(iOS 14.0, *) {
-                            
+
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
                             
                             AnyView( ScrollView( .horizontal ) {

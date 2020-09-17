@@ -24,6 +24,12 @@ class AuthService {
     
     func signIn( verificationCode: String, completion: @escaping ( Bool ) -> () ) {
         let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        if verificationID == nil {
+            DispatchQueue.main.async {
+                completion( false )
+            }
+            return
+        }
         let credential =  PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
 
         

@@ -114,26 +114,7 @@ struct FilterView: View {
                 NavigationLink(destination: FilterResult().environmentObject(self.filterVM), isActive: self.$goToResult) {
                     EmptyView()
                 }
-                
-//                HStack {
-//
-//                    Spacer()
-//
-//                    TextDesign(text: "AR\nԱպրանքներ", size: 14, font: "Montserrat-ExtraLight", color: Color.white)
-//                        .multilineTextAlignment(.center)
-//                        .padding(.horizontal, 12)
-//                        .padding(.vertical, 5)
-//                        .background(Color.green)
-//                        .cornerRadius(30)
-//                        .onTapGesture {
-//                            // Show AR products in result screen
-//
-//                    }
-//                }.padding(.trailing, 15)
-//
-//                Text( "").frame( height: 30)
-
-                
+                                
                 Spacer()
                 
                 TextDesign(text: "Ցուցադրել Արդյունքները", size: 15, font: "Montserrat-ExtraLight", color: Color.white)

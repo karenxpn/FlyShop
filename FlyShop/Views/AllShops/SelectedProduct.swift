@@ -17,7 +17,6 @@ struct SelectedProduct: View {
     @State private var showSheet: Bool = false
     @State private var size: String = "Չափս"
     @State private var activeAlert: ActiveAlert = .error
-    @State private var activeSheet: ActiveSheet = .brand
     @State private var showAlert: Bool = false
     @State private var expanded: Bool = false
     
@@ -100,7 +99,6 @@ struct SelectedProduct: View {
                                 .multilineTextAlignment(.leading)
                                 .padding([.top, .bottom], 6)
                                 .onTapGesture {
-                                    self.activeSheet = .size
                                     self.showSheet.toggle()
                             }
                         }
@@ -130,8 +128,7 @@ struct SelectedProduct: View {
                         
                         Spacer()
                         
-                    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        .scrollOptions(direction: .vertical, showsIndicators: false)
+                    }
                     
                 }
                 
@@ -144,9 +141,7 @@ struct SelectedProduct: View {
                 }
             }
             .sheet(isPresented: self.$showSheet) {
-                if self.activeSheet == .size {
-                    SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
-                }
+                SizeSheet(sizeList: self.product.size, showSeet: self.$showSheet, selectedSize: self.$size)
             }
             
         }.navigationBarTitleView( NavigationTitleView(), displayMode: .inline)

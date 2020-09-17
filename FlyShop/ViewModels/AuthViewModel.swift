@@ -14,6 +14,7 @@ class AuthViewModel: ObservableObject {
     @Published var number: String = ""
     @Published var confirmationCode: String = ""
     @Published var showLoading: Bool = false
+    @Published var showAlert: Bool = false
     
     
     func signUp() {
@@ -26,6 +27,9 @@ class AuthViewModel: ObservableObject {
             if result == true {
                 self.showLoading = false
                 self.userShouldLog = false
+            } else {
+                self.showLoading = false
+                self.showAlert = true
             }
         }
     }

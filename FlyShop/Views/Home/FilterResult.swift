@@ -33,10 +33,25 @@ struct FilterResult: View {
                     }
                 }
                 
+                if #available(iOS 14.0, *) {
+                    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+
+                    AnyView( ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(self.filterVM.filteredItems ) {   product in
+                                SingleProduct(product: product)
+                            }
+                        }.transition(AnyTransition.slide)
+                        .animation(.default)
+                    })
+
+                } else {
+                
                     WaterfallGrid( self.filterVM.filteredItems) { product in
                         SingleProduct(product: product)
                     }.transition(AnyTransition.slide)
                         .animation(.default)
+                }
                 
             }
         }

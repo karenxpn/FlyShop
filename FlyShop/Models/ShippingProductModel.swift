@@ -1,5 +1,5 @@
 //
-//  ReviewModel.swift
+//  ShippingProductModel.swift
 //  FlyShop
 //
 //  Created by Karen Mirakyan on 5/15/20.
@@ -13,8 +13,6 @@ struct ShippingProductModel: Codable {
     var image: [String]
     var productPrice: Int
     var productName: String
-    var description: String
-    var date: String
     var sale: Int
     var gender: String
     var type: String
@@ -22,4 +20,5 @@ struct ShippingProductModel: Codable {
     var size: String
     var shipped: Bool
     var color: String
+    var brand: String
 }

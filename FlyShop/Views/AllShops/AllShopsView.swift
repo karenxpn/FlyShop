@@ -65,7 +65,7 @@ struct AllShopsView: View {
                         
                         if #available(iOS 14.0, *) {
                             let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-                            
+
                             AnyView( ScrollView {
                                 LazyVGrid(columns: columns, spacing: 20) {
                                     ForEach( self.allShopVM.allShops
@@ -79,7 +79,7 @@ struct AllShopsView: View {
                                 .animation(.default)
                                 .offset(y: self.showSearch ? 10 : 0)
                             })
-                            
+
                         } else {
                             WaterfallGrid( self.allShopVM.allShops
                                             .filter{

@@ -28,8 +28,6 @@ struct ShippingItems: View {
                         Text( product.productName )
                             .font(.system(size: 17))
                         
-                        Text( product.description )
-                            .lineLimit(3)
                         
                         HStack {
                             Spacer()

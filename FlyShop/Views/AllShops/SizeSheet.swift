@@ -31,7 +31,7 @@ struct SizeSheet: View {
 
                 }
             }
-            .navigationBarTitleView( NavigationTitleView(), displayMode: .inline)
+            .navigationBarTitle( Text("FlyShop"), displayMode: .inline)
         }
     }
     

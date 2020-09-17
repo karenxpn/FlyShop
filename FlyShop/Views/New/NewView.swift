@@ -25,10 +25,10 @@ struct NewView: View {
                     
                     VStack{
                         TopChat(message: "Բարեւ Ձեզ!\nՄենք նոր տեսականի ունենք Ձեզ համար:")
-                        
+
                         if #available(iOS 14.0, *) {
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-                            
+
                             AnyView ( ScrollView( .horizontal ) {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.newVM.newItemList, id: \.id) { product in
@@ -36,8 +36,8 @@ struct NewView: View {
                                     }
                                 }
                             }.frame(maxHeight: .infinity))
-                            
-                            
+
+
                         } else {
                             WaterfallGrid(self.newVM.newItemList) { product in
                                 SingleNewProduct(product: product)
