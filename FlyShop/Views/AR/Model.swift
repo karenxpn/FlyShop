@@ -11,23 +11,22 @@ import RealityKit
 import Combine
 
 class Model {
-    var modelName: String
+    var path: String
     var modelEntity: ModelEntity?
     
     private var cancellable: AnyCancellable? = nil
     
-    init(modelName: String) {
-        self.modelName = modelName
-        
-        //let filename = modelName + ".usdz"
-        self.cancellable = ModelEntity.loadModelAsync(contentsOf: URL(string: modelName)!, withName: "ARProducts")
+    init(path: String) {
+        self.path = path
+                
+        self.cancellable = ModelEntity.loadModelAsync(contentsOf: URL(string: path)!, withName: "ARProducts")
             .sink(receiveCompletion: { (loadCompletion) in
                 // handle our error
-                print("Unable to load modelEntity for modelName: \(self.modelName)")
+                print("Unable to load modelEntity for modelName: \(self.path)")
             }, receiveValue: { (modelEntity) in
                 // get our entity
                 self.modelEntity = modelEntity
-                print("Successfully loaded modelEntity for modelName: \(self.modelName)")
+                print("Successfully loaded modelEntity for modelName: \(self.path)")
             })
     }
 }

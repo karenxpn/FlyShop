@@ -52,7 +52,7 @@
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
 		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
-		FF5F41402512C104007AF24B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */; };
+		FF5F41402512C104007AF24B /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF5F413F2512C104007AF24B /* FocusEntity */; };
 		FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF685A3824FAC57600E8EBA5 /* Credentials.swift */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
@@ -67,7 +67,7 @@
 		FF69FA0E2498236C0044F077 /* PaymentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA0D2498236C0044F077 /* PaymentWebView.swift */; };
 		FF69FA132499329C0044F077 /* GetPaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA122499329C0044F077 /* GetPaymentDetails.swift */; };
 		FF69FA1A249AB4320044F077 /* RedirectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69FA19249AB4320044F077 /* RedirectResponse.swift */; };
-		FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */; };
+		FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */ = {isa = PBXBuildFile; productRef = FF69FA1E249D4B7C0044F077 /* AlertX */; };
 		FF73935A24BF202000EB0B07 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF73935924BF202000EB0B07 /* OrderDetails.swift */; };
 		FF81A07424BF898400C023EA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07324BF898400C023EA /* Address.swift */; };
 		FF81A07D24C24E1300C023EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A07C24C24E1300C023EA /* Model.swift */; };
@@ -108,7 +108,7 @@
 		FFB023432465B67300FC135D /* SaleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023422465B67300FC135D /* SaleService.swift */; };
 		FFB023452465B74B00FC135D /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023442465B74B00FC135D /* SaleViewModel.swift */; };
 		FFB023472465B8A200FC135D /* SingleSaleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023462465B8A200FC135D /* SingleSaleProduct.swift */; };
-		FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftPackageProductDependency */; };
+		FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = FFB023492465DCD100FC135D /* SwiftUIX */; };
 		FFB0234D2465DDCA00FC135D /* NavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0234C2465DDCA00FC135D /* NavigationTitleView.swift */; };
 		FFB023552465EACB00FC135D /* SingleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB023542465EACB00FC135D /* SingleProduct.swift */; };
 		FFB0235724660F8F00FC135D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0235624660F8F00FC135D /* SearchBar.swift */; };
@@ -274,9 +274,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5F41402512C104007AF24B /* BuildFile in Frameworks */,
-				FFB0234A2465DCD100FC135D /* BuildFile in Frameworks */,
-				FF69FA1F249D4B7C0044F077 /* BuildFile in Frameworks */,
+				FF5F41402512C104007AF24B /* FocusEntity in Frameworks */,
+				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
+				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
 				2C0D9DE8157C084A5906ECA1 /* Pods_FlyShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,9 +647,9 @@
 			);
 			name = FlyShop;
 			packageProductDependencies = (
-				FFB023492465DCD100FC135D /* SwiftPackageProductDependency */,
-				FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */,
-				FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */,
+				FFB023492465DCD100FC135D /* SwiftUIX */,
+				FF69FA1E249D4B7C0044F077 /* AlertX */,
+				FF5F413F2512C104007AF24B /* FocusEntity */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -680,9 +680,9 @@
 			);
 			mainGroup = FF1C804924616F23000E5D88;
 			packageReferences = (
-				FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */,
-				FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */,
-				FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */,
+				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
+				FF5F413E2512C104007AF24B /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -1012,7 +1012,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -1022,7 +1022,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.006;
+				MARKETING_VERSION = 1.5.007;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1036,7 +1036,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"FlyShop/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GVVA24YR6;
 				ENABLE_PREVIEWS = YES;
@@ -1046,7 +1046,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.006;
+				MARKETING_VERSION = 1.5.007;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.develop-xpn.FlyShop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1078,7 +1078,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */ = {
+		FF5F413E2512C104007AF24B /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
 			requirement = {
@@ -1086,7 +1086,7 @@
 				minimumVersion = 1.1.1;
 			};
 		};
-		FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */ = {
+		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
 			requirement = {
@@ -1094,7 +1094,7 @@
 				kind = branch;
 			};
 		};
-		FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */ = {
+		FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
@@ -1105,19 +1105,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FF5F413F2512C104007AF24B /* SwiftPackageProductDependency */ = {
+		FF5F413F2512C104007AF24B /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF5F413E2512C104007AF24B /* RemoteSwiftPackageReference */;
+			package = FF5F413E2512C104007AF24B /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
 		};
-		FF69FA1E249D4B7C0044F077 /* SwiftPackageProductDependency */ = {
+		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF69FA1D249D4B7B0044F077 /* RemoteSwiftPackageReference */;
+			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;
 			productName = AlertX;
 		};
-		FFB023492465DCD100FC135D /* SwiftPackageProductDependency */ = {
+		FFB023492465DCD100FC135D /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FFB023482465DCD100FC135D /* RemoteSwiftPackageReference */;
+			package = FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */

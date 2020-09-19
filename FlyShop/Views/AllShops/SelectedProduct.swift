@@ -62,6 +62,8 @@ struct SelectedProduct: View {
                     VStack {
                         
                         if product.ar {
+                            
+                                                        
                             NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
                                 TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
                                     .padding(.vertical, 5)

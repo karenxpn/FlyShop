@@ -19,7 +19,7 @@ class ARService {
         
         let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let fileURL = documentDirURL.appendingPathComponent("ARProducts").appendingPathExtension("usdz")
-            
+                    
         storage.write(toFile: fileURL) { (url, error) in
             if error != nil {
                 DispatchQueue.main.async {
@@ -29,9 +29,11 @@ class ARService {
             }
             
             DispatchQueue.main.async {
+                print("AR model written to the path")
                 completion( url?.path )
             }
         }
+        
     }
     
     func getARProductWithPath(path: String, completion: @escaping( Model? ) -> () ) {
@@ -42,9 +44,10 @@ class ARService {
             let fileURL = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
                 .filter{ $0.pathExtension == "usdz" }.first!.absoluteString
             
-            let model = Model(modelName: fileURL)
+            let model = Model(path: fileURL)
 
             DispatchQueue.main.async {
+                print("AR view loaded from path")
                 completion(model)
             }
             
