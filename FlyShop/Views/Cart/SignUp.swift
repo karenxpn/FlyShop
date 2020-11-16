@@ -140,7 +140,9 @@ struct NumberInput: View {
             
             Image( "signUpNumberAttr" )
                 .resizable()
+                .renderingMode(.template)
                 .frame(width: 35, height: 35)
+                .foregroundColor(self.authVM.number.count == 8 ? Color.white : Color.gray)
                 // send verification code
                 .onTapGesture {
                     self.authVM.signUp()

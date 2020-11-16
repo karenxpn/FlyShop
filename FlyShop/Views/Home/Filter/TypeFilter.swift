@@ -39,13 +39,8 @@ struct TypeFilter: View {
                     .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(30)
                     .onTapGesture {
-                        if self.filterVM.category == "Կոշիկ" {
-                            self.activeSheet = .shoes
-                        } else if self.filterVM.category == "Հագուստ" {
-                            self.activeSheet = .clothes
-                        } else if self.filterVM.category == "Աքսեսուարներ" {
-                            self.activeSheet = .accessories
-                        }
+                        
+                        self.activeSheet = .type
                         self.showSheet.toggle()
                 }
             }

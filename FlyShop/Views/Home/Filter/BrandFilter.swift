@@ -37,9 +37,9 @@ struct BrandFilter: View {
                     .background(Color(UIColor(red: 90/255, green: 123/255, blue: 239/255, alpha: 1)))
                     .cornerRadius(30)
                     .onTapGesture {
+                        print("Clicked")
                         self.activeSheet = .brand
                         self.showSheet.toggle()
-                        
                 }
             }
         }

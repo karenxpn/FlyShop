@@ -62,6 +62,6 @@ struct SizeFilter: View {
 
 struct SizeFilter_Previews: PreviewProvider {
     static var previews: some View {
-        SizeFilter(activeSheet: .constant(.accessories), showSheet: .constant(false), showAlert: .constant(false))
+        SizeFilter(activeSheet: .constant(.brand), showSheet: .constant(false), showAlert: .constant(false))
     }
 }

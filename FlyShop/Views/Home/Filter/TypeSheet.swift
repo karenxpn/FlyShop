@@ -11,7 +11,6 @@ import SwiftUI
 struct TypeSheet: View {
     
     @EnvironmentObject var filterVM: FilterViewModel
-    @State private var checkList = [Bool]( repeating: false, count: 20)
     @Binding var showSheet: Bool
     let typeArray: [String]
     
@@ -20,22 +19,13 @@ struct TypeSheet: View {
         NavigationView {
             List{
                 ForEach( 0..<self.typeArray.count ) { index in
-                    HStack {
-                        Text( self.typeArray[index] )
-                        Spacer()
-                        if self.checkList[index] == true {
-                            Image(systemName: "checkmark")
-                                .resizable()
-                                .frame(width: 15, height: 15)
-                        }
-                    }.onTapGesture {
-                        for checkIndex in 0..<self.checkList.count {
-                            self.checkList[checkIndex] = false
-                        }
-                        
-                        self.checkList[index].toggle()
+                    Button(action: {
                         self.filterVM.type = self.typeArray[index]
-                    }
+                        self.showSheet = false
+                    }, label: {
+                        Text( self.typeArray[index] )
+
+                    })
                 }
             }
             .navigationBarTitle(Text( "FlyShop"), displayMode: .inline)

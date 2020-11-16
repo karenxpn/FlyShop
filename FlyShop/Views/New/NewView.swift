@@ -13,6 +13,10 @@ struct NewView: View {
     
     @ObservedObject var newVM = NewViewModel()
     
+    
+    @State private var offset: CGFloat = 200
+    @State private var animate: Bool = false
+    
     var body: some View {
         NavigationView {
             
@@ -25,19 +29,26 @@ struct NewView: View {
                     
                     VStack{
                         TopChat(message: "Բարեւ Ձեզ!\nՄենք նոր տեսականի ունենք Ձեզ համար:")
-
+                        
                         if #available(iOS 14.0, *) {
                             let rows: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-
+                            
                             AnyView ( ScrollView( .horizontal ) {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.newVM.newItemList, id: \.id) { product in
                                         SingleNewProduct(product: product)
+                                            .offset(y: animate ? 0 : offset)
+                                            .animation(
+                                                Animation.interpolatingSpring(stiffness: 70, damping: 10)
+                                                    .delay(0.2)
+                                            ).onAppear {
+                                                animate = true
+                                            }
                                     }
                                 }
                             }.frame(maxHeight: .infinity))
-
-
+                            
+                            
                         } else {
                             WaterfallGrid(self.newVM.newItemList) { product in
                                 SingleNewProduct(product: product)

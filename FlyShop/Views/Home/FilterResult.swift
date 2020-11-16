@@ -11,7 +11,11 @@ import WaterfallGrid
 
 struct FilterResult: View {
     
-    @EnvironmentObject var filterVM: FilterViewModel    
+    @EnvironmentObject var filterVM: FilterViewModel
+    
+    
+    @State private var offset: CGFloat = 200
+    @State private var animate: Bool = false
     
     var body: some View {
         ZStack {
@@ -35,27 +39,32 @@ struct FilterResult: View {
                 
                 if #available(iOS 14.0, *) {
                     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
-
+                    
                     AnyView( ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(self.filterVM.filteredItems ) {   product in
+                            ForEach(self.filterVM.filteredItems ) { product in
                                 SingleProduct(product: product)
+                                    .offset(y: animate ? 0 : offset)
+                                    .animation(
+                                        Animation.interpolatingSpring(stiffness: 70, damping: 10)
+                                            .delay(0.2)
+                                    ).onAppear {
+                                        animate = true
+                                    }
                             }
-                        }.transition(AnyTransition.slide)
-                        .animation(.default)
+                        }
                     })
-
+                    
                 } else {
-                
+                    
                     WaterfallGrid( self.filterVM.filteredItems) { product in
                         SingleProduct(product: product)
                     }.transition(AnyTransition.slide)
-                        .animation(.default)
+                    .animation(.default)
                 }
                 
             }
         }
-            
         .navigationBarTitle(Text("FlyShop"), displayMode: .inline)
     }
 }

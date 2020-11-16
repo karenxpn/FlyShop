@@ -10,7 +10,7 @@ import SwiftUI
 import AlertX
 
 enum ActiveSheet {
-    case brand, size, accessories, shoes, clothes, arView
+    case brand, size, type, arView
 }
 
 struct FilterView: View {
@@ -141,7 +141,7 @@ struct FilterView: View {
                         .environmentObject(self.filterVM)
             } else if self.activeSheet == .brand {
                 BrandSheet( showSheet: self.$showSheet).environmentObject(self.filterVM)
-            } else if self.activeSheet == .shoes || self.activeSheet == .clothes || self.activeSheet == .accessories{
+            } else if self.activeSheet == .type {
                 TypeSheet(showSheet: self.$showSheet, typeArray: FilterTypeModel().categoryType(category: self.filterVM.category, gender: self.filterVM.gender))
                     .environmentObject(self.filterVM)
             }

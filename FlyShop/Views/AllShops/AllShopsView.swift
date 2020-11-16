@@ -15,6 +15,10 @@ struct AllShopsView: View {
     @State private var search: String = ""
     @ObservedObject var allShopVM = AllShopsViewModel()
     
+    
+    @State private var offset: CGFloat = 200
+    @State private var animate: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -73,6 +77,13 @@ struct AllShopsView: View {
                                                     self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
                                                 } ) {   shop in
                                         AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
+                                                .offset(y: animate ? 0 : offset)
+                                                .animation(
+                                                    Animation.interpolatingSpring(stiffness: 70, damping: 10)
+                                                        .delay(0.2)
+                                                ).onAppear {
+                                                    animate = true
+                                                }
                                     }
                                 }.zIndex(0)
                                 .transition(AnyTransition.slide)

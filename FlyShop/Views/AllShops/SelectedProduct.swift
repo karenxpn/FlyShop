@@ -61,17 +61,17 @@ struct SelectedProduct: View {
                     
                     VStack {
                         
-                        if product.ar {
-                            
-                                                        
-                            NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
-                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
-                                    .padding(.vertical, 5)
-                                    .padding(.horizontal)
-                                    .background(Color.green)
-                                    .cornerRadius(20)
-                            }
-                        }
+//                        if product.ar {
+//                            
+//                                                        
+//                            NavigationLink(destination: ARContentView(selectedModelName: self.product.name)) {
+//                                TextDesign(text: "Դիտեք AR-ը", size: 18, font: "Montserrat-ExtraLight", color: Color.white)
+//                                    .padding(.vertical, 5)
+//                                    .padding(.horizontal)
+//                                    .background(Color.green)
+//                                    .cornerRadius(20)
+//                            }
+//                        }
                         
                         TextDesign(text: "Նկարագրություն", size: 27, font: "Montserrat-ExtraLight", color: Color.white)
                             .padding(.bottom)

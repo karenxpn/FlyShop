@@ -15,6 +15,7 @@ class AuthViewModel: ObservableObject {
     @Published var confirmationCode: String = ""
     @Published var showLoading: Bool = false
     @Published var showAlert: Bool = false
+    @Published var changeSendVerificationIconColor: Bool = false
     
     
     func signUp() {
