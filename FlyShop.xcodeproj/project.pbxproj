@@ -53,6 +53,7 @@
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
 		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
 		FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF685A3824FAC57600E8EBA5 /* Credentials.swift */; };
+		FF69EB7B2562D2ED00939256 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF69EB7A2562D2ED00939256 /* FocusEntity */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
 		FF69F9FD24959D280044F077 /* BrandFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FC24959D280044F077 /* BrandFilter.swift */; };
@@ -273,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF69EB7B2562D2ED00939256 /* FocusEntity in Frameworks */,
 				FFB0234A2465DCD100FC135D /* SwiftUIX in Frameworks */,
 				FF69FA1F249D4B7C0044F077 /* AlertX in Frameworks */,
 				31BD6606B4D1B84B24A70EEA /* Pods_FlyShop.framework in Frameworks */,
@@ -647,6 +649,7 @@
 			packageProductDependencies = (
 				FFB023492465DCD100FC135D /* SwiftUIX */,
 				FF69FA1E249D4B7C0044F077 /* AlertX */,
+				FF69EB7A2562D2ED00939256 /* FocusEntity */,
 			);
 			productName = FlyShop;
 			productReference = FF1C805224616F23000E5D88 /* FlyShop.app */;
@@ -679,6 +682,7 @@
 			packageReferences = (
 				FFB023482465DCD100FC135D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */,
+				FF69EB792562D2ED00939256 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = FF1C805324616F23000E5D88 /* Products */;
 			projectDirPath = "";
@@ -1074,6 +1078,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FF69EB792562D2ED00939256 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neel-makhecha/AlertX.git";
@@ -1093,6 +1105,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF69EB7A2562D2ED00939256 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF69EB792562D2ED00939256 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
 		FF69FA1E249D4B7C0044F077 /* AlertX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */;
