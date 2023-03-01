@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AlertX",
-        "repositoryURL": "https://github.com/neel-makhecha/AlertX.git",
-        "state": {
-          "branch": "master",
-          "revision": "d5f82d61521c019ec83571c16f3351e7ef8191d0",
-          "version": null
-        }
-      },
-      {
-        "package": "FocusEntity",
-        "repositoryURL": "https://github.com/maxxfrazer/FocusEntity.git",
-        "state": {
-          "branch": null,
-          "revision": "cf36b43d9a6ced6f572d6c60a3e3b825a20a210b",
-          "version": "2.0.1"
-        }
-      },
-      {
-        "package": "SwiftUIX",
-        "repositoryURL": "https://github.com/SwiftUIX/SwiftUIX",
-        "state": {
-          "branch": "master",
-          "revision": "5a51a5b749f7d1cfdbd86adf7eb3f42aaa158981",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "alertx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/neel-makhecha/AlertX.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6249e4a36fffb77a53215b77d30fdf044d5da39d"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "focusentity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/maxxfrazer/FocusEntity.git",
+      "state" : {
+        "revision" : "cf36b43d9a6ced6f572d6c60a3e3b825a20a210b",
+        "version" : "2.0.1"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX",
+      "state" : {
+        "branch" : "master",
+        "revision" : "1b8b443b61b8b37fafb06c1abad9b6be244c9de9"
+      }
+    }
+  ],
+  "version" : 2
 }

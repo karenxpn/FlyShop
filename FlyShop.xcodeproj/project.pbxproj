@@ -51,8 +51,8 @@
 		FF379F17249EB213006ED6DB /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F16249EB213006ED6DB /* ShippingModel.swift */; };
 		FF379F19249EB404006ED6DB /* ShippingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F18249EB404006ED6DB /* ShippingItems.swift */; };
 		FF379F1B24A14F74006ED6DB /* ProductColorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */; };
-		FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */; };
-		FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF685A3824FAC57600E8EBA5 /* Credentials.swift */; };
+		FF3A14BF29AFF16400D1EF03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF3A14BE29AFF16400D1EF03 /* GoogleService-Info.plist */; };
+		FF3A14C129AFF1D100D1EF03 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A14C029AFF1D100D1EF03 /* Credentials.swift */; };
 		FF69EB7B2562D2ED00939256 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = FF69EB7A2562D2ED00939256 /* FocusEntity */; };
 		FF69F9F9249574A90044F077 /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9F8249574A90044F077 /* TypeSheet.swift */; };
 		FF69F9FB24959D0A0044F077 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */; };
@@ -186,9 +186,9 @@
 		FF379F16249EB213006ED6DB /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
 		FF379F18249EB404006ED6DB /* ShippingItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingItems.swift; sourceTree = "<group>"; };
 		FF379F1A24A14F74006ED6DB /* ProductColorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductColorImage.swift; sourceTree = "<group>"; };
-		FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF3A14BE29AFF16400D1EF03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF3A14C029AFF1D100D1EF03 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FF5EB336248DAF760021D49D /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
-		FF685A3824FAC57600E8EBA5 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FF69F9F8249574A90044F077 /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
 		FF69F9FA24959D0A0044F077 /* CategoryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
 		FF69F9FC24959D280044F077 /* BrandFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFilter.swift; sourceTree = "<group>"; };
@@ -343,10 +343,10 @@
 				FF1C805924616F23000E5D88 /* ContentView.swift */,
 				FF1C805B24616F25000E5D88 /* Assets.xcassets */,
 				FF1C806024616F25000E5D88 /* LaunchScreen.storyboard */,
-				FF379F4224A67EDA006ED6DB /* GoogleService-Info.plist */,
+				FF3A14BE29AFF16400D1EF03 /* GoogleService-Info.plist */,
 				FF1C806324616F25000E5D88 /* Info.plist */,
 				FF5EB336248DAF760021D49D /* privacy_policy.md */,
-				FF685A3824FAC57600E8EBA5 /* Credentials.swift */,
+				FF3A14C029AFF1D100D1EF03 /* Credentials.swift */,
 				FF1C807F2461C366000E5D88 /* fonts */,
 				FF1C805D24616F25000E5D88 /* Preview Content */,
 			);
@@ -699,7 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF90A9A124B8F613007EC0C0 /* .gitignore in Resources */,
-				FF379F4324A67EDA006ED6DB /* GoogleService-Info.plist in Resources */,
+				FF3A14BF29AFF16400D1EF03 /* GoogleService-Info.plist in Resources */,
 				FF1C806224616F25000E5D88 /* LaunchScreen.storyboard in Resources */,
 				FF1C805F24616F25000E5D88 /* Preview Assets.xcassets in Resources */,
 				FFFDA076247094B1002EA40D /* Montserrat-ExtraLight.ttf in Resources */,
@@ -820,7 +820,7 @@
 				FFB02376246B4A3600FC135D /* TrendSingleProduct.swift in Sources */,
 				FF920A3124898131003D2E9C /* PaymentDetailsResponse.swift in Sources */,
 				FF1C80F024642F4D000E5D88 /* NewView.swift in Sources */,
-				FF685A3924FAC57600E8EBA5 /* Credentials.swift in Sources */,
+				FF3A14C129AFF1D100D1EF03 /* Credentials.swift in Sources */,
 				FF0D7EE12485602B00EE96B0 /* ARContentView.swift in Sources */,
 				FF69FA082497EAD40044F077 /* InitPayment.swift in Sources */,
 				FF1C80B524633C38000E5D88 /* AllShopService.swift in Sources */,
@@ -1082,8 +1082,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
+				kind = exactVersion;
+				version = 2.0.1;
 			};
 		};
 		FF69FA1D249D4B7B0044F077 /* XCRemoteSwiftPackageReference "AlertX" */ = {

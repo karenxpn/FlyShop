@@ -9,9 +9,9 @@
 import Foundation
 
 class PaymentViewModel: ObservableObject {
-    @Published var clientID: String = Credentials().clientID
-    @Published var username: String = Credentials().username
-    @Published var password: String = Credentials().password
+    @Published var clientID: String = Credentials.clientID
+    @Published var username: String = Credentials.username
+    @Published var password: String = Credentials.password
     @Published var description: String = ""
     @Published var orderID: Int = 0
     @Published var amount: Decimal = 0
