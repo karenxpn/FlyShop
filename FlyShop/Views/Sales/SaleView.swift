@@ -14,9 +14,6 @@ struct SaleView: View {
     @ObservedObject var saleVM = SaleViewModel()
     
     
-    @State private var offset: CGFloat = 200
-    @State private var animate: Bool = false
-    
     var body: some View {
         
         NavigationView {
@@ -39,20 +36,14 @@ struct SaleView: View {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.saleVM.productsUnderSale, id: \.id) { product in
                                         SingleSaleProduct(product: product)
-                                            .offset(y: animate ? 0 : offset)
-                                            .animation(
-                                                Animation.interpolatingSpring(stiffness: 70, damping: 10)
-                                                    .delay(0.2)
-                                            ).onAppear {
-                                                animate = true
-                                            }
                                     }
                                 }
                             }.frame(maxHeight: .infinity))
                         } else {
                             WaterfallGrid(self.saleVM.productsUnderSale) { product in
                                 SingleSaleProduct(product: product)
-                            }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                            }.scrollOptions(direction: .horizontal)
+                            .gridStyle(
                                 animation: .easeInOut(duration: 0.5)
                             )
                         }

@@ -27,12 +27,11 @@ struct SingleProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.images[0]), context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)])
-                            .placeholder(content: {
-                                Rectangle().foregroundColor(.gray)
-                            })
+                        WebImage(url: URL(string: product.images[0]))
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .placeholder {
+                                Rectangle().foregroundColor(.gray)
+                            }.aspectRatio(contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
                         
@@ -59,14 +58,14 @@ struct SingleProduct: View {
                         
                         Divider().frame(width: UIScreen.main.bounds.size.width/2 - 40 )
                         
-                        WebImage(url: URL(string: product.images[0]),context: [.imageThumbnailPixelSize : CGSize(width: 250, height: 250)] )
+                        WebImage(url: URL(string: product.images[0]))
                             .resizable()
-                            .placeholder(content: {
+                            .placeholder {
                                 Rectangle().foregroundColor(.gray)
-                            })
-                            .aspectRatio(contentMode: .fill)
+                            }.aspectRatio(contentMode: .fill)
                             .frame(width: UIScreen.main.bounds.size.width/2 - 40, height: UIScreen.main.bounds.size.height/7 )
                             .cornerRadius(10)
+                        
                         
                         TextDesign(text: "\(product.price)դր.", size: 14, font: "Montserrat-ExtraLight", color: Color.red)
                             .padding(.trailing)

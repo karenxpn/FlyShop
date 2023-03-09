@@ -16,8 +16,6 @@ struct AllShopsView: View {
     @ObservedObject var allShopVM = AllShopsViewModel()
     
     
-    @State private var offset: CGFloat = 200
-    @State private var animate: Bool = false
     
     var body: some View {
         NavigationView {
@@ -70,27 +68,17 @@ struct AllShopsView: View {
                         if #available(iOS 14.0, *) {
                             let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
-                            AnyView( ScrollView {
+                            ScrollView {
                                 LazyVGrid(columns: columns, spacing: 20) {
                                     ForEach( self.allShopVM.allShops
                                                 .filter{
                                                     self.search.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.search)
                                                 } ) {   shop in
                                         AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
-                                                .offset(y: animate ? 0 : offset)
-                                                .animation(
-                                                    Animation.interpolatingSpring(stiffness: 70, damping: 10)
-                                                        .delay(0.2)
-                                                ).onAppear {
-                                                    animate = true
-                                                }
                                     }
                                 }.zIndex(0)
-                                .transition(AnyTransition.slide)
-                                .animation(.default)
                                 .offset(y: self.showSearch ? 10 : 0)
-                            })
-
+                            }
                         } else {
                             WaterfallGrid( self.allShopVM.allShops
                                             .filter{
@@ -98,8 +86,7 @@ struct AllShopsView: View {
                                             }) { shop in
                                 AllShopGridCell(shopModel: shop).padding(.bottom, UIScreen.main.bounds.size.height/25)
                                 
-                            }.transition(AnyTransition.slide)
-                            .animation(.default)
+                            }
                             .offset(y: self.showSearch ? 10 : 0)
                         }
                     }

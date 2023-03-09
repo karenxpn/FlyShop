@@ -13,10 +13,6 @@ struct NewView: View {
     
     @ObservedObject var newVM = NewViewModel()
     
-    
-    @State private var offset: CGFloat = 200
-    @State private var animate: Bool = false
-    
     var body: some View {
         NavigationView {
             
@@ -37,13 +33,6 @@ struct NewView: View {
                                 LazyHGrid(rows: rows, alignment: .center, spacing: 20) {
                                     ForEach( self.newVM.newItemList, id: \.id) { product in
                                         SingleNewProduct(product: product)
-                                            .offset(y: animate ? 0 : offset)
-                                            .animation(
-                                                Animation.interpolatingSpring(stiffness: 70, damping: 10)
-                                                    .delay(0.2)
-                                            ).onAppear {
-                                                animate = true
-                                            }
                                     }
                                 }
                             }.frame(maxHeight: .infinity))
@@ -52,7 +41,8 @@ struct NewView: View {
                         } else {
                             WaterfallGrid(self.newVM.newItemList) { product in
                                 SingleNewProduct(product: product)
-                            }.scrollOptions(direction: .horizontal, showsIndicators: false).gridStyle(
+                            }.scrollOptions(direction: .horizontal)
+                                .gridStyle(
                                 animation: .easeInOut(duration: 0.5)
                             )
                         }

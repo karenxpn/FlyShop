@@ -15,9 +15,6 @@ struct SingleShop: View {
     @ObservedObject var shopVM = ShopViewModel()
     let shopModel: ShopListViewModel
     let category = ["Հագուստ", "Կոշիկ", "Աքսեսուարներ"]
-
-    @State private var offset: CGFloat = 200
-    @State private var animate: Bool = false
     
     init(shopModel: ShopListViewModel) {
         self.shopModel = shopModel
@@ -85,21 +82,13 @@ struct SingleShop: View {
                 if #available(iOS 14.0, *) {
                     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
-                    AnyView( ScrollView {
+                    ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(self.shopVM.filter(), id: \.id ) { product in
                                 SingleProduct(product: product)
-                                    .offset(y: animate ? 0 : offset)
-                                    .animation(
-                                        Animation.interpolatingSpring(stiffness: 70, damping: 10)
-                                            .delay(0.2)
-                                    ).onAppear {
-                                        animate = true
-                                    }
                             }
                         }.zIndex(0)
-                    } )
-
+                    } 
                 } else {
 
                     WaterfallGrid(self.shopVM.filter()) { product in
